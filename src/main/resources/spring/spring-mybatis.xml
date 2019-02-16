@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	<!-- 加载db.properties -->
+	<context:property-placeholder
+		location="classpath:db.properties" />
+
+	<!-- 配置druid数据库连接池 -->
+	<!-- 可参考博客https://blog.csdn.net/hj7jay/article/details/51686418 -->
+	<bean id="dataSource"
+		class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
+		destroy-method="close">
+		<!-- 配置基本属性 -->
+		<property name="driverClassName" value="${mysql.driver}"></property>
+		<property name="url" value="${mysql.url}"></property>
+		<property name="username" value="${mysql.username}"></property>
+		<property name="password" value="${mysql.password}"></property>
+		<!-- 配置初始化大小,最小,最大 -->
+		<property name="initialSize" value="1"></property>
+		<property name="minIdle" value="1"></property>
+		<property name="maxActive" value="20"></property>
+		<!-- 配置获取连接等待超时时间 -->
+		<property name="maxWait" value="60000"></property>
+		<!--配置检测时间间隔,用来检测需要关闭的空闲连接,单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000"></property>
+		<!--配置一个连接在连接池中的最小生存时间 -->
+		<property name="minEvictableIdleTimeMillis" value="300000"></property>
+		<!--检测数据库连接查询语句 -->
+		<property name="validationQuery" value="SELECT 1"></property>
+		<!-- 指明连接是否被空闲连接回收器(如果有)进行检验 -->
+		<property name="testWhileIdle" value="true"></property>
+		<!-- 指明是否在从池中取出连接前进行检验 -->
+		<property name="testOnBorrow" value="false"></property>
+		<!-- 指明是否在归还到池中前进行检验 -->
+		<property name="testOnReturn" value="false"></property>
+		<!-- 打开PSCache,并且制定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="true"></property>
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+			value="20"></property>
+		<!--配置监控统计拦截的filters,去掉后监控界面sql无法统计 -->
+		<property name="filters" value="stat"></property>
+	</bean>
+
+	<!-- 配置sqlSessionFactory -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 配置数据库连接池 -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 加载mybatis全局配置文件 -->
+		<property name="configLocation"
+			value="classpath:mybatis/mybatis-config.xml"></property>
+		<!-- 指定mapper文件所在位置 -->
+		<property name="mapperLocations"
+			value="classpath*:mapper/*.xml"></property>
+		<!-- 指定需要使用别名的pojo类所在的包 -->
+		<property name="typeAliasesPackage" value="com.wantao.bean"></property>
+	</bean>
+
+	<!-- 配置mapper扫描器 -->
+	<bean id="mapperScannerConfigurer"
+		class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.wantao.mapper"></property>
+		<property name="sqlSessionFactoryBeanName"
+			value="sqlSessionFactory"></property>
+	</bean>
+
+	<!-- 对mybatis操作数据事务控制,spring使用jdbc的事务控制类 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<!-- 通知 -->
+	<!-- 事物传播种类 https://blog.csdn.net/bigtree_3721/article/details/53966617 -->
+	<tx:advice id="txAdvice"
+		transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="insert*" propagation="REQUIRED"/>
+			<tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="get*" propagation="SUPPORTS" read-only="true"/>			
+			<tx:method name="select*" propagation="SUPPORTS" read-only="true"/>			
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+	<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.wantao.service.impl.*.*(..))"/>
+	</aop:config>
+</beans>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wantao.mapper.UserMapper">
+	<select id="selectUserCount" resultType="java.lang.Integer">
+		select count(*) from
+		user
+	</select>
+	<select id="selectAllUser" resultType="com.wantao.bean.User">
+		select * from user
+	</select>
+	<select id="selectUserById" resultType="com.wantao.bean.User">
+		select * from user where
+		user_id =#{userId}
+	</select>
+	<insert id="insertUser" parameterType="com.wantao.bean.User">
+		insert into user
+		values(#{userId},#{userName},#{userPassword},#{userNickname},#{userEmail},#{userUrl},#{userAvatar},#{userLastLoginIp},#{userRegisterTime},#{userLastLoginTime},#{userStatus})
+	</insert>
+	<insert id="insertUserByBatch" parameterType="java.util.List">
+		insert into user values
+		<foreach collection="list" item="user" index="index"
+			separator=",">
+			(
+			#{user.userId},
+			#{user.userName},
+			#{user.userPassword},
+			#{user.userNickname},
+			#{user.userEmail},
+			#{user.userUrl},
+			#{user.userAvatar},
+			#{user.userLastLoginIp},
+			#{user.userRegisterTime},
+			#{user.userLastLoginTime},
+			#{user.userStatus}
+			)
+		</foreach>
+	</insert>
+	<update id="updateUserByUserId" parameterType="com.wantao.bean.User">
+		update user
+		set
+		<if test="userId!=null and userId!=''">
+			user_id=#{userId},
+		</if>
+		<if test="userName!=null and userName!=''">
+			user_name=#{userName},
+		</if>
+		<if test="userPassword!=null and userPassword!=''">
+			user_password=#{userPassword},
+		</if>
+		<if test="userNickname!=null and userNickname!=''">
+			user_nickname=#{userNickname},
+		</if>
+		<if test="userEmail!=null and userEmail!=''">
+			user_email=#{userEmail},
+		</if>
+		<if test="userUrl!=null and userUrl!=''">
+			user_url=#{userUrl},
+		</if>
+		<if test="userAvatar!=null and userAvatar!=''">
+			user_avatar=#{userAvatar},
+		</if>
+		<if test="userLastLoginIp!=null and userLastLoginIp!=''">
+			user_last_login_ip=#{userLastLoginIp},
+		</if>
+		<if test="userRegisterTime!=null and userRegisterTime!=''">
+			user_register_time=#{userRegisterTime},
+		</if>
+		<if test="userLastLoginTime!=null and userLastLoginTime!=''">
+			user_last_login_time=#{userLastLoginTime},
+		</if>
+		<if test="userStatus!=null and userStatus!=''">
+			user_status=#{userStatus},
+		</if>
+		user_id=#{userId}
+		where user_id=#{userId}
+	</update>
+</mapper>

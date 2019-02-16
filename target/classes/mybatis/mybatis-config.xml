@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!--是否开启驼峰命名规则 -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<!-- 是否允许jdbc支持自动生成主键 -->
+		<setting name="useGeneratedKeys" value="true" />
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="logImpl" value="LOG4J" />
+	</settings>
+	<typeAliases>
+		<package name="com.wantao.bean" />
+	</typeAliases>
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<property name="offsetAsPageNum" value="false" />
+			<property name="rowBoundsWithCount" value="false" />
+			<property name="pageSizeZero" value="true" />
+			<property name="reasonable" value="true" />
+			<property name="supportMethodsArguments" value="false" />
+			<property name="returnPageInfo" value="none" />
+		</plugin>
+	</plugins>
+</configuration>
