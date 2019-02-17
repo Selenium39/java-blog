@@ -9,6 +9,14 @@ $(function() {
 	$("#updateButton").click(function() {
 		update($(this));
 	});
+	// 为批量删除按钮绑定事件
+	$("#batchDeleteButton").click(function() {
+		deleteUserByBatchById();
+	});
+	//为新增按钮绑定事件
+	$("#addButton").click(function(){
+		add();
+	});
 });
 
 function users(pn) {// 查询所有的用户并显示在分页中
@@ -20,7 +28,8 @@ function users(pn) {// 查询所有的用户并显示在分页中
 			$("#users").empty();
 			$.each(users, function(index, item) {
 				var tr = $("<tr></tr>");
-				var checkbox = $("<td><input type='checkbox'/></td>")
+				var checkbox = $("<td></td>").append(
+						$("<input type='checkbox' class='check_item' />"))
 				var id = $("<td></td>").append(item.userId);
 				var name = $("<td></td>").append(item.userName);
 				var nickname = $("<td></td>").append(item.userNickname);
@@ -44,12 +53,20 @@ function users(pn) {// 查询所有的用户并显示在分页中
 								buttons).appendTo($("#users"));
 				build_page_info(result);
 				build_page_line(result);
+				// 批量选择的选择框全选或者不全选
+				selectCheckBox();
 				// 为按钮绑定事件
 				$("#btn-show-" + item.userId).click(function() {
 					build_show_modal(item.userId);
 				});
 				$("#btn-update-" + item.userId).click(function() {
 					build_update_modal(item.userId);
+				});
+				$("#btn-delete-" + item.userId).click(function() {
+					var flag = confirm("是否删除" + item.userName + "?");
+					if (flag == true) {
+						deleteUserById(item.userId);
+					}
 				});
 			});
 
@@ -124,7 +141,7 @@ function build_update_modal(userId) { // 构建修改模态框
 			});
 			$("#userName1").append(user.userName);
 			$("#userPassword1").val(user.userPassword);
-			$("#eye").click(function() {
+			$("#eye").click(function() {//控制密码是否可见
 				if ($("#eye").attr("show") == "false") {
 					$("#eye").attr("show", "true");
 					$("#userPassword1").attr("type", "text");
@@ -149,7 +166,7 @@ function build_update_modal(userId) { // 构建修改模态框
 	});
 }
 
-function showImgOnTime() {
+function showImgOnTime() { // 发送ajax请求实时显示修改的照片
 	var formData = new FormData($("#updateForm")[0]);
 	formData.append("file", $("#photo")[0]);// ajax文件上传
 	$.ajax({
@@ -231,13 +248,13 @@ function build_page_line(result) {// 构建分页条
 	})
 	ul.append(nextPageLi).append(lastPageLi);
 	var nav = $("<nav></nav>").append(ul).addClass();
-	$("#page_line").append(nav);
+	$("#page_line").append(nav).addClass("offset-md-7");
 }
 
 function update(button) {// 修改用户
 	var formData = new FormData($("#updateForm")[0]);
 	formData.append("file", $("#photo")[0]);// ajax文件上传
-	formData.append("userId",$("#updateButton").attr("update-id"));
+	formData.append("userId", $("#updateButton").attr("update-id"));
 	$.ajax({
 		url : APP_PATH + "/admin/updateUserById",
 		type : "post",
@@ -249,5 +266,113 @@ function update(button) {// 修改用户
 			$('#myUpdateModal').modal('hide');
 			window.location.reload();
 		}
+	});
+}
+
+function selectCheckBox() {// 完成批量删除的checkbox全选or全不选
+	$("#checkAll").prop("checked", null);
+	$(".check_item")
+			.click(
+					function() {
+						if ($("input[type=checkbox].check_item:checked").length == $(".check_item").length) {
+							$("#checkAll").prop("checked", "checked");
+						} else {
+							$("#checkAll").prop("checked", null);
+						}
+					});
+	$("#checkAll").click(function() {
+		// 这里注意dom原生的属性使用prop,自定义属性使用attr
+		// alert($(this).prop("checked"));
+		$(".check_item").prop("checked", $(this).prop("checked"));
+	});
+}
+
+function deleteUserById(userId) {// 删除单个
+	$.ajax({
+		url : APP_PATH + "/admin/deleteUserById",
+		type : "get",
+		data : {
+			"userId" : userId
+		},
+		success : function(result) {
+			window.location.reload();
+		}
+	});
+}
+
+function deleteUserByBatchById() {// 批量删除
+	var userId = "";
+	var userName = "";
+	$.each($(".check_item:checked"), function() {
+		userId += $(this).parents("tr").find("td:eq(1)").text() + "-";
+		userName += $(this).parents("tr").find("td:eq(2)").text() + " ";
+	});
+	userName = userName.substring(0, userName.length - 1);
+	var flag = confirm("是否删除用户" + userName + "?");
+	if (flag == true) {
+		$.ajax({
+			url : APP_PATH + "/admin/deleteUserById",
+			type : "get",
+			data : {
+				"userId" : userId
+			},
+			success : function(result) {
+				window.location.reload();
+			}
+		});
+	}
+}
+
+
+function add(){//增加新用户
+	$("#userAvatar2").attr("src",null);
+	$("#addForm")[0].reset();
+	$(".a").empty();
+	$('#myAddModal').modal({});
+	$("#eye2").click(function() {//控制密码是否可见
+		if ($("#eye").attr("show") == "false") {
+			$("#eye").attr("show", "true");
+			$("#userPassword2").attr("type", "text");
+		} else {
+			$("#eye").attr("show", "false");
+			$("#userPassword2").attr("type", "password");
+		}
+	});
+	$("#photo2").change(function() {//ajax实时显示上传的照片
+		showImgOnTime2();
+	});
+	$("#addButtonFinish").click(function(){
+		var formData = new FormData($("#addForm")[0]);
+		formData.append("file", $("#photo2")[0]);// ajax文件上传
+		$.ajax({
+			url : APP_PATH + "/admin/addUser",
+			type : "post",
+			data : formData,
+			cache : false,
+			contentType : false,
+			processData : false,
+			success : function(result) {
+				$('#myAddModal').modal('hide');
+				window.location.reload();
+			}
+		});
+	});
+}
+
+function showImgOnTime2() { // 发送ajax请求实时显示上传的照片
+	var formData = new FormData($("#addForm")[0]);
+	formData.append("file", $("#photo2")[0]);// ajax文件上传
+	$.ajax({
+		url : APP_PATH + "/admin/showImgOnTime",
+		type : "post",
+		data : formData,
+		cache : false,
+		contentType : false,
+		processData : false,
+		success : function(result) {
+			$("#userAvatar2").prop("src", APP_PATH + result.data.imgUrl).addClass("rounded-circle").prop(
+					"height", 150);
+		}
+
 	});
 }

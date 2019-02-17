@@ -31,11 +31,10 @@ public class UserMapperTest {
     @Test
 	public void testInsertUser() {
       User user=new User();
-      user.setUserName("Selenium777");
-      user.setUserNickname("Sakura的男朋友");
-      user.setUserEmail("895486222@qq.com");
-      user.setUserPassword("111111");
-      user.setUserAvatar("/resource/avatar/avatar0.jpg");
+      user.setUserName("Selenium887");
+      user.setUserPassword("213");
+      user.setUserNickname("insert8887");
+      user.setUserEmail("3213123@qq.com");
       userService.insertUser(user);
 	}
     /**

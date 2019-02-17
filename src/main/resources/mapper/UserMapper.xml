@@ -14,7 +14,55 @@
 	</select>
 	<insert id="insertUser" parameterType="com.wantao.bean.User">
 		insert into user
-		values(#{userId},#{userName},#{userPassword},#{userNickname},#{userEmail},#{userUrl},#{userAvatar},#{userLastLoginIp},#{userRegisterTime},#{userLastLoginTime},#{userStatus})
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			user_name,
+			user_password,
+			user_nickname,
+			user_email,
+		<if test="userUrl!=null and userUrl!=''">
+			user_url,
+		</if>
+		<if test="userAvatar!=null and userAvatar!=''">
+			user_avatar,
+		</if>
+		<if test="userLastLoginIp!=null and userLastLoginIp!=''">
+			user_last_login_ip,
+		</if>
+		<if test="userRegisterTime!=null and userRegisterTime!=''">
+			user_register_time,
+		</if>
+		<if test="userLastLoginTime!=null and userLastLoginTime!=''">
+			user_last_login_time,
+		</if>
+		<if test="userStatus!=null and userStatus!=''">
+			user_status,
+		</if>
+		</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			#{userName},
+			#{userPassword},
+			#{userNickname},
+			#{userEmail},
+		<if test="userUrl!=null and userUrl!=''">
+			#{userUrl},
+		</if>
+		<if test="userAvatar!=null and userAvatar!=''">
+			#{userAvatar},
+		</if>
+		<if test="userLastLoginIp!=null and userLastLoginIp!=''">
+			#{userLastLoginIp},
+		</if>
+		<if test="userRegisterTime!=null and userRegisterTime!=''">
+			#{userRegisterTime},
+		</if>
+		<if test="userLastLoginTime!=null and userLastLoginTime!=''">
+			#{userLastLoginTime},
+		</if>
+		<if test="userStatus!=null and userStatus!=''">
+			#{userStatus},
+		</if>
+		</trim>
 	</insert>
 	<insert id="insertUserByBatch" parameterType="java.util.List">
 		insert into user values

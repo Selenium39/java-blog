@@ -2,11 +2,12 @@ package com.wantao.controller;
 
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.catalina.util.URLEncoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,7 +23,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.wantao.bean.User;
-import com.wantao.mapper.UserMapper;
 import com.wantao.service.ArticleService;
 import com.wantao.service.CommentService;
 import com.wantao.service.MessageService;
@@ -187,25 +186,69 @@ public class AdminController {
 	 */
 	@PostMapping("/updateUserById")
 	@ResponseBody
-	public Message updateUserById(User user, @RequestParam(value="file",required=false) MultipartFile file, HttpServletRequest request) {
-		if(file.getSize()==0) {//注意这里不要使用file==null判断
-		//logger.info(user.toString());			
-		}else {
-			String[] userAvatars= PhotoUtil.saveFile(file, request).split("webapp");
+	public Message updateUserById(User user, @RequestParam(value = "file", required = false) MultipartFile file,
+			HttpServletRequest request) {
+		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
+			// logger.info(user.toString());
+		} else {
+			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
-           // logger.info(userAvatar);
+			// logger.info(userAvatar);
 		}
 		userService.updateUserByUserId(user);
 		return Message.success();
 	}
 
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过ajax实时显示修改的头像
+	 */
 	@PostMapping("/showImgOnTime")
 	@ResponseBody
 	public Message showImgOnTime(@RequestParam("file") MultipartFile file, HttpServletRequest request)
 			throws UnsupportedEncodingException {
-		String[] userAvatars= PhotoUtil.saveFile(file, request).split("webapp");
+		String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
 		String userAvatar = userAvatars[1].replace("\\", "/");
 		return Message.success().add("imgUrl", userAvatar);
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id单个和批量删除用户
+	 */
+	@GetMapping("/deleteUserById")
+	@ResponseBody
+	public Message deleteUserById(@RequestParam("userId") String userId) {
+		List<Integer> ids = new ArrayList<>();
+		if(userId.contains("-")) {
+			String[] userIds=userId.split("-");
+			for(String id:userIds) {
+				ids.add(Integer.parseInt(id));
+			}
+		}else {
+			ids.add(Integer.parseInt(userId));
+		}
+		userService.deleteUserByBatchById(ids);
+		return Message.success();
+	}
+	
+	@PostMapping("/addUser")
+	@ResponseBody
+	public Message addUser(User user, @RequestParam(value = "file", required = false) MultipartFile file,
+			HttpServletRequest request) {
+		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
+			// logger.info(user.toString());
+		} else {
+			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+			String userAvatar = userAvatars[1].replace("\\", "/");
+			user.setUserAvatar(userAvatar);
+			// logger.info(userAvatar);
+		}
+		user.setUserRegisterTime(new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss").format(new Date()));
+		userService.insertUser(user);
+		return Message.success();
 	}
 
 }

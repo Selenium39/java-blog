@@ -275,11 +275,15 @@
 				<!-- Dashboard Section-->
 				<section class="dashboard-counts no-padding-bottom">
 					<div class="container-fluid" id="show">
+						<div class="row">
+							<button id="batchDeleteButton" class="btn btn-danger">批量删除</button>
+							<button id="addButton" class="btn btn-black">新增用户</button>
+						</div>
 						<div class="row bg-white has-shadow">
 							<table class="table  table-condensed table-bordered table-hover">
 								<thead>
 									<tr>
-										<th><input type="checkbox" /></th>
+										<th><input type="checkbox" id="checkAll" /></th>
 										<th>id</th>
 										<th>name</th>
 										<th>nickname</th>
@@ -429,6 +433,53 @@
 		</div>
 	</div>
 
+
+	<!-- 模态框 -->
+	<!-- 新增模态框 -->
+	<div class="modal fade" id="myAddModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document" style="margin-top: 170px;">
+			<div class="modal-content">
+				<div class="modal-body">
+					<form id="addForm">
+						<div class="form-group">
+							<label for="userName2">userName:</label> <input id="userName2"
+								type="text" name="userName" class="a form-control col-md-8" />
+						</div>
+						<div class="form-group">
+							<label for="userPassword2">userPassword:</label> <input
+								id="userPassword2" type="password" name="userPassword"
+								class="a form-control col-md-8" />
+						</div>
+						<i id="eye2" show="false"
+							style="position: absolute; margin-top: -43px; margin-left: 280px;"
+							class="fa fa-eye"></i>
+						<div class="form-group">
+							<label for="userNickname2">userNickname:</label> <input
+								id="userNickname2" type="text" name="userNickname"
+								class="a form-control col-md-8" />
+						</div>
+						<div class="form-group">
+							<label for="userEmail2">userEmail:</label> <input id="userEmail2"
+								type="email" name="userEmail" class="a form-control col-md-8" />
+						</div>
+						<div class="form-group">
+							<label for="userAvatar2">userAvatar:</label> <img class="a"
+								id="userAvatar2" />
+						</div>
+						<div class="form-group">
+							<label for="photo2" class="control-label">上传照片:</label> <input
+								type="file" id="photo2" name="file" class="a">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary" id="addButtonFinish">添加</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- JavaScript files-->
 	<script

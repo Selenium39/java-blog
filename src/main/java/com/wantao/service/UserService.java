@@ -84,5 +84,4 @@ public class UserService implements UserMapper {
 	public Integer deleteUserByBatchById(List<Integer> ids) {
 		return userMapper.deleteUserByBatchById(ids);
 	}
-
 }
