@@ -187,13 +187,15 @@ public class AdminController {
 	 */
 	@PostMapping("/updateUserById")
 	@ResponseBody
-	public Message updateUserById(User user, @RequestParam("file") MultipartFile file, HttpServletRequest request) {
-		// logger.info("进入到updateUserById方法");
-		// logger.info(file.getName());
-		// logger.info(user.toString());
-		// logger.info(PhotoUtil.saveFile(file, request).split("/")[1]);
-		// logger.info(PhotoUtil.saveFile(file, request).split("/webapp")[1]);
-		String userAvatar = PhotoUtil.saveFile(file, request).split("/webapp")[1];
+	public Message updateUserById(User user, @RequestParam(value="file",required=false) MultipartFile file, HttpServletRequest request) {
+		if(file.getSize()==0) {//注意这里不要使用file==null判断
+		//logger.info(user.toString());			
+		}else {
+			String[] userAvatars= PhotoUtil.saveFile(file, request).split("webapp");
+			String userAvatar = userAvatars[1].replace("\\", "/");
+           // logger.info(userAvatar);
+		}
+		userService.updateUserByUserId(user);
 		return Message.success();
 	}
 
@@ -201,7 +203,8 @@ public class AdminController {
 	@ResponseBody
 	public Message showImgOnTime(@RequestParam("file") MultipartFile file, HttpServletRequest request)
 			throws UnsupportedEncodingException {
-		String userAvatar = PhotoUtil.saveFile(file, request).split("/webapp")[1];
+		String[] userAvatars= PhotoUtil.saveFile(file, request).split("webapp");
+		String userAvatar = userAvatars[1].replace("\\", "/");
 		return Message.success().add("imgUrl", userAvatar);
 	}
 

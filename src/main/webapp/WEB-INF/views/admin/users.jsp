@@ -390,24 +390,27 @@
 						<div class="form-group">
 							<label for="userPassword1">userPassword:</label> <input
 								id="userPassword1" type="password" name="userPassword"
-								class="u form-control" />
+								class="u form-control col-md-8" />
 						</div>
+						<i id="eye" show="false"
+							style="position: absolute; margin-top: -43px; margin-left: 280px;"
+							class="fa fa-eye"></i>
 						<div class="form-group">
 							<label for="userNickname1">userNickname:</label> <input
 								id="userNickname1" type="text" name="userNickname"
-								class="u form-control" />
+								class="u form-control col-md-8" />
 						</div>
 						<div class="form-group">
 							<label for="userEmail1">userEmail:</label> <input id="userEmail1"
-								type="email" name="userEmail" class="u form-control" />
+								type="email" name="userEmail" class="u form-control col-md-8" />
 						</div>
 						<div class="form-group">
 							<label for="userAvatar1">userAvatar:</label> <img
 								id="userAvatar1" />
 						</div>
 						<div class="form-group">
-							<label for="photo" class="control-label">上传照片:</label>
-								<input type="file" id="photo" name="file" class="u">
+							<label for="photo" class="control-label">上传照片:</label> <input
+								type="file" id="photo" name="file" class="u">
 						</div>
 						<div class="form-group">
 							<label for="userStatus1">userStatus:</label> <select

@@ -77,4 +77,12 @@ public class UserService implements UserMapper {
 		return userMapper.updateUserByUserId(user);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.UserMapper#deleteUserByBatchById(java.util.List) 按用户id批量删除用户
+	 */
+	@Override
+	public Integer deleteUserByBatchById(List<Integer> ids) {
+		return userMapper.deleteUserByBatchById(ids);
+	}
+
 }

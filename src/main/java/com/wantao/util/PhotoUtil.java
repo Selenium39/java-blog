@@ -110,7 +110,7 @@ public class PhotoUtil {
 	 */
 	public static String saveFile(MultipartFile filedata, HttpServletRequest request) {
 		// 文件存放位置
-		String pathval = "D:/src/eclipse/blog/src/main/webapp/resource/avatar";
+		String pathval = "D:\\src\\eclipse\\blog\\src\\main\\webapp\\resource\\avatar";
 		File fileDir = new File(pathval);
 		if (!fileDir.exists()) {
 			fileDir.mkdirs();

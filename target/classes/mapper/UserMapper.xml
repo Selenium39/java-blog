@@ -74,4 +74,10 @@
 		user_id=#{userId}
 		where user_id=#{userId}
 	</update>
+	<delete id="deleteUserByBatchById">
+	  delete from user where user_id in
+	  <foreach collection="list" item="id" separator="," open="(" close=")">
+	      #{id}
+	  </foreach>
+	</delete>
 </mapper>

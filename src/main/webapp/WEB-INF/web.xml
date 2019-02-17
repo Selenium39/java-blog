@@ -73,4 +73,16 @@
     <filter-name>DruidWebStatFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <filter>
+    <filter-name>urlFilter</filter-name>
+    <filter-class>com.wantao.filter.UrlFilter</filter-class>
+    <init-param>
+      <param-name>DEFAULT_URI_ENCODE</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>urlFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

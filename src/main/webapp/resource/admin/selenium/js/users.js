@@ -119,11 +119,20 @@ function build_update_modal(userId) { // 构建修改模态框
 			$(".u").empty();
 			$("#updateForm")[0].reset();
 			var user = result.data.user;
-			$("#photo").change(function(){
+			$("#photo").change(function() {
 				showImgOnTime();
 			});
 			$("#userName1").append(user.userName);
 			$("#userPassword1").val(user.userPassword);
+			$("#eye").click(function() {
+				if ($("#eye").attr("show") == "false") {
+					$("#eye").attr("show", "true");
+					$("#userPassword1").attr("type", "text");
+				} else {
+					$("#eye").attr("show", "false");
+					$("#userPassword1").attr("type", "password");
+				}
+			});
 			$("#userNickname1").val(user.userNickname);
 			$("#userEmail1").val(user.userEmail);
 			$("#userAvatar1").prop(
@@ -140,20 +149,20 @@ function build_update_modal(userId) { // 构建修改模态框
 	});
 }
 
-function showImgOnTime(){
+function showImgOnTime() {
 	var formData = new FormData($("#updateForm")[0]);
-	formData.append("file", $("#photo")[0]);//ajax文件上传
+	formData.append("file", $("#photo")[0]);// ajax文件上传
 	$.ajax({
-		url:APP_PATH+"/admin/showImgOnTime",
+		url : APP_PATH + "/admin/showImgOnTime",
 		type : "post",
 		data : formData,
 		cache : false,
 		contentType : false,
 		processData : false,
-		success:function(result){
-			$("#userAvatar1").prop("src",APP_PATH+result.data.imgUrl);
+		success : function(result) {
+			$("#userAvatar1").prop("src", APP_PATH + result.data.imgUrl);
 		}
-		
+
 	});
 }
 
@@ -225,9 +234,10 @@ function build_page_line(result) {// 构建分页条
 	$("#page_line").append(nav);
 }
 
-function update(button) {//修改用户
+function update(button) {// 修改用户
 	var formData = new FormData($("#updateForm")[0]);
-	formData.append("file", $("#photo")[0]);//ajax文件上传
+	formData.append("file", $("#photo")[0]);// ajax文件上传
+	formData.append("userId",$("#updateButton").attr("update-id"));
 	$.ajax({
 		url : APP_PATH + "/admin/updateUserById",
 		type : "post",
@@ -236,7 +246,8 @@ function update(button) {//修改用户
 		contentType : false,
 		processData : false,
 		success : function(result) {
-
+			$('#myUpdateModal').modal('hide');
+			window.location.reload();
 		}
 	});
 }

@@ -19,4 +19,5 @@ public interface UserMapper {
        public Integer insertUser(User user);
        public Integer insertUserByBatch(List<User> users);
        public  Integer updateUserByUserId(User user);
+       public Integer deleteUserByBatchById(List<Integer>ids);
 }

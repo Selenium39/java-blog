@@ -82,4 +82,11 @@ public class UserMapperTest {
     	userService.updateUserByUserId(user);
     }
     
+    @Test
+    public void testDeleteUserByBatchById() {
+    	List<Integer>ids=new ArrayList<>();
+    	ids.add(7777);
+       userService.deleteUserByBatchById(ids);
+    }
+    
 }
