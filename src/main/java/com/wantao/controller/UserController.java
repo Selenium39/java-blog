@@ -11,8 +11,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
+	/**
+	 * @param
+	 * @return String
+	 * @description 跳转首页
+	 */
 	@RequestMapping("/index")
 	public String index() {
 		return "user/index";
+	}
+
+	/**
+	 * @param
+	 * @return String
+	 * @description 跳转个人信息页面
+	 */
+	@RequestMapping("/aboutMe")
+	public String aboutMe() {
+		return "user/me";
 	}
 }

@@ -22,6 +22,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.wantao.bean.Article;
+import com.wantao.bean.Comment;
 import com.wantao.bean.User;
 import com.wantao.service.ArticleService;
 import com.wantao.service.CommentService;
@@ -87,6 +89,36 @@ public class AdminController {
 	@RequestMapping("/users")
 	public String users() {
 		return "admin/users";
+	}
+
+	/**
+	 * @param
+	 * @return String
+	 * @description 查看所有文章跳转
+	 */
+	@RequestMapping("/articles")
+	public String articles() {
+		return "admin/articles";
+	}
+
+	/**
+	 * @param
+	 * @return String
+	 * @description 查看所有评论跳转
+	 */
+	@RequestMapping("/comments")
+	public String comments() {
+		return "admin/comments";
+	}
+
+	/**
+	 * @param
+	 * @return String
+	 * @description 查看所有留言跳转
+	 */
+	@RequestMapping("/messages")
+	public String messages() {
+		return "admin/messages";
 	}
 
 	// ------------------------------处理--------------------------------------
@@ -222,18 +254,23 @@ public class AdminController {
 	@ResponseBody
 	public Message deleteUserById(@RequestParam("userId") String userId) {
 		List<Integer> ids = new ArrayList<>();
-		if(userId.contains("-")) {
-			String[] userIds=userId.split("-");
-			for(String id:userIds) {
+		if (userId.contains("-")) {
+			String[] userIds = userId.split("-");
+			for (String id : userIds) {
 				ids.add(Integer.parseInt(id));
 			}
-		}else {
+		} else {
 			ids.add(Integer.parseInt(userId));
 		}
 		userService.deleteUserByBatchById(ids);
 		return Message.success();
 	}
-	
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 新增用户
+	 */
 	@PostMapping("/addUser")
 	@ResponseBody
 	public Message addUser(User user, @RequestParam(value = "file", required = false) MultipartFile file,
@@ -248,6 +285,137 @@ public class AdminController {
 		}
 		user.setUserRegisterTime(new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss").format(new Date()));
 		userService.insertUser(user);
+		return Message.success();
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 查看所有文章
+	 */
+	@GetMapping("/selectAllArticle/{pn}")
+	@ResponseBody
+	public Message selectAllArticle(@PathVariable("pn") Integer pn) {
+		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
+		List<Article> articles = articleService.selectAllArticle();
+		PageInfo pageInfo = new PageInfo(articles, 5);// 用pageInfo封装然后交给页面
+		return Message.success().add("pageInfo", pageInfo);
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id查询文章
+	 */
+	@GetMapping("/selectArticleById/{articleId}")
+	@ResponseBody
+	public Message selectArticleById(@PathVariable("articleId") Integer articleId) {
+		Article article = articleService.selectArticleById(articleId);
+		return Message.success().add("article", article);
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id修改文章
+	 */
+	@PostMapping("/updateArticleById")
+	@ResponseBody
+	public Message updateArticleById(@RequestParam Integer articleId, Article article) {
+		// logger.info("进入到updateArticleById的方法");
+		articleService.updateArticleById(article);
+		return Message.success();
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id单个和批量删除文章
+	 */
+	@GetMapping("/deleteArticleById")
+	@ResponseBody
+	public Message deleteArticleById(@RequestParam("articleId") String articleId) {
+		// logger.info("进入到deleteArticleById");
+		List<Integer> ids = new ArrayList<>();
+		if (articleId.contains("-")) {
+			String[] articleIds = articleId.split("-");
+			for (String id : articleIds) {
+				ids.add(Integer.parseInt(id));
+			}
+		} else {
+			ids.add(Integer.parseInt(articleId));
+		}
+		articleService.deleteArticleByBatchById(ids);
+		return Message.success();
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 查询所有的评论
+	 */
+	@GetMapping("/selectAllComment/{pn}")
+	@ResponseBody
+	public Message selectAllComment(@PathVariable("pn") Integer pn) {
+		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
+		List<Comment> comments = commentService.selectAllComment();
+		PageInfo pageInfo = new PageInfo(comments, 5);// 用pageInfo封装然后交给页面
+		return Message.success().add("pageInfo", pageInfo);
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id单个和批量删除评论
+	 */
+	@GetMapping("/deleteCommentById")
+	@ResponseBody
+	public Message deleteCommentById(@RequestParam("commentId") String commentId) {
+		List<Integer> ids = new ArrayList<>();
+		if (commentId.contains("-")) {
+			String[] commentIds = commentId.split("-");
+			for (String id : commentIds) {
+				ids.add(Integer.parseInt(id));
+			}
+		} else {
+			ids.add(Integer.parseInt(commentId));
+		}
+		commentService.deleteCommentByBatchById(ids);
+		return Message.success();
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 查询所有的留言
+	 */
+	@GetMapping("/selectAllMessage/{pn}")
+	@ResponseBody
+	public Message selectAllMessage(@PathVariable("pn") Integer pn) {
+		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
+		List<Message> messages = messageService.selectAllMessage();
+		PageInfo pageInfo = new PageInfo(messages, 5);// 用pageInfo封装然后交给页面
+		return Message.success().add("pageInfo", pageInfo);
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id单个和批量删除留言
+	 */
+	@GetMapping("/deleteMessageById")
+	@ResponseBody
+	public Message deleteMessageById(@RequestParam("messageId") String messageId) {
+		List<Integer> ids = new ArrayList<>();
+		if (messageId.contains("-")) {
+			String[] messageIds = messageId.split("-");
+			for (String id : messageIds) {
+				ids.add(Integer.parseInt(id));
+			}
+		} else {
+			ids.add(Integer.parseInt(messageId));
+		}
+		messageService.deleteMessageByBatchById(ids);
 		return Message.success();
 	}
 

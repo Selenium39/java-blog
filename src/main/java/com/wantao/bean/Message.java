@@ -13,17 +13,19 @@ import lombok.Data;
  */
 @Data
 /**
- * @param messageId
- * @param userId
- * @param content
- * @param messageCreateTime
+ * @param messageId 留言id
+ * @param messageUserId 留言用户id
+ * @param messsageUserName 留言用户name
+ * @param messageContent 留言内容
+ * @param messageCreateTime 留言创建时间
  */
 @AllArgsConstructor
 public class Message implements Serializable {
 	private static final long serialVersionUID = -181550064979924929L;
 	private Integer messageId;
-	private Integer userId;
-	private String content;
+	private Integer messageUserId;
+	private String  messageUserName;
+	private String messageContent;
 	private Date messageCreateTime;
 	public Message() {
 		super();

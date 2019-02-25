@@ -22,7 +22,7 @@ import lombok.ToString;
  * @param userLastLoginIp 用户登录ip
  * @param userRegisterTime 用户注册时间
  * @param userLastLoginTime 用户上次登录时间
- * @param userStatus 用户状态
+ * @param userStatus 用户状态 1有效 0无效
  * @param articleCount
  */
 @AllArgsConstructor

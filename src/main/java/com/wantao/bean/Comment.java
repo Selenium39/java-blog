@@ -13,31 +13,35 @@ import lombok.Data;
  */
 @Data
 /**
- * @param commentPid
- * @param commentPname
- * @param commentArticleId
- * @param commentAuthorName
- * @param commentAuthorEmail
- * @param commentAuthorUrl
- * @param commnetAhthorAvatar
- * @param commentContent
- * @param commentAgent
- * @param commentIp
- * @param commentCreateTime
+ * @param commentId 评论Id
+ * @param commentPid 评论人Id
+ * @param commentPname 评论人Name
+ * @param commentArticleId 评论文章id
+ * @param commentAuthorId 评论文章作者id
+ * @param commentAuthorName 评论文章作者name
+ * @param commentAuthorEmail 评论文章作者email
+ * @param commentAuthorUrl   
+ * @param commnetAuthorAvatar 评论作者头像
+ * @param commentContent 评论内容
+ * @param commentAgent 
+ * @param commentIp  评论人的ip
+ * @param commentCreateTime 评论的创建时间
  */
 @AllArgsConstructor
 public class Comment implements Serializable{
 	private static final long serialVersionUID = 3872535011425095495L;
-    private Integer commentPid;
-    private String commentPname;
+	private Integer commentId;
+    private Integer commentUserId;
+    private String commentUserName;
     private Integer commentArticleId;
+    private Integer commentAuthorId;
     private String commentAuthorName;
     private String commentAuthorEmail;
     private String commentAuthorUrl;
-    private String commnetAhthorAvatar;
+    private String commnetAuthorAvatar;
     private String commentContent;
     private String commentAgent;
     private String commentIp;
-    private Date commentCreateTime;
+    private String commentCreateTime;
    public Comment() {}
 }

@@ -64,46 +64,11 @@
 						<button class="header-navigation-trigger">
 							<span></span> <span></span> <span></span>
 						</button>
+						<!--导航栏界面  -->
 						<nav class="main-navigation">
 							<ul>
-								<li><a href="index.html">HOME</a>
-									<ul>
-										<li><a href="index.html">Home Default Version</a></li>
-										<li><a href="index-dark.html">Home Dark Version</a></li>
-										<li><a href="index-boxed.html">Home Boxed Layout</a></li>
-									</ul></li>
-								<li><a href="about.html">ABOUT US</a></li>
-								<li><a href="portfolio.html">PORTFOLIO</a>
-									<ul>
-										<li><a href="portfolio-2-column.html">Portfolio 2
-												Column</a></li>
-										<li><a href="portfolio.html">Portfolio 3 Column</a></li>
-										<li><a href="portfolio-4-column.html">Portfolio 4
-												Column</a></li>
-										<li><a href="portfolio-masonry.html">Portfolio
-												Masonry</a></li>
-										<li><a href="portfolio-details.html">Portfolio
-												Details</a></li>
-									</ul></li>
-								<li><a href="blog.html">BLOG</a>
-									<ul>
-										<li><a href="blog.html">Blog Fullwidth</a></li>
-										<li><a href="blog-right-sidebar.html">Blog Right
-												Sidebar</a></li>
-										<li><a href="blog-left-sidebar.html">Blog Left
-												Sidebar</a></li>
-										<li><a href="blog-details.html">Blog Details</a>
-											<ul>
-												<li><a href="blog-details.html">Blog Details</a>
-												<li><a href="blog-details-right-sidebar.html">Blog
-														Details Right Sidebar</a></li>
-												<li><a href="blog-details-left-sidebar.html">Blog
-														Details Left Sidebar</a></li>
-											</ul></li>
-									</ul></li>
-								<li><a href="pricing.html">PRICING</a></li>
-								<li><a href="services.html">SERVICES</a></li>
-								<li><a href="contact.html">CONTACT</a></li>
+								<li><a href="${APP_PATH}/user/index">HOME</a>
+							    <li><a href="${APP_PATH}/user/aboutMe">ABOUT ME</a>
 							</ul>
 						</nav>
 					</div>

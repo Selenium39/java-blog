@@ -231,11 +231,11 @@
 					<!--显示所有用户 -->
 					<li><a href="${APP_PATH}/admin/users"> <i class="fa fa-user"></i>User
 					</a></li>
-					<li><a href="charts.html"> <i class="fa fa-book"></i>Article
+					<li><a href="${APP_PATH}/admin/articles"> <i class="fa fa-book"></i>Article
 					</a></li>
-					<li><a href="forms.html"> <i class="fa fa-comment"></i>Comment
+					<li><a href="${APP_PATH}/admin/comments"> <i class="fa fa-comment"></i>Comment
 					</a></li>
-					<li><a href="forms.html"> <i class="fa fa-heart"></i>Message
+					<li><a href="${APP_PATH}/admin/messages"> <i class="fa fa-heart"></i>Message
 					</a></li>
 					<li><a href="#exampledropdownDropdown" aria-expanded="false"
 						data-toggle="collapse"> <i class="icon-interface-windows"></i>Example

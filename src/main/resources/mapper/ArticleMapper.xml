@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wantao.mapper.ArticleMapper">
-  <select id="selectArticleCount" resultType="java.lang.Integer">
-     select count(*) from article
-  </select>
+	<sql id="articleColumn">
+		article_id,
+		article_user_id,
+		article_user_name,
+		article_title,
+		article_view_count,
+		article_comment_count,
+		article_dislike_count,
+		article_like_count,
+		article_create_time,
+		article_update_time,
+		article_is_comment,
+		article_status,
+		article_order,
+		article_content
+	</sql>
+	<select id="selectArticleCount" resultType="java.lang.Integer">
+		select count(*) from article
+	</select>
+	<select id="selectAllArticle"
+		resultType="com.wantao.bean.Article">
+		select <include refid="articleColumn"></include> from article a,user u where a.article_user_id =u.user_id
+	</select>
+	<select id="selectArticleById" resultType="com.wantao.bean.Article">
+	select * from article where article_id=#{articleId}
+	</select>
+	<update id="updateArticleById" parameterType="com.wantao.bean.Article">
+	  update article set 
+	  article_is_comment =#{articleIsComment},
+	  article_status=#{articleStatus},
+	  article_order=#{articleOrder}
+	  where article_id = #{articleId} 
+	</update>
+	<delete id="deleteArticleByBatchById">
+	  delete from article where article_id in
+	  <foreach collection="list" item="id" separator="," open="(" close=")">
+	      #{id}
+	  </foreach>
+	</delete>
 </mapper>

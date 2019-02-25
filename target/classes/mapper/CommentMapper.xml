@@ -4,4 +4,13 @@
   <select id="selectCommentCount" resultType="java.lang.Integer">
      select count(*) from comment
   </select>
+  <select id="selectAllComment" resultType="com.wantao.bean.Comment">
+     select * from comment
+  </select>
+  <delete id="deleteCommentByBatchById">
+	  delete from comment where comment_id in
+	  <foreach collection="list" item="id" separator="," open="(" close=")">
+	      #{id}
+	  </foreach>
+	</delete>
 </mapper>

@@ -1,5 +1,5 @@
 /**
- * author:Selenium
+ * Author:Selenium
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
@@ -122,7 +122,7 @@ function build_show_modal(userId) { // 构建查看模态框
 			$("#userLastLoginIp").append(user.userLastLoginIp);
 			$("#userRegisterTime").append(user.userRegisterTime);
 			$("#userLastLoginTime").append(user.userLastLoginTime);
-			$("#userStatus").append(user.userStatus == 1 ? "有效账户" : "无效账户");
+			$("#userStatus").append(user.userStatus == 0 ? "无效账户" : "有效账户");
 			$('#myShowModal').modal({});
 		}
 	});
@@ -158,8 +158,8 @@ function build_update_modal(userId) { // 构建修改模态框
 							+ '/resource/avatar/avatar.jpg' : APP_PATH
 							+ user.userAvatar).addClass("rounded-circle").prop(
 					"height", 150);
-			user.userStatus == 1 ? $("#status1").attr("selected", "selected")
-					: $("#status0").attr("selected", "selected");
+			user.userStatus == 0 ? $("#status0").attr("selected", "selected")
+					: $("#status1").attr("selected", "selected");
 			$("#updateButton").attr("update-id", user.userId);
 			$('#myUpdateModal').modal({});
 		}
@@ -254,7 +254,7 @@ function build_page_line(result) {// 构建分页条
 function update(button) {// 修改用户
 	var formData = new FormData($("#updateForm")[0]);
 	formData.append("file", $("#photo")[0]);// ajax文件上传
-	formData.append("userId", $("#updateButton").attr("update-id"));
+	formData.append("userId", button.attr("update-id"));
 	$.ajax({
 		url : APP_PATH + "/admin/updateUserById",
 		type : "post",

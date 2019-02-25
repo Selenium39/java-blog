@@ -4,4 +4,13 @@
   <select id="selectMessageCount" resultType="java.lang.Integer">
      select count(*) from message
   </select>
+  <select id="selectAllMessage" resultType="com.wantao.bean.Message">
+     select * from message
+  </select>
+    <delete id="deleteMessageByBatchById">
+	  delete from message where message_id in
+	  <foreach collection="list" item="id" separator="," open="(" close=")">
+	      #{id}
+	  </foreach>
+	</delete>
 </mapper>
