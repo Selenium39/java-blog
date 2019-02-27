@@ -8,7 +8,7 @@ import lombok.Data;
 /**
  * @author wantao
  * @date 2019-02-27 11:27
- * @description: 个人
+ * @description: 个人信息类
  */
 
 /**

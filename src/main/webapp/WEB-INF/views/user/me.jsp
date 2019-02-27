@@ -19,8 +19,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } 
+
+
 
 
 
@@ -286,8 +290,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<i>Despite shortcomings, efforts are still under way</i>
 				</h5>
 				<p class="bar-p">
-					<a href="https://github.com/wantao666">talk is cheap , let me show you my code !</a> <a
-						href="https://github.com/wantao666"><i class="fa fa-github"></i></a>
+					<a href="https://github.com/wantao666">talk is cheap , let me
+						show you my code !</a> <a href="https://github.com/wantao666"><i
+						class="fa fa-github"></i></a>
 				</p>
 			</div>
 			<div class='clearfix'></div>
@@ -399,179 +404,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-6">
 				<div class="grid1">
 					<h3>Bachelor Degree of education</h3>
-					<p>Dignissim elit at ligula laoreet iaculis. Sed urna purus,
-						convallis sedrhon cus eget, bibendum idtortor. Donec libero
-						tellus, feugiat ut felis ac, commodo pharetra massa</p>
+					<p>
+					<ul>
+						<li>School: Shanghai DianJi University</li>
+						<li>Major:Software Engineering</li>
+					</ul>
+					</p>
 					<h4>
-						<b>Year</b> : 2011-2013
+						<b>Year</b> : 2016-2020
 					</h4>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="grid1">
-					<h3>Bachelor Degree of education</h3>
-					<p>Dignissim elit at ligula laoreet iaculis. Sed urna purus,
-						convallis sedrhon cus eget, bibendum idtortor. Donec libero
-						tellus, feugiat ut felis ac, commodo pharetra massa</p>
+					<h3>Future</h3>
+					<p>
+					<ul>
+						<li>Good Good Study Day Day Up</li>
+						<li>The future will be colorful</li>
+					</ul>
+					</p>
 					<h4>
-						<b>Year</b> : 2011-2013
+						<b>Year</b> : 2019-xxx
 					</h4>
 				</div>
 			</div>
 			<div class='clearfix'></div>
-			<div class="educationbottom">
-				<div class="col-md-6">
-					<div class="grid1">
-						<h3>Bachelor Degree of education</h3>
-						<p>Dignissim elit at ligula laoreet iaculis. Sed urna purus,
-							convallis sedrhon cus eget, bibendum idtortor. Donec libero
-							tellus, feugiat ut felis ac, commodo pharetra massa</p>
-						<h4>
-							<b>Year</b> : 2011-2013
-						</h4>
-
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="grid1 lastgrid">
-						<h3>Bachelor Degree of education</h3>
-						<p>Dignissim elit at ligula laoreet iaculis. Sed urna purus,
-							convallis sedrhon cus eget, bibendum idtortor. Donec libero
-							tellus, feugiat ut felis ac, commodo pharetra massa</p>
-						<h4>
-							<b>Year</b> : 2011-2013
-						</h4>
-					</div>
-				</div>
-				<div class='clearfix'></div>
-			</div>
 		</div>
 	</div>
-	<!-- //Education -->
-
-	<!-- Work experience -->
-	<div class="experience" id="experience">
-		<div class="container">
-			<h3 class="heading">Experience</h3>
-			<div class="col-md-6">
-				<div class="grid1">
-					<h3>
-						<i class="fa fa-laptop" aria-hidden="true"></i> Web Developer
-					</h3>
-					<p>Dignissim elit at ligula laoreet iaculis. Sed urna purus,
-						convallis sedrhon cus eget, bibendum idtortor. Donec libero tellus</p>
-					<h4>
-						<b>Year</b> : 2011-2013
-					</h4>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="grid1">
-					<h3>
-						<i class="fa fa-camera" aria-hidden="true"></i> Senior UI/UX
-						designer
-					</h3>
-					<p>Dignissim elit at ligula laoreet iaculis. Sed urna purus,
-						convallis sedrhon cus eget, bibendum idtortor. Donec libero tellus</p>
-					<h4>
-						<b>Year</b> : 2011-2013
-					</h4>
-				</div>
-			</div>
-			<div class='clearfix'></div>
-			<div class="educationbottom">
-				<div class="col-md-6">
-					<div class="grid1">
-						<h3>
-							<i class="fa fa-mobile" aria-hidden="true"></i> Mobile App
-							Developer
-						</h3>
-						<p>Dignissim elit at ligula laoreet iaculis. Sed urna purus,
-							convallis sedrhon cus eget, bibendum idtortor. Donec libero
-							tellus</p>
-						<h4>
-							<b>Year</b> : 2011-2013
-						</h4>
-
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="grid1 lastgrid">
-						<h3>
-							<i class="fa fa-line-chart" aria-hidden="true"></i> Graphic
-							Designer
-						</h3>
-						<p>Dignissim elit at ligula laoreet iaculis. Sed urna purus,
-							convallis sedrhon cus eget, bibendum idtortor. Donec libero
-							tellus</p>
-						<h4>
-							<b>Year</b> : 2011-2013
-						</h4>
-					</div>
-				</div>
-				<div class='clearfix'></div>
-			</div>
-		</div>
 	</div>
-	<!-- //Work experience -->
-
-	<!-- Technical Skills -->
-	<div class="count-agileits" id="stats">
-		<div class="container">
-			<h3 class="heading">Technical Skills</h3>
-			<div class="count-grids">
-				<div class="count-bgcolor-w3ls">
-					<div class="col-md-3 count-grid">
-						<div class="count hvr-bounce-to-bottom">
-							<div class='numscroller numscroller-big-bottom' data-slno='1'
-								data-min='0' data-max='120' data-delay='1' data-increment="1">120</div>
-							<span></span>
-							<h5>Projects done</h5>
-						</div>
-					</div>
-					<div class="col-md-3 count-grid">
-						<div class="count hvr-bounce-to-bottom">
-							<div class='numscroller numscroller-big-bottom' data-slno='1'
-								data-min='0' data-max='172' data-delay='1' data-increment="1">172</div>
-							<span></span>
-							<h5>New Companies</h5>
-						</div>
-					</div>
-					<div class="col-md-3 count-grid">
-						<div class="count hvr-bounce-to-bottom">
-							<div class='numscroller numscroller-big-bottom' data-slno='1'
-								data-min='0' data-max='102' data-delay='1' data-increment="1">102</div>
-							<span></span>
-							<h5>Web designs</h5>
-						</div>
-					</div>
-					<div class="col-md-3 count-grid">
-						<div class="count hvr-bounce-to-bottom">
-							<div class='numscroller numscroller-big-bottom' data-slno='1'
-								data-min='0' data-max='156' data-delay='1' data-increment="1">156</div>
-							<span></span>
-							<h5>Happy clients</h5>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Technical Skills -->
-
 	<!-- contact -->
 	<div class="contact" id="contact">
 		<div class="container">
 			<h3 class="heading">Contact Me</h3>
 			<div class="col-md-4 address">
-				<h3>Address</h3>
 				<div class="mail-agileits-w3layouts">
 					<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
 					<div class="contact-right">
 						<p>Phone</p>
-						<span>+1(01) 24-212-5665</span>
+						<span>18800269697</span>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -579,7 +450,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
 					<div class="contact-right">
 						<p>Email</p>
-						<a href="mailto:info@example.com">info@example.com</a>
+						<a href="mailto:895484122@qq.com">895484122@qq.com</a>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -587,10 +458,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
 					<div class="contact-right">
 						<p>Address</p>
-						<span>10 Eunos Road 8, Mandalay </span>
-						<p>
-							<span>Towers, Singapore.</span>
-						</p>
+						<span>ShangHai China </span>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -636,43 +504,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="index.html">Selenium</a>
 			</h3>
 			<p>
-				Copyright &copy; 2017.Company name All rights reserved.More
-				Templates <a href="http://www.cssmoban.com/" target="_blank"
-					title="æ¨¡æ¿ä¹å®¶">æ¨¡æ¿ä¹å®¶</a> - Collect from <a
-					href="http://www.cssmoban.com/" title="ç½é¡µæ¨¡æ¿"
-					target="_blank">ç½é¡µæ¨¡æ¿</a>
+				<small>@上海电机学院 Selenium</small>
 			</p>
 			<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-				<li><a href="#" class="facebook">
+				<li><a href="https://github/wantao666" class="github">
 						<div class="front">
-							<i class="fa fa-facebook" aria-hidden="true"></i>
+							<i class="fa fa-github" aria-hidden="true"></i>
 						</div>
 						<div class="back">
-							<i class="fa fa-facebook" aria-hidden="true"></i>
+							<i class="fa fa-github" aria-hidden="true"></i>
 						</div>
 				</a></li>
-				<li><a href="#" class="twitter">
+				<li><a href="#" class="qq">
 						<div class="front">
-							<i class="fa fa-twitter" aria-hidden="true"></i>
+							<i class="fa fa-qq" aria-hidden="true"></i>
 						</div>
 						<div class="back">
-							<i class="fa fa-twitter" aria-hidden="true"></i>
+							<i class="fa fa-qq" aria-hidden="true"></i>
 						</div>
 				</a></li>
-				<li><a href="#" class="instagram">
+				<li><a href="#" class="wecaht">
 						<div class="front">
-							<i class="fa fa-instagram" aria-hidden="true"></i>
+							<i class="fa fa-wechat" aria-hidden="true"></i>
 						</div>
 						<div class="back">
-							<i class="fa fa-instagram" aria-hidden="true"></i>
+							<i class="fa fa-wechat" aria-hidden="true"></i>
 						</div>
 				</a></li>
-				<li><a href="#" class="pinterest">
+				<li><a href="https://weibo.com/u/6857791826" class="weibo">
 						<div class="front">
-							<i class="fa fa-linkedin" aria-hidden="true"></i>
+							<i class="fa fa-weibo" aria-hidden="true"></i>
 						</div>
 						<div class="back">
-							<i class="fa fa-linkedin" aria-hidden="true"></i>
+							<i class="fa fa-weibo" aria-hidden="true"></i>
 						</div>
 				</a></li>
 			</ul>
