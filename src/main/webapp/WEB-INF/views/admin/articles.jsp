@@ -224,19 +224,22 @@
 				<!-- Sidebar Navidation Menus-->
 				<span class="heading">Main</span>
 				<ul class="list-unstyled">
-					<li class="active"><a
-						href="${APP_PATH}/resource/admin/template2/index.html"> <i
+					<li><a
+						href="${APP_PATH}/admin/home"> <i
 							class="icon-home"></i>Home
 					</a></li>
 					<!--显示所有用户 -->
 					<li><a href="${APP_PATH}/admin/users"> <i
-							class="fa fa-user"></i>User
+							class="fa fa-users"></i>User
 					</a></li>
-					<li><a href="${APP_PATH}/admin/articles"> <i class="fa fa-book"></i>Article
+					<li  class="active"><a href="${APP_PATH}/admin/articles"> <i class="fa fa-book"></i>Article
 					</a></li>
 					<li><a href="${APP_PATH}/admin/comments"> <i class="fa fa-comment"></i>Comment
 					</a></li>
 					<li><a href="${APP_PATH}/admin/messages"> <i class="fa fa-heart"></i>Message
+					</a></li>
+					<li><a href="${APP_PATH}/admin/me">
+							<i class="fa fa-user"></i>Profile
 					</a></li>
 					<li><a href="#exampledropdownDropdown" aria-expanded="false"
 						data-toggle="collapse"> <i class="icon-interface-windows"></i>Example
@@ -247,9 +250,6 @@
 							<li><a href="#">Page</a></li>
 							<li><a href="#">Page</a></li>
 						</ul></li>
-					<li><a href="${APP_PATH}/resource/admin/template2/login.html">
-							<i class="icon-interface-windows"></i>Login page
-					</a></li>
 				</ul>
 				<span class="heading">Extras</span>
 				<ul class="list-unstyled">

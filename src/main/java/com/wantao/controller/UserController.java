@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-
+	
+	
+//---------------------------控制页面跳转-----------------------
 	/**
 	 * @param
 	 * @return String
@@ -31,4 +33,8 @@ public class UserController {
 	public String aboutMe() {
 		return "user/me";
 	}
+	
+
+//---------------------------ajax请求获取数据-----------------------	
+	
 }

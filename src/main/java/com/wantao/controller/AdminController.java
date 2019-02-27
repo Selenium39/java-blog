@@ -24,9 +24,11 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.wantao.bean.Article;
 import com.wantao.bean.Comment;
+import com.wantao.bean.Me;
 import com.wantao.bean.User;
 import com.wantao.service.ArticleService;
 import com.wantao.service.CommentService;
+import com.wantao.service.MeService;
 import com.wantao.service.MessageService;
 import com.wantao.service.UserService;
 import com.wantao.util.Message;
@@ -49,6 +51,8 @@ public class AdminController {
 	CommentService commentService;
 	@Autowired
 	MessageService messageService;
+	@Autowired
+	MeService meService;
 	// ------------------------------跳转--------------------------------------
 
 	/**
@@ -119,6 +123,26 @@ public class AdminController {
 	@RequestMapping("/messages")
 	public String messages() {
 		return "admin/messages";
+	}
+
+	/**
+	 * @param
+	 * @return String
+	 * @description 返回首页跳转
+	 */
+	@RequestMapping("/home")
+	public String home() {
+		return "admin/index";
+	}
+
+	/**
+	 * @param
+	 * @return String
+	 * @description 查看个人信息跳转
+	 */
+	@RequestMapping("/me")
+	public String me() {
+		return "admin/me";
 	}
 
 	// ------------------------------处理--------------------------------------
@@ -226,6 +250,7 @@ public class AdminController {
 			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
 			// logger.info(userAvatar);
+			user.setUserAvatar(userAvatar);
 		}
 		userService.updateUserByUserId(user);
 		return Message.success();
@@ -416,6 +441,35 @@ public class AdminController {
 			ids.add(Integer.parseInt(messageId));
 		}
 		messageService.deleteMessageByBatchById(ids);
+		return Message.success();
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 查询个人信息
+	 */
+	@GetMapping("/selectMe")
+	@ResponseBody
+	public Message selectAllMe() {
+		Me me = meService.selectMe();
+		return Message.success().add("me", me);
+	}
+
+	@PostMapping("/updateMe")
+	@ResponseBody
+	public Message updateMe(Me me, @RequestParam(value = "file", required = false) MultipartFile file,
+			HttpServletRequest request) {
+		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
+			// logger.info(user.toString());
+		} else {
+			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+			String userAvatar = userAvatars[1].replace("\\", "/");
+			// logger.info(userAvatar);
+			me.setAvatar(userAvatar);
+		}
+		me.setId(1);
+		meService.updateMe(me);
 		return Message.success();
 	}
 

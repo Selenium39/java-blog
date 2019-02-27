@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wantao.mapper.MeMapper">
+	<select id="selectMe" resultType="com.wantao.bean.Me">
+		select * from me
+	</select>
+	<update id="updateMe" parameterType="com.wantao.bean.Me">
+		update me
+		set
+		<if test="name!=null and name!=''">
+			name=#{name},
+		</if>
+		<if test="avatar!=null and avatar!=''">
+			avatar=#{avatar},
+		</if>
+		<if test="password!=null and password!=''">
+			password=#{password},
+		</if>
+		<if test="nickname!=null and nickname!=''">
+			nickname=#{nickname},
+		</if>
+		<if test="gender!=null and gender!=''">
+			gender=#{gender},
+		</if>
+		<if test="age!=null and age!=''">
+			age=#{age},
+		</if>
+		<if test="phone!=null and phone!=''">
+			phone=#{phone},
+		</if>
+		<if test="email!=null and email!=''">
+			email=#{email},
+		</if>
+		<if test="title!=null and title!=''">
+			title=#{title},
+		</if>
+		<if test="viceTitle!=null and viceTitle!=''">
+			vice_title=#{viceTitle},
+		</if>
+		<if test="introduction!=null and introduction!=''">
+			introduction=#{introduction},
+		</if>
+		id=#{id}
+		where id=#{id}
+	</update>
+</mapper>

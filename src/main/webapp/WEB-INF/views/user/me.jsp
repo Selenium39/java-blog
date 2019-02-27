@@ -15,11 +15,21 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript">
 	
+	
+	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } 
 
-</script>
 
+
+
+
+</script>
+<!-- Selenium icon -->
+<link rel="icon" href="${APP_PATH}/resource/image/logo.icon"
+	type="image/x-icon" />
 <link rel="stylesheet"
 	href="${APP_PATH}/resource/user/template2/css/lightbox.css">
 <!-- for gallery css -->
@@ -68,7 +78,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
-
+	<!--一个小技巧,将jsp内的值放到隐藏域中,让引用的js能够访问到 -->
+	<input id="APP_PATH" type="hidden" value="${APP_PATH}" />
 	<!-- Header -->
 	<div class="aitsheaderw3ls" id="agilehome">
 
@@ -99,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<p>MENU</p>
 			</div>
 			<div class="aitslogow3ls">
-				<a href="index.html"><div class="agilelogo">My Career</div></a>
+				<a href="index.html"><div class="agilelogo">SELENIUM</div></a>
 			</div>
 			<div class="wthreecontact">
 				<p>
@@ -118,46 +129,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="w3_banner_info">
 				<div class="w3_banner_info_grid">
-					<h1>Albert son</h1>
+					<h1>Selenium</h1>
 					<h2 class="rw-sentence">
-						<span>Software Engineer and</span>
+						<span>A Noob Programmer and Love</span>
 						<div class="rw-words rw-words-1">
-							<span>UI/UX Designer.</span> <span>Web Developer</span> <span>App
-								Developer</span> <span>Graphic Designer</span> <span>Team Leader</span>
-							<span>Programmer</span>
+							<span>JAVA</span> <span>C</span><span>C++</span> <span>
+								PYTHON</span> <span>JAVASCRIPT</span>
 						</div>
 					</h2>
 					<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-						<li><a href="#" class="facebook">
+						<li><a href="https://github.com/wantao666" class="github">
 								<div class="front">
-									<i class="fa fa-facebook" aria-hidden="true"></i>
+									<i class="fa fa-github" aria-hidden="true"></i>
 								</div>
 								<div class="back">
-									<i class="fa fa-facebook" aria-hidden="true"></i>
+									<i class="fa fa-github" aria-hidden="true"></i>
 								</div>
 						</a></li>
-						<li><a href="#" class="twitter">
+						<li><a href="#" class="qq">
 								<div class="front">
-									<i class="fa fa-twitter" aria-hidden="true"></i>
+									<i class="fa fa-qq" aria-hidden="true"></i>
 								</div>
 								<div class="back">
-									<i class="fa fa-twitter" aria-hidden="true"></i>
+									<i class="fa fa-qq" aria-hidden="true"></i>
 								</div>
 						</a></li>
-						<li><a href="#" class="instagram">
+						<li><a href="#" class="wechat">
 								<div class="front">
-									<i class="fa fa-instagram" aria-hidden="true"></i>
+									<i class="fa fa-wechat" aria-hidden="true"></i>
 								</div>
 								<div class="back">
-									<i class="fa fa-instagram" aria-hidden="true"></i>
+									<i class="fa fa-wechat" aria-hidden="true"></i>
 								</div>
 						</a></li>
-						<li><a href="#" class="pinterest">
+						<li><a href="https://weibo.com/u/6857791826"
+							class="pinterest">
 								<div class="front">
-									<i class="fa fa-linkedin" aria-hidden="true"></i>
+									<i class="fa fa-weibo" aria-hidden="true"></i>
 								</div>
 								<div class="back">
-									<i class="fa fa-linkedin" aria-hidden="true"></i>
+									<i class="fa fa-weibo" aria-hidden="true"></i>
 								</div>
 						</a></li>
 					</ul>
@@ -182,61 +193,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<ul class="slides">
 								<li>
 									<h3>Personal information</h3>
-									<ul class="address">
+									<ul class="address" id="me">
 										<li>
-											<ul class="agileits-address-text ">
-												<li><b>D.O.B</b></li>
-												<li>21-04-1990</li>
+											<ul class="agileits-address-text">
+												<li><b>NAME</b></li>
+												<li id="name"></li>
+											</ul>
+										</li>
+										<li>
+											<ul class="agileits-address-text">
+												<li><b>NICKNAME</b></li>
+												<li id="nickname"></li>
+											</ul>
+										</li>
+										<li>
+											<ul class="agileits-address-text">
+												<li><b>GENDER</b></li>
+												<li id="gender"></li>
+											</ul>
+										</li>
+										<li>
+											<ul class="agileits-address-text">
+												<li><b>AGE</b></li>
+												<li id="age"></li>
 											</ul>
 										</li>
 										<li>
 											<ul class="agileits-address-text">
 												<li><b>PHONE</b></li>
-												<li>+0(12) 111 183 3166</li>
+												<li id="phone"></li>
 											</ul>
 										</li>
 										<li>
 											<ul class="agileits-address-text">
-												<li><b>EXPERIENCE</b></li>
-												<li>+4 Years</li>
+												<li><b>EMAIL</b></li>
+												<li id="email"></li>
 											</ul>
 										</li>
-										<li>
-											<ul class="agileits-address-text">
-												<li><b>ADDRESS </b></li>
-												<li>10 Eunos Road 8, Mandalay Towers, Singapore.</li>
-											</ul>
-										</li>
-										<li>
-											<ul class="agileits-address-text">
-												<li><b>E-MAIL </b></li>
-												<li><a href="mailto:example@mail.com">
-														info@example.com</a></li>
-											</ul>
-										</li>
-										<li>
-											<ul class="agileits-address-text">
-												<li><b>WEBSITE </b></li>
-												<li><a href="#">www.mywebsite.com</a></li>
-											</ul>
-										</li>
-									</ul>
-									<div class="clearfix"></div>
-									<ul class="hireme">
-										<li><a href="#" class="w3ls_more">Hire Me</a></li>
-										<li><a href="#" class="w3l_contact"><i
-												class="fa fa-download" aria-hidden="true"></i> Download CV</a></li>
 									</ul>
 								</li>
 								<li>
-									<h3>Hi, Iam Albert son</h3>
-									<h4>UI/UX designer - +4 years of coding experience</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna
-										aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-										sed do eiusmod tempor incididunt ut labore et dolore magna
-										aliqua.</p>
+									<h3 id="title"></h3>
+									<h4 id="viceTile"></h4>
+									<p id="introduction"></p>
 								</li>
 							</ul>
 						</div>
@@ -254,31 +253,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<h3 class="heading">Skills</h3>
 			<div class='col-md-8 bar'>
-				<p class="bar-p">Phasellus dignissim elit at ligula laoreet
-					iaculis. Sed urna purus, convallis sed rhoncus eget, bibendum
-					idtortor. Donec libero tellus, feugiat ut felis ac, commodo
-					pharetra massa.</p>
+				<p class="bar-p">Below is the technology I have mastered</p>
 				<div class="col-md-6 group">
 					<div class='bar_left'>
 						<div class='bar_group'>
-							<div class='bar_group__bar thin' label='Javascript'
-								show_values='true' value='343'></div>
-							<div class='bar_group__bar thin' label='HTML5' show_values='true'
-								value='235'></div>
-							<div class='bar_group__bar thin' label='Bootstrap'
-								show_values='true' value='245'></div>
+							<div class='bar_group__bar thin' label='Java' show_values='true'
+								value='100'></div>
+							<div class='bar_group__bar thin' label='C' show_values='true'
+								value='100'></div>
+							<div class='bar_group__bar thin' label='C++' show_values='true'
+								value='100'></div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 group">
 					<div class='bar_right'>
 						<div class='bar_group'>
-							<div class='bar_group__bar thin' label='PHP' show_values='true'
-								value='675'></div>
-							<div class='bar_group__bar thin' label='jQuery'
-								show_values='true' value='343'></div>
-							<div class='bar_group__bar thin' label='CSS3' show_values='true'
-								value='245'></div>
+							<div class='bar_group__bar thin' label='Python'
+								show_values='true' value='100'></div>
+							<div class='bar_group__bar thin' label='Javascript'
+								show_values='true' value='100'></div>
+							<div class='bar_group__bar thin' label='Html5' show_values='true'
+								value='100'></div>
 						</div>
 					</div>
 				</div>
@@ -287,15 +283,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-4 skillsright">
 				<h3 class="bar-h3">About my skills</h3>
 				<h5 class="bar-p">
-					<i>Phasellus dignissim elit at ligula laoreet iaculis. Sed urna
-						purus</i>
+					<i>Despite shortcomings, efforts are still under way</i>
 				</h5>
-				<p class="bar-p">Phasellus dignissim elit at ligula laoreet
-					iaculis. Sed urna purus, convallis sed rhoncus eget, bibendum
-					idtortor. Donec libero tellus, feugiat ut felis ac, commodo
-					pharetra massa.</p>
-				<p class="bar-p">Bibendum idtortor. Donec libero tellus, feugiat
-					ut felis ac, commodo pharetra massa.</p>
+				<p class="bar-p">
+					<a href="https://github.com/wantao666">talk is cheap , let me show you my code !</a> <a
+						href="https://github.com/wantao666"><i class="fa fa-github"></i></a>
+				</p>
 			</div>
 			<div class='clearfix'></div>
 		</div>
@@ -306,7 +299,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!-- gallery -->
 	<div id="gallery" class="gallery">
-		<h3 class="heading">Portfolio</h3>
+		<h3 class="heading">Image</h3>
 		<div class="gallery-info">
 			<div class="col-md-3 gallery-grids">
 				<a href="${APP_PATH}/resource/user/template2/images/gallery1.jpg"
@@ -640,7 +633,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 			<h3>
-				<a href="index.html">My Career</a>
+				<a href="index.html">Selenium</a>
 			</h3>
 			<p>
 				Copyright &copy; 2017.Company name All rights reserved.More
@@ -747,7 +740,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		src="${APP_PATH}/resource/user/template2/js/jquery.flexslider.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			SyntaxHighlighter.all();
+			//SyntaxHighlighter.all();
 		});
 		$(window).load(function() {
 			$('.flexslider').flexslider({
@@ -772,6 +765,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- for bootstrap working -->
 	<script src="${APP_PATH}/resource/user/template2/js/bootstrap.js"></script>
 	<!-- //for bootstrap working -->
-
+	<!-- selenium -->
+	<script src="${APP_PATH}/resource/user/selenium/js/me.js"></script>
 </body>
 </html>

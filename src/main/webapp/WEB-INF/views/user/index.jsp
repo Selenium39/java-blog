@@ -46,6 +46,8 @@
 	<!-- Add your site or application content here -->
 
 	<!-- Wrapper -->
+	<!--一个小技巧,将jsp内的值放到隐藏域中,让引用的js能够访问到 -->
+	<input id="APP_PATH" type="hidden" value="${APP_PATH}" />
 	<div id="wrapper" class="wrapper">
 
 		<span class="cursor"></span>
@@ -105,10 +107,10 @@
 					</div>
 					<div class="social-icons">
 						<ul>
-							<li><a href="#"><i class="fa fa-github"></i></a></li>
+							<li><a href="https://github.com/wantao666"><i class="fa fa-github"></i></a></li>
 							<li><a href="#"><i class="fa fa-qq"></i></a></li>
 							<li><a href="#"><i class="fa fa-wechat"></i></a></li>
-							<li><a href="#"><i class="fa fa-weibo"></i></a></li>
+							<li><a href="https://weibo.com/u/6857791826"><i class="fa fa-weibo"></i></a></li>
 						</ul>
 					</div>
 				</div>
