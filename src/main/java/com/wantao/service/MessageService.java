@@ -18,16 +18,28 @@ public class MessageService implements MessageMapper {
 	@Autowired
 	MessageMapper messageMapper;
 
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.MessageMapper#selectMessageCount()
+	 * 查看留言数量
+	 */
 	@Override
 	public Integer selectMessageCount() {
 		return messageMapper.selectMessageCount();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.MessageMapper#selectAllMessage()
+	 * 查看所有留言
+	 */
 	@Override
 	public List<Message> selectAllMessage() {
 		return messageMapper.selectAllMessage();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.MessageMapper#deleteMessageByBatchById(java.util.List)
+	 * 单个或者批量删除留言
+	 */
 	@Override
 	public Integer deleteMessageByBatchById(List<Integer> ids) {
 		return messageMapper.deleteMessageByBatchById(ids);

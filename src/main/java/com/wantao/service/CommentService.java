@@ -36,6 +36,10 @@ public class CommentService implements CommentMapper {
 		return commentMapper.selectAllComment();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.CommentMapper#deleteCommentByBatchById(java.util.List)
+	 * 批量删除评论
+	 */
 	@Override
 	public Integer deleteCommentByBatchById(List<Integer> ids) {
 		return commentMapper.deleteCommentByBatchById(ids);

@@ -240,6 +240,9 @@
 					<li><a href="${APP_PATH}/admin/me">
 							<i class="fa fa-user"></i>Profile
 					</a></li>
+					<li><a href="${APP_PATH}/admin/contact"> <i
+							class="fa fa-phone" aria-hidden="true"></i> Contact
+					</a></li>
 					<li><a href="#exampledropdownDropdown" aria-expanded="false"
 						data-toggle="collapse"> <i class="icon-interface-windows"></i>Example
 							dropdown

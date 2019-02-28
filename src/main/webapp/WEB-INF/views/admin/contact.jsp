@@ -1,16 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	pageContext.setAttribute("APP_PATH", request.getContextPath());
 %>
-<!-- 后台首页 -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>index</title>
+<title>user</title>
 <meta name="description" content="">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -226,10 +224,11 @@
 				<!-- Sidebar Navidation Menus-->
 				<span class="heading">Main</span>
 				<ul class="list-unstyled">
-					<li><a href="${APP_PATH}/admin/home"> <i class="icon-home"></i>Home
+					<li class="active"><a href="${APP_PATH}/admin/home"> <i
+							class="icon-home"></i>Home
 					</a></li>
 					<!--显示所有用户 -->
-					<li class="active"><a href="${APP_PATH}/admin/users"> <i
+					<li><a href="${APP_PATH}/admin/users"> <i
 							class="fa fa-users"></i>User
 					</a></li>
 					<li><a href="${APP_PATH}/admin/articles"> <i
@@ -280,7 +279,6 @@
 					<div class="container-fluid" id="show">
 						<div class="row">
 							<button id="batchDeleteButton" class="btn btn-danger">批量删除</button>
-							<button id="addButton" class="btn btn-black">新增用户</button>
 						</div>
 						<div class="row bg-white has-shadow">
 							<table class="table  table-condensed table-bordered table-hover">
@@ -289,13 +287,15 @@
 										<th><input type="checkbox" id="checkAll" /></th>
 										<th>id</th>
 										<th>name</th>
-										<th>nickname</th>
-										<th>lastLoginTime</th>
-										<th>lastLoginIp</th>
+										<th>email</th>
+										<th>phone</th>
+										<th>message</th>
+										<th>sendTime</th>
+										<th>sendIp</th>
 										<th>opration</th>
 									</tr>
 								</thead>
-								<tbody id="users">
+								<tbody id="contacts">
 								</tbody>
 							</table>
 						</div>
@@ -321,169 +321,6 @@
 			</div>
 		</div>
 	</div>
-
-
-	<!--模态框-->
-	<!--查看Modal -->
-	<div class="modal fade" id="myShowModal" tabindex="-1" role="dialog"
-		aria-labelledby="showTitle" aria-hidden="true">
-		<div class="modal-dialog" role="document" style="margin-top: 170px;">
-			<div class="modal-content">
-				<div class="modal-body">
-					<table class="table" id="showTable">
-						<tbody>
-							<tr>
-								<td>userId</td>
-								<td id="userId" class="s"></td>
-							</tr>
-							<tr>
-								<td>userName</td>
-								<td id="userName" class="s"></td>
-							</tr>
-							<tr>
-								<td>userPassword</td>
-								<td id="userPassword" class="s"></td>
-							</tr>
-							<tr>
-								<td>userNickname</td>
-								<td id="userNickname" class="s"></td>
-							</tr>
-							<tr>
-								<td>userEmail</td>
-								<td id="userEmail" class="s"></td>
-							</tr>
-							<tr>
-								<td>userAvatar</td>
-								<td id="userAvatar" class="s"></td>
-							</tr>
-							<tr>
-								<td>userLastLoginIp</td>
-								<td id="userLastLoginIp" class="s"></td>
-							</tr>
-							<tr>
-								<td>userRegisterTime</td>
-								<td id="userRegisterTime" class="s"></td>
-							</tr>
-							<tr>
-								<td>userLastLoginTime</td>
-								<td id="userLastLoginTime" class="s"></td>
-							</tr>
-							<tr>
-								<td>userStatus</td>
-								<td id="userStatus" class="s"></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!--模态框-->
-	<!--修改Modal -->
-	<div class="modal fade" id="myUpdateModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document" style="margin-top: 170px;">
-			<div class="modal-content">
-				<div class="modal-body">
-					<form id="updateForm">
-						<div class="form-group">
-							<label for="userName1">userName:</label>
-							<p id="userName1" class="u"></p>
-						</div>
-						<div class="form-group">
-							<label for="userPassword1">userPassword:</label> <input
-								id="userPassword1" type="password" name="userPassword"
-								class="u form-control col-md-8" />
-						</div>
-						<i id="eye" show="false"
-							style="position: absolute; margin-top: -43px; margin-left: 280px;"
-							class="fa fa-eye"></i>
-						<div class="form-group">
-							<label for="userNickname1">userNickname:</label> <input
-								id="userNickname1" type="text" name="userNickname"
-								class="u form-control col-md-8" />
-						</div>
-						<div class="form-group">
-							<label for="userEmail1">userEmail:</label> <input id="userEmail1"
-								type="email" name="userEmail" class="u form-control col-md-8" />
-						</div>
-						<div class="form-group">
-							<label for="userAvatar1">userAvatar:</label> <img
-								id="userAvatar1" />
-						</div>
-						<div class="form-group">
-							<label for="photo" class="control-label">上传照片:</label> <input
-								type="file" id="photo" name="file" class="u">
-						</div>
-						<div class="form-group">
-							<label for="userStatus1">userStatus:</label> <select
-								name="userStatus">
-								<option id="status0" value="0">无效账户</option>
-								<option id="status1" value="1">有效账户</option>
-							</select>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary" id="updateButton">修改</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- 模态框 -->
-	<!-- 新增模态框 -->
-	<div class="modal fade" id="myAddModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document" style="margin-top: 170px;">
-			<div class="modal-content">
-				<div class="modal-body">
-					<form id="addForm">
-						<div class="form-group">
-							<label for="userName2">userName:</label> <input id="userName2"
-								type="text" name="userName" class="a form-control col-md-8" />
-						</div>
-						<div class="form-group">
-							<label for="userPassword2">userPassword:</label> <input
-								id="userPassword2" type="password" name="userPassword"
-								class="a form-control col-md-8" />
-						</div>
-						<i id="eye2" show="false"
-							style="position: absolute; margin-top: -43px; margin-left: 280px;"
-							class="fa fa-eye"></i>
-						<div class="form-group">
-							<label for="userNickname2">userNickname:</label> <input
-								id="userNickname2" type="text" name="userNickname"
-								class="a form-control col-md-8" />
-						</div>
-						<div class="form-group">
-							<label for="userEmail2">userEmail:</label> <input id="userEmail2"
-								type="email" name="userEmail" class="a form-control col-md-8" />
-						</div>
-						<div class="form-group">
-							<label for="userAvatar2">userAvatar:</label> <img class="a"
-								id="userAvatar2" />
-						</div>
-						<div class="form-group">
-							<label for="photo2" class="control-label">上传照片:</label> <input
-								type="file" id="photo2" name="file" class="a">
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary" id="addButtonFinish">添加</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<!-- JavaScript files-->
 	<script
 		src="${APP_PATH}/resource/admin/template2/vendor/jquery/jquery.min.js"></script>
@@ -504,8 +341,7 @@
 	<script src="${APP_PATH}/resource/admin/template2/js/charts-home.js"></script>
 	<!-- Main File-->
 	<script src="${APP_PATH}/resource/admin/template2/js/front.js"></script>
-
 	<!-- Selenium -->
-	<script src="${APP_PATH}/resource/admin/selenium/js/users.js"></script>
+	<script src="${APP_PATH}/resource/admin/selenium/js/contact.js"></script>
 </body>
 </html>

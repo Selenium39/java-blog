@@ -24,10 +24,12 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.wantao.bean.Article;
 import com.wantao.bean.Comment;
+import com.wantao.bean.Contact;
 import com.wantao.bean.Me;
 import com.wantao.bean.User;
 import com.wantao.service.ArticleService;
 import com.wantao.service.CommentService;
+import com.wantao.service.ContactService;
 import com.wantao.service.MeService;
 import com.wantao.service.MessageService;
 import com.wantao.service.UserService;
@@ -53,6 +55,8 @@ public class AdminController {
 	MessageService messageService;
 	@Autowired
 	MeService meService;
+	@Autowired
+	ContactService contactService;
 	// ------------------------------跳转--------------------------------------
 
 	/**
@@ -143,6 +147,16 @@ public class AdminController {
 	@RequestMapping("/me")
 	public String me() {
 		return "admin/me";
+	}
+
+	/**
+	 * @param
+	 * @return String
+	 * @description 查看联系人跳转
+	 */
+	@RequestMapping("/contact")
+	public String contact() {
+		return "admin/contact";
 	}
 
 	// ------------------------------处理--------------------------------------
@@ -451,11 +465,16 @@ public class AdminController {
 	 */
 	@GetMapping("/selectMe")
 	@ResponseBody
-	public Message selectAllMe() {
+	public Message selectMe() {
 		Me me = meService.selectMe();
 		return Message.success().add("me", me);
 	}
 
+	/**
+	 * @param
+	 * @return Message
+	 * @description 修改个人信息
+	 */
 	@PostMapping("/updateMe")
 	@ResponseBody
 	public Message updateMe(Me me, @RequestParam(value = "file", required = false) MultipartFile file,
@@ -473,4 +492,38 @@ public class AdminController {
 		return Message.success();
 	}
 
+	/**
+	 * @param
+	 * @return Message
+	 * @description 查询所有的联系人
+	 */
+	@GetMapping("/selectAllContact/{pn}")
+	@ResponseBody
+	public Message selectAllContact(@PathVariable("pn") Integer pn) {
+		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
+		List<Contact> contacts = contactService.selectAllContact();
+		PageInfo pageInfo = new PageInfo(contacts, 5);// 用pageInfo封装然后交给页面
+		return Message.success().add("pageInfo", pageInfo);
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id单个和批量删除联系人
+	 */
+	@GetMapping("/deleteContactById")
+	@ResponseBody
+	public Message deleteContactById(@RequestParam("id") String id) {
+		List<Integer> ids = new ArrayList<>();
+		if (id.contains("-")) {
+			String[] contactIds = id.split("-");
+			for (String id1 : contactIds) {
+				ids.add(Integer.parseInt(id1));
+			}
+		} else {
+			ids.add(Integer.parseInt(id));
+		}
+		contactService.deleteContactByBatchById(ids);
+		return Message.success();
+	}
 }

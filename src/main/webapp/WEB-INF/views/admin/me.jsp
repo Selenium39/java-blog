@@ -245,6 +245,9 @@
 					<li class="active"><a href="${APP_PATH}/admin/me"> <i
 							class="fa fa-user"></i>Profile
 					</a></li>
+					<li><a href="${APP_PATH}/admin/contact"> <i
+							class="fa fa-phone" aria-hidden="true"></i> Contact
+					</a></li>
 					<li><a href="#exampledropdownDropdown" aria-expanded="false"
 						data-toggle="collapse"> <i class="icon-interface-windows"></i>Example
 							dropdown
@@ -360,8 +363,8 @@
 				<div class="modal-body">
 					<form id="updateForm">
 						<div class="form-group">
-							<label for="name1">name:</label>
-							<input id="name1" class="m form-control col-md-8" name="name"></input>
+							<label for="name1">name:</label> <input id="name1"
+								class="m form-control col-md-8" name="name"></input>
 						</div>
 						<div class="form-group">
 							<label for="avatar1">avatar:</label> <img id="avatar1" />

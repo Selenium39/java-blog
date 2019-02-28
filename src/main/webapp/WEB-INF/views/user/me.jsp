@@ -21,8 +21,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } 
+
+
 
 
 
@@ -299,9 +303,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</section>
 	<!-- //Skills -->
-	<div class="tlinks">
-		Collect from <a href="http://www.cssmoban.com/">ç½ç«å»ºè®¾</a>
-	</div>
 	<!-- gallery -->
 	<div id="gallery" class="gallery">
 		<h3 class="heading">Image</h3>
@@ -434,7 +435,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	</div>
 	<!-- contact -->
-	<div class="contact" id="contact">
+	<div class="contact">
 		<div class="container">
 			<h3 class="heading">Contact Me</h3>
 			<div class="col-md-4 address">
@@ -464,28 +465,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="clear"></div>
 			</div>
-			<div class="col-md-4 form">
-				<form action="#" method="post">
+			<div class="col-md-4">
+				<form action="#" method="post" id="contactForm">
 					<div class="fields-grid">
 						<div class="styled-input agile-styled-input-top">
-							<input type="text" name="First name" required=""> <label>Full
+							<input type="text" name="name" required=""> <label>Full
 								Name</label> <span></span>
 						</div>
 						<div class="styled-input">
-							<input type="email" name="Email" required=""> <label>Email</label>
+							<input type="email" name="email" required=""> <label>Email</label>
 							<span></span>
 						</div>
 						<div class="styled-input">
-							<input type="tel" name="Phone" required=""> <label>Phone
+							<input type="tel" name="phone" required=""> <label>Phone
 								Number</label> <span></span>
 						</div>
 						<div class="styled-input">
-							<textarea name="Message" required></textarea>
+							<textarea name="message" required=""></textarea>
 							<label>Message</label> <span></span>
 						</div>
 						<div class="clear"></div>
 					</div>
-					<input type="submit" value="SEND">
+					<input id="send" type="submit" value="SEND">
 				</form>
 
 			</div>
@@ -501,7 +502,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 			<h3>
-				<a href="index.html">Selenium</a>
+				<a href="${APP_PATH}/user/index">Selenium</a>
 			</h3>
 			<p>
 				<small>@上海电机学院 Selenium</small>

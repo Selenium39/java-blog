@@ -5,4 +5,13 @@
 		insert into contact(name,email,phone,message,send_time,send_ip)
 		values(#{name},#{email},#{phone},#{message},#{sendTime},#{sendIp})
 	</insert>
+	 <select id="selectAllContact" resultType="com.wantao.bean.Contact">
+     select * from contact
+  </select>
+    <delete id="deleteContactByBatchById">
+	  delete from contact where id in
+	  <foreach collection="list" item="id" separator="," open="(" close=")">
+	      #{id}
+	  </foreach>
+	</delete>
 </mapper>

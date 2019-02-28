@@ -1,7 +1,10 @@
 package com.wantao.mapper;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
+import com.wantao.bean.Comment;
 import com.wantao.bean.Contact;
 
 /**
@@ -12,4 +15,6 @@ import com.wantao.bean.Contact;
 @Repository
 public interface ContactMapper {
    public Integer addContact(Contact contact);
+   public List<Contact> selectAllContact();
+   public Integer deleteContactByBatchById(List<Integer>ids);
 }

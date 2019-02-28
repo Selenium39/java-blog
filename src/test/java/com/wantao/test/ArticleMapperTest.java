@@ -21,6 +21,11 @@ public class ArticleMapperTest {
 	ArticleService articleService;
 	private final static Logger logger = LoggerFactory.getLogger("ArticleMapperTest.class");
 
+	/**
+	 * @param
+	 * @return void
+	 * @description 测试查询所有文章
+	 */
 	@Test
 	public void testSelectAllArticle() {
 		List<Article> articles = articleService.selectAllArticle();

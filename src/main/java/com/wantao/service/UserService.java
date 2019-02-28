@@ -42,7 +42,8 @@ public class UserService implements UserMapper {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.wantao.mapper.UserMapper#insertUser(com.wantao.bean.User) 插入一个用户
+	 * @see com.wantao.mapper.UserMapper#insertUser(com.wantao.bean.User) 
+	 * 插入一个用户
 	 */
 	@Override
 	public Integer insertUser(User user) {
@@ -52,7 +53,8 @@ public class UserService implements UserMapper {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.wantao.mapper.UserMapper#insertUserByBatch(java.util.List) 批量插入多个用户
+	 * @see com.wantao.mapper.UserMapper#insertUserByBatch(java.util.List) 
+	 * 批量插入多个用户
 	 */
 	@Override
 	public Integer insertUserByBatch(List<User> users) {
@@ -62,7 +64,8 @@ public class UserService implements UserMapper {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.wantao.mapper.UserMapper#selectUserById(java.lang.Integer) 按用户id查找用户
+	 * @see com.wantao.mapper.UserMapper#selectUserById(java.lang.Integer) 
+	 * 按用户id查找用户
 	 */
 	@Override
 	public User selectUserById(Integer userId) {
@@ -70,7 +73,8 @@ public class UserService implements UserMapper {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.wantao.mapper.UserMapper#updateUserByUserId(com.wantao.bean.User) 按用户id修改用户
+	 * @see com.wantao.mapper.UserMapper#updateUserByUserId(com.wantao.bean.User) 
+	 * 按用户id修改用户
 	 */
 	@Override
 	public Integer updateUserByUserId(User user) {
@@ -78,7 +82,8 @@ public class UserService implements UserMapper {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.wantao.mapper.UserMapper#deleteUserByBatchById(java.util.List) 按用户id批量删除用户
+	 * @see com.wantao.mapper.UserMapper#deleteUserByBatchById(java.util.List)
+	 *  按用户id批量删除用户
 	 */
 	@Override
 	public Integer deleteUserByBatchById(List<Integer> ids) {

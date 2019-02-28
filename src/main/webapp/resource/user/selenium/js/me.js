@@ -7,7 +7,7 @@ $(function() {
 });
 function selectMe() {// 查询个人信息
 	$.ajax({
-		url : APP_PATH + "/admin/selectMe",
+		url : APP_PATH + "/user/selectMe",
 		type : "GET",
 		success : function(result) {
 			var me = result.data.me;

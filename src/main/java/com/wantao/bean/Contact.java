@@ -15,10 +15,10 @@ import lombok.Data;
  * @param id       id
  * @param name     联系人姓名
  * @param email    联系人email
- * @param phone
- * @param message
- * @param sendTime
- * @param sendIp
+ * @param phone    联系人phone
+ * @param message  联系人信息
+ * @param sendTime 联系人发送时间
+ * @param sendIp   联系人发送ip
  */
 @Data
 @AllArgsConstructor

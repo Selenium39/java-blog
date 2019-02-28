@@ -26,6 +26,10 @@ public class MeService implements MeMapper {
 		return meMapper.selectMe();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.MeMapper#updateMe(com.wantao.bean.Me)
+	 * 更新个人信息
+	 */
 	@Override
 	public Integer updateMe(Me me) {
 		return meMapper.updateMe(me);
