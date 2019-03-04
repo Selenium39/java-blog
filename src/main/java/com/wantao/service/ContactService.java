@@ -45,4 +45,9 @@ public class ContactService implements ContactMapper {
 		return contactMapper.deleteContactByBatchById(ids);
 	}
 
+	@Override
+	public Integer updateContactByBatchById(List<Integer> ids) {
+		return contactMapper.updateContactByBatchById(ids);
+	}
+
 }

@@ -132,12 +132,14 @@
 										class="dropdown-item all-notifications text-center"> <strong>view
 												all notifications </strong></a></li>
 								</ul></li>
-							<!-- Messages                        -->
+							<!-- Messages-->
 							<li class="nav-item dropdown"><a id="messages"
 								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false" class="nav-link"><i
-									class="fa fa-envelope-o"></i><span
-									class="badge bg-orange badge-corner">10</span></a>
+									class="fa fa-envelope-o"></i>
+									<!-- 这里显示消息条数 -->
+									<span class="badge bg-orange badge-corner">0</span>
+									</a>
 								<ul aria-labelledby="notifications" class="dropdown-menu">
 									<li><a rel="nofollow" href="#"
 										class="dropdown-item d-flex">
@@ -224,7 +226,7 @@
 				<!-- Sidebar Navidation Menus-->
 				<span class="heading">Main</span>
 				<ul class="list-unstyled">
-					<li class="active"><a href="${APP_PATH}/admin/home"> <i
+					<li><a href="${APP_PATH}/admin/home"> <i
 							class="icon-home"></i>Home
 					</a></li>
 					<!--显示所有用户 -->
@@ -242,7 +244,7 @@
 					</a></li>
 					<li><a href="${APP_PATH}/admin/me"> <i class="fa fa-user"></i>Profile
 					</a></li>
-					<li><a href="${APP_PATH}/admin/contact"> <i
+					<li class="active"><a href="${APP_PATH}/admin/contact"> <i
 							class="fa fa-phone" aria-hidden="true"></i> Contact
 					</a></li>
 					<li><a href="#exampledropdownDropdown" aria-expanded="false"
@@ -279,6 +281,7 @@
 					<div class="container-fluid" id="show">
 						<div class="row">
 							<button id="batchDeleteButton" class="btn btn-danger">批量删除</button>
+							<button id="batchUpdateButton" class="btn btn-success">批量已读</button>
 						</div>
 						<div class="row bg-white has-shadow">
 							<table class="table  table-condensed table-bordered table-hover">

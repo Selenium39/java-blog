@@ -526,4 +526,25 @@ public class AdminController {
 		contactService.deleteContactByBatchById(ids);
 		return Message.success();
 	}
+	
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id单个和批量修改联系人信息已读
+	 */
+	@GetMapping("/updateContactById")
+	@ResponseBody
+	public Message updateContactById(@RequestParam("id") String id) {
+		List<Integer> ids = new ArrayList<>();
+		if (id.contains("-")) {
+			String[] contactIds = id.split("-");
+			for (String id1 : contactIds) {
+				ids.add(Integer.parseInt(id1));
+			}
+		} else {
+			ids.add(Integer.parseInt(id));
+		}
+		contactService.updateContactByBatchById(ids);
+		return Message.success();
+	}
 }

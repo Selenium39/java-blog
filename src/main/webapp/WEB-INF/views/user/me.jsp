@@ -466,7 +466,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clear"></div>
 			</div>
 			<div class="col-md-4">
-				<form action="#" method="post" id="contactForm">
+				<form method="post" id="contactForm">
 					<div class="fields-grid">
 						<div class="styled-input agile-styled-input-top">
 							<input type="text" name="name" required=""> <label>Full
@@ -486,9 +486,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="clear"></div>
 					</div>
-					<input id="send" type="submit" value="SEND">
+				  <button class="btn btn-info" id="submitButton">提交</button>
 				</form>
-
 			</div>
 			<!---<div class="col-md-4 map">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31909.33437743319!2d103.8212862717648!3d1.3766002857431643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da16c40ac82661%3A0x500f7acaedaa550!2sAng+Mo+Kio%2C+Singapore!5e0!3m2!1sen!2sin!4v1497852510740"></iframe>

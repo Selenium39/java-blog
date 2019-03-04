@@ -73,10 +73,12 @@ public class UserController {
 	 * @return Message
 	 * @description 增加联系人
 	 */
-	@PostMapping("/aboutMe")
-	public String addContact(Contact contact,HttpServletRequest request) {
+	@PostMapping("/addContact")
+	public String addContact(Contact contact, HttpServletRequest request) {
 		contact.setSendTime(new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss").format(new Date()));
 		contact.setSendIp(request.getRemoteAddr());
+		// logger.info("进入到表单提交的方法");
+		contact.setAnswer(0);
 		contactService.addContact(contact);
 		return "user/me";
 	}

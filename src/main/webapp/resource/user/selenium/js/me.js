@@ -4,6 +4,10 @@
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
 	selectMe();// 查询个人信息
+	$("#submitButton").click(function(){
+		addContact();
+		return false;//阻止表单的默认提交
+	});
 });
 function selectMe() {// 查询个人信息
 	$.ajax({
@@ -21,6 +25,18 @@ function selectMe() {// 查询个人信息
 			$("#title").append(me.title);
 			$("#viceTitle").append(me.viceTitle);
 			$("#introduction").append(me.introduction);
+		}
+	});
+}
+
+function addContact(){
+	$.ajax({
+		url:APP_PATH+"/user/addContact",
+		type:"post",
+		data:$("#contactForm").serialize(),
+		success:function(result){
+			 alert("I have received your letter and I will contact you.");
+			 window.location.reload();
 		}
 	});
 }

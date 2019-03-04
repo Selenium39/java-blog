@@ -7,9 +7,12 @@ $(function() {
 	contacts(1);
 	// 为批量删除按钮绑定事件
 	$("#batchDeleteButton").click(function() {
-		deleteMessageByBatchById();
+		deleteContactByBatchById();
 	});
-
+	// 为批量已读按钮绑定事件
+	$("#batchUpdateButton").click(function() {
+		updateContactByBatchById();
+	});
 });
 
 function contacts(pn) {// 查询所有的留言并显示在分页中
@@ -34,7 +37,10 @@ function contacts(pn) {// 查询所有的留言并显示在分页中
 				var deleteButton = $("<button></button>").append("删除").attr(
 						"class", "btn btn-danger").attr("id",
 						"btn-delete-" + item.id);
-				buttons.append(deleteButton);
+				var answerButton = $("<button></button>").attr("id",
+						"btn-answer-" + item.id);
+				item.answer==1?answerButton.addClass("btn btn-success").append("已读"):answerButton.addClass("btn btn-default").append("未读")
+				buttons.append(deleteButton).append(answerButton);
 				tr.append(checkbox).append(id).append(name).append(email)
 						.append(phone).append(message).append(sendTime).append(
 								sendIp).append(buttons)
@@ -44,10 +50,16 @@ function contacts(pn) {// 查询所有的留言并显示在分页中
 				// 批量选择的选择框全选或者不全选
 				selectCheckBox();
 				// 为按钮绑定事件
-				$("#btn-delete-" + item.id).click(function() {
+				$("#btn-delete-" + item.id).click(function() {//单个联系人删除
 					var flag = confirm("是否删除id为:" + item.id + "的联系人信息?");
 					if (flag == true) {
 						deleteContactById(item.id);
+					}
+				});
+				$("#btn-answer-" + item.id).click(function() {//单个未读已读
+					var flag = confirm("是否已读id为:" + item.id + "的信息?");
+					if (flag == true) {
+						updateContactById(item.id);
 					}
 				});
 			});
@@ -67,6 +79,8 @@ function build_page_info(result) {// 构建分页信息
 function build_page_line(result) {// 构建分页条
 	$("#page_line").empty();// 注意每次构建前都要清空分页
 	var ul = $("<ul></ul>").addClass("pagination")
+	//任意页数跳转
+	pageJumpLi=$("<li></li>").append($("<input/>").addClass("page-link")).addClass("page-item");
 	// 首页
 	firstPageLi = $("<li></li>").append(
 			$("<a></a>").append("首页").attr("href", "#").addClass("page-link"))
@@ -86,7 +100,7 @@ function build_page_line(result) {// 构建分页条
 		contacts(result.data.pageInfo.pageNum == 1 ? 1
 				: result.data.pageInfo.pageNum - 1)
 	})
-	ul.append(firstPageLi).append(prePageLi);
+	ul.append(pageJumpLi).append(firstPageLi).append(prePageLi);
 	// 下一页
 	nextPageLi = $("<li></li>").append(
 			$("<a></a>").append("&raquo;").attr("href", "#").addClass(
@@ -155,7 +169,7 @@ function deleteContactById(id) {// 删除单个
 	});
 }
 
-function deleteMessageByBatchById() {// 批量删除
+function deleteContactByBatchById() {// 批量删除
 	var id = "";
 	var messageIdShow = "";
 	$.each($(".check_item:checked"), function() {
@@ -166,6 +180,42 @@ function deleteMessageByBatchById() {// 批量删除
 	if (flag == true) {
 		$.ajax({
 			url : APP_PATH + "/admin/deleteContactById",
+			type : "get",
+			data : {
+				"id" : id
+			},
+			success : function(result) {
+				window.location.reload();
+			}
+		});
+	}
+}
+
+function updateContactById(id) {// 修改单个
+	$.ajax({
+		url : APP_PATH + "/admin/updateContactById",
+		type : "get",
+		data : {
+			"id" : id
+		},
+		success : function(result) {
+			window.location.reload();
+		}
+	});
+}
+
+
+function updateContactByBatchById() {// 批量修改
+	var id = "";
+	var messageIdShow = "";
+	$.each($(".check_item:checked"), function() {
+		id += $(this).parents("tr").find("td:eq(1)").text() + "-";
+		messageIdShow += $(this).parents("tr").find("td:eq(1)").text() + " ";
+	});
+	var flag = confirm("是否批量已读id为:" + messageIdShow + "的联系人信息?");
+	if (flag == true) {
+		$.ajax({
+			url : APP_PATH + "/admin/updateContactById",
 			type : "get",
 			data : {
 				"id" : id

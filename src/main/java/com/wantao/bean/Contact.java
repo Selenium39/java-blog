@@ -19,6 +19,7 @@ import lombok.Data;
  * @param message  联系人信息
  * @param sendTime 联系人发送时间
  * @param sendIp   联系人发送ip
+ * @param answer   是否已读(1 已读 0 未读)
  */
 @Data
 @AllArgsConstructor
@@ -31,6 +32,7 @@ public class Contact implements Serializable {
 	private String message;
 	private String sendTime;
 	private String sendIp;
+	private Integer answer;
 
 	public Contact() {
 	};
