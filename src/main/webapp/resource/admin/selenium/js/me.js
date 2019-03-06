@@ -3,6 +3,8 @@
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
+	//查询未读联系人数量
+	selectNewContactCount();
 	selectMe();// 查询个人信息
 	$("#update").click(function(){//修改个人信息
 		build_update_modal();
@@ -137,6 +139,16 @@ function update() {// 修改个人信息
 		success : function(result) {
 			$('#myUpdateModal').modal('hide');
 			window.location.reload();
+		}
+	});
+}
+
+function selectNewContactCount(){//查询未读联系人的数量
+	$.ajax({
+		url:APP_PATH+"/admin/selectNewContactCount",
+		type:"get",
+		success:function(result){
+			$("#new_contact_count").append(result.data.newContactCount);
 		}
 	});
 }

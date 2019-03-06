@@ -45,9 +45,31 @@ public class ContactService implements ContactMapper {
 		return contactMapper.deleteContactByBatchById(ids);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ContactMapper#updateContactByBatchById(java.util.List)
+	  * 批量修改联系人信息是否已读
+	 */
 	@Override
 	public Integer updateContactByBatchById(List<Integer> ids) {
 		return contactMapper.updateContactByBatchById(ids);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ContactMapper#updateAllContact()
+	 * 一键修改全部的联系人消息为已读
+	 */
+	@Override
+	public Integer updateAllContact() {
+		return contactMapper.updateAllContact();
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ContactMapper#selectNewContactCount()
+	  * 查询未读联系人消息数量
+	 */
+	@Override
+	public Integer selectNewContactCount() {
+		return contactMapper.selectNewContactCount();
 	}
 
 }

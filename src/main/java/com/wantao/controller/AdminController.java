@@ -547,4 +547,28 @@ public class AdminController {
 		contactService.updateContactByBatchById(ids);
 		return Message.success();
 	}
+	
+	/**
+	 * @param
+	 * @return Message
+	 * @description 将全部的信息设为已读
+	 */
+	@GetMapping("/updateAllContact")
+	@ResponseBody
+	public Message updateAllContact() {
+		contactService.updateAllContact();
+		return Message.success();
+	}
+	
+	/**
+	 * @param
+	 * @return Message
+	 * @description 将全部的信息设为已读
+	 */
+	@GetMapping("/selectNewContactCount")
+	@ResponseBody
+	public Message selectNewContactCount() {
+		Integer newContactCount=contactService.selectNewContactCount();
+		return Message.success().add("newContactCount",newContactCount);
+	}
 }

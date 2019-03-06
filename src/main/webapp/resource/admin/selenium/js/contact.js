@@ -3,6 +3,8 @@
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
+	//查询未读联系人数量
+	selectNewContactCount();
 	// 查询所有的评论并显示在分页中
 	contacts(1);
 	// 为批量删除按钮绑定事件
@@ -12,6 +14,16 @@ $(function() {
 	// 为批量已读按钮绑定事件
 	$("#batchUpdateButton").click(function() {
 		updateContactByBatchById();
+	});
+	// 为全部已读按钮绑定事件
+	$("#allUpdateButton").click(function() {
+		updateAllContact();
+	});
+	//为跳转任意页面按钮绑定事件
+	$("#jumpButton").click(function(){
+		var pn=$("#page_number").val();
+		//记得要做校验
+		contacts(pn);
 	});
 });
 
@@ -79,8 +91,6 @@ function build_page_info(result) {// 构建分页信息
 function build_page_line(result) {// 构建分页条
 	$("#page_line").empty();// 注意每次构建前都要清空分页
 	var ul = $("<ul></ul>").addClass("pagination")
-	//任意页数跳转
-	pageJumpLi=$("<li></li>").append($("<input/>").addClass("page-link")).addClass("page-item");
 	// 首页
 	firstPageLi = $("<li></li>").append(
 			$("<a></a>").append("首页").attr("href", "#").addClass("page-link"))
@@ -100,7 +110,7 @@ function build_page_line(result) {// 构建分页条
 		contacts(result.data.pageInfo.pageNum == 1 ? 1
 				: result.data.pageInfo.pageNum - 1)
 	})
-	ul.append(pageJumpLi).append(firstPageLi).append(prePageLi);
+	ul.append(firstPageLi).append(prePageLi);
 	// 下一页
 	nextPageLi = $("<li></li>").append(
 			$("<a></a>").append("&raquo;").attr("href", "#").addClass(
@@ -225,4 +235,27 @@ function updateContactByBatchById() {// 批量修改
 			}
 		});
 	}
+}
+
+function updateAllContact(){//将全部信息设为已读
+	var flag = confirm("是否将全部信息设为已读?");
+	if(flag==true){
+		$.ajax({
+			url: APP_PATH + "/admin/updateAllContact",
+			type:"get",
+			success:function(result){
+				window.location.reload();
+			}
+		});
+	}
+}
+
+function selectNewContactCount(){//查询未读联系人的数量
+	$.ajax({
+		url:APP_PATH+"/admin/selectNewContactCount",
+		type:"get",
+		success:function(result){
+			$("#new_contact_count").append(result.data.newContactCount);
+		}
+	});
 }

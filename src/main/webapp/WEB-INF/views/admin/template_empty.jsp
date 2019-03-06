@@ -132,13 +132,14 @@
 										class="dropdown-item all-notifications text-center"> <strong>view
 												all notifications </strong></a></li>
 								</ul></li>
-							<!-- Messages                        -->
+						<!-- Messages-->
 							<li class="nav-item dropdown"><a id="messages"
 								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false" class="nav-link"><i
-									class="fa fa-envelope-o"></i><span
-									class="badge bg-orange badge-corner">10</span></a>
-								<ul aria-labelledby="notifications" class="dropdown-menu">
+									class="fa fa-envelope-o"></i> <!-- 这里显示消息条数 --> <span
+									id="new_contact_count" class="badge bg-orange badge-corner"></span>
+							</a> <!--	
+							<ul aria-labelledby="notifications" class="dropdown-menu">
 									<li><a rel="nofollow" href="#"
 										class="dropdown-item d-flex">
 											<div class="msg-profile">
@@ -179,6 +180,7 @@
 										class="dropdown-item all-notifications text-center"> <strong>Read
 												all messages </strong></a></li>
 								</ul></li>
+								--> 
 							<!-- Languages dropdown    -->
 							<li class="nav-item dropdown"><a id="languages"
 								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"

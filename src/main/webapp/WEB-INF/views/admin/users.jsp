@@ -134,13 +134,14 @@
 										class="dropdown-item all-notifications text-center"> <strong>view
 												all notifications </strong></a></li>
 								</ul></li>
-							<!-- Messages                        -->
+							<!-- Messages-->
 							<li class="nav-item dropdown"><a id="messages"
 								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false" class="nav-link"><i
-									class="fa fa-envelope-o"></i><span
-									class="badge bg-orange badge-corner">10</span></a>
-								<ul aria-labelledby="notifications" class="dropdown-menu">
+									class="fa fa-envelope-o"></i> <!-- 这里显示消息条数 --> <span
+									id="new_contact_count" class="badge bg-orange badge-corner"></span>
+							</a> <!--	
+							<ul aria-labelledby="notifications" class="dropdown-menu">
 									<li><a rel="nofollow" href="#"
 										class="dropdown-item d-flex">
 											<div class="msg-profile">
@@ -181,7 +182,7 @@
 										class="dropdown-item all-notifications text-center"> <strong>Read
 												all messages </strong></a></li>
 								</ul></li>
-							<!-- Languages dropdown    -->
+								--> <!-- Languages dropdown    -->
 							<li class="nav-item dropdown"><a id="languages"
 								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"
@@ -301,6 +302,10 @@
 						</div>
 						<div class="row">
 							<div id="page_info" class="col-md-8"></div>
+							<div id="page_jump" class="offset-md-8">
+								跳转到第<input type="text" class="col-md-2" id="page_number" />
+								<button class="btn btn-link" id="jumpButton">跳转</button>
+							</div>
 							<div id="page_line" class="col-md-8  offset-md-8"></div>
 						</div>
 					</div>

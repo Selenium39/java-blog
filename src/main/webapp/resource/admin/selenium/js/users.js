@@ -3,6 +3,8 @@
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
+	//查询未读联系人数量
+	selectNewContactCount();
 	// 查询所有的用户并显示在分页中
 	users(1);
 	// 为修改按钮绑定事件
@@ -16,6 +18,12 @@ $(function() {
 	//为新增按钮绑定事件
 	$("#addButton").click(function(){
 		add();
+	});
+	//为跳转任意页面按钮绑定事件
+	$("#jumpButton").click(function(){
+		var pn=$("#page_number").val();
+		//记得要做校验
+		users(pn);
 	});
 });
 
@@ -374,5 +382,15 @@ function showImgOnTime2() { // 发送ajax请求实时显示上传的照片
 					"height", 150);
 		}
 
+	});
+}
+
+function selectNewContactCount(){//查询未读联系人的数量
+	$.ajax({
+		url:APP_PATH+"/admin/selectNewContactCount",
+		type:"get",
+		success:function(result){
+			$("#new_contact_count").append(result.data.newContactCount);
+		}
 	});
 }

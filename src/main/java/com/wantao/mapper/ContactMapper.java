@@ -16,6 +16,8 @@ import com.wantao.bean.Contact;
 public interface ContactMapper {
    public Integer addContact(Contact contact);
    public List<Contact> selectAllContact();
+   public Integer selectNewContactCount();
    public Integer deleteContactByBatchById(List<Integer>ids);
    public Integer updateContactByBatchById(List<Integer>ids);
+   public Integer updateAllContact();
 }

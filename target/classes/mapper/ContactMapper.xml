@@ -10,6 +10,9 @@
 		resultType="com.wantao.bean.Contact">
 		select * from contact
 	</select>
+	<select id="selectNewContactCount" resultType="java.lang.Integer">
+		select count(*) from contact where answer =0
+	</select>
 	<delete id="deleteContactByBatchById">
 		delete from contact where id in
 		<foreach collection="list" item="id" separator="," open="("
@@ -25,5 +28,9 @@
 			close=")">
 			#{id}
 		</foreach>
+	</update>
+	<update id="updateAllContact">
+		update contact
+		set answer =1
 	</update>
 </mapper>

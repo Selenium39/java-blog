@@ -3,11 +3,19 @@
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
+	//查询未读联系人数量
+	selectNewContactCount();
 	// 查询所有的评论并显示在分页中
 	comments(1);
 	// 为批量删除按钮绑定事件
 	$("#batchDeleteButton").click(function() {
 		deleteCommentByBatchById();
+	});
+	//为跳转任意页面按钮绑定事件
+	$("#jumpButton").click(function(){
+		var pn=$("#page_number").val();
+		//记得要做校验
+		comments(pn);
 	});
 
 });
@@ -201,4 +209,14 @@ function deleteCommentByBatchById() {// 批量删除
 			}
 		});
 	}
+}
+
+function selectNewContactCount(){//查询未读联系人的数量
+	$.ajax({
+		url:APP_PATH+"/admin/selectNewContactCount",
+		type:"get",
+		success:function(result){
+			$("#new_contact_count").append(result.data.newContactCount);
+		}
+	});
 }
