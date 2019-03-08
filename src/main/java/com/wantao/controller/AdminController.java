@@ -23,11 +23,13 @@ import org.springframework.web.multipart.MultipartFile;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.wantao.bean.Article;
+import com.wantao.bean.Category;
 import com.wantao.bean.Comment;
 import com.wantao.bean.Contact;
 import com.wantao.bean.Me;
 import com.wantao.bean.User;
 import com.wantao.service.ArticleService;
+import com.wantao.service.CategoryService;
 import com.wantao.service.CommentService;
 import com.wantao.service.ContactService;
 import com.wantao.service.MeService;
@@ -57,6 +59,8 @@ public class AdminController {
 	MeService meService;
 	@Autowired
 	ContactService contactService;
+	@Autowired
+	CategoryService categoryService;
 	// ------------------------------跳转--------------------------------------
 
 	/**
@@ -107,6 +111,16 @@ public class AdminController {
 	@RequestMapping("/articles")
 	public String articles() {
 		return "admin/articles";
+	}
+
+	/**
+	 * @param
+	 * @return String
+	 * @description 查看所有文章分类跳转
+	 */
+	@RequestMapping("/categorys")
+	public String categorys() {
+		return "admin/categorys";
 	}
 
 	/**
@@ -391,6 +405,20 @@ public class AdminController {
 	/**
 	 * @param
 	 * @return Message
+	 * @description 查看所有分类
+	 */
+	@GetMapping("/selectAllCategory/{pn}")
+	@ResponseBody
+	public Message selectAllCategory(@PathVariable("pn") Integer pn) {
+		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
+		List<Category> categorys = categoryService.selectAllCategory();
+		PageInfo pageInfo = new PageInfo(categorys, 5);// 用pageInfo封装然后交给页面
+		return Message.success().add("pageInfo", pageInfo);
+	}
+
+	/**
+	 * @param
+	 * @return Message
 	 * @description 查询所有的评论
 	 */
 	@GetMapping("/selectAllComment/{pn}")
@@ -526,7 +554,7 @@ public class AdminController {
 		contactService.deleteContactByBatchById(ids);
 		return Message.success();
 	}
-	
+
 	/**
 	 * @param
 	 * @return Message
@@ -547,7 +575,7 @@ public class AdminController {
 		contactService.updateContactByBatchById(ids);
 		return Message.success();
 	}
-	
+
 	/**
 	 * @param
 	 * @return Message
@@ -559,7 +587,7 @@ public class AdminController {
 		contactService.updateAllContact();
 		return Message.success();
 	}
-	
+
 	/**
 	 * @param
 	 * @return Message
@@ -568,7 +596,41 @@ public class AdminController {
 	@GetMapping("/selectNewContactCount")
 	@ResponseBody
 	public Message selectNewContactCount() {
-		Integer newContactCount=contactService.selectNewContactCount();
-		return Message.success().add("newContactCount",newContactCount);
+		Integer newContactCount = contactService.selectNewContactCount();
+		return Message.success().add("newContactCount", newContactCount);
 	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id单个和批量删除分类
+	 */
+	@GetMapping("/deleteCategoryById")
+	@ResponseBody
+	public Message deleteCategoryById(@RequestParam("categoryId") String categoryId) {
+		List<Integer> ids = new ArrayList<>();
+		if (categoryId.contains("-")) {
+			String[] categoryIds = categoryId.split("-");
+			for (String id : categoryIds) {
+				ids.add(Integer.parseInt(id));
+			}
+		} else {
+			ids.add(Integer.parseInt(categoryId));
+		}
+		categoryService.deleteCategoryByBatchById(ids);
+		return Message.success();
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id查询分类
+	 */
+	@GetMapping("/selectCategoryById/{categoryId}")
+	@ResponseBody
+	public Message selectCategoryById(@PathVariable("categoryId") Integer categoryId) {
+		Category category = categoryService.selectCategoryById(categoryId);
+		return Message.success().add("category", category);
+	}
+
 }

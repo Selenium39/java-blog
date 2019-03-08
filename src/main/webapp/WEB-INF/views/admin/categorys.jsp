@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>article</title>
+<title>category</title>
 <meta name="description" content="">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -231,11 +231,11 @@
 					<li><a href="${APP_PATH}/admin/users"> <i
 							class="fa fa-users"></i>User
 					</a></li>
-					<li class="active"><a href="#article_tool" aria-expanded="false"
+					<li><a href="#article_tool" aria-expanded="false"
 						data-toggle="collapse"> <i class="fa fa-book"></i>Articles
 					</a>
-						<ul id="article_tool" class="collapse list-unstyled ">
-							<li><a href="${APP_PATH}/admin/categorys">Category</a></li>
+						<ul id="article_tool" class="show list-unstyled ">
+							<li class="active"><a href="${APP_PATH}/admin/categorys">Category</a></li>
 							<li><a href="#">Page</a></li>
 							<li><a href="#">Page</a></li>
 						</ul></li>
@@ -284,7 +284,7 @@
 					<div class="container-fluid" id="show">
 						<div class="row">
 							<button id="batchDeleteButton" class="btn btn-danger">批量删除</button>
-							<button id="addButton" class="btn btn-black">新增文章</button>
+							<button id="addButton" class="btn btn-black">新增分类</button>
 						</div>
 						<div class="row bg-white has-shadow">
 							<table class="table  table-condensed table-bordered table-hover">
@@ -292,13 +292,13 @@
 									<tr>
 										<th><input type="checkbox" id="checkAll" /></th>
 										<th>id</th>
-										<th>author</th>
-										<th>title</th>
-										<th>createTime</th>
+										<th>name</th>
+										<th>description</th>
+										<th>icon</th>
 										<th>opration</th>
 									</tr>
 								</thead>
-								<tbody id="articles">
+								<tbody id="categorys">
 								</tbody>
 							</table>
 						</div>
@@ -314,79 +314,6 @@
 				</section>
 
 				<!--模态框-->
-				<!--查看Modal -->
-				<div class="modal fade" id="myShowModal" tabindex="-1" role="dialog"
-					aria-labelledby="showTitle" aria-hidden="true">
-					<div class="modal-dialog" role="document"
-						style="margin-top: 170px;">
-						<div class="modal-content">
-							<div class="modal-body">
-								<table class="table" id="showTable">
-									<tbody>
-										<tr>
-											<td>articleId</td>
-											<td id="articleId" class="s"></td>
-										</tr>
-										<tr>
-											<td>authorId</td>
-											<td id="articleUserId" class="s"></td>
-										</tr>
-										<tr>
-											<td>authorName</td>
-											<td id="articleUserName" class="s"></td>
-										</tr>
-										<tr>
-											<td>articleTitle</td>
-											<td id="articleTitle" class="s"></td>
-										</tr>
-										<tr>
-											<td>articleViewCount</td>
-											<td id="articleViewCount" class="s"></td>
-										</tr>
-										<tr>
-											<td>articleCommentCount</td>
-											<td id="articleCommentCount" class="s"></td>
-										</tr>
-										<tr>
-											<td>articleDislikeCount</td>
-											<td id="articleDislikeCount" class="s"></td>
-										</tr>
-										<tr>
-											<td>articleLikeCount</td>
-											<td id="articleLikeCount" class="s"></td>
-										</tr>
-										<tr>
-											<td>articleIsComment</td>
-											<td id="articleIsComment" class="s"></td>
-										</tr>
-										<tr>
-											<td>articleStatus</td>
-											<td id="articleStatus" class="s"></td>
-										</tr>
-										<tr>
-											<td>articleOrder</td>
-											<td id="articleOrder" class="s"></td>
-										</tr>
-										<tr>
-											<td>articleUpdateTime</td>
-											<td id="articleUpdateTime" class="s"></td>
-										</tr>
-										<tr>
-											<td>articleCreateTime</td>
-											<td id="articleCreateTime" class="s"></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default"
-									data-dismiss="modal">关闭</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!--模态框-->
 				<!--修改Modal -->
 				<div class="modal fade" id="myUpdateModal" tabindex="-1"
 					role="dialog" aria-labelledby="myModalLabel">
@@ -396,29 +323,23 @@
 							<div class="modal-body">
 								<form id="updateForm">
 									<div class="form-group">
-										<label for="articleTitle1">articleTitle:</label>
-										<p id="articleTitle1" class="u"></p>
+										<label for="categoryId">id:</label>
+										<p id="categoryId" class="u"></p>
 									</div>
 									<div class="form-group">
-										<label for="articleIsComment1">articleIsComment:</label><select
-											name="articleIsComment">
-											<option id="articleIsComment0" value="0">不允许评论</option>
-											<option id="articleIsComment1" value="1">允许评论</option>
-										</select>
+										<label for="categoryName">categoryName:</label> <input
+											id="categoryName" type="text" name="categoryName"
+											class="a form-control col-md-8" />
 									</div>
 									<div class="form-group">
-										<label for="articleStatus1">articleStatus:</label><select
-											name="articleStatus">
-											<option id="articleStatus0" value="0">无效</option>
-											<option id="articleStatus1" value="1">有效</option>
-										</select>
+										<label for="categoryDecription">categoryDescription:</label> <input
+											id="categoryDescription" type="text"
+											name="categoryDescription" class="a form-control col-md-8" />
 									</div>
 									<div class="form-group">
-										<label for="articleOrder">articleOrder:</label><select
-											name="articleOrder">
-											<option id="articleOrder0" value="0">置顶</option>
-											<option id="articleOrder1" value="1">正常</option>
-										</select>
+										<label for="categoryIcon">categoryIcon:</label> <input
+											id="categoryIcon" type="text" name="categoryIcon"
+											class="a form-control col-md-8" />
 									</div>
 								</form>
 							</div>
@@ -502,65 +423,6 @@
 		</div>
 	</div>
 
-
-	<!--模态框-->
-	<!--查看Modal -->
-	<div class="modal fade" id="myShowModal" tabindex="-1" role="dialog"
-		aria-labelledby="showTitle" aria-hidden="true">
-		<div class="modal-dialog" role="document" style="margin-top: 170px;">
-			<div class="modal-content">
-				<div class="modal-body">
-					<table class="table" id="showTable">
-						<tbody>
-							<tr>
-								<td>userId</td>
-								<td id="userId" class="s"></td>
-							</tr>
-							<tr>
-								<td>userName</td>
-								<td id="userName" class="s"></td>
-							</tr>
-							<tr>
-								<td>userPassword</td>
-								<td id="userPassword" class="s"></td>
-							</tr>
-							<tr>
-								<td>userNickname</td>
-								<td id="userNickname" class="s"></td>
-							</tr>
-							<tr>
-								<td>userEmail</td>
-								<td id="userEmail" class="s"></td>
-							</tr>
-							<tr>
-								<td>userAvatar</td>
-								<td id="userAvatar" class="s"></td>
-							</tr>
-							<tr>
-								<td>userLastLoginIp</td>
-								<td id="userLastLoginIp" class="s"></td>
-							</tr>
-							<tr>
-								<td>userRegisterTime</td>
-								<td id="userRegisterTime" class="s"></td>
-							</tr>
-							<tr>
-								<td>userLastLoginTime</td>
-								<td id="userLastLoginTime" class="s"></td>
-							</tr>
-							<tr>
-								<td>userStatus</td>
-								<td id="userStatus" class="s"></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- JavaScript files-->
 	<script
 		src="${APP_PATH}/resource/admin/template2/vendor/jquery/jquery.min.js"></script>
@@ -582,6 +444,6 @@
 	<!-- Main File-->
 	<script src="${APP_PATH}/resource/admin/template2/js/front.js"></script>
 	<!-- Selenium -->
-	<script src="${APP_PATH}/resource/admin/selenium/js/articles.js"></script>
+	<script src="${APP_PATH}/resource/admin/selenium/js/categorys.js"></script>
 </body>
 </html>

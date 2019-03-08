@@ -6,72 +6,65 @@ $(function() {
 	//查询未读联系人数量
 	selectNewContactCount();
 	// 查询所有的文章并显示在分页中
-	articles(1);
+	categorys(1);
 	// 为修改按钮绑定事件
 	$("#updateButton").click(function() {
 		update($(this));
 	});
 	// 为批量删除按钮绑定事件
 	$("#batchDeleteButton").click(function() {
-		deleteArticleByBatchById();
+		deleteCategoryByBatchById();
 	});
 	//为跳转任意页面按钮绑定事件
 	$("#jumpButton").click(function(){
 		var pn=$("#page_number").val();
 		//记得要做校验
-		articles(pn);
+		categorys(pn);
 	});
 });
 
-function articles(pn) {// 查询所有的用户并显示在分页中
+function categorys(pn) {// 查询所有的分类并显示在分页中
 	$.ajax({
-		url : APP_PATH + "/admin/selectAllArticle/" + pn,
+		url : APP_PATH + "/admin/selectAllCategory/" + pn,
 		type : "GET",
 		success : function(result) {
-			var articles = result.data.pageInfo.list;
-			$("#articles").empty();
-			$.each(articles, function(index, item) {
+			var categorys = result.data.pageInfo.list;
+			$("#categorys").empty();
+			$.each(categorys, function(index, item) {
 				var tr = $("<tr></tr>");
 				var checkbox = $("<td></td>").append(
 						$("<input type='checkbox' class='check_item' />"))
-				var articleId = $("<td></td>").append(item.articleId);
-				var articleUserName = $("<td></td>").append(
-						item.articleUserName);
-				var articleTitle = $("<td></td>").append(item.articleTitle);
-				var articleCreateTime = $("<td></td>").append(
-						item.articleCreateTime);
+				var categoryId = $("<td></td>").append(item.categoryId);
+				var categoryName = $("<td></td>").append(
+						item.categoryName);
+				var categoryDescription= $("<td></td>").append(item.categoryDescription);
+				var categoryIcon = $("<td></td>").append($("<i></i>").addClass(item.categoryIcon));
 				var buttons = $("<td></td>");
-				var showButton = $("<button></button>").append("查看").attr(
-						"class", "btn btn-info").attr("id",
-						"btn-show-" + item.articleId);
 				var updateButton = $("<button></button>").append("修改").attr(
 						"class", "btn btn-success").attr("id",
-						"btn-update-" + item.articleId);
+						"btn-update-" + item.categoryId);
 				var deleteButton = $("<button></button>").append("删除").attr(
 						"class", "btn btn-danger").attr("id",
-						"btn-delete-" + item.articleId);
-				buttons.append(showButton).append(" ").append(updateButton)
+						"btn-delete-" + item.categoryId);
+				buttons.append(updateButton)
 						.append(" ").append(deleteButton);
-				tr.append(checkbox).append(articleId).append(articleUserName)
-						.append(articleTitle).append(articleCreateTime).append(
-								buttons).appendTo($("#articles"));
+				tr.append(checkbox).append(categoryId).append(categoryName)
+						.append(categoryDescription).append(categoryIcon).append(
+								buttons).appendTo($("#categorys"));
 				build_page_info(result);
 				build_page_line(result);
 				// 批量选择的选择框全选或者不全选
 				selectCheckBox();
 				// 为按钮绑定事件
-				$("#btn-show-" + item.articleId).click(function() {
-					build_show_modal(item.articleId);
+				$("#btn-update-" + item.categoryId).click(function() {
+					build_update_modal(item.categoryId);
 				});
-				$("#btn-update-" + item.articleId).click(function() {
-					build_update_modal(item.articleId);
-				});
-				$("#btn-delete-" + item.articleId).click(
+				$("#btn-delete-" + item.categoryId).click(
 						function() {
-							var flag = confirm("是否删除标题为:<<" + item.articleTitle
-									+ ">>的文章?");
+							var flag = confirm("是否删除分类'" + item.categoryName
+									+ "'?");
 							if (flag == true) {
-								deleteArticleById(item.articleId);
+								deleteCategoryById(item.categoryId);
 							}
 						});
 			});
@@ -104,10 +97,10 @@ function build_page_line(result) {// 构建分页条
 		prePageLi.addClass("disabled");
 	}
 	firstPageLi.click(function() {// 跳转首页
-		articles(1);
+		categorys(1);
 	});
 	prePageLi.click(function() {// 跳转前一页(注意前面虽然禁止了首页跳转,但是只有禁止点击标志,还是可以点击)
-		articles(result.data.pageInfo.pageNum == 1 ? 1
+		categorys(result.data.pageInfo.pageNum == 1 ? 1
 				: result.data.pageInfo.pageNum - 1)
 	})
 	ul.append(firstPageLi).append(prePageLi);
@@ -124,11 +117,11 @@ function build_page_line(result) {// 构建分页条
 		nextPageLi.addClass("disabled");
 	}
 	lastPageLi.click(function() {// 跳转最后一页
-		articles(result.data.pageInfo.pages);
+		categorys(result.data.pageInfo.pages);
 	});
 	nextPageLi
 			.click(function() {// 跳转下一页(注意前面虽然禁止了末页跳转,但是只有禁止点击标志,还是可以点击,或者在pagehelper的配置中设置reasonable属性)
-				articles(result.data.pageInfo.pageNum == result.data.pageInfo.pages ? result.data.pageInfo.pages
+				categorys(result.data.pageInfo.pageNum == result.data.pageInfo.pages ? result.data.pageInfo.pages
 						: result.data.pageInfo.pageNum + 1)
 			})
 	$.each(result.data.pageInfo.navigatepageNums, function(index, item) {// 页数的生成与跳转
@@ -139,7 +132,7 @@ function build_page_line(result) {// 构建分页条
 			numLi.addClass("active");
 		}
 		numLi.click(function() {
-			articles(item);
+			categorys(item);
 		})
 		ul.append(numLi);
 	})
@@ -166,87 +159,19 @@ function selectCheckBox() {// 完成批量删除的checkbox全选or全不选
 	});
 }
 
-/**
- * @param articleId
- *            文章id
- * @param articleUserId
- *            文章作者id
- * @param articleUserName
- *            文章作者name
- * @param articleTitle
- *            文章标题
- * @param articleContent
- *            文章内容
- * @param articleViewCount
- *            文章浏览数量
- * @param articleCommentCount
- *            文章评论数量
- * @param articleDislikeCount
- *            不喜欢的数量
- * @param articleLikeCount
- *            喜欢的数量
- * @param articleIsComment
- *            是否允许评论 1允许评论 0不允许评论
- * @param articleStatus
- *            文章状态 1有效 2无效
- * @param articleOrder
- *            文章顺序 0为置顶1为正常
- * @param articleUpdateTime
- *            文章更新时间
- * @param articleCreateTime
- *            文章创建时间
- * @param tagList
- *            标签列表
- * @param categoryList
- *            分类列表
- */
-
-function build_show_modal(articleId) { // 构建查看模态框
+function build_update_modal(categoryId) { // 构建修改模态框
 	$.ajax({
-		url : APP_PATH + "/admin/selectArticleById/" + articleId,
-		type : "GET",
-		success : function(result) {
-			var article = result.data.article;
-			$(".s").empty();
-			$("#articleId").append(article.articleId);
-			$("#articleUserId").append(article.articleUserId);
-			$("#articleUserName").append(article.articleUserName);
-			$("#articleTitle").append(article.articleTitle);
-			$("#articleViewCount").append(article.articleViewCount);
-			$("#articleCommentCount").append(article.articleCommentCount);
-			$("#articleDislikeCount").append(article.articleDislikeCount);
-			$("#articleLikeCount").append(article.articleLikeCount);
-			$("#articleIsComment").append(
-					article.articleIsComment == 0 ? "不允许评论" : "允许评论");
-			$("#articleStatus")
-					.append(article.articleStatus == 0 ? "无效" : "有效");
-			$("#articleOrder").append(article.articleOrder == 0 ? "置顶" : "正常");
-			$("#articleUpdateTime").append(article.articleUpdateTime);
-			$("#articleCreateTime").append(article.articleCreateTime);
-			$('#myShowModal').modal({});
-		}
-	});
-}
-
-function build_update_modal(articleId) { // 构建修改模态框
-	$.ajax({
-		url : APP_PATH + "/admin/selectArticleById/" + articleId,
+		url : APP_PATH + "/admin/selectCategoryById/" + categoryId,
 		type : "GET",
 		success : function(result) {
 			$(".u").empty();
 			$("#updateForm")[0].reset();
-			var article = result.data.article;
-			$("#articleTitle1").text(article.articleTitle);
-			article.articleIsComment == 0 ? $("#articleIsComment0").attr(
-					"selected", "selected") : $("#articleIsComment1").attr(
-					"selected", "selected");
-			article.articleStatus == 0 ? $("#articleStatus0").attr("selected",
-					"selected") : $("#articleStatus1").attr("selected",
-					"selected");
-			article.articleOrder == 0 ? $("#articleOrder0").attr("selected",
-					"selected") : $("#articleOrder1").attr("selected",
-					"selected");
-			$("#updateButton").attr("update-id", article.articleId);
+			var category = result.data.category;
+			$("#categoryId").text(category.categoryId);
+			$("#categoryName").val(category.categoryName);
+			$("#categoryDescription").val(category.categoryDescription);
+			$("#categoryIcon").val(category.categoryIcon);
+			$("#updateButton").attr("update-id", category.categoryId);
 			$('#myUpdateModal').modal({});
 		}
 	});
@@ -254,9 +179,9 @@ function build_update_modal(articleId) { // 构建修改模态框
 
 function update(button) {// 修改文章
 	$.ajax({
-		url : APP_PATH + "/admin/updateArticleById",
+		url : APP_PATH + "/admin/updatecategoryById",
 		type : "POST",
-		data : $("#updateForm").serialize()+"&articleId="+button.attr("update-id"),
+		data : $("#updateForm").serialize()+"&categoryId="+button.attr("update-id"),
 		success : function(result) {
 			$('#myUpdateModal').modal('hide');
 			window.location.reload();
@@ -264,12 +189,12 @@ function update(button) {// 修改文章
 	});
 }
 
-function deleteArticleById(articleId) {// 删除单个
+function deleteCategoryById(categoryId) {// 删除单个
 	$.ajax({
-		url : APP_PATH + "/admin/deleteArticleById",
+		url : APP_PATH + "/admin/deleteCategoryById",
 		type : "get",
 		data : {
-			"articleId" : articleId
+			"categoryId" : categoryId
 		},
 		success : function(result) {
 			window.location.reload();
@@ -277,21 +202,21 @@ function deleteArticleById(articleId) {// 删除单个
 	});
 }
 
-function deleteArticleByBatchById() {// 批量删除
-	var articleId = "";
-	var articleTitle = "";
+function deleteCategoryByBatchById() {// 批量删除
+	var categoryId = "";
+	var categoryName = "";
 	$.each($(".check_item:checked"), function() {
-		articleId += $(this).parents("tr").find("td:eq(1)").text() + "-";
-		articleTitle += "<<"+$(this).parents("tr").find("td:eq(3)").text() + ">> ";
+		categoryId += $(this).parents("tr").find("td:eq(1)").text() + "-";
+		categoryName += "'"+$(this).parents("tr").find("td:eq(2)").text() + "' ";
 	});
-	articleTitle= articleTitle.substring(0, articleTitle.length - 1);
-	var flag = confirm("是否删除标题为" + articleTitle + "的文章?");
+	categoryName= categoryName.substring(0, categoryName.length - 1);
+	var flag = confirm("是否删除标签名为" + categoryName + "的标签?");
 	if (flag == true) {
 		$.ajax({
-			url : APP_PATH + "/admin/deleteArticleById",
+			url : APP_PATH + "/admin/deleteCategoryById",
 			type : "get",
 			data : {
-				"articleId" : articleId
+				"categoryId" : categoryId
 			},
 			success : function(result) {
 				window.location.reload();
