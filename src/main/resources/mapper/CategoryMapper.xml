@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wantao.mapper.CategoryMapper">
-	 <select id="selectAllCategory" resultType="com.wantao.bean.Category">
-	   select * from category 
-	 </select>
-	 <select id="selectCategoryById" resultType="com.wantao.bean.Category">
-	select * from category where category_id=#{categoryId}
+	<select id="selectAllCategory"
+		resultType="com.wantao.bean.Category">
+		select * from category
 	</select>
-	 <delete id="deleteCategoryByBatchById">
-	  delete from category where category_id in
-	  <foreach collection="list" item="id" separator="," open="(" close=")">
-	      #{id}
-	  </foreach>
+	<select id="selectCategoryById"
+		resultType="com.wantao.bean.Category">
+		select * from category where category_id=#{categoryId}
+	</select>
+	<delete id="deleteCategoryByBatchById">
+		delete from category where category_id in
+		<foreach collection="list" item="id" separator="," open="("
+			close=")">
+			#{id}
+		</foreach>
 	</delete>
+	<update id="updateCategoryById"
+		parameterType="com.wantao.bean.Category">
+		update category set
+		category_name=#{categoryName},
+		category_description=#{categoryDescription},
+		category_icon=#{categoryIcon}
+		where category_id = #{categoryId}
+	</update>
+
+	<insert id="insertCategory"
+		parameterType="com.wantao.bean.Category">
+		insert into category
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			category_name,
+			category_description,
+			category_icon,
+		</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			#{categoryName},
+			#{categoryDescription},
+			#{categoryIcon},
+		</trim>
+	</insert>
 </mapper>

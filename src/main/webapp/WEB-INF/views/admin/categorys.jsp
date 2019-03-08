@@ -231,13 +231,12 @@
 					<li><a href="${APP_PATH}/admin/users"> <i
 							class="fa fa-users"></i>User
 					</a></li>
-					<li><a href="#article_tool" aria-expanded="false"
-						data-toggle="collapse"> <i class="fa fa-book"></i>Articles
+					<li><a href="${APP_PATH}/admin/articles" aria-expanded="false"
+						> <i class="fa fa-book"></i>Articles
 					</a>
 						<ul id="article_tool" class="show list-unstyled ">
 							<li class="active"><a href="${APP_PATH}/admin/categorys">Category</a></li>
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
+							<li><a href="${APP_PATH}/admin/tags">Tag</a></li>
 						</ul></li>
 					<li><a href="${APP_PATH}/admin/comments"> <i
 							class="fa fa-comment"></i>Comment
@@ -250,15 +249,6 @@
 					<li><a href="${APP_PATH}/admin/contact"> <i
 							class="fa fa-phone" aria-hidden="true"></i> Contact
 					</a></li>
-					<li><a href="#exampledropdownDropdown" aria-expanded="false"
-						data-toggle="collapse"> <i class="icon-interface-windows"></i>Example
-							dropdown
-					</a>
-						<ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-						</ul></li>
 				</ul>
 				<span class="heading">Extras</span>
 				<ul class="list-unstyled">
@@ -329,17 +319,20 @@
 									<div class="form-group">
 										<label for="categoryName">categoryName:</label> <input
 											id="categoryName" type="text" name="categoryName"
-											class="a form-control col-md-8" />
+											class="u form-control col-md-8" />
 									</div>
 									<div class="form-group">
 										<label for="categoryDecription">categoryDescription:</label> <input
 											id="categoryDescription" type="text"
-											name="categoryDescription" class="a form-control col-md-8" />
+											name="categoryDescription" class="u form-control col-md-8" />
 									</div>
 									<div class="form-group">
-										<label for="categoryIcon">categoryIcon:</label> <input
-											id="categoryIcon" type="text" name="categoryIcon"
-											class="a form-control col-md-8" />
+										<label for="categoryIcon">categoryIcon:</label> <i
+											id="categoryIconShow" class="u"></i> <input id="categoryIcon"
+											type="text" name="categoryIcon"
+											class="u form-control col-md-8" />
+										<button id="categoryIconPreShow" type="button"
+											class="btn btn-clink">预览图标</button>
 									</div>
 								</form>
 							</div>
@@ -363,34 +356,22 @@
 							<div class="modal-body">
 								<form id="addForm">
 									<div class="form-group">
-										<label for="userName2">userName:</label> <input id="userName2"
-											type="text" name="userName" class="a form-control col-md-8" />
-									</div>
-									<div class="form-group">
-										<label for="userPassword2">userPassword:</label> <input
-											id="userPassword2" type="password" name="userPassword"
-											class="a form-control col-md-8" />
-									</div>
-									<i id="eye2" show="false"
-										style="position: absolute; margin-top: -43px; margin-left: 280px;"
-										class="fa fa-eye"></i>
-									<div class="form-group">
-										<label for="userNickname2">userNickname:</label> <input
-											id="userNickname2" type="text" name="userNickname"
+										<label for="categoryName1">categoryName:</label> <input
+											id="categoryName1" type="text" name="categoryName"
 											class="a form-control col-md-8" />
 									</div>
 									<div class="form-group">
-										<label for="userEmail2">userEmail:</label> <input
-											id="userEmail2" type="email" name="userEmail"
-											class="a form-control col-md-8" />
+										<label for="categoryDescription1">categoryDescription:</label>
+										<textarea id="categoryDescription1" name="categoryDescription"
+											class="a form-control col-md-8"></textarea>
 									</div>
-									<div class="form-group">
-										<label for="userAvatar2">userAvatar:</label> <img class="a"
-											id="userAvatar2" />
-									</div>
-									<div class="form-group">
-										<label for="photo2" class="control-label">上传照片:</label> <input
-											type="file" id="photo2" name="file" class="a">
+                                    <div class="form-group">
+										<label for="categoryIcon1">categoryIcon:</label> <i
+											id="categoryIconShow1" class="a"></i> <input id="categoryIcon1"
+											type="text" name="categoryIcon"
+											class="u form-control col-md-8" />
+										<button id="categoryIconPreShow1" type="button"
+											class="btn btn-clink">预览图标</button>
 									</div>
 								</form>
 							</div>

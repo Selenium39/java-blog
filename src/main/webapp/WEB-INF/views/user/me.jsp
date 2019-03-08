@@ -97,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="menu-wrap">
 					<nav class="menu">
 						<div class="icon-list">
-							<a class="scroll active" href="#agilehome"><i
+							<a class="scroll active" href="${APP_PATH}/user/index"><i
 								class="fa fa-home"></i><span>Home</span></a> <a class="scroll"
 								href="#about"><i class="fa fa-info"></i><span>About</span></a> <a
 								class="scroll" href="#skills"><i class="fa fa-bar-chart"></i><span>Skills</span></a>

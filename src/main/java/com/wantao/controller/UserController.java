@@ -54,6 +54,16 @@ public class UserController {
 	public String aboutMe() {
 		return "user/me";
 	}
+	
+	/**
+	 * @param
+	 * @return String
+	 * @description 跳转博客文章页面
+	 */
+	@RequestMapping("/blog")
+	public String blog() {
+		return "user/blog";
+	}
 
 //---------------------------ajax请求获取数据-----------------------	
 	/**

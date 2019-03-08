@@ -27,6 +27,7 @@ import com.wantao.bean.Category;
 import com.wantao.bean.Comment;
 import com.wantao.bean.Contact;
 import com.wantao.bean.Me;
+import com.wantao.bean.Tag;
 import com.wantao.bean.User;
 import com.wantao.service.ArticleService;
 import com.wantao.service.CategoryService;
@@ -34,6 +35,7 @@ import com.wantao.service.CommentService;
 import com.wantao.service.ContactService;
 import com.wantao.service.MeService;
 import com.wantao.service.MessageService;
+import com.wantao.service.TagService;
 import com.wantao.service.UserService;
 import com.wantao.util.Message;
 import com.wantao.util.PhotoUtil;
@@ -61,6 +63,8 @@ public class AdminController {
 	ContactService contactService;
 	@Autowired
 	CategoryService categoryService;
+	@Autowired	
+	TagService tagService;
 	// ------------------------------跳转--------------------------------------
 
 	/**
@@ -113,6 +117,16 @@ public class AdminController {
 		return "admin/articles";
 	}
 
+	/**
+	 * @param
+	 * @return String
+	 * @description 查看所有文章标签跳转
+	 */
+	@RequestMapping("/tags")
+	public String tags() {
+		return "admin/tags";
+	}
+	
 	/**
 	 * @param
 	 * @return String
@@ -401,21 +415,7 @@ public class AdminController {
 		articleService.deleteArticleByBatchById(ids);
 		return Message.success();
 	}
-
-	/**
-	 * @param
-	 * @return Message
-	 * @description 查看所有分类
-	 */
-	@GetMapping("/selectAllCategory/{pn}")
-	@ResponseBody
-	public Message selectAllCategory(@PathVariable("pn") Integer pn) {
-		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
-		List<Category> categorys = categoryService.selectAllCategory();
-		PageInfo pageInfo = new PageInfo(categorys, 5);// 用pageInfo封装然后交给页面
-		return Message.success().add("pageInfo", pageInfo);
-	}
-
+	
 	/**
 	 * @param
 	 * @return Message
@@ -599,7 +599,81 @@ public class AdminController {
 		Integer newContactCount = contactService.selectNewContactCount();
 		return Message.success().add("newContactCount", newContactCount);
 	}
+	
+	/**
+	 * @param
+	 * @return Message
+	 * @description 查看所有分类
+	 */
+	@GetMapping("/selectAllTag/{pn}")
+	@ResponseBody
+	public Message selectAllTag(@PathVariable("pn") Integer pn) {
+		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
+		List<Tag> tags = tagService.selectAllTag();
+		PageInfo pageInfo = new PageInfo(tags, 5);// 用pageInfo封装然后交给页面
+		return Message.success().add("pageInfo", pageInfo);
+	}
 
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id单个和批量删除标签
+	 */
+	@GetMapping("/deleteTagById")
+	@ResponseBody
+	public Message deleteTagById(@RequestParam("tagId") String tagId) {
+		List<Integer> ids = new ArrayList<>();
+		if (tagId.contains("-")) {
+			String[] tagIds = tagId.split("-");
+			for (String id : tagIds) {
+				ids.add(Integer.parseInt(id));
+			}
+		} else {
+			ids.add(Integer.parseInt(tagId));
+		}
+		tagService.deleteTagByBatchById(ids);
+		return Message.success();
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id查询标签
+	 */
+	@GetMapping("/selectTagById/{tagId}")
+	@ResponseBody
+	public Message selectTagById(@PathVariable("tagId") Integer tagId) {
+		Tag tag=tagService.selectTagById(tagId);
+		return Message.success().add("tag", tag);
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id修改标签
+	 */
+	@PostMapping("/updateTagById")
+	@ResponseBody
+	public Message updateTagById(@RequestParam Integer tagId, Tag tag) {
+		// logger.info("进入到updateTagById的方法");
+		// logger.info(tag.toString());
+		tagService.updateTagById(tag);
+		return Message.success();
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 新增标签
+	 */
+	@PostMapping("/addTag")
+	@ResponseBody
+	public Message addTag(Tag tag) {
+		tagService.insertTag(tag);
+		return Message.success();
+	}
+	
 	/**
 	 * @param
 	 * @return Message
@@ -632,5 +706,46 @@ public class AdminController {
 		Category category = categoryService.selectCategoryById(categoryId);
 		return Message.success().add("category", category);
 	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id修改分类
+	 */
+	@PostMapping("/updateCategoryById")
+	@ResponseBody
+	public Message updateCategoryById(@RequestParam Integer categoryId, Category category) {
+		// logger.info("进入到updateCategoryById的方法");
+		// logger.info(category.toString());
+		categoryService.updateCategoryById(category);
+		return Message.success();
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 新增分类
+	 */
+	@PostMapping("/addCategory")
+	@ResponseBody
+	public Message addCategory(Category category) {
+		categoryService.insertCategory(category);
+		return Message.success();
+	}
+	/**
+	 * @param
+	 * @return Message
+	 * @description 查看所有分类
+	 */
+	@GetMapping("/selectAllCategory/{pn}")
+	@ResponseBody
+	public Message selectAllCategory(@PathVariable("pn") Integer pn) {
+		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
+		List<Category> categorys = categoryService.selectAllCategory();
+		PageInfo pageInfo = new PageInfo(categorys, 5);// 用pageInfo封装然后交给页面
+		return Message.success().add("pageInfo", pageInfo);
+	}
+
+
 
 }

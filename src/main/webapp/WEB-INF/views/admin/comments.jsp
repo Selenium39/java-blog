@@ -233,8 +233,13 @@
 					<!--显示所有用户 -->
 					<li><a href="${APP_PATH}/admin/users"> <i class="fa fa-users"></i>User
 					</a></li>
-					<li><a href="${APP_PATH}/admin/articles"> <i class="fa fa-book"></i>Article
-					</a></li>
+					<li><a href="#article_tool" aria-expanded="false"
+						data-toggle="collapse"> <i class="fa fa-book"></i>Articles
+					</a>
+						<ul id="article_tool" class="collapse list-unstyled ">
+							<li><a href="${APP_PATH}/admin/categorys">Category</a></li>
+							<li><a href="${APP_PATH}/admin/tags">Tag</a></li>
+						</ul></li>
 					<li  class="active"><a href="${APP_PATH}/admin/comments"> <i class="fa fa-comment"></i>Comment
 					</a></li>
 					<li><a href="${APP_PATH}/admin/messages"> <i class="fa fa-heart"></i>Message
@@ -245,15 +250,6 @@
 					<li><a href="${APP_PATH}/admin/contact"> <i
 							class="fa fa-phone" aria-hidden="true"></i> Contact
 					</a></li>
-					<li><a href="#exampledropdownDropdown" aria-expanded="false"
-						data-toggle="collapse"> <i class="icon-interface-windows"></i>Example
-							dropdown
-					</a>
-						<ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-						</ul></li>
 				</ul>
 				<span class="heading">Extras</span>
 				<ul class="list-unstyled">

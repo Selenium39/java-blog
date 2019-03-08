@@ -15,10 +15,9 @@ import lombok.RequiredArgsConstructor;
  */
 @Data
 /**
- * @param tagId
- * @param tagName
- * @param tagDescription
- * @param articleCount
+ * @param tagId 标签id
+ * @param tagName 标签name
+ * @param tagDescription 标签描述
  */
 @AllArgsConstructor
 public class Tag implements Serializable {
@@ -26,11 +25,6 @@ public class Tag implements Serializable {
 	private Integer tagId;
 	private String tagName;
 	private String tagDescription;
-	/**
-	 * @field Integer articleCount 文章数量,不是数据库字段
-	 */
-	private Integer articleCount;
-
 	public Tag() {
 	}
 

@@ -44,11 +44,32 @@ public class CategoryService implements CategoryMapper {
 	 * (non-Javadoc)
 	 * 
 	 * @see com.wantao.mapper.CategoryMapper#selectCategoryById(java.lang.Integer)
-	  * 根据id查看分类
+	 * 根据id查看分类
 	 */
 	@Override
 	public Category selectCategoryById(Integer id) {
 		return categoryMapper.selectCategoryById(id);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.wantao.mapper.CategoryMapper#updateCategoryById(com.wantao.bean.Category)
+	 * 根据id修改分类
+	 */
+	@Override
+	public Integer updateCategoryById(Category category) {
+		return categoryMapper.updateCategoryById(category);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.CategoryMapper#insertCategory(com.wantao.bean.Category)
+	  * 增加分类
+	 */
+	@Override
+	public Integer insertCategory(Category category) {
+		return categoryMapper.insertCategory(category);
 	}
 
 }

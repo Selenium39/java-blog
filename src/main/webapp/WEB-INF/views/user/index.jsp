@@ -70,6 +70,7 @@
 						<nav class="main-navigation">
 							<ul>
 								<li><a href="${APP_PATH}/user/index">HOME</a>
+								<li><a href="${APP_PATH}/user/blog">BLOG</a>
 							    <li><a href="${APP_PATH}/user/aboutMe">ABOUT ME</a>
 							</ul>
 						</nav>

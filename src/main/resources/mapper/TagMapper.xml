@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wantao.mapper.TagMapper">
+	<select id="selectAllTag" resultType="com.wantao.bean.Tag">
+		select * from tag
+	</select>
+	<select id="selectTagById" resultType="com.wantao.bean.Tag">
+		select * from tag where
+		tag_id=#{tagId}
+	</select>
+	<delete id="deleteTagByBatchById">
+		delete from tag where tag_id in
+		<foreach collection="list" item="id" separator="," open="("
+			close=")">
+			#{id}
+		</foreach>
+	</delete>
+	<update id="updateTagById" parameterType="com.wantao.bean.Tag">
+		update tag set
+		tag_name=#{tagName},
+		tag_description=#{tagDescription}
+		where tag_id =
+		#{tagId}
+	</update>
+
+	<insert id="insertTag" parameterType="com.wantao.bean.Tag">
+		insert into Tag
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			tag_name,
+			tag_description,
+		</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			#{tagName},
+			#{tagDescription},
+		</trim>
+	</insert>
+</mapper>

@@ -3,7 +3,7 @@
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
-	//查询未读联系人数量
+	// 查询未读联系人数量
 	selectNewContactCount();
 	// 查询所有的文章并显示在分页中
 	categorys(1);
@@ -15,10 +15,14 @@ $(function() {
 	$("#batchDeleteButton").click(function() {
 		deleteCategoryByBatchById();
 	});
-	//为跳转任意页面按钮绑定事件
-	$("#jumpButton").click(function(){
-		var pn=$("#page_number").val();
-		//记得要做校验
+	// 为新增按钮绑定事件
+	$("#addButton").click(function() {
+		add();
+	});
+	// 为跳转任意页面按钮绑定事件
+	$("#jumpButton").click(function() {
+		var pn = $("#page_number").val();
+		// 记得要做校验
 		categorys(pn);
 	});
 });
@@ -35,10 +39,11 @@ function categorys(pn) {// 查询所有的分类并显示在分页中
 				var checkbox = $("<td></td>").append(
 						$("<input type='checkbox' class='check_item' />"))
 				var categoryId = $("<td></td>").append(item.categoryId);
-				var categoryName = $("<td></td>").append(
-						item.categoryName);
-				var categoryDescription= $("<td></td>").append(item.categoryDescription);
-				var categoryIcon = $("<td></td>").append($("<i></i>").addClass(item.categoryIcon));
+				var categoryName = $("<td></td>").append(item.categoryName);
+				var categoryDescription = $("<td></td>").append(
+						item.categoryDescription);
+				var categoryIcon = $("<td></td>").append(
+						$("<i></i>").addClass(item.categoryIcon));
 				var buttons = $("<td></td>");
 				var updateButton = $("<button></button>").append("修改").attr(
 						"class", "btn btn-success").attr("id",
@@ -46,11 +51,10 @@ function categorys(pn) {// 查询所有的分类并显示在分页中
 				var deleteButton = $("<button></button>").append("删除").attr(
 						"class", "btn btn-danger").attr("id",
 						"btn-delete-" + item.categoryId);
-				buttons.append(updateButton)
-						.append(" ").append(deleteButton);
+				buttons.append(updateButton).append(" ").append(deleteButton);
 				tr.append(checkbox).append(categoryId).append(categoryName)
-						.append(categoryDescription).append(categoryIcon).append(
-								buttons).appendTo($("#categorys"));
+						.append(categoryDescription).append(categoryIcon)
+						.append(buttons).appendTo($("#categorys"));
 				build_page_info(result);
 				build_page_line(result);
 				// 批量选择的选择框全选或者不全选
@@ -59,14 +63,12 @@ function categorys(pn) {// 查询所有的分类并显示在分页中
 				$("#btn-update-" + item.categoryId).click(function() {
 					build_update_modal(item.categoryId);
 				});
-				$("#btn-delete-" + item.categoryId).click(
-						function() {
-							var flag = confirm("是否删除分类'" + item.categoryName
-									+ "'?");
-							if (flag == true) {
-								deleteCategoryById(item.categoryId);
-							}
-						});
+				$("#btn-delete-" + item.categoryId).click(function() {
+					var flag = confirm("是否删除分类'" + item.categoryName + "'?");
+					if (flag == true) {
+						deleteCategoryById(item.categoryId);
+					}
+				});
 			});
 
 		}
@@ -166,22 +168,29 @@ function build_update_modal(categoryId) { // 构建修改模态框
 		success : function(result) {
 			$(".u").empty();
 			$("#updateForm")[0].reset();
+			$("#categoryIconShow").removeClass();
 			var category = result.data.category;
 			$("#categoryId").text(category.categoryId);
 			$("#categoryName").val(category.categoryName);
 			$("#categoryDescription").val(category.categoryDescription);
+			$("#categoryIconShow").addClass(category.categoryIcon);
 			$("#categoryIcon").val(category.categoryIcon);
 			$("#updateButton").attr("update-id", category.categoryId);
+			$("#categoryIconPreShow").click(function() {
+				$("#categoryIconShow").removeClass();
+				$("#categoryIconShow").addClass($("#categoryIcon").val());
+			});
 			$('#myUpdateModal').modal({});
 		}
 	});
 }
 
-function update(button) {// 修改文章
+function update(button) {// 修改分类
 	$.ajax({
-		url : APP_PATH + "/admin/updatecategoryById",
+		url : APP_PATH + "/admin/updateCategoryById",
 		type : "POST",
-		data : $("#updateForm").serialize()+"&categoryId="+button.attr("update-id"),
+		data : $("#updateForm").serialize() + "&categoryId="
+				+ button.attr("update-id"),
 		success : function(result) {
 			$('#myUpdateModal').modal('hide');
 			window.location.reload();
@@ -207,10 +216,11 @@ function deleteCategoryByBatchById() {// 批量删除
 	var categoryName = "";
 	$.each($(".check_item:checked"), function() {
 		categoryId += $(this).parents("tr").find("td:eq(1)").text() + "-";
-		categoryName += "'"+$(this).parents("tr").find("td:eq(2)").text() + "' ";
+		categoryName += "'" + $(this).parents("tr").find("td:eq(2)").text()
+				+ "' ";
 	});
-	categoryName= categoryName.substring(0, categoryName.length - 1);
-	var flag = confirm("是否删除标签名为" + categoryName + "的标签?");
+	categoryName = categoryName.substring(0, categoryName.length - 1);
+	var flag = confirm("是否删除分类名为" + categoryName + "的分类?");
 	if (flag == true) {
 		$.ajax({
 			url : APP_PATH + "/admin/deleteCategoryById",
@@ -225,11 +235,33 @@ function deleteCategoryByBatchById() {// 批量删除
 	}
 }
 
-function selectNewContactCount(){//查询未读联系人的数量
+function add() {// 增加新分类
+	$("#addForm")[0].reset();
+	$("#categoryIconShow1").removeClass();
+	$(".a").empty();
+	$('#myAddModal').modal({});
+	$("#categoryIconPreShow1").click(function() {
+		$("#categoryIconShow1").removeClass();
+		$("#categoryIconShow1").addClass($("#categoryIcon1").val());
+	});
+	$("#addButtonFinish").click(function() {
+		$.ajax({
+			url : APP_PATH + "/admin/addCategory",
+			type : "post",
+			data : $("#addForm").serialize(),
+			success : function(result) {
+				$('#myAddModal').modal('hide');
+				window.location.reload();
+			}
+		});
+	});
+}
+
+function selectNewContactCount() {// 查询未读联系人的数量
 	$.ajax({
-		url:APP_PATH+"/admin/selectNewContactCount",
-		type:"get",
-		success:function(result){
+		url : APP_PATH + "/admin/selectNewContactCount",
+		type : "get",
+		success : function(result) {
 			$("#new_contact_count").append(result.data.newContactCount);
 		}
 	});

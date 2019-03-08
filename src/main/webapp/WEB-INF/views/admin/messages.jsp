@@ -133,8 +133,8 @@
 												all notifications </strong></a></li>
 								</ul></li>
 							<!-- Messages-->
-							<li class="nav-item dropdown"><a
-								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
+							<li class="nav-item dropdown"><a rel="nofollow"
+								data-target="#" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false" class="nav-link"><i
 									class="fa fa-envelope-o"></i> <!-- 这里显示消息条数 --> <span
 									id="new_contact_count" class="badge bg-orange badge-corner"></span>
@@ -180,8 +180,7 @@
 										class="dropdown-item all-notifications text-center"> <strong>Read
 												all messages </strong></a></li>
 								</ul></li>
-								--> 
-							<!-- Languages dropdown    -->
+								--> <!-- Languages dropdown    -->
 							<li class="nav-item dropdown"><a id="languages"
 								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"
@@ -226,34 +225,30 @@
 				<!-- Sidebar Navidation Menus-->
 				<span class="heading">Main</span>
 				<ul class="list-unstyled">
-					<li><a
-						href="${APP_PATH}/admin/home"> <i
-							class="icon-home"></i>Home
+					<li><a href="${APP_PATH}/admin/home"> <i class="icon-home"></i>Home
 					</a></li>
 					<!--显示所有用户 -->
-					<li><a href="${APP_PATH}/admin/users"> <i class="fa fa-users"></i>User
+					<li><a href="${APP_PATH}/admin/users"> <i
+							class="fa fa-users"></i>User
 					</a></li>
-					<li><a href="${APP_PATH}/admin/articles"> <i class="fa fa-book"></i>Article
+					<li><a href="#article_tool" aria-expanded="false"
+						data-toggle="collapse"> <i class="fa fa-book"></i>Articles
+					</a>
+						<ul id="article_tool" class="collapse list-unstyled ">
+							<li><a href="${APP_PATH}/admin/categorys">Category</a></li>
+							<li><a href="${APP_PATH}/admin/tags">Tag</a></li>
+						</ul></li>
+					<li><a href="${APP_PATH}/admin/comments"> <i
+							class="fa fa-comment"></i>Comment
 					</a></li>
-					<li><a href="${APP_PATH}/admin/comments"> <i class="fa fa-comment"></i>Comment
+					<li class="active"><a href="${APP_PATH}/admin/messages"> <i
+							class="fa fa-heart"></i>Message
 					</a></li>
-					<li class="active"><a href="${APP_PATH}/admin/messages"> <i class="fa fa-heart"></i>Message
-					</a></li>
-					<li><a href="${APP_PATH}/admin/me">
-							<i class="fa fa-user"></i>Profile
+					<li><a href="${APP_PATH}/admin/me"> <i class="fa fa-user"></i>Profile
 					</a></li>
 					<li><a href="${APP_PATH}/admin/contact"> <i
 							class="fa fa-phone" aria-hidden="true"></i> Contact
 					</a></li>
-					<li><a href="#exampledropdownDropdown" aria-expanded="false"
-						data-toggle="collapse"> <i class="icon-interface-windows"></i>Example
-							dropdown
-					</a>
-						<ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-							<li><a href="#">Page</a></li>
-						</ul></li>
 				</ul>
 				<span class="heading">Extras</span>
 				<ul class="list-unstyled">
@@ -273,9 +268,9 @@
 					<div class="container-fluid">
 						<h2 class="no-margin-bottom">Dashboard</h2>
 					</div>
-				</header>										
+				</header>
 				<!-- Dashboard Section-->
-					<section class="dashboard-counts no-padding-bottom">
+				<section class="dashboard-counts no-padding-bottom">
 					<div class="container-fluid" id="show">
 						<div class="row">
 							<button id="batchDeleteButton" class="btn btn-danger">批量删除</button>
@@ -300,8 +295,8 @@
 						<div class="row">
 							<div id="page_info" class="col-md-8"></div>
 							<div id="page_jump" class="offset-md-8">
-								跳转到第<input type="text" class="col-md-2" id="page_number"/>
-							    <button class="btn btn-link" id="jumpButton">跳转</button>
+								跳转到第<input type="text" class="col-md-2" id="page_number" />
+								<button class="btn btn-link" id="jumpButton">跳转</button>
 							</div>
 							<div id="page_line" class="col-md-8  offset-md-8"></div>
 						</div>

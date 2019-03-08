@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.wantao.bean.Article;
 import com.wantao.bean.Category;
 
 /**
@@ -16,4 +17,6 @@ public interface CategoryMapper {
     public List<Category> selectAllCategory();
     public Category selectCategoryById(Integer id);
     public Integer deleteCategoryByBatchById(List<Integer>ids);
+    public Integer updateCategoryById(Category category);
+    public Integer insertCategory(Category category);
 }
