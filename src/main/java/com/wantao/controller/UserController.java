@@ -2,6 +2,7 @@ package com.wantao.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,12 +11,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.wantao.bean.Article;
 import com.wantao.bean.Contact;
 import com.wantao.bean.Me;
+import com.wantao.bean.User;
+import com.wantao.service.ArticleService;
 import com.wantao.service.ContactService;
 import com.wantao.service.MeService;
 import com.wantao.util.Message;
@@ -32,6 +39,8 @@ public class UserController {
 	MeService meService;
 	@Autowired
 	ContactService contactService;
+	@Autowired
+	ArticleService articleService;
 	private static final Logger logger = LoggerFactory.getLogger("UserController.class");
 
 //---------------------------控制页面跳转-----------------------
@@ -93,4 +102,17 @@ public class UserController {
 		return "user/me";
 	}
 
+	/**
+	 * @param
+	 * @return Message
+	 * @description 查询有效文章列表
+	 */
+	@GetMapping("/selectAllArticle/{pn}")
+	@ResponseBody
+	public Message selectAllArticle(@PathVariable("pn") Integer pn) {
+		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
+		List<Article>articles = articleService.selectAllArticleWithStatus();
+		PageInfo pageInfo = new PageInfo(articles, 5);// 用pageInfo封装然后交给页面
+		return Message.success().add("pageInfo", pageInfo);
+	}
 }

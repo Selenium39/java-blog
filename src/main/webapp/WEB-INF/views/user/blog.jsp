@@ -133,28 +133,8 @@
 					</div>
 				</div>
 				<!-- 文章列表 -->
-				<article class="excerpt excerpt-1" style="">
-					<a class="focus" href="#" title="article1" target="_blank"><img
-						class="thumb"
-						data-original="${APP_PATH}/resource/user/template3/images/201610181739277776.jpg"
-						src="${APP_PATH}/resource/user/template3/images/201610181739277776.jpg"
-						alt="article1" style="display: inline;"></a>
-					<header>
-						<a class="cat" href="#" title="tag">tag<i></i></a>
-						<h2>
-							<a href="#" title="title" target="_blank">title</a>
-						</h2>
-					</header>
-					<p class="meta">
-						<time class="time">
-							<i class="glyphicon glyphicon-time"></i> 2016-10-14
-						</time>
-						<span class="views"><i class="glyphicon glyphicon-eye-open"></i>
-							216</span> <a class="comment" href="##comment" title="view"
-							target="_blank"><i class="glyphicon glyphicon-comment"></i> 4</a>
-					</p>
-					<p class="note">article context</p>
-				</article>
+				<div id="article_list">
+				</div>
 				<nav class="pagination" style="display: none;">
 					<ul>
 						<li class="prev-page"></li>
@@ -255,5 +235,7 @@
 	<script src="${APP_PATH}/resource/user/template3/js/bootstrap.min.js"></script>
 	<script src="${APP_PATH}/resource/user/template3/js/jquery.ias.js"></script>
 	<script src="${APP_PATH}/resource/user/template3/js/scripts.js"></script>
+	<!-- selenium -->
+	<script src="${APP_PATH}/resource/user/selenium/js/blog.js"></script>
 </body>
 </html>

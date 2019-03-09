@@ -18,7 +18,8 @@
 	<update id="updateTagById" parameterType="com.wantao.bean.Tag">
 		update tag set
 		tag_name=#{tagName},
-		tag_description=#{tagDescription}
+		tag_description=#{tagDescription},
+		tag_image=#{tagImage}
 		where tag_id =
 		#{tagId}
 	</update>
@@ -28,11 +29,13 @@
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			tag_name,
 			tag_description,
+			tag_image
 		</trim>
 		values
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			#{tagName},
 			#{tagDescription},
+			#{tagImage}
 		</trim>
 	</insert>
 </mapper>

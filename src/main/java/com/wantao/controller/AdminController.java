@@ -311,7 +311,22 @@ public class AdminController {
 		String userAvatar = userAvatars[1].replace("\\", "/");
 		return Message.success().add("imgUrl", userAvatar);
 	}
-
+ 
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过ajax实时显示修改的标签头像
+	 */
+	@PostMapping("/showImgOnTime1")
+	@ResponseBody
+	public Message showImgOnTime1(@RequestParam("file") MultipartFile file, HttpServletRequest request)
+			throws UnsupportedEncodingException {
+		String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+		String userAvatar = userAvatars[1].replace("\\", "/");
+		String tagImage=userAvatar.replaceAll("avatar","tag");
+        //logger.info(tagImage);
+		return Message.success().add("imgUrl", tagImage);
+	}
 	/**
 	 * @param
 	 * @return Message
@@ -669,13 +684,22 @@ public class AdminController {
 	/**
 	 * @param
 	 * @return Message
-	 * @description 通过id修改标签
+	 * @description 通过Id更新用户
 	 */
 	@PostMapping("/updateTagById")
 	@ResponseBody
-	public Message updateTagById(@RequestParam Integer tagId, Tag tag) {
-		// logger.info("进入到updateTagById的方法");
-		// logger.info(tag.toString());
+	public Message updateTagById(Tag tag, @RequestParam(value = "file", required = false) MultipartFile file,
+			HttpServletRequest request) {
+		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
+			// logger.info(user.toString());
+		} else {
+			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+			String userAvatar = userAvatars[1].replace("\\", "/");
+			// logger.info(userAvatar);
+			String tagImage=userAvatar.replaceAll("avatar","tag");
+			tag.setTagImage(tagImage);
+			
+		}
 		tagService.updateTagById(tag);
 		return Message.success();
 	}
@@ -683,11 +707,21 @@ public class AdminController {
 	/**
 	 * @param
 	 * @return Message
-	 * @description 新增标签
+	 * @description 新增用户
 	 */
 	@PostMapping("/addTag")
 	@ResponseBody
-	public Message addTag(Tag tag) {
+	public Message addTag(Tag tag, @RequestParam(value = "file", required = false) MultipartFile file,
+			HttpServletRequest request) {
+		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
+			// logger.info(user.toString());
+		} else {
+			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+			String userAvatar = userAvatars[1].replace("\\", "/");
+			String tagImage=userAvatar.replaceAll("avatar","tag");
+			tag.setTagImage(tagImage);
+			// logger.info(userAvatar);
+		}
 		tagService.insertTag(tag);
 		return Message.success();
 	}

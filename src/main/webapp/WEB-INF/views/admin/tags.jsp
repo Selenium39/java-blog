@@ -235,7 +235,7 @@
 							<i class="fa fa-book"></i>Article
 					</a>
 						<ul id="article_tool" class="show list-unstyled ">
-						 <li><a href="${APP_PATH}/admin/articles">Article</a></li>
+							<li><a href="${APP_PATH}/admin/articles">Article</a></li>
 							<li><a href="${APP_PATH}/admin/categorys">Category</a></li>
 							<li class="active"><a href="${APP_PATH}/admin/tags">Tag</a></li>
 						</ul></li>
@@ -275,7 +275,7 @@
 					<div class="container-fluid" id="show">
 						<div class="row">
 							<button id="batchDeleteButton" class="btn btn-danger">批量删除</button>
-							<button id="addButton" class="btn btn-black">新增分类</button>
+							<button id="addButton" class="btn btn-black">新增标签</button>
 						</div>
 						<div class="row bg-white has-shadow">
 							<table class="table  table-condensed table-bordered table-hover">
@@ -284,6 +284,7 @@
 										<th><input type="checkbox" id="checkAll" /></th>
 										<th>id</th>
 										<th>name</th>
+										<th>tagImage</th>
 										<th>description</th>
 										<th>opration</th>
 									</tr>
@@ -321,6 +322,14 @@
 											type="text" name="tagName" class="u form-control col-md-8" />
 									</div>
 									<div class="form-group">
+							<label for="tagImage">tagImage:</label> <img
+								id="tagImage" />
+						</div>
+						<div class="form-group">
+							<label for="photo" class="control-label">上传照片:</label> <input
+								type="file" id="photo" name="file" class="u">
+						</div>
+									<div class="form-group">
 										<label for="tagDecription">tagDescription:</label> <input
 											id="tagDescription" type="text" name="tagDescription"
 											class="u form-control col-md-8" />
@@ -349,6 +358,14 @@
 									<div class="form-group">
 										<label for="tagName1">tagName:</label> <input id="tagName1"
 											type="text" name="tagName" class="a form-control col-md-8" />
+									</div>
+									<div class="form-group">
+										<label for="tagImage1">tagImage:</label> <img class="a"
+											id="tagImage1" />
+									</div>
+									<div class="form-group">
+										<label for="photo1" class="control-label">上传标签图片:</label> <input
+											type="file" id="photo1" name="file" class="a">
 									</div>
 									<div class="form-group">
 										<label for="tagDescription1">tagDescription:</label>

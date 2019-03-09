@@ -59,8 +59,8 @@ public class TagService implements TagMapper {
 	 * 根据id修改分类
 	 */
 	@Override
-	public Integer updateTagById(Tag Tag) {
-		return TagMapper.updateTagById(Tag);
+	public Integer updateTagById(Tag tag) {
+		return TagMapper.updateTagById(tag);
 	}
 
 	/* (non-Javadoc)
@@ -68,8 +68,8 @@ public class TagService implements TagMapper {
 	  * 增加分类
 	 */
 	@Override
-	public Integer insertTag(Tag Tag) {
-		return TagMapper.insertTag(Tag);
+	public Integer insertTag(Tag tag) {
+		return TagMapper.insertTag(tag);
 	}
 
 }
