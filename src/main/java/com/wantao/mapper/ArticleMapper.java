@@ -15,6 +15,10 @@ import com.wantao.bean.Article;
 public interface ArticleMapper {
    public Integer selectArticleCount();
    public List<Article> selectAllArticle();
+   public List<Article> selectAllArticleWithStatus();
+   public List<Article> selectAllArticleWithoutStatus();
+   public List<Article> selectAllArticleWithOrder();
+   public List<Article> selectAllArticleWithoutOrder();
    public Article selectArticleById(Integer articleId);
    public Integer updateArticleById(Article article);
    public Integer deleteArticleByBatchById(List<Integer>ids);

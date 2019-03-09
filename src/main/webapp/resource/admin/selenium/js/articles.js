@@ -3,7 +3,7 @@
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
-	//查询未读联系人数量
+	// 查询未读联系人数量
 	selectNewContactCount();
 	// 查询所有的文章并显示在分页中
 	articles(1);
@@ -15,20 +15,46 @@ $(function() {
 	$("#batchDeleteButton").click(function() {
 		deleteArticleByBatchById();
 	});
-	//为跳转任意页面按钮绑定事件
-	$("#jumpButton").click(function(){
-		var pn=$("#page_number").val();
-		//记得要做校验
-		articles(pn);
+	// 为跳转任意页面按钮绑定事件
+	$("#jumpButton").click(function() {
+		var pn = $("#page_number").val();
+		var type=$(this).attr("jumpType");
+		// 记得要做校验
+		articles(pn,type);
+	});
+	$("#articleChoose").change(function() {
+		var articleType = $("#articleChoose").val();
+		/*
+		 * 文章分类: 0.代表所有文章 1.代表有效文章 2.代表无效文章 3.代表置顶文章 4.代表未置顶文章
+		 */
+		if (articleType == 0) {
+			articles(1, 0);
+		}
+		if (articleType == 1) {
+			articles(1, 1);
+		}
+		if (articleType == 2) {
+			articles(1, 2);
+		}
+		if (articleType == 3) {
+			articles(1, 3);
+		}
+		if (articleType == 4) {
+			articles(1, 4);
+		}
 	});
 });
 
-function articles(pn) {// 查询所有的用户并显示在分页中
+function articles(pn, type) {// 查询所有的用户并显示在分页中
 	$.ajax({
 		url : APP_PATH + "/admin/selectAllArticle/" + pn,
 		type : "GET",
+		data : {
+			"type" : type,
+		},
 		success : function(result) {
 			var articles = result.data.pageInfo.list;
+			var type = result.data.type;
 			$("#articles").empty();
 			$.each(articles, function(index, item) {
 				var tr = $("<tr></tr>");
@@ -56,7 +82,7 @@ function articles(pn) {// 查询所有的用户并显示在分页中
 						.append(articleTitle).append(articleCreateTime).append(
 								buttons).appendTo($("#articles"));
 				build_page_info(result);
-				build_page_line(result);
+				build_page_line(result, type);
 				// 批量选择的选择框全选或者不全选
 				selectCheckBox();
 				// 为按钮绑定事件
@@ -88,7 +114,7 @@ function build_page_info(result) {// 构建分页信息
 					+ result.data.pageInfo.total + "条记录")
 }
 
-function build_page_line(result) {// 构建分页条
+function build_page_line(result, type) {// 构建分页条
 	$("#page_line").empty();// 注意每次构建前都要清空分页
 	var ul = $("<ul></ul>").addClass("pagination")
 	// 首页
@@ -104,11 +130,11 @@ function build_page_line(result) {// 构建分页条
 		prePageLi.addClass("disabled");
 	}
 	firstPageLi.click(function() {// 跳转首页
-		articles(1);
+		articles(1, type);
 	});
 	prePageLi.click(function() {// 跳转前一页(注意前面虽然禁止了首页跳转,但是只有禁止点击标志,还是可以点击)
 		articles(result.data.pageInfo.pageNum == 1 ? 1
-				: result.data.pageInfo.pageNum - 1)
+				: result.data.pageInfo.pageNum - 1, type)
 	})
 	ul.append(firstPageLi).append(prePageLi);
 	// 下一页
@@ -124,12 +150,13 @@ function build_page_line(result) {// 构建分页条
 		nextPageLi.addClass("disabled");
 	}
 	lastPageLi.click(function() {// 跳转最后一页
-		articles(result.data.pageInfo.pages);
+		articles(result.data.pageInfo.pages, type);
 	});
 	nextPageLi
 			.click(function() {// 跳转下一页(注意前面虽然禁止了末页跳转,但是只有禁止点击标志,还是可以点击,或者在pagehelper的配置中设置reasonable属性)
-				articles(result.data.pageInfo.pageNum == result.data.pageInfo.pages ? result.data.pageInfo.pages
-						: result.data.pageInfo.pageNum + 1)
+				articles(
+						result.data.pageInfo.pageNum == result.data.pageInfo.pages ? result.data.pageInfo.pages
+								: result.data.pageInfo.pageNum + 1, type)
 			})
 	$.each(result.data.pageInfo.navigatepageNums, function(index, item) {// 页数的生成与跳转
 		var numLi = $("<li></li>").append(
@@ -139,13 +166,14 @@ function build_page_line(result) {// 构建分页条
 			numLi.addClass("active");
 		}
 		numLi.click(function() {
-			articles(item);
+			articles(item, type);
 		})
 		ul.append(numLi);
 	})
 	ul.append(nextPageLi).append(lastPageLi);
 	var nav = $("<nav></nav>").append(ul).addClass();
 	$("#page_line").append(nav).addClass("offset-md-7");
+	$("#jumpButton").attr("jumpType",type);
 }
 
 function selectCheckBox() {// 完成批量删除的checkbox全选or全不选
@@ -256,7 +284,8 @@ function update(button) {// 修改文章
 	$.ajax({
 		url : APP_PATH + "/admin/updateArticleById",
 		type : "POST",
-		data : $("#updateForm").serialize()+"&articleId="+button.attr("update-id"),
+		data : $("#updateForm").serialize() + "&articleId="
+				+ button.attr("update-id"),
 		success : function(result) {
 			$('#myUpdateModal').modal('hide');
 			window.location.reload();
@@ -282,9 +311,10 @@ function deleteArticleByBatchById() {// 批量删除
 	var articleTitle = "";
 	$.each($(".check_item:checked"), function() {
 		articleId += $(this).parents("tr").find("td:eq(1)").text() + "-";
-		articleTitle += "<<"+$(this).parents("tr").find("td:eq(3)").text() + ">> ";
+		articleTitle += "<<" + $(this).parents("tr").find("td:eq(3)").text()
+				+ ">> ";
 	});
-	articleTitle= articleTitle.substring(0, articleTitle.length - 1);
+	articleTitle = articleTitle.substring(0, articleTitle.length - 1);
 	var flag = confirm("是否删除标题为" + articleTitle + "的文章?");
 	if (flag == true) {
 		$.ajax({
@@ -300,11 +330,11 @@ function deleteArticleByBatchById() {// 批量删除
 	}
 }
 
-function selectNewContactCount(){//查询未读联系人的数量
+function selectNewContactCount() {// 查询未读联系人的数量
 	$.ajax({
-		url:APP_PATH+"/admin/selectNewContactCount",
-		type:"get",
-		success:function(result){
+		url : APP_PATH + "/admin/selectNewContactCount",
+		type : "get",
+		success : function(result) {
 			$("#new_contact_count").append(result.data.newContactCount);
 		}
 	});

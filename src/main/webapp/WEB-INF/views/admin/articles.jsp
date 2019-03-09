@@ -34,6 +34,8 @@
 <!-- Custom stylesheet - for your changes-->
 <link rel="stylesheet"
 	href="${APP_PATH}/resource/admin/template2/css/custom.css">
+<link rel="stylesheet"
+	href="${APP_PATH}/resource/admin/selenium/css/articles.css">
 <!-- Tweaks for older IEs-->
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -231,10 +233,11 @@
 					<li><a href="${APP_PATH}/admin/users"> <i
 							class="fa fa-users"></i>User
 					</a></li>
-					<li class="active"><a href="#article_tool" aria-expanded="false"
-						data-toggle="collapse"> <i class="fa fa-book"></i>Articles
+					<li><a href="${APP_PATH}/admin/articles" aria-expanded="false">
+							<i class="fa fa-book"></i>Article
 					</a>
-						<ul id="article_tool" class="collapse list-unstyled ">
+						<ul id="article_tool" class="show list-unstyled ">
+							<li class="active"><a href="${APP_PATH}/admin/articles">Article</a></li>
 							<li><a href="${APP_PATH}/admin/categorys">Category</a></li>
 							<li><a href="${APP_PATH}/admin/tags">Tag</a></li>
 						</ul></li>
@@ -275,6 +278,13 @@
 						<div class="row">
 							<button id="batchDeleteButton" class="btn btn-danger">批量删除</button>
 							<button id="addButton" class="btn btn-black">新增文章</button>
+							<select class="form-control col-md-2" id="articleChoose">
+								<option value="0">全部文章</option>
+								<option value="1">有效文章</option>
+								<option value="2">无效文章</option>
+								<option value="3">置顶文章</option>
+								<option value="4">未置顶文章</option>
+							</select>
 						</div>
 						<div class="row bg-white has-shadow">
 							<table class="table  table-condensed table-bordered table-hover">

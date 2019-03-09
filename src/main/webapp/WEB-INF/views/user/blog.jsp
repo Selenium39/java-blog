@@ -23,10 +23,6 @@
 	href="${APP_PATH}/resource/user/template3/css/style.css">
 <link rel="stylesheet" type="text/css"
 	href="${APP_PATH}/resource/user/template3/css/font-awesome.min.css">
-<link rel="apple-touch-icon-precomposed"
-	href="${APP_PATH}/resource/user/template3/images/icon.png">
-<link rel="shortcut icon"
-	href="${APP_PATH}/resource/user/template3/images/favicon.ico">
 <script src="${APP_PATH}/resource/user/template3/js/jquery-2.1.4.min.js"></script>
 <script src="${APP_PATH}/resource/user/template3/js/nprogress.js"></script>
 <script
@@ -41,19 +37,19 @@
   <script>window.location.href='upgrade-browser.html';</script>
 <![endif]-->
 </head>
+
 <body class="user-select">
+	<!--一个小技巧,将jsp内的值放到隐藏域中,让引用的js能够访问到 -->
+	<input id="APP_PATH" type="hidden" value="${APP_PATH}" />
 	<header class="header">
 		<nav class="navbar navbar-default" id="navbar">
 			<div class="container">
 				<div class="header-topbar hidden-xs link-border">
+					<!-- 右上角标签栏 -->
 					<ul class="site-nav topmenu">
-						<li><a href="#">æ ç­¾äº</a></li>
-						<li><a href="#" rel="nofollow">è¯»èå¢</a></li>
-						<li><a href="#" title="RSSè®¢é"> <i class="fa fa-rss">
-							</i> RSSè®¢é
-						</a></li>
+						<a>navbar</a>
 					</ul>
-					å¤è®°å½ æåäº«
+					Don't forget your heart.
 				</div>
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
@@ -63,37 +59,26 @@
 							class="icon-bar"></span> <span class="icon-bar"></span>
 					</button>
 					<h1 class="logo hvr-bounce-in">
-						<a href="#" title="æ¨åºç½ç»åå®¢"><img
-							src="${APP_PATH}/resource/user/template3/images/201610171329086541.png"
-							alt="æ¨åºç½ç»åå®¢"></a>
+						<!-- 可更换为照片 -->
+						Selenium's blog
 					</h1>
 				</div>
+				<!-- 右侧搜索栏 -->
 				<div class="collapse navbar-collapse" id="header-navbar">
-					<form class="navbar-form visible-xs" action="/Search" method="post">
+					<form class="navbar-form visible-xs" action="#" method="post">
 						<div class="input-group">
 							<input type="text" name="keyword" class="form-control"
-								placeholder="è¯·è¾å¥å³é®å­" maxlength="20"
+								placeholder="input the keyword" maxlength="20"
 								autocomplete="off"> <span class="input-group-btn">
 								<button class="btn btn-default btn-search" name="search"
-									type="submit">æç´¢</button>
+									type="submit">search</button>
 							</span>
 						</div>
 					</form>
+
+					<!-- 导航栏 -->
 					<ul class="nav navbar-nav navbar-right">
-						<li><a data-cont="æ¨åºç½ç»åå®¢"
-							title="æ¨åºç½ç»åå®¢" href="index.html">é¦é¡µ</a></li>
-						<li><a data-cont="åè¡¨é¡µ" title="åè¡¨é¡µ"
-							href="list.html">åè¡¨é¡µ</a></li>
-						<li><a data-cont="è¯¦ç»é¡µ" title="è¯¦ç»é¡µ"
-							href="show.html">è¯¦ç»é¡µ</a></li>
-						<li><a data-cont="404" title="404" href="404.html">404</a></li>
-						<li><a data-cont="MZ-NetBolgä¸»é¢" title="MZ-NetBolgä¸»é¢"
-							href="#">MZ-NetBolgä¸»é¢</a></li>
-						<li><a data-cont="ITææ¯ç¬è®°" title="ITææ¯ç¬è®°"
-							href="#">ITææ¯ç¬è®°</a></li>
-						<li><a data-cont="æºç åäº«" title="æºç åäº«" href="#">æºç åäº«</a></li>
-						<li><a data-cont="é è°±ç½èµ" title="é è°±ç½èµ" href="#">é è°±ç½èµ</a></li>
-						<li><a data-cont="èµè®¯åäº«" title="èµè®¯åäº«" href="#">èµè®¯åäº«</a></li>
+						<li><a title="index" href="${APP_PATH}/user/blog">index</a></li>
 					</ul>
 				</div>
 			</div>
@@ -102,6 +87,7 @@
 	<section class="container">
 		<div class="content-wrap">
 			<div class="content">
+				<!-- 首页的图片展览 -->
 				<div id="focusslide" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
 						<li data-target="#focusslide" data-slide-to="0" class="active"></li>
@@ -110,59 +96,53 @@
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
 							<a href="#" target="_blank" title="æ¨åºç½ç»åå®¢æºç ">
-								<img src="images//201610181557196870.jpg"
+								<img
+								src="${APP_PATH}/resource/user/template3/images//201610181557196870.jpg"
 								alt="æ¨åºç½ç»åå®¢æºç " class="img-responsive">
 							</a>
 						</div>
 						<div class="item">
 							<a href="#" target="_blank" title="ä¸ä¸ç½ç«å»ºè®¾"> <img
-								src="images//201610241227558789.jpg" alt="ä¸ä¸ç½ç«å»ºè®¾"
-								class="img-responsive"></a>
+								src="${APP_PATH}/resource/user/template3/images//201610241227558789.jpg"
+								alt="ä¸ä¸ç½ç«å»ºè®¾" class="img-responsive"></a>
 						</div>
 					</div>
 					<a class="left carousel-control" href="#focusslide" role="button"
 						data-slide="prev" rel="nofollow"> <span
 						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						<span class="sr-only">ä¸ä¸ä¸ª</span>
+						<span class="sr-only">previous</span>
 					</a> <a class="right carousel-control" href="#focusslide" role="button"
 						data-slide="next" rel="nofollow"> <span
 						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-						<span class="sr-only">ä¸ä¸ä¸ª</span>
+						<span class="sr-only">next</span>
 					</a>
 				</div>
+				<!-- 置顶文章 -->
 				<article class="excerpt-minic excerpt-minic-index">
 					<h2>
-						<span class="red">ãæ¨èã</span><a target="_blank" href="#"
-							title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</a>
+						<span class="red">Recommend</span> <a>title</a>
 					</h2>
-					<p class="note">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼ï¼éç¨DTcms
-						V4.0æ­£å¼çï¼MSSQLï¼ãå¼åç¯å¢ï¼SQL2008R2+VS2010ãDTcms
-						V4.0æ­£å¼çåè½ä¿®å¤åä¼åï¼1ãfavicon.icoå¾æ åå°ä¸ä¼ ãï¼è§£å³è¦æ¢å¾æ æ¶è¦è¿FTPæèå¼æå¡å¨çéº»ç¦ï¼</p>
+					<p class="note">recommend article</p>
 				</article>
+				<!-- 最新发布 -->
 				<div class="title">
-					<h3>ææ°åå¸</h3>
+					<h3>NEW Article</h3>
+					<!-- 文章界面导航栏 -->
 					<div class="more">
-						<a href="#" title="MZ-NetBlogä¸»é¢">MZ-NetBlogä¸»é¢</a> <a
-							href="#" title="ITææ¯ç¬è®°">ITææ¯ç¬è®°</a> <a href="#"
-							title="æºç åäº«">æºç åäº«</a> <a href="#"
-							title="é è°±ç½èµ">é è°±ç½èµ</a> <a href="#"
-							title="èµè®¯åäº«">èµè®¯åäº«</a>
+						<a>navarbar</a> <a>navarbar</a>
 					</div>
 				</div>
+				<!-- 文章列表 -->
 				<article class="excerpt excerpt-1" style="">
-					<a class="focus" href="#"
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						target="_blank"><img class="thumb"
-						data-original="images/201610181739277776.jpg"
-						src="images/201610181739277776.jpg"
-						alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						style="display: inline;"></a>
+					<a class="focus" href="#" title="article1" target="_blank"><img
+						class="thumb"
+						data-original="${APP_PATH}/resource/user/template3/images/201610181739277776.jpg"
+						src="${APP_PATH}/resource/user/template3/images/201610181739277776.jpg"
+						alt="article1" style="display: inline;"></a>
 					<header>
-						<a class="cat" href="#" title="MZ-NetBlogä¸»é¢">MZ-NetBlogä¸»é¢<i></i></a>
+						<a class="cat" href="#" title="tag">tag<i></i></a>
 						<h2>
-							<a href="#"
-								title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								target="_blank">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</a>
+							<a href="#" title="title" target="_blank">title</a>
 						</h2>
 					</header>
 					<p class="meta">
@@ -170,124 +150,10 @@
 							<i class="glyphicon glyphicon-time"></i> 2016-10-14
 						</time>
 						<span class="views"><i class="glyphicon glyphicon-eye-open"></i>
-							216</span> <a class="comment" href="##comment" title="è¯è®º"
+							216</span> <a class="comment" href="##comment" title="view"
 							target="_blank"><i class="glyphicon glyphicon-comment"></i> 4</a>
 					</p>
-					<p class="note">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼ï¼éç¨DTcms
-						V4.0æ­£å¼çï¼MSSQLï¼ãå¼åç¯å¢ï¼SQL2008R2+VS2010ãDTcms
-						V4.0æ­£å¼çåè½ä¿®å¤åä¼åï¼1ãfavicon.icoå¾æ åå°ä¸ä¼ ãï¼è§£å³è¦æ¢å¾æ æ¶è¦è¿FTPæèå¼æå¡å¨çéº»ç¦ï¼</p>
-				</article>
-				<article class="excerpt excerpt-2" style="">
-					<a class="focus" href="#"
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						target="_blank"><img class="thumb"
-						data-original="images/201610181739277776.jpg"
-						src="images/201610181739277776.jpg"
-						alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						style="display: inline;"></a>
-					<header>
-						<a class="cat" href="#" title="MZ-NetBlogä¸»é¢">MZ-NetBlogä¸»é¢<i></i></a>
-						<h2>
-							<a href="#"
-								title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								target="_blank">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</a>
-						</h2>
-					</header>
-					<p class="meta">
-						<time class="time">
-							<i class="glyphicon glyphicon-time"></i> 2016-10-14
-						</time>
-						<span class="views"><i class="glyphicon glyphicon-eye-open"></i>216</span>
-						<a class="comment" href="##comment" title="è¯è®º" target="_blank"><i
-							class="glyphicon glyphicon-comment"></i>4</a>
-					</p>
-					<p class="note">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼ï¼éç¨DTcms
-						V4.0æ­£å¼çï¼MSSQLï¼ãå¼åç¯å¢ï¼SQL2008R2+VS2010ãDTcms
-						V4.0æ­£å¼çåè½ä¿®å¤åä¼åï¼1ãfavicon.icoå¾æ åå°ä¸ä¼ ãï¼è§£å³è¦æ¢å¾æ æ¶è¦è¿FTPæèå¼æå¡å¨çéº»ç¦ï¼</p>
-				</article>
-				<article class="excerpt excerpt-3" style="">
-					<a class="focus" href="#"
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						target="_blank"><img class="thumb"
-						data-original="images/201610181739277776.jpg"
-						src="images/201610181739277776.jpg"
-						alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						style="display: inline;"></a>
-					<header>
-						<a class="cat" href="#" title="MZ-NetBlogä¸»é¢">MZ-NetBlogä¸»é¢<i></i></a>
-						<h2>
-							<a href="#"
-								title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								target="_blank">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</a>
-						</h2>
-					</header>
-					<p class="meta">
-						<time class="time">
-							<i class="glyphicon glyphicon-time"></i> 2016-10-14
-						</time>
-						<span class="views"><i class="glyphicon glyphicon-eye-open"></i>
-							216</span> <a class="comment" href="##comment" title="è¯è®º"
-							target="_blank"><i class="glyphicon glyphicon-comment"></i> 4</a>
-					</p>
-					<p class="note">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼ï¼éç¨DTcms
-						V4.0æ­£å¼çï¼MSSQLï¼ãå¼åç¯å¢ï¼SQL2008R2+VS2010ãDTcms
-						V4.0æ­£å¼çåè½ä¿®å¤åä¼åï¼1ãfavicon.icoå¾æ åå°ä¸ä¼ ãï¼è§£å³è¦æ¢å¾æ æ¶è¦è¿FTPæèå¼æå¡å¨çéº»ç¦ï¼</p>
-				</article>
-				<article class="excerpt excerpt-4" style="">
-					<a class="focus" href="#"
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						target="_blank"><img class="thumb"
-						data-original="images/201610181739277776.jpg"
-						src="images/201610181739277776.jpg"
-						alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						style="display: inline;"></a>
-					<header>
-						<a class="cat" href="#" title="MZ-NetBlogä¸»é¢">MZ-NetBlogä¸»é¢<i></i></a>
-						<h2>
-							<a href="#"
-								title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								target="_blank">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</a>
-						</h2>
-					</header>
-					<p class="meta">
-						<time class="time">
-							<i class="glyphicon glyphicon-time"></i> 2016-10-14
-						</time>
-						<span class="views"><i class="glyphicon glyphicon-eye-open"></i>
-							216</span> <a class="comment" href="##comment" title="è¯è®º"
-							target="_blank"><i class="glyphicon glyphicon-comment"></i> 4</a>
-					</p>
-					<p class="note">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼ï¼éç¨DTcms
-						V4.0æ­£å¼çï¼MSSQLï¼ãå¼åç¯å¢ï¼SQL2008R2+VS2010ãDTcms
-						V4.0æ­£å¼çåè½ä¿®å¤åä¼åï¼1ãfavicon.icoå¾æ åå°ä¸ä¼ ãï¼è§£å³è¦æ¢å¾æ æ¶è¦è¿FTPæèå¼æå¡å¨çéº»ç¦ï¼</p>
-				</article>
-				<article class="excerpt excerpt-5" style="">
-					<a class="focus" href="#"
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						target="_blank"><img class="thumb"
-						data-original="images/201610181739277776.jpg"
-						src="images/201610181739277776.jpg"
-						alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						style="display: inline;"></a>
-					<header>
-						<a class="cat" href="#" title="MZ-NetBlogä¸»é¢">MZ-NetBlogä¸»é¢<i></i></a>
-						<h2>
-							<a href="#"
-								title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								target="_blank">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</a>
-						</h2>
-					</header>
-					<p class="meta">
-						<time class="time">
-							<i class="glyphicon glyphicon-time"></i> 2016-10-14
-						</time>
-						<span class="views"><i class="glyphicon glyphicon-eye-open"></i>
-							216</span> <a class="comment" href="##comment" title="è¯è®º"
-							target="_blank"><i class="glyphicon glyphicon-comment"></i> 4</a>
-					</p>
-					<p class="note">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼ï¼éç¨DTcms
-						V4.0æ­£å¼çï¼MSSQLï¼ãå¼åç¯å¢ï¼SQL2008R2+VS2010ãDTcms
-						V4.0æ­£å¼çåè½ä¿®å¤åä¼åï¼1ãfavicon.icoå¾æ åå°ä¸ä¼ ãï¼è§£å³è¦æ¢å¾æ æ¶è¦è¿FTPæèå¼æå¡å¨çéº»ç¦ï¼</p>
+					<p class="note">article context</p>
 				</article>
 				<nav class="pagination" style="display: none;">
 					<ul>
@@ -305,155 +171,73 @@
 		</div>
 		<aside class="sidebar">
 			<div class="fixed">
+				<!--右侧信息页面  -->
 				<div class="widget widget-tabs">
 					<ul class="nav nav-tabs" role="tablist">
 						<li role="presentation" class="active"><a href="#notice"
-							aria-controls="notice" role="tab" data-toggle="tab">ç»è®¡ä¿¡æ¯</a></li>
+							aria-controls="notice" role="tab" data-toggle="tab">Web
+								Statistics</a></li>
 						<li role="presentation"><a href="#contact"
-							aria-controls="contact" role="tab" data-toggle="tab">èç³»ç«é¿</a></li>
+							aria-controls="contact" role="tab" data-toggle="tab">Contact
+								Me</a></li>
 					</ul>
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane contact active" id="notice">
-							<h2>æ¥å¿æ»æ°: 888ç¯</h2>
-							<h2>
-								ç½ç«è¿è¡: <span id="sitetime">88å¤© </span>
-							</h2>
+							<h2>网站统计信息</h2>
 						</div>
 						<div role="tabpanel" class="tab-pane contact" id="contact">
-							<h2>
-								QQ: <a href="" target="_blank" rel="nofollow"
-									data-toggle="tooltip" data-placement="bottom" title=""
-									data-original-title="QQ:"></a>
-							</h2>
-							<h2>
-								Email: <a href="#" target="_blank" data-toggle="tooltip"
-									rel="nofollow" data-placement="bottom" title=""
-									data-original-title="#"></a>
-							</h2>
+							<h2>QQ</h2>
+
 						</div>
 					</div>
 				</div>
 				<div class="widget widget_search">
-					<form class="navbar-form" action="/Search" method="post">
+					<form class="navbar-form" action="#" method="post">
 						<div class="input-group">
 							<input type="text" name="keyword" class="form-control" size="35"
-								placeholder="è¯·è¾å¥å³é®å­" maxlength="15"
+								placeholder="please input keyword" maxlength="15"
 								autocomplete="off"> <span class="input-group-btn">
 								<button class="btn btn-default btn-search" name="search"
-									type="submit">æç´¢</button>
+									type="submit">Search</button>
 							</span>
 						</div>
 					</form>
 				</div>
 			</div>
+			<!-- 右侧最新评论文章 -->
 			<div class="widget widget_hot">
-				<h3>ææ°è¯è®ºæç« </h3>
+				<h3>The New Comment Article</h3>
 				<ul>
-					<li><a
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						href="#"><span class="thumbnail"> <img class="thumb"
-								data-original="images/201610181739277776.jpg"
-								src="images/201610181739277776.jpg"
-								alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								style="display: block;">
-						</span><span class="text">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</span><span
-							class="muted"><i class="glyphicon glyphicon-time"></i>
-								2016-11-01 </span><span class="muted"><i
-								class="glyphicon glyphicon-eye-open"></i>88</span></a></li>
-					<li><a
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						href="#"><span class="thumbnail"> <img class="thumb"
-								data-original="images/201610181739277776.jpg"
-								src="images/201610181739277776.jpg"
-								alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								style="display: block;">
-						</span><span class="text">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</span><span
-							class="muted"><i class="glyphicon glyphicon-time"></i>
-								2016-11-01 </span><span class="muted"><i
-								class="glyphicon glyphicon-eye-open"></i>88</span></a></li>
-					<li><a
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						href="#"><span class="thumbnail"> <img class="thumb"
-								data-original="images/201610181739277776.jpg"
-								src="images/201610181739277776.jpg"
-								alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								style="display: block;">
-						</span><span class="text">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</span><span
-							class="muted"><i class="glyphicon glyphicon-time"></i>
-								2016-11-01 </span><span class="muted"><i
-								class="glyphicon glyphicon-eye-open"></i>88</span></a></li>
-					<li><a
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						href="#"><span class="thumbnail"> <img class="thumb"
-								data-original="images/201610181739277776.jpg"
-								src="images/201610181739277776.jpg"
-								alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								style="display: block;">
-						</span><span class="text">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</span><span
-							class="muted"><i class="glyphicon glyphicon-time"></i>
-								2016-11-01 </span><span class="muted"><i
-								class="glyphicon glyphicon-eye-open"></i>88</span></a></li>
-					<li><a
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						href="#"><span class="thumbnail"> <img class="thumb"
-								data-original="images/201610181739277776.jpg"
-								src="images/201610181739277776.jpg"
-								alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								style="display: block;">
-						</span><span class="text">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</span><span
-							class="muted"><i class="glyphicon glyphicon-time"></i>
-								2016-11-01 </span><span class="muted"><i
-								class="glyphicon glyphicon-eye-open"></i>88</span></a></li>
-					<li><a
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						href="#"><span class="thumbnail"> <img class="thumb"
-								data-original="images/201610181739277776.jpg"
-								src="images/201610181739277776.jpg"
-								alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								style="display: block;">
-						</span><span class="text">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</span><span
-							class="muted"><i class="glyphicon glyphicon-time"></i>
-								2016-11-01 </span><span class="muted"><i
-								class="glyphicon glyphicon-eye-open"></i>88</span></a></li>
-					<li><a
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						href="#"><span class="thumbnail"> <img class="thumb"
-								data-original="images/201610181739277776.jpg"
-								src="images/201610181739277776.jpg"
-								alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								style="display: block;">
-						</span><span class="text">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</span><span
-							class="muted"><i class="glyphicon glyphicon-time"></i>
-								2016-11-01 </span><span class="muted"><i
-								class="glyphicon glyphicon-eye-open"></i>88</span></a></li>
-					<li><a
-						title="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-						href="#"><span class="thumbnail"> <img class="thumb"
-								data-original="images/201610181739277776.jpg"
-								src="images/201610181739277776.jpg"
-								alt="ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼"
-								style="display: block;">
-						</span><span class="text">ç¨DTcmsåä¸ä¸ªç¬ç«åå®¢ç½ç«ï¼ååºå¼æ¨¡æ¿ï¼</span><span
-							class="muted"><i class="glyphicon glyphicon-time"></i>
-								2016-11-01 </span><span class="muted"><i
-								class="glyphicon glyphicon-eye-open"></i>88</span></a></li>
-
+					<li><a title="title" href="#"><span class="thumbnail">
+								<img class="thumb"
+								data-original="${APP_PATH}/resource/user/template3/images/201610181739277776.jpg"
+								src="${APP_PATH}/resource/user/template3/images/201610181739277776.jpg"
+								alt="alttitle" style="display: block;">
+						</span><span class="text">title</span><span class="muted"><i
+								class="glyphicon glyphicon-time"></i> 2016-11-01 </span><span
+							class="muted"><i class="glyphicon glyphicon-eye-open"></i>88</span></a></li>
 				</ul>
 			</div>
+			<!-- 支付宝 -->
 			<div class="widget widget_sentence">
-				<a href="#" target="_blank" rel="nofollow"
-					title="ä¸ä¸ç½ç«å»ºè®¾"> <img style="width: 100%"
-					src="images//201610241224221511.jpg" alt="ä¸ä¸ç½ç«å»ºè®¾"></a>
+				<a href="#" target="_blank" rel="nofollow" title="advertise"> <img
+					style="width: 100%"
+					src="${APP_PATH}/resource/user/template3/images/alipay.jpg"
+					alt="advertise"></a>
 			</div>
+			<!-- 微信 -->
 			<div class="widget widget_sentence">
 				<a href="#" target="_blank" rel="nofollow" title="MZ-NetBlogä¸»é¢">
-					<img style="width: 100%" src="images/ad.jpg" alt="MZ-NetBlogä¸»é¢">
+					<img style="width: 100%"
+					src="${APP_PATH}/resource/user/template3/images/weixinpay.jpg"
+					alt="MZ-NetBlogä¸»é¢">
 				</a>
 			</div>
+			<!--友情链接 -->
 			<div class="widget widget_sentence">
-				<h3>åæé¾æ¥</h3>
+				<h3>friendly link</h3>
 				<div class="widget-sentence-link">
-					<a href="#" title="ç½ç«å»ºè®¾" target="_blank">ç½ç«å»ºè®¾</a>&nbsp;&nbsp;&nbsp;
+					<a href="#" title="friendlylink" target="_blank">friendly link</a>&nbsp;&nbsp;&nbsp;
 				</div>
 			</div>
 		</aside>
@@ -461,11 +245,7 @@
 	<footer class="footer">
 		<div class="container">
 			<p>
-				Copyright &copy; 2016.Company name All rights reserved.More
-				Templates <a href="http://www.cssmoban.com/" target="_blank"
-					title="æ¨¡æ¿ä¹å®¶">æ¨¡æ¿ä¹å®¶</a> - Collect from <a
-					href="http://www.cssmoban.com/" title="ç½é¡µæ¨¡æ¿"
-					target="_blank">ç½é¡µæ¨¡æ¿</a>
+				<small>@上海电机学院 Selenium</small>
 			</p>
 		</div>
 		<div id="gotop">

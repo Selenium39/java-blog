@@ -35,6 +35,40 @@ public class ArticleService implements ArticleMapper {
 		return articleMapper.selectAllArticle();
 	}
 	
+	
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ArticleMapper#selectAllArticleWithStatus()
+	 * 查询所有有效的文章
+	 */
+	@Override
+	public List<Article> selectAllArticleWithStatus() {
+		return articleMapper.selectAllArticleWithStatus();
+	}
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ArticleMapper#selectAllArticleWithStatus()
+	 * 查询所有置顶的文章
+	 */
+	@Override
+	public List<Article> selectAllArticleWithOrder() {
+		return articleMapper.selectAllArticleWithOrder();
+	}
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ArticleMapper#selectAllArticleWithoutStatus()
+	 * 查询所有无效的文章
+	 */
+	@Override
+	public List<Article> selectAllArticleWithoutStatus() {
+		return articleMapper.selectAllArticleWithoutStatus();
+	}
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ArticleMapper#selectAllArticleWithoutOrder()
+	 * 查询未置顶文章
+	 */
+	@Override
+	public List<Article> selectAllArticleWithoutOrder() {
+		return articleMapper.selectAllArticleWithoutOrder();
+	}
+	
 	/* (non-Javadoc)
 	 * @see com.wantao.mapper.ArticleMapper#selectArticleById()
 	 * 通过id查找文章

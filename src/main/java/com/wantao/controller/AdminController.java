@@ -63,7 +63,7 @@ public class AdminController {
 	ContactService contactService;
 	@Autowired
 	CategoryService categoryService;
-	@Autowired	
+	@Autowired
 	TagService tagService;
 	// ------------------------------跳转--------------------------------------
 
@@ -126,7 +126,7 @@ public class AdminController {
 	public String tags() {
 		return "admin/tags";
 	}
-	
+
 	/**
 	 * @param
 	 * @return String
@@ -362,11 +362,30 @@ public class AdminController {
 	 */
 	@GetMapping("/selectAllArticle/{pn}")
 	@ResponseBody
-	public Message selectAllArticle(@PathVariable("pn") Integer pn) {
+	public Message selectAllArticle(@PathVariable("pn") Integer pn,
+			@RequestParam(name = "type", required = false, defaultValue = "0") Integer type) {
+		List<Article> articles = null;
 		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
-		List<Article> articles = articleService.selectAllArticle();
+		if (type == 1) {//有效文章
+			articles = articleService.selectAllArticleWithStatus();
+		}
+		if (type == 2) {//无效文章
+			articles = articleService.selectAllArticleWithoutStatus();
+		}
+		if (type == 3) {//置顶文章
+			articles = articleService.selectAllArticleWithOrder();
+		}
+		if (type == 4) {//未置顶文章
+			articles = articleService.selectAllArticleWithoutOrder();
+		}
+		if (type == 0) {
+			articles = articleService.selectAllArticle();
+		}
+		if (articles == null) {
+			articles = articleService.selectAllArticle();
+		}
 		PageInfo pageInfo = new PageInfo(articles, 5);// 用pageInfo封装然后交给页面
-		return Message.success().add("pageInfo", pageInfo);
+		return Message.success().add("pageInfo", pageInfo).add("type",type);
 	}
 
 	/**
@@ -415,7 +434,7 @@ public class AdminController {
 		articleService.deleteArticleByBatchById(ids);
 		return Message.success();
 	}
-	
+
 	/**
 	 * @param
 	 * @return Message
@@ -599,7 +618,7 @@ public class AdminController {
 		Integer newContactCount = contactService.selectNewContactCount();
 		return Message.success().add("newContactCount", newContactCount);
 	}
-	
+
 	/**
 	 * @param
 	 * @return Message
@@ -613,7 +632,6 @@ public class AdminController {
 		PageInfo pageInfo = new PageInfo(tags, 5);// 用pageInfo封装然后交给页面
 		return Message.success().add("pageInfo", pageInfo);
 	}
-
 
 	/**
 	 * @param
@@ -644,7 +662,7 @@ public class AdminController {
 	@GetMapping("/selectTagById/{tagId}")
 	@ResponseBody
 	public Message selectTagById(@PathVariable("tagId") Integer tagId) {
-		Tag tag=tagService.selectTagById(tagId);
+		Tag tag = tagService.selectTagById(tagId);
 		return Message.success().add("tag", tag);
 	}
 
@@ -673,7 +691,7 @@ public class AdminController {
 		tagService.insertTag(tag);
 		return Message.success();
 	}
-	
+
 	/**
 	 * @param
 	 * @return Message
@@ -732,6 +750,7 @@ public class AdminController {
 		categoryService.insertCategory(category);
 		return Message.success();
 	}
+
 	/**
 	 * @param
 	 * @return Message
@@ -745,7 +764,5 @@ public class AdminController {
 		PageInfo pageInfo = new PageInfo(categorys, 5);// 用pageInfo封装然后交给页面
 		return Message.success().add("pageInfo", pageInfo);
 	}
-
-
 
 }

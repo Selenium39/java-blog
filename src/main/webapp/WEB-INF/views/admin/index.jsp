@@ -235,9 +235,10 @@
 							class="fa fa-users"></i>User
 					</a></li>
 					<li><a href="#article_tool" aria-expanded="false"
-						data-toggle="collapse"> <i class="fa fa-book"></i>Articles
+						data-toggle="collapse"> <i class="fa fa-book"></i>Article
 					</a>
 						<ul id="article_tool" class="collapse list-unstyled ">
+						<li><a href="${APP_PATH}/admin/articles">Article</a></li>
 							<li><a href="${APP_PATH}/admin/categorys">Category</a></li>
 							<li><a href="${APP_PATH}/admin/tags">Tag</a></li>
 						</ul></li>

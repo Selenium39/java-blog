@@ -232,9 +232,10 @@
 							class="fa fa-users"></i>User
 					</a></li>
 					<li><a href="${APP_PATH}/admin/articles" aria-expanded="false">
-							<i class="fa fa-book"></i>Articles
+							<i class="fa fa-book"></i>Article
 					</a>
 						<ul id="article_tool" class="show list-unstyled ">
+						 <li><a href="${APP_PATH}/admin/articles">Article</a></li>
 							<li><a href="${APP_PATH}/admin/categorys">Category</a></li>
 							<li class="active"><a href="${APP_PATH}/admin/tags">Tag</a></li>
 						</ul></li>
