@@ -95,5 +95,9 @@ public class ArticleService implements ArticleMapper {
 	public Integer deleteArticleByBatchById(List<Integer> ids) {
 		return articleMapper.deleteArticleByBatchById(ids);
 	}
+	@Override
+	public Article selectArticleByIdWithStatus(Integer articleId) {
+		return articleMapper.selectArticleByIdWithStatus(articleId);
+	}
 
 }

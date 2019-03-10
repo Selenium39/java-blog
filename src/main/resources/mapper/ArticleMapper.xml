@@ -43,8 +43,12 @@
 	<select id="selectArticleById" resultType="com.wantao.bean.Article">
 	select * from article where article_id=#{articleId}
 	</select>
+		<select id="selectArticleByIdWithStatus" resultType="com.wantao.bean.Article">
+	select * from article where article_id=#{articleId} and article_status=1
+	</select>
 	<update id="updateArticleById" parameterType="com.wantao.bean.Article">
 	  update article set 
+	  article_title=#{articleTitle},
 	  article_is_comment =#{articleIsComment},
 	  article_status=#{articleStatus},
 	  article_order=#{articleOrder}

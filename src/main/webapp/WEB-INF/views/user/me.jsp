@@ -86,7 +86,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
-	<!--一个小技巧,将jsp内的值放到隐藏域中,让引用的js能够访问到 -->
 	<input id="APP_PATH" type="hidden" value="${APP_PATH}" />
 	<!-- Header -->
 	<div class="aitsheaderw3ls" id="agilehome">

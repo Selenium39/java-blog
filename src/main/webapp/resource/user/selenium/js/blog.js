@@ -2,8 +2,18 @@
  * author:selenium
  */
 var APP_PATH = $("#APP_PATH").val();
+var pages=null;
+var page=1;
 $(function(){
-	articles(1);
+	articles(page);
+	$("#show_more").click(function(){
+		if(page<=pages){
+			page++;
+			articles(page);
+		}else{
+			$("#show_more").text("已经到最底部了!!!");
+		}
+	});
 });
 
 function articles(pn){
@@ -12,6 +22,7 @@ function articles(pn){
 		type:"get",
 		success:function(result){
 			var articles=result.data.pageInfo.list;
+			pages=result.data.pageInfo.pages;
 			$.each(articles, function(index, item) {
 				var content=item.articleContent.substr(0,100)+"...";
 				var article=$("<article></article>").addClass("excerpt excerpt-"+item.articleId);
@@ -23,7 +34,7 @@ function articles(pn){
 				var views=$("<span></span>").addClass("views").append($("<i></i>").addClass("glyphicon glyphicon-eye-open")).append(item.articleViewCount);
 			    var comment=$("<a></a>").addClass("comment").attr({"title":"comment","target":"_blank"}).append($("<i></i>").addClass("glyphicon glyphicon-comment")).append(item.articleCommentCount);
 			    articleMeta.append(time).append(views).append(comment);
-			    var articleContent=$("<p></p>").append(content).append($("<a></a>").append("查看全文"));
+			    var articleContent=$("<p></p>").append(content).append($("<a></a>").append("查看全文").prop("href",APP_PATH+"/user/article/"+item.articleId));
 			    article.append(articleImage).append(articleHeader).append(articleMeta).append(articleContent).appendTo($("#article_list"));
 			});
 		}

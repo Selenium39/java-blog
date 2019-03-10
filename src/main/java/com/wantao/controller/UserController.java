@@ -10,10 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.pagehelper.PageHelper;
@@ -63,7 +65,7 @@ public class UserController {
 	public String aboutMe() {
 		return "user/me";
 	}
-	
+
 	/**
 	 * @param
 	 * @return String
@@ -72,6 +74,12 @@ public class UserController {
 	@RequestMapping("/blog")
 	public String blog() {
 		return "user/blog";
+	}
+
+	@GetMapping("/article/{pn}")
+	public String article(Model model, @PathVariable("pn") Integer pn) {
+		model.addAttribute("ARTICLE_ID", pn);
+		return "user/article";
 	}
 
 //---------------------------ajax请求获取数据-----------------------	
@@ -111,8 +119,20 @@ public class UserController {
 	@ResponseBody
 	public Message selectAllArticle(@PathVariable("pn") Integer pn) {
 		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
-		List<Article>articles = articleService.selectAllArticleWithStatus();
+		List<Article> articles = articleService.selectAllArticleWithStatus();
 		PageInfo pageInfo = new PageInfo(articles, 5);// 用pageInfo封装然后交给页面
 		return Message.success().add("pageInfo", pageInfo);
+	}
+
+	/**
+	 * @param
+	 * @return Message
+	 * @description 根据id查询文章
+	 */
+	@GetMapping("/selectArticleById")
+	@ResponseBody
+	public Message selectArticleById(@RequestParam("articleId") Integer articleId) {
+		Article article = articleService.selectArticleByIdWithStatus(articleId);
+		return Message.success().add("article", article);
 	}
 }

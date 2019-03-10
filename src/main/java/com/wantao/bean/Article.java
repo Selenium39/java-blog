@@ -51,7 +51,5 @@ public class Article implements Serializable {
     private Integer articleStatus;
     private Integer articleOrder;
     private String articleContent;
-    private List<Tag> tagList;
-    private List<Category> categoryList;
     public Article() {};
 }

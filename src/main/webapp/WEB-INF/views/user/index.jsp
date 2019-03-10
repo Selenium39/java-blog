@@ -46,7 +46,6 @@
 	<!-- Add your site or application content here -->
 
 	<!-- Wrapper -->
-	<!--一个小技巧,将jsp内的值放到隐藏域中,让引用的js能够访问到 -->
 	<input id="APP_PATH" type="hidden" value="${APP_PATH}" />
 	<div id="wrapper" class="wrapper">
 

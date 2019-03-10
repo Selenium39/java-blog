@@ -396,8 +396,9 @@
 							<div class="modal-body">
 								<form id="updateForm">
 									<div class="form-group">
-										<label for="articleTitle1">articleTitle:</label>
-										<p id="articleTitle1" class="u"></p>
+										<label for="articleTitle1">articleTitle:</label> <input
+											id="articleTitle1" type="text" name="aritcleTitle"
+											class="u form-control col-md-12" />
 									</div>
 									<div class="form-group">
 										<label for="articleIsComment1">articleIsComment:</label><select

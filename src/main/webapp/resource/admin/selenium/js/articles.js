@@ -264,7 +264,7 @@ function build_update_modal(articleId) { // 构建修改模态框
 			$(".u").empty();
 			$("#updateForm")[0].reset();
 			var article = result.data.article;
-			$("#articleTitle1").text(article.articleTitle);
+			$("#articleTitle1").val(article.articleTitle);
 			article.articleIsComment == 0 ? $("#articleIsComment0").attr(
 					"selected", "selected") : $("#articleIsComment1").attr(
 					"selected", "selected");

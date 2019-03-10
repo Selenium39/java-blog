@@ -39,7 +39,6 @@
 </head>
 
 <body class="user-select">
-	<!--一个小技巧,将jsp内的值放到隐藏域中,让引用的js能够访问到 -->
 	<input id="APP_PATH" type="hidden" value="${APP_PATH}" />
 	<header class="header">
 		<nav class="navbar navbar-default" id="navbar">
@@ -117,14 +116,6 @@
 						<span class="sr-only">next</span>
 					</a>
 				</div>
-				<!-- 置顶文章 -->
-				<article class="excerpt-minic excerpt-minic-index">
-					<h2>
-						<span class="red">Recommend</span> <a>title</a>
-					</h2>
-					<p class="note">recommend article</p>
-				</article>
-				<!-- 最新发布 -->
 				<div class="title">
 					<h3>NEW Article</h3>
 					<!-- 文章界面导航栏 -->
@@ -133,15 +124,11 @@
 					</div>
 				</div>
 				<!-- 文章列表 -->
-				<div id="article_list">
-				</div>
-				<nav class="pagination" style="display: none;">
-					<ul>
-						<li class="prev-page"></li>
-						<li class="active"><span>1</span></li>
-						<li><a href="?page=2">2</a></li>
-						<li class="next-page"><a href="?page=2">ä¸ä¸é¡µ</a></li>
-						<li><span>å± 2 é¡µ</span></li>
+				<div id="article_list"></div>
+				<!-- 点击查看更多出来更多文章 -->
+				<nav>
+					<ul class="pager">
+						<li><a class="col-md-12" id="show_more">查看更多</a></li>
 					</ul>
 				</nav>
 			</div>
