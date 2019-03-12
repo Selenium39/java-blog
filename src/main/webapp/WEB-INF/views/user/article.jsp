@@ -105,12 +105,14 @@
 							id="article_author"><i
 							class="glyphicon glyphicon-globe"></i></span>
 							
-							 <span
+							 <span 
 							class="item article-meta-category" data-toggle="tooltip"
-							data-placement="bottom" title=""
-							data-original-title="MZ-NetBlogä¸»é¢"><i
+							data-placement="bottom"
+							><i
 							class="glyphicon glyphicon-list"></i> <a href="#"
-							title="MZ-NetBlogä¸»é¢">MZ-NetBlogä¸»é¢</a></span> <span
+							id="article_category"></a></span>
+							
+							 <span
 							class="item article-meta-views" data-toggle="tooltip"
 							data-placement="bottom" title=""
 							data-original-title="æµè§éï¼219"><i

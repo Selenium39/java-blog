@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wantao.mapper.ArticleCategoryRefMapper">
+	<select id="selectCategoryByArticleId" resultType="com.wantao.bean.Category">
+	    select * from category where category_id =(
+	       select category_id from article_category_ref
+	       where article_id=#{article_id}
+	    )
+	</select>
+</mapper>

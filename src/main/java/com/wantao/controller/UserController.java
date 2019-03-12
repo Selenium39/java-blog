@@ -21,9 +21,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.wantao.bean.Article;
+import com.wantao.bean.Category;
 import com.wantao.bean.Contact;
 import com.wantao.bean.Me;
 import com.wantao.bean.User;
+import com.wantao.service.ArticleCategoryRefService;
 import com.wantao.service.ArticleService;
 import com.wantao.service.ContactService;
 import com.wantao.service.MeService;
@@ -43,6 +45,8 @@ public class UserController {
 	ContactService contactService;
 	@Autowired
 	ArticleService articleService;
+	@Autowired
+	ArticleCategoryRefService articleCategoryRefService;
 	private static final Logger logger = LoggerFactory.getLogger("UserController.class");
 
 //---------------------------控制页面跳转-----------------------
@@ -127,12 +131,13 @@ public class UserController {
 	/**
 	 * @param
 	 * @return Message
-	 * @description 根据id查询文章
+	 * @description 根据id查询文章和文章所属分类
 	 */
 	@GetMapping("/selectArticleById")
 	@ResponseBody
 	public Message selectArticleById(@RequestParam("articleId") Integer articleId) {
 		Article article = articleService.selectArticleByIdWithStatus(articleId);
-		return Message.success().add("article", article);
+		Category category = articleCategoryRefService.selectCategoryByArticleId(articleId);
+		return Message.success().add("article", article).add("category", category);
 	}
 }

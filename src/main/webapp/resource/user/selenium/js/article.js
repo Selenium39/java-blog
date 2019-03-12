@@ -16,9 +16,11 @@ function show(){
 		},
 		success:function(result){
 			var article=result.data.article;
+			var category=result.data.category;
 			$("#article_title").append(article.articleTitle);
 			$("#article_time").append(article.articleCreateTime).attr({"data-original-title":article.articleCreateTime});
 		    $("#article_author").append(article.articleUserName).attr({"data-original-title":article.articleUserName});
+		    $("#article_category").append(category.categoryName).attr("data-original-title",category.categoryName);
 		}
 	});
 }
