@@ -9,7 +9,7 @@ import com.wantao.bean.Article;
 /**
  * @author wantao
  * @date 2019-02-13 23:03
- * @description:article表
+ * @description article表
  */
 @Repository
 public interface ArticleMapper {

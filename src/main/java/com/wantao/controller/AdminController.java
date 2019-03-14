@@ -289,7 +289,7 @@ public class AdminController {
 		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
 			// logger.info(user.toString());
 		} else {
-			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+			String[] userAvatars = PhotoUtil.saveFile(file, request,"avatar").split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
 			// logger.info(userAvatar);
 			user.setUserAvatar(userAvatar);
@@ -307,7 +307,7 @@ public class AdminController {
 	@ResponseBody
 	public Message showImgOnTime(@RequestParam("file") MultipartFile file, HttpServletRequest request)
 			throws UnsupportedEncodingException {
-		String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+		String[] userAvatars = PhotoUtil.saveFile(file, request,"avatar").split("webapp");
 		String userAvatar = userAvatars[1].replace("\\", "/");
 		return Message.success().add("imgUrl", userAvatar);
 	}
@@ -321,11 +321,10 @@ public class AdminController {
 	@ResponseBody
 	public Message showImgOnTime1(@RequestParam("file") MultipartFile file, HttpServletRequest request)
 			throws UnsupportedEncodingException {
-		String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+		String[] userAvatars = PhotoUtil.saveFile(file, request,"tag").split("webapp");
 		String userAvatar = userAvatars[1].replace("\\", "/");
-		String tagImage=userAvatar.replaceAll("avatar","tag");
         //logger.info(tagImage);
-		return Message.success().add("imgUrl", tagImage);
+		return Message.success().add("imgUrl", userAvatar);
 	}
 	/**
 	 * @param
@@ -360,7 +359,7 @@ public class AdminController {
 		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
 			// logger.info(user.toString());
 		} else {
-			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+			String[] userAvatars = PhotoUtil.saveFile(file, request,"avatar").split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
 			user.setUserAvatar(userAvatar);
 			// logger.info(userAvatar);
@@ -394,9 +393,11 @@ public class AdminController {
 			articles = articleService.selectAllArticleWithoutOrder();
 		}
 		if (type == 0) {
+			logger.info("type==0方法被调用");
 			articles = articleService.selectAllArticle();
 		}
 		if (articles == null) {
+			logger.info("articles==null方法被调用");
 			articles = articleService.selectAllArticle();
 		}
 		PageInfo pageInfo = new PageInfo(articles, 5);// 用pageInfo封装然后交给页面
@@ -544,7 +545,7 @@ public class AdminController {
 		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
 			// logger.info(user.toString());
 		} else {
-			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+			String[] userAvatars = PhotoUtil.saveFile(file, request,"avatar").split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
 			// logger.info(userAvatar);
 			me.setAvatar(userAvatar);
@@ -693,11 +694,10 @@ public class AdminController {
 		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
 			// logger.info(user.toString());
 		} else {
-			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+			String[] userAvatars = PhotoUtil.saveFile(file, request,"tag").split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
 			// logger.info(userAvatar);
-			String tagImage=userAvatar.replaceAll("avatar","tag");
-			tag.setTagImage(tagImage);
+			tag.setTagImage(userAvatar);
 			
 		}
 		tagService.updateTagById(tag);
@@ -716,7 +716,7 @@ public class AdminController {
 		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
 			// logger.info(user.toString());
 		} else {
-			String[] userAvatars = PhotoUtil.saveFile(file, request).split("webapp");
+			String[] userAvatars = PhotoUtil.saveFile(file, request,"avatar").split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
 			String tagImage=userAvatar.replaceAll("avatar","tag");
 			tag.setTagImage(tagImage);

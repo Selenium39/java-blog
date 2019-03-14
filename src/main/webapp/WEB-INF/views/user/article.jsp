@@ -23,6 +23,8 @@
 	href="${APP_PATH}/resource/user/template3/css/font-awesome.min.css">
 <link rel="icon" href="${APP_PATH}/resource/image/logo.icon"
 	type="image/x-icon" />
+<link rel="stylesheet" type="text/css"
+	href="${APP_PATH}/resource/user/selenium/css/article.css"  />
 <script src="${APP_PATH}/resource/user/template3/js/jquery-2.1.4.min.js"></script>
 <script src="${APP_PATH}/resource/user/template3/js/nprogress.js"></script>
 <script
@@ -95,45 +97,44 @@
 					</h1>
 					<!-- 文章有关内容 -->
 					<div class="article-meta">
-						<span class="item article-meta-time"> <time class="time"
+						<span class="item article-meta-time">
+						    <time class="time"
 								data-toggle="tooltip" data-placement="bottom"
 								id="article_time">
-								<i class="glyphicon glyphicon-time"></i>
+								  <i class="glyphicon glyphicon-time"></i>
 							</time>
-						</span> <span class="item article-meta-source" data-toggle="tooltip"
+						</span>
+					   <span class="item article-meta-source" data-toggle="tooltip"
 							data-placement="bottom"
-							id="article_author"><i
-							class="glyphicon glyphicon-globe"></i></span>
-							
-							 <span 
-							class="item article-meta-category" data-toggle="tooltip"
-							data-placement="bottom"
-							><i
-							class="glyphicon glyphicon-list"></i> <a href="#"
-							id="article_category"></a></span>
-							
-							 <span
-							class="item article-meta-views" data-toggle="tooltip"
-							data-placement="bottom" title=""
-							data-original-title="æµè§éï¼219"><i
-							class="glyphicon glyphicon-eye-open"></i> 219</span> <span
-							class="item article-meta-comment" data-toggle="tooltip"
-							data-placement="bottom" title="" data-original-title="è¯è®ºé"><i
-							class="glyphicon glyphicon-comment"></i> 4</span>
+							id="article_author">
+							<i class="glyphicon glyphicon-globe"></i>
+					   </span>
+					   <span class="item article-meta-category" data-toggle="tooltip"
+							data-placement="bottom">
+							<i class="glyphicon glyphicon-list"> </i> 
+							<a href="#" id="article_category"></a>
+					   </span>
+					   <span class="item article-meta-views" data-toggle="tooltip"
+							data-placement="bottom" id="article_view_count" >
+							<i class="glyphicon glyphicon-eye-open"></i></span> 
+							<span class="item article-meta-comment" data-toggle="tooltip"
+							data-placement="bottom" id="article_comment_count">
+							<i class="glyphicon glyphicon-comment"></i> 
+					   </span>
 					</div>
 				</header>
 				<!-- 文章内容 -->
 				<article class="article-content">
+				    <p id="article_content"></p>
 					<div class="bdsharebuttonbox">
 						<a href="#" class="bds_more" data-cmd="more"></a><a href="#"
-							class="bds_qzone" data-cmd="qzone" title="åäº«å°QQç©ºé´"></a><a
+							class="bds_qzone" data-cmd="qzone" title="qzone"></a><a
 							href="#" class="bds_tsina" data-cmd="tsina"
-							title="åäº«å°æ°æµªå¾®å"></a><a href="#" class="bds_tqq"
-							data-cmd="tqq" title="åäº«å°è¾è®¯å¾®å"></a><a href="#"
-							class="bds_weixin" data-cmd="weixin" title="åäº«å°å¾®ä¿¡"></a><a
+							title="weibo"></a><a href="#"
+							class="bds_weixin" data-cmd="weixin" title="wexin"></a><a
 							href="#" class="bds_tieba" data-cmd="tieba"
-							title="åäº«å°ç¾åº¦è´´å§"></a><a href="#" class="bds_sqq"
-							data-cmd="sqq" title="åäº«å°QQå¥½å"></a>
+							title="tieba"></a><a href="#" class="bds_sqq"
+							data-cmd="sqq" title="qq"></a>
 					</div>
 
 					<script>
@@ -156,70 +157,59 @@
 					</script>
 				</article>
 				<!-- 文章标签 -->
-				<div class="article-tags">
-					æ ç­¾ï¼<a href="#list/2/" rel="tag">DTcmsåå®¢</a><a
-						href="#list/3/" rel="tag">æ¨åºç½ç»åå®¢</a><a href="#list/4/"
-						rel="tag">ç¬ç«åå®¢</a><a href="#list/5/" rel="tag">ä¿®å¤ä¼å</a>
+				<div class="article-tags" id="tagDiv">
+					
 				</div>
 
 				<!-- 相关推荐 -->
-				<div class="relates">
-					<div class="title">
-						<h3>ç¸å³æ¨è</h3>
+				<div style="font-size:20px;">
+					<div>
+					<h2>相关推荐</h2>
 					</div>
-					<ul>
-						<li><a href="#" title=""></a></li>
-					</ul>
+					<div>
+					   <ul id="relate_recommend"></ul>
+					</div>
 				</div>
+				
 				<!-- 文章评论 -->
-				<div class="title" id="comment">
-					<h3>è¯è®º</h3>
+				<div id="comment">
+					<h3>文章评论</h3>
 				</div>
-				<div id="respond">
-					<form id="comment-form" name="comment-form" action="" method="POST">
-						<div class="comment">
-							<input name="" id="" class="form-control" size="22"
-								placeholder="æ¨çæµç§°ï¼å¿å¡«ï¼" maxlength="15"
-								autocomplete="off" tabindex="1" type="text"> <input
-								name="" id="" class="form-control" size="22"
-								placeholder="æ¨çç½åæé®ç®±ï¼éå¿å¡«ï¼"
-								maxlength="58" autocomplete="off" tabindex="2" type="text">
-							<div class="comment-box">
-								<textarea placeholder="æ¨çè¯è®ºæçè¨ï¼å¿å¡«ï¼"
-									name="comment-textarea" id="comment-textarea" cols="100%"
-									rows="3" tabindex="3"></textarea>
-								<div class="comment-ctrl">
-									<div class="comment-prompt" style="display: none;">
-										<i class="fa fa-spin fa-circle-o-notch"></i> <span
-											class="comment-prompt-text">è¯è®ºæ­£å¨æäº¤ä¸­...è¯·ç¨å</span>
-									</div>
-									<div class="comment-success" style="display: none;">
-										<i class="fa fa-check"></i> <span class="comment-prompt-text">è¯è®ºæäº¤æå...</span>
-									</div>
-									<button type="submit" name="comment-submit" id="comment-submit"
-										tabindex="4">è¯è®º</button>
-								</div>
-							</div>
-						</div>
-					</form>
-
-				</div>
-
+				<!--添加评论-->
+				<div>
+					<form class="form-horizontal" role="form" id="comment_form">
+	<div class="form-group">
+		<div class="col-sm-10">
+			<input type="text" class="form-control a" name="commentUserName" 
+				   placeholder="您的昵称(必填)">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-10">
+			<input type="text" class="form-control a" name="commentUserEmail" 
+				   placeholder="您的邮箱(非必填)">
+		</div>
+	</div>
+	<div class="form-group">
+	 <div class="col-sm-10">
+    <textarea class="form-control a" rows="3" placeholder="您的评论或留言" name="commentContent" ></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+     <div class="col-sm-10">
+      <button type="button" id="comment_submit_button">评论</button>
+     </div>
+  </div>
+</form>
+</div>
 				<!-- 评论显示 -->
 				<div id="postcomments">
 					<ol id="comment_list" class="commentlist">
-						<li class="comment-content"><span class="comment-f">#2</span>
-							<div class="comment-main">
-								<p>
-									<a class="address" href="#" rel="nofollow" target="_blank">æ¨åºç½ç»åå®¢</a><span
-										class="time">(2016/10/28 11:41:03)</span><br>ä¸éçç½ç«ä¸»é¢ï¼ççç¸å½èæ
-								</p>
-							</div></li>
 						<li class="comment-content"><span class="comment-f">#1</span>
 							<div class="comment-main">
 								<p>
-									<a class="address" href="#" rel="nofollow" target="_blank">æ¨åºç½ç»åå®¢</a><span
-										class="time">(2016/10/14 21:02:39)</span><br>åå®¢åå¾å¥½æ¼äº®å¦ï¼
+									<a class="address" href="#" rel="nofollow" target="_blank">222</a><span
+										class="time">(2016/10/14 21:02:39)</span><br>111
 								</p>
 							</div></li>
 					</ol>

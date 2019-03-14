@@ -22,11 +22,14 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.wantao.bean.Article;
 import com.wantao.bean.Category;
+import com.wantao.bean.Comment;
 import com.wantao.bean.Contact;
 import com.wantao.bean.Me;
-import com.wantao.bean.User;
+import com.wantao.bean.Tag;
 import com.wantao.service.ArticleCategoryRefService;
 import com.wantao.service.ArticleService;
+import com.wantao.service.ArticleTagRefService;
+import com.wantao.service.CommentService;
 import com.wantao.service.ContactService;
 import com.wantao.service.MeService;
 import com.wantao.util.Message;
@@ -47,9 +50,12 @@ public class UserController {
 	ArticleService articleService;
 	@Autowired
 	ArticleCategoryRefService articleCategoryRefService;
+	@Autowired
+	ArticleTagRefService articleTagRefService;
+	@Autowired
+	CommentService commentService;
 	private static final Logger logger = LoggerFactory.getLogger("UserController.class");
 
-//---------------------------控制页面跳转-----------------------
 	/**
 	 * @param
 	 * @return String
@@ -86,7 +92,6 @@ public class UserController {
 		return "user/article";
 	}
 
-//---------------------------ajax请求获取数据-----------------------	
 	/**
 	 * @param
 	 * @return Message
@@ -101,7 +106,7 @@ public class UserController {
 
 	/**
 	 * @param
-	 * @return Message
+	 * @return 
 	 * @description 增加联系人
 	 */
 	@PostMapping("/addContact")
@@ -138,6 +143,24 @@ public class UserController {
 	public Message selectArticleById(@RequestParam("articleId") Integer articleId) {
 		Article article = articleService.selectArticleByIdWithStatus(articleId);
 		Category category = articleCategoryRefService.selectCategoryByArticleId(articleId);
-		return Message.success().add("article", article).add("category", category);
+		List<Article> relateArticles = articleTagRefService.selectRelateArticle(articleId);
+		List<Tag> tags = articleTagRefService.selectTagByArticleId(articleId);
+		return Message.success().add("article", article).add("category", category).add("tags", tags)
+				.add("relateArticles", relateArticles);
+	}
+	
+	/**
+	 * @param
+	 * @return 
+	 * @description 增加评论
+	 */
+	@PostMapping("/addComment")
+	@ResponseBody
+	public Message addComment(Comment comment, HttpServletRequest request) {
+		//logger.info(comment.toString());
+		comment.setCommentCreateTime(new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss").format(new Date()));
+		comment.setCommentIp(request.getRemoteAddr());
+		commentService.insertComment(comment);
+		return Message.success();
 	}
 }

@@ -1,0 +1,27 @@
+@charset "UTF-8";
+#relate_recommend a{
+	text-decoration: none;
+	color: blue;
+}
+#relate_recommend a:hover{
+	color:red;
+}
+#comment_submit_button{
+	position: absolute;
+	right: autopx;
+	bottom: -28px;
+	background: #3399CC;
+	border: none;
+	border: 2px solid;
+	border-color: #3399CC;
+	border-left: none;
+	border-top: none;
+	padding: 0px;
+	width: 100px;
+	height: 38px;
+	color: #FFF;
+	outline: 0;
+	border-radius: 0 0 2px 0;
+	font-size: 16px;
+	z-index: 6;
+}

@@ -108,9 +108,9 @@ public class PhotoUtil {
 	 * @param filedata
 	 *            文件数据 返回图片位置
 	 */
-	public static String saveFile(MultipartFile filedata, HttpServletRequest request) {
+	public static String saveFile(MultipartFile filedata, HttpServletRequest request,String dirname) {
 		// 文件存放位置
-		String pathval = "D:\\src\\eclipse\\blog\\src\\main\\webapp\\resource\\avatar";
+		String pathval = "/home/selenium/selenium/src/eclipse/blog/src/main/webapp/resource";
 		File fileDir = new File(pathval);
 		if (!fileDir.exists()) {
 			fileDir.mkdirs();
@@ -119,7 +119,7 @@ public class PhotoUtil {
 		// 上传的文件名
 		String filename = filedata.getOriginalFilename();
 		// 总的文件路径
-		String filePath = pathval + "/" + filename;
+		String filePath = pathval + "/"+dirname+"/" + filename;
 		File file = new File(filePath);
 		try {
 			FileOutputStream out = new FileOutputStream(file);

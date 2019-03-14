@@ -283,12 +283,11 @@
 									<tr>
 										<th><input type="checkbox" id="checkAll" /></th>
 										<th>commentId</th>
-										<th>articleId</th>
-										<th>authorId</th>
-										<th>authorName</th>
-										<th>userId</th>
+										<th>ArticleId</th>
 										<th>userName</th>
+										<th>userEmail</th>
 										<th>content</th>
+										<th>userIp</th>
 										<th>createTime</th>
 										<th>opration</th>
 									</tr>

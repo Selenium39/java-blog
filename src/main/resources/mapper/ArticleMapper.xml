@@ -22,23 +22,23 @@
 	</select>
 	<select id="selectAllArticle"
 		resultType="com.wantao.bean.Article">
-		select <include refid="articleColumn"></include> from article a,user u where a.article_user_id =u.user_id order by article_create_time desc
+		select <include refid="articleColumn"></include> from article order by article_create_time desc
 	</select>
 	<select id="selectAllArticleWithStatus"
 		resultType="com.wantao.bean.Article">
-		select <include refid="articleColumn"></include> from article a,user u where a.article_user_id =u.user_id and article_status=1 order by article_create_time desc
+		select <include refid="articleColumn"></include> from article where article_status=1 order by article_create_time desc
 	</select>
 	<select id="selectAllArticleWithoutStatus"
 		resultType="com.wantao.bean.Article">
-		select <include refid="articleColumn"></include> from article a,user u where a.article_user_id =u.user_id and article_status=0 order by article_create_time desc
+		select <include refid="articleColumn"></include> from article where article_status=0 order by article_create_time desc
 	</select>
 	<select id="selectAllArticleWithOrder"
 		resultType="com.wantao.bean.Article">
-		select <include refid="articleColumn"></include> from article a,user u where a.article_user_id =u.user_id and article_order=1 order by article_create_time desc
+		select <include refid="articleColumn"></include> from article  where article_order=1 order by article_create_time desc
 	</select>
 	<select id="selectAllArticleWithoutOrder"
 		resultType="com.wantao.bean.Article">
-		select <include refid="articleColumn"></include> from article a,user u where a.article_user_id =u.user_id and article_order=0 order by article_create_time desc
+		select <include refid="articleColumn"></include> from article a where article_order=0 order by article_create_time desc
 	</select>
 	<select id="selectArticleById" resultType="com.wantao.bean.Article">
 	select * from article where article_id=#{articleId}

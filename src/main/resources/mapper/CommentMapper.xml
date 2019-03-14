@@ -7,10 +7,17 @@
   <select id="selectAllComment" resultType="com.wantao.bean.Comment">
      select * from comment
   </select>
+  <select id="selectCommentsByArticleId" parameterType="java.lang.Integer" resultType="com.wantao.bean.Comment">
+     select * from comment where article_id =#{articleId}
+  </select>
   <delete id="deleteCommentByBatchById">
 	  delete from comment where comment_id in
 	  <foreach collection="list" item="id" separator="," open="(" close=")">
 	      #{id}
 	  </foreach>
 	</delete>
+	<insert id="insertComment" parameterType="com.wantao.bean.Comment">
+	 insert into comment(comment_article_id,comment_user_name,comment_user_email,comment_content,comment_ip,comment_create_time)
+	 values(#{commentArticleId},#{commentUserName},#{commentUserEmail},#{commentContent},#{commentIp},#{commentCreateTime})
+	</insert>
 </mapper>

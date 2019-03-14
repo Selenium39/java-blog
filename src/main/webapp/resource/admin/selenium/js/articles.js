@@ -6,7 +6,7 @@ $(function() {
 	// 查询未读联系人数量
 	selectNewContactCount();
 	// 查询所有的文章并显示在分页中
-	articles(1);
+	articles(1,0);
 	// 为修改按钮绑定事件
 	$("#updateButton").click(function() {
 		update($(this));
@@ -45,7 +45,7 @@ $(function() {
 	});
 });
 
-function articles(pn, type) {// 查询所有的用户并显示在分页中
+function articles(pn, type) {// 查询所有的文章并显示在分页中
 	$.ajax({
 		url : APP_PATH + "/admin/selectAllArticle/" + pn,
 		type : "GET",

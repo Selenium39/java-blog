@@ -26,7 +26,7 @@ public class Message implements Serializable {
 	private Integer messageUserId;
 	private String  messageUserName;
 	private String messageContent;
-	private Date messageCreateTime;
+	private String messageCreateTime;
 	public Message() {
 		super();
 	}

@@ -225,7 +225,7 @@
           slider.controlNav.removeClass(namespace + "active").eq(slider.animatingTo).addClass(namespace + "active");
         },
         update: function(action, pos) {
-          if (slider.pagingCount > 1 && action === "add") {
+          if (slider.pagingCount > 1 && action === "add") {	
             slider.controlNavScaffold.append($('<li><a>' + slider.count + '</a></li>'));
           } else if (slider.pagingCount === 1) {
             slider.controlNavScaffold.find('li').remove();
@@ -435,7 +435,7 @@
           
           if (Math.ceil((target + 1)/slider.visible) - 1 !== slider.currentSlide && target !== 0) {
             slider.currentItem = target;
-            slider.slides.removeClass(namespace + "active-slide").eq(target).addClass(namespace + "active-slide");
+            slider.slides.removeClass(namespace + "active-slide").eq(target).addClass(namespace + "active-slide").attr("id","777");
             target = Math.floor(target/slider.visible);
           } else {
             slider.currentItem = target;

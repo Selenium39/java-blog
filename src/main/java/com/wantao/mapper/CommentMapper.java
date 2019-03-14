@@ -16,4 +16,6 @@ public interface CommentMapper {
     public Integer selectCommentCount();
     public List<Comment> selectAllComment();
     public Integer deleteCommentByBatchById(List<Integer>ids);
+    public List<Comment> selectCommentsByArticleId(Integer articleId);
+    public Integer insertComment(Comment comment);
 }

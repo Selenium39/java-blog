@@ -1,0 +1,24 @@
+/*去除bootstrap轮播框阴影*/
+.carousel-control.left {
+  left: 0;
+  right: auto;
+  background-image:none;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+}
+.carousel-control.right {
+  left: auto;
+  right: 0;
+  background-image:none;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+}
+/*p段落缩进*/
+p{ text-indent:35px}
+a {
+	text-decoration: none;
+	color: black;
+}
+a:hover{
+	color:red;
+}

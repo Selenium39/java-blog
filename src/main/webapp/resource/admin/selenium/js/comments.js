@@ -3,7 +3,7 @@
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
-	//查询未读联系人数量
+	// 查询未读联系人数量
 	selectNewContactCount();
 	// 查询所有的评论并显示在分页中
 	comments(1);
@@ -11,10 +11,10 @@ $(function() {
 	$("#batchDeleteButton").click(function() {
 		deleteCommentByBatchById();
 	});
-	//为跳转任意页面按钮绑定事件
-	$("#jumpButton").click(function(){
-		var pn=$("#page_number").val();
-		//记得要做校验
+	// 为跳转任意页面按钮绑定事件
+	$("#jumpButton").click(function() {
+		var pn = $("#page_number").val();
+		// 记得要做校验
 		comments(pn);
 	});
 
@@ -36,20 +36,19 @@ function comments(pn) {// 查询所有的用户并显示在分页中
 										var checkbox = $("<td></td>")
 												.append(
 														$("<input type='checkbox' class='check_item' />"))
+
 										var commentId = $("<td></td>").append(
 												item.commentId);
 										var commentArticleId = $("<td></td>")
 												.append(item.commentArticleId);
-										var commentAuthorId = $("<td></td>")
-												.append(item.commentAuthorId);
-										var commentAuthorName = $("<td></td>")
-												.append(item.commentAuthorName);
-										var commentUserId = $("<td></td>")
-												.append(item.commentUserId);
 										var commentUserName = $("<td></td>")
 												.append(item.commentUserName);
+										var commentUserEmail = $("<td></td>")
+												.append(item.commentUserEmail);
 										var commentContent = $("<td></td>")
 												.append(item.commentContent);
+										var commentIp = $("<td></td>").append(
+												item.commentIp);
 										var commentCreateTime = $("<td></td>")
 												.append(item.commentCreateTime);
 										var buttons = $("<td></td>");
@@ -61,14 +60,13 @@ function comments(pn) {// 查询所有的用户并显示在分页中
 										buttons.append(deleteButton);
 										tr.append(checkbox).append(commentId)
 												.append(commentArticleId)
-												.append(commentAuthorId)
-												.append(commentAuthorName)
-												.append(commentUserId).append(
-														commentUserName)
-												.append(commentContent).append(
-														commentCreateTime)
-												.append(buttons).appendTo(
-														$("#comments"));
+												.append(commentUserName)
+												.append(commentUserEmail)
+												.append(commentContent)
+												.append(commentIp)
+												.append(commentCreateTime)
+												.append(buttons)
+												.appendTo($("#comments"));
 										build_page_info(result);
 										build_page_line(result);
 										// 批量选择的选择框全选或者不全选
@@ -191,12 +189,12 @@ function deleteCommentById(commentId) {// 删除单个
 
 function deleteCommentByBatchById() {// 批量删除
 	var commentId = "";
-	var commentIdShow="";
+	var commentIdShow = "";
 	$.each($(".check_item:checked"), function() {
 		commentId += $(this).parents("tr").find("td:eq(1)").text() + "-";
-		commentIdShow+= $(this).parents("tr").find("td:eq(1)").text() + " ";
+		commentIdShow += $(this).parents("tr").find("td:eq(1)").text() + " ";
 	});
-	var flag = confirm("是否批量删除id为:"+commentIdShow+"的评论?");
+	var flag = confirm("是否批量删除id为:" + commentIdShow + "的评论?");
 	if (flag == true) {
 		$.ajax({
 			url : APP_PATH + "/admin/deleteCommentById",
@@ -211,11 +209,11 @@ function deleteCommentByBatchById() {// 批量删除
 	}
 }
 
-function selectNewContactCount(){//查询未读联系人的数量
+function selectNewContactCount() {// 查询未读联系人的数量
 	$.ajax({
-		url:APP_PATH+"/admin/selectNewContactCount",
-		type:"get",
-		success:function(result){
+		url : APP_PATH + "/admin/selectNewContactCount",
+		type : "get",
+		success : function(result) {
 			$("#new_contact_count").append(result.data.newContactCount);
 		}
 	});
