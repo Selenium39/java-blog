@@ -20,6 +20,7 @@ import lombok.Data;
  * @param commentContent 评论内容
  * @param commentIp 评论人ip
  * @param commentCreateTime 评论创建时间
+ * @param answer   是否已读(1 已读 0 未读)
  */
 @AllArgsConstructor
 public class Comment implements Serializable{
@@ -31,5 +32,6 @@ public class Comment implements Serializable{
     private String commentContent;
     private String commentIp;
     private String commentCreateTime;
+    private Integer answer;
    public Comment() {}
 }

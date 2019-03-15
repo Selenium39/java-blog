@@ -67,4 +67,13 @@ public class CommentService implements CommentMapper {
 		return commentMapper.insertComment(comment);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.CommentMapper#selectCommentPostion(java.lang.Integer)
+	 * 查询评论在表中的位置（评论楼层显示）但是后来发现直接按create time排序就行了
+	 */
+	@Override
+	public Integer selectCommentPostion(Integer commentId) {
+		return commentMapper.selectCommentPostion(commentId);
+	}
+
 }

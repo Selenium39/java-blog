@@ -86,7 +86,7 @@
 	<section class="container">
 		<div class="content-wrap">
 			<div class="content">
-				<!-- 首页的图片展览 -->
+				<!-- 首页的图片展览 820x200 px -->
 				<div id="focusslide" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
 						<li data-target="#focusslide" data-slide-to="0" class="active"></li>
@@ -94,16 +94,16 @@
 					</ol>
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<a href="#" target="_blank" title="æ¨åºç½ç»åå®¢æºç ">
+							<a href="#" target="_blank">
 								<img
-								src="${APP_PATH}/resource/user/template3/images//201610181557196870.jpg"
-								alt="æ¨åºç½ç»åå®¢æºç " class="img-responsive">
+								src="${APP_PATH}/resource/image/1552546380466_820x200.png"
+								class="img-responsive">
 							</a>
 						</div>
 						<div class="item">
-							<a href="#" target="_blank" title="ä¸ä¸ç½ç«å»ºè®¾"> <img
-								src="${APP_PATH}/resource/user/template3/images//201610241227558789.jpg"
-								alt="ä¸ä¸ç½ç«å»ºè®¾" class="img-responsive"></a>
+							<a href="#" target="_blank" > <img
+								src="${APP_PATH}/resource/image/5girls_820x200.png"
+								 class="img-responsive"></a>
 						</div>
 					</div>
 					<a class="left carousel-control" href="#focusslide" role="button"

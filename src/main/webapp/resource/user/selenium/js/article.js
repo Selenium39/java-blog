@@ -40,6 +40,7 @@ function show() {
 					.attr("data-original-title", article.articleCommentCount);
 			$("#article_content").append(article.articleContent);
 			$("#comment_submit_button").attr("send_id", article.articleId);
+			show_comment($("#comment_submit_button").attr("send_id"));
 			// 构建文章标签
 			var tagString = "标签: ";
 			$("#tagDiv").append(tagString);
@@ -69,7 +70,15 @@ function show_comment(articleId) {
 			"articleId" : articleId,
 		},
 		success : function(result) {
-
+			var comments=result.data.comments;
+			var count=1;
+			$.each(comments,function(index,item){
+				number=$("<li></li>").addClass("comment-content").append($("<span></span>").addClass("comment-f").append("#"+count));
+				commentDiv=$("<div></div>").addClass("comment-main");
+				commentDiv.append($("<p style='color:blue;font-size:30px;'></p>").append($("<a class='address' rel='nofollow'></a>")).append(item.commentUserName).append($("<span style='color:red;'></span>").addClass("time").append(item.commentCreateTime).append($("<br>")).append($("<p style='color:black;font-size:20px;'></p>").append(item.commentContent))));
+				$("#comment_list").append(number).append(commentDiv);
+				++count;
+			});
 		}
 	});
 }

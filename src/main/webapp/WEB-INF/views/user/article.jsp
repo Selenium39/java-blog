@@ -202,16 +202,10 @@
   </div>
 </form>
 </div>
+<br/>
 				<!-- 评论显示 -->
 				<div id="postcomments">
 					<ol id="comment_list" class="commentlist">
-						<li class="comment-content"><span class="comment-f">#1</span>
-							<div class="comment-main">
-								<p>
-									<a class="address" href="#" rel="nofollow" target="_blank">222</a><span
-										class="time">(2016/10/14 21:02:39)</span><br>111
-								</p>
-							</div></li>
 					</ol>
 				</div>
 			</div>

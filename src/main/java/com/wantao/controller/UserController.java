@@ -163,4 +163,12 @@ public class UserController {
 		commentService.insertComment(comment);
 		return Message.success();
 	}
+	
+	@GetMapping("/selectCommentsByArticleId")
+	@ResponseBody
+	public Message selectCommentsByArticleId(@RequestParam("articleId")Integer articleId) {
+		List<Comment> comments=commentService.selectCommentsByArticleId(articleId);
+		return Message.success().add("comments",comments);
+	}
+	
 }

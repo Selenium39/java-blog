@@ -8,7 +8,11 @@
      select * from comment
   </select>
   <select id="selectCommentsByArticleId" parameterType="java.lang.Integer" resultType="com.wantao.bean.Comment">
-     select * from comment where article_id =#{articleId}
+     select * from comment where comment_article_id =#{articleId} order by comment_create_time
+  </select>
+  <!-- 可以查出当前记录在数据库中处于第几条，但是后来发现直接按create time排序就行了 -->
+  <select id="selectCommentPostion" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+   select count(*) from comment where comment_id <![CDATA[<= ]]> #{commentId}  
   </select>
   <delete id="deleteCommentByBatchById">
 	  delete from comment where comment_id in
