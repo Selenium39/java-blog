@@ -83,106 +83,27 @@
 							<li class="nav-item d-flex align-items-center"><a
 								id="search" href="#"><i class="icon-search"></i></a></li>
 							<!-- Notifications-->
-							<li class="nav-item dropdown"><a id="notifications"
+							<!-- 留言 -->
+							<li class="nav-item dropdown"><a id="notification_message"
 								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false" class="nav-link"><i
-									class="fa fa-bell-o"></i><span
-									class="badge bg-red badge-corner">12</span></a>
-								<ul aria-labelledby="notifications" class="dropdown-menu">
-									<li><a rel="nofollow" href="#" class="dropdown-item">
-											<div class="notification">
-												<div class="notification-content">
-													<i class="fa fa-envelope bg-green"></i>You have 6 new
-													messages
-												</div>
-												<div class="notification-time">
-													<small>4 minutes ago</small>
-												</div>
-											</div>
-									</a></li>
-									<li><a rel="nofollow" href="#" class="dropdown-item">
-											<div class="notification">
-												<div class="notification-content">
-													<i class="fa fa-twitter bg-blue"></i>You have 2 followers
-												</div>
-												<div class="notification-time">
-													<small>4 minutes ago</small>
-												</div>
-											</div>
-									</a></li>
-									<li><a rel="nofollow" href="#" class="dropdown-item">
-											<div class="notification">
-												<div class="notification-content">
-													<i class="fa fa-upload bg-orange"></i>Server Rebooted
-												</div>
-												<div class="notification-time">
-													<small>4 minutes ago</small>
-												</div>
-											</div>
-									</a></li>
-									<li><a rel="nofollow" href="#" class="dropdown-item">
-											<div class="notification">
-												<div class="notification-content">
-													<i class="fa fa-twitter bg-blue"></i>You have 2 followers
-												</div>
-												<div class="notification-time">
-													<small>10 minutes ago</small>
-												</div>
-											</div>
-									</a></li>
-									<li><a rel="nofollow" href="#"
-										class="dropdown-item all-notifications text-center"> <strong>view
-												all notifications </strong></a></li>
-								</ul></li>
-							<!-- Messages-->
-							<li class="nav-item dropdown"><a id="messages"
+									class="fa fa-bell-o" id=""></i> <!-- 这里显示消息条数 --> <span
+									id="new_message_count" class="badge bg-orange badge-corner"></span>
+							</a></li>
+							<!-- 文章评论 -->
+							<li class="nav-item dropdown"><a id="notification_comments"
 								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false" class="nav-link"><i
-									class="fa fa-envelope-o"></i> <!-- 这里显示消息条数 --> <span
+									class="fa fa-commenting"></i><span id="new_comment_count"
+									class="badge bg-red badge-corner"></span></a>	</li>
+							<!-- 联系人-->
+							<li class="nav-item dropdown"><a id="notification_contact"
+								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false" class="nav-link"><i
+									class="fa fa-address-book"></i> <!-- 这里显示消息条数 --> <span
 									id="new_contact_count" class="badge bg-orange badge-corner"></span>
-							</a> <!--	
-							<ul aria-labelledby="notifications" class="dropdown-menu">
-									<li><a rel="nofollow" href="#"
-										class="dropdown-item d-flex">
-											<div class="msg-profile">
-												<img
-													src="${APP_PATH}/resource/admin/template2/img/avatar-1.jpg"
-													alt="..." class="img-fluid rounded-circle">
-											</div>
-											<div class="msg-body">
-												<h3 class="h5">Jason Doe</h3>
-												<span>Sent You Message</span>
-											</div>
-									</a></li>
-									<li><a rel="nofollow" href="#"
-										class="dropdown-item d-flex">
-											<div class="msg-profile">
-												<img
-													src="${APP_PATH}/resource/admin/template2/img/avatar-2.jpg"
-													alt="..." class="img-fluid rounded-circle">
-											</div>
-											<div class="msg-body">
-												<h3 class="h5">Frank Williams</h3>
-												<span>Sent You Message</span>
-											</div>
-									</a></li>
-									<li><a rel="nofollow" href="#"
-										class="dropdown-item d-flex">
-											<div class="msg-profile">
-												<img
-													src="${APP_PATH}/resource/admin/template2/img/avatar-3.jpg"
-													alt="..." class="img-fluid rounded-circle">
-											</div>
-											<div class="msg-body">
-												<h3 class="h5">Ashley Wood</h3>
-												<span>Sent You Message</span>
-											</div>
-									</a></li>
-									<li><a rel="nofollow" href="#"
-										class="dropdown-item all-notifications text-center"> <strong>Read
-												all messages </strong></a></li>
-								</ul></li>
-								--> <!-- Languages dropdown    -->
+							</a></li> <!--	
+							<!-- Languages dropdown    -->
 							<li class="nav-item dropdown"><a id="languages"
 								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"

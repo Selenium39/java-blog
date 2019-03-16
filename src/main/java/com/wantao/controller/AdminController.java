@@ -464,6 +464,39 @@ public class AdminController {
 		PageInfo pageInfo = new PageInfo(comments, 5);// 用pageInfo封装然后交给页面
 		return Message.success().add("pageInfo", pageInfo);
 	}
+	
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id单个和批量修改评论信息已读
+	 */
+	@GetMapping("/updateCommentById")
+	@ResponseBody
+	public Message updateCommentById(@RequestParam("id") String id) {
+		List<Integer> ids = new ArrayList<>();
+		if (id.contains("-")) {
+			String[] commentIds = id.split("-");
+			for (String id1 : commentIds) {
+				ids.add(Integer.parseInt(id1));
+			}
+		} else {
+			ids.add(Integer.parseInt(id));
+		}
+		commentService.updateCommentByBatchById(ids);
+		return Message.success();
+	}
+	
+	/**
+	 * @param
+	 * @return Message
+	 * @description 将全部的评论设为已读
+	 */
+	@GetMapping("/updateAllComment")
+	@ResponseBody
+	public Message updateAllComment() {
+		commentService.updateAllComment();
+		return Message.success();
+	}
 
 	/**
 	 * @param
@@ -495,7 +528,7 @@ public class AdminController {
 	@ResponseBody
 	public Message selectAllMessage(@PathVariable("pn") Integer pn) {
 		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
-		List<Message> messages = messageService.selectAllMessage();
+		List<com.wantao.bean.Message> messages = messageService.selectAllMessage();
 		PageInfo pageInfo = new PageInfo(messages, 5);// 用pageInfo封装然后交给页面
 		return Message.success().add("pageInfo", pageInfo);
 	}
@@ -518,6 +551,38 @@ public class AdminController {
 			ids.add(Integer.parseInt(messageId));
 		}
 		messageService.deleteMessageByBatchById(ids);
+		return Message.success();
+	}
+	
+	/**
+	 * @param
+	 * @return Message
+	 * @description 通过id单个和批量修改留言信息已读
+	 */
+	@GetMapping("/updateMessageById")
+	@ResponseBody
+	public Message updateMessageById(@RequestParam("id") String id) {
+		List<Integer> ids = new ArrayList<>();
+		if (id.contains("-")) {
+			String[] messageIds = id.split("-");
+			for (String id1 : messageIds) {
+				ids.add(Integer.parseInt(id1));
+			}
+		} else {
+			ids.add(Integer.parseInt(id));
+		}
+		messageService.updateMessageByBatchById(ids);
+		return Message.success();
+	}
+	/**
+	 * @param
+	 * @return Message
+	 * @description 将全部的留言设为已读
+	 */
+	@GetMapping("/updateAllMessage")
+	@ResponseBody
+	public Message updateAllMessage() {
+		messageService.updateAllMessage();
 		return Message.success();
 	}
 
@@ -628,11 +693,13 @@ public class AdminController {
 	 * @return Message
 	 * @description 将全部的信息设为已读
 	 */
-	@GetMapping("/selectNewContactCount")
+	@GetMapping("/selectNotificationCount")
 	@ResponseBody
-	public Message selectNewContactCount() {
+	public Message selectNotificationCount() {
 		Integer newContactCount = contactService.selectNewContactCount();
-		return Message.success().add("newContactCount", newContactCount);
+		Integer newMessageCount = messageService.selectNewMessageCount();
+		Integer newCommentCount = commentService.selectNewCommentCount();
+		return Message.success().add("newContactCount", newContactCount).add("newMessageCount",newMessageCount).add("newCommentCount",newCommentCount);
 	}
 
 	/**

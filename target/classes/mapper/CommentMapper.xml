@@ -14,6 +14,9 @@
   <select id="selectCommentPostion" parameterType="java.lang.Integer" resultType="java.lang.Integer">
    select count(*) from comment where comment_id <![CDATA[<= ]]> #{commentId}  
   </select>
+  <select id="selectNewCommentCount" resultType="java.lang.Integer">
+		select count(*) from comment where answer =0
+	</select>
   <delete id="deleteCommentByBatchById">
 	  delete from comment where comment_id in
 	  <foreach collection="list" item="id" separator="," open="(" close=")">
@@ -21,7 +24,20 @@
 	  </foreach>
 	</delete>
 	<insert id="insertComment" parameterType="com.wantao.bean.Comment">
-	 insert into comment(comment_article_id,comment_user_name,comment_user_email,comment_content,comment_ip,comment_create_time)
-	 values(#{commentArticleId},#{commentUserName},#{commentUserEmail},#{commentContent},#{commentIp},#{commentCreateTime})
+	 insert into comment(comment_article_id,comment_user_name,comment_user_email,comment_content,comment_ip,comment_create_time,answer)
+	 values(#{commentArticleId},#{commentUserName},#{commentUserEmail},#{commentContent},#{commentIp},#{commentCreateTime},#{answer})
 	</insert>
+	<update id="updateCommentByBatchById">
+		update comment
+		set answer =1
+		where comment_id in
+		<foreach collection="list" item="id" separator="," open="("
+			close=")">
+			#{id}
+		</foreach>
+	</update>
+		<update id="updateAllComment">
+		update comment
+		set answer =1
+	</update>
 </mapper>

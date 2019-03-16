@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.wantao.util.Message;
+import com.wantao.bean.Message;
 
 /**
  * @author wantao
@@ -16,5 +16,9 @@ public interface MessageMapper {
 	public Integer selectMessageCount();
 	public List<Message> selectAllMessage();
 	 public Integer deleteMessageByBatchById(List<Integer>ids);
+	 public Integer selectNewMessageCount();
+	 public Integer updateMessageByBatchById(List<Integer>ids);
+	 public Integer updateAllMessage();
+	 public Integer insertMessage(Message message);
 
 }

@@ -76,4 +76,19 @@ public class CommentService implements CommentMapper {
 		return commentMapper.selectCommentPostion(commentId);
 	}
 
+	@Override
+	public Integer selectNewCommentCount() {
+		return commentMapper.selectNewCommentCount();
+	}
+
+	@Override
+	public Integer updateCommentByBatchById(List<Integer> ids) {
+		return commentMapper.updateCommentByBatchById(ids);
+	}
+
+	@Override
+	public Integer updateAllComment() {
+		return commentMapper.updateAllComment();
+	}
+
 }

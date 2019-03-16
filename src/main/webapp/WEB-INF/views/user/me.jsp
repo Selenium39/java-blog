@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>关于我</title>
 <!-- custom-theme -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -109,17 +109,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="menu-wrap">
 					<nav class="menu">
 						<div class="icon-list">
-							<a class="scroll active" href="${APP_PATH}/user/index"><i
-								class="fa fa-home"></i><span>Home</span></a> <a class="scroll"
-								href="#about"><i class="fa fa-info"></i><span>About</span></a> <a
-								class="scroll" href="#skills"><i class="fa fa-bar-chart"></i><span>Skills</span></a>
-							<a class="scroll" href="#gallery"><i class="fa fa-picture-o"></i><span>Portfolio</span></a>
-							<a class="scroll" href="#education"><i class="fa fa-book"></i><span>Education</span></a>
-							<a class="scroll" href="#experience"><i
-								class="fa fa-university"></i><span>Experience</span></a> <a
-								class="scroll" href="#stats"><i class="fa fa-laptop"></i><span>Technical
-									Skills</span></a> <a class="scroll" href="#contact"><i
-								class="fa fa-phone"></i><span>Contact Me</span></a>
+							<a class=" active" href="${APP_PATH}/user/index"><i
+								class="fa fa-home"></i><span>首页</span></a> 
+								<a class=" active" href="${APP_PATH}/user/blog"><i
+								class="fa fa-book"></i><span>博客</span></a> 
+								<a class=" active" href="${APP_PATH}/user/message"><i
+								class="fa fa-commenting"></i><span>留言</span></a> 
+								<a class=" active" href="${APP_PATH}/user/aboutMe"><i
+								class="fa fa-user"></i><span>关于我</span></a> 
+
 						</div>
 					</nav>
 					<button class="close-button" id="close-button">Close Menu</button>
@@ -127,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<button class="menu-button" id="open-button">Open Menu</button>
 			</div>
 			<div class="agileinfomenu">
-				<p>MENU</p>
+				<p>菜单</p>
 			</div>
 			<div class="aitslogow3ls">
 				<a href="index.html"><div class="agilelogo">SELENIUM</div></a>
@@ -135,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="wthreecontact">
 				<p>
 					<a class="scroll" href="#contact"><i class="fa fa-envelope-o"
-						aria-hidden="true"></i> CONTACT ME</a>
+						aria-hidden="true"></i> 联系我</a>
 				</p>
 			</div>
 			<div class="clearfix"></div>
@@ -201,7 +199,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- About -->
 	<div class="about" id="about">
 		<div class="container">
-			<h3 class="heading">About Me</h3>
+			<h3 class="heading">基本信息</h3>
 			<div class="col-md-6 aboutleft">
 				<img src="${APP_PATH}/resource/user/template2/images/about.jpg"
 					alt="" />
@@ -211,41 +209,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- 轮播（Carousel）项目 -->
 					<div class="carousel-inner">
 						<div class="item active">
-								<h3>Personal information</h3>
+								<h3>个人信息</h3>
 								<ul class="address" id="me">
 									<li>
 										<ul class="agileits-address-text">
-											<li><b>NAME</b></li>
+											<li><b>姓名</b></li>
 											<li id="name"></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="agileits-address-text">
-											<li><b>NICKNAME</b></li>
+											<li><b>昵称</b></li>
 											<li id="nickname"></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="agileits-address-text">
-											<li><b>GENDER</b></li>
+											<li><b>性别</b></li>
 											<li id="gender"></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="agileits-address-text">
-											<li><b>AGE</b></li>
+											<li><b>年龄</b></li>
 											<li id="age"></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="agileits-address-text">
-											<li><b>PHONE</b></li>
+											<li><b>手机号</b></li>
 											<li id="phone"></li>
 										</ul>
 									</li>
 									<li>
 										<ul class="agileits-address-text">
-											<li><b>EMAIL</b></li>
+											<li><b>邮箱</b></li>
 											<li id="email"></li>
 										   </ul>
 									</li>
@@ -272,9 +270,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- Skills -->
 			<section class="skills" id="skills">
 				<div class="container">
-					<h3 class="heading">Skills</h3>
+					<h3 class="heading">技能</h3>
 					<div class='col-md-8 bar'>
-						<p class="bar-p">Below is the technology I have mastered</p>
+						<p class="bar-p">下面是我所学过的部分技能</p>
 						<div class="col-md-6 group">
 							<div class='bar_left'>
 								<div class='bar_group'>
@@ -302,7 +300,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class='clearfix'></div>
 					</div>
 					<div class="col-md-4 skillsright">
-						<h3 class="bar-h3">About my skills</h3>
+						<h3 class="bar-h3">关于我的技能</h3>
 						<h5 class="bar-p">
 							<i>Despite shortcomings, efforts are still under way</i>
 						</h5>
@@ -318,7 +316,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- //Skills -->
 			<!-- gallery -->
 			<div id="gallery" class="gallery">
-				<h3 class="heading">Image</h3>
+				<h3 class="heading">相册</h3>
 				<div class="gallery-info">
 					<div class="col-md-3 gallery-grids">
 						<a href="${APP_PATH}/resource/user/template2/images/gallery1.jpg"
@@ -426,32 +424,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- Education -->
 			<div class="education" id="education">
 				<div class="container">
-					<h3 class="heading">Education</h3>
+					<h3 class="heading">教育</h3>
 					<div class="col-md-6">
 						<div class="grid1">
-							<h3>Bachelor Degree of education</h3>
+							<h3>本科</h3>
 							<p>
 							<ul>
-								<li>School: Shanghai DianJi University</li>
-								<li>Major:Software Engineering</li>
+								<li>学校: 上海电机学院</li>
+								<li>专业:软件工程</li>
 							</ul>
 							</p>
 							<h4>
-								<b>Year</b> : 2016-2020
+								<b>时间</b> : 2016-2020
 							</h4>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="grid1">
-							<h3>Future</h3>
+							<h3>未来</h3>
 							<p>
 							<ul>
-								<li>Good Good Study Day Day Up</li>
-								<li>The future will be colorful</li>
+								<li>勿忘初心，方得始终</li>
+								<li>未来可期</li>
 							</ul>
 							</p>
 							<h4>
-								<b>Year</b> : 2019-xxx
+								<b>时间</b> : 2019-xxx
 							</h4>
 						</div>
 					</div>
@@ -462,12 +460,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- contact -->
 		<div class="contact">
 			<div class="container">
-				<h3 class="heading">Contact Me</h3>
+				<h3 class="heading">联系我</h3>
 				<div class="col-md-4 address">
 					<div class="mail-agileits-w3layouts">
 						<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
 						<div class="contact-right">
-							<p>Phone</p>
+							<p>手机号码</p>
 							<span>18800269697</span>
 						</div>
 						<div class="clear"></div>
@@ -475,7 +473,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="mail-agileits-w3layouts">
 						<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
 						<div class="contact-right">
-							<p>Email</p>
+							<p>邮箱</p>
 							<a href="mailto:895484122@qq.com">895484122@qq.com</a>
 						</div>
 						<div class="clear"></div>
@@ -483,8 +481,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="mail-agileits-w3layouts">
 						<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
 						<div class="contact-right">
-							<p>Address</p>
-							<span>ShangHai China </span>
+							<p>地址</p>
+							<span>中国 上海 </span>
 						</div>
 						<div class="clear"></div>
 					</div>
@@ -494,20 +492,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<form method="post" id="contactForm">
 						<div class="fields-grid">
 							<div class="styled-input agile-styled-input-top">
-								<input type="text" name="name" required=""> <label>Full
-									Name</label> <span></span>
+								<input type="text" name="name" required=""> <label>姓名</label> <span></span>
 							</div>
 							<div class="styled-input">
-								<input type="email" name="email" required=""> <label>Email</label>
+								<input type="email" name="email" required=""> <label>邮箱</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<input type="tel" name="phone" required=""> <label>Phone
-									Number</label> <span></span>
+								<input type="tel" name="phone" required=""> <label>手机号码</label> <span></span>
 							</div>
 							<div class="styled-input">
 								<textarea name="message" required=""></textarea>
-								<label>Message</label> <span></span>
+								<label>信息</label> <span></span>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -579,12 +575,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- numscroller js file -->
 
 		<!-- scrolling script -->
+		<!-- 点击联系我后跳转到联系我部分 -->
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event) {
 					event.preventDefault();
 					$('html,body').animate({
-						scrollTop : $(this.hash).offset().top
+						scrollTop : $(".contact").offset().top
 					}, 1000);
 				});
 			});

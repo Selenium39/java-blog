@@ -17,8 +17,8 @@ function selectMe() {// 查询个人信息
 			var me = result.data.me;
 			$("#name").append(me.name);
 			$("#nickname").append(me.nickname);
-			me.gender == 0 ? $("#gender").append("female") : $("#gender")
-					.append("male");
+			me.gender == 0 ? $("#gender").append("女") : $("#gender")
+					.append("男");
 			$("#age").append(me.age);
 			$("#phone").append(me.phone);
 			$("#email").append(me.email);

@@ -32,6 +32,7 @@ import com.wantao.service.ArticleTagRefService;
 import com.wantao.service.CommentService;
 import com.wantao.service.ContactService;
 import com.wantao.service.MeService;
+import com.wantao.service.MessageService;
 import com.wantao.util.Message;
 
 /**
@@ -54,6 +55,8 @@ public class UserController {
 	ArticleTagRefService articleTagRefService;
 	@Autowired
 	CommentService commentService;
+	@Autowired
+	MessageService messageService;
 	private static final Logger logger = LoggerFactory.getLogger("UserController.class");
 
 	/**
@@ -85,6 +88,17 @@ public class UserController {
 	public String blog() {
 		return "user/blog";
 	}
+	
+	/**
+	 * @param
+	 * @return String
+	 * @description 跳转留言页面
+	 */
+	@RequestMapping("/message")
+	public String message() {
+		return "user/message";
+	}
+	
 
 	@GetMapping("/article/{pn}")
 	public String article(Model model, @PathVariable("pn") Integer pn) {
@@ -160,6 +174,7 @@ public class UserController {
 		//logger.info(comment.toString());
 		comment.setCommentCreateTime(new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss").format(new Date()));
 		comment.setCommentIp(request.getRemoteAddr());
+		comment.setAnswer(0);
 		commentService.insertComment(comment);
 		return Message.success();
 	}
@@ -169,6 +184,15 @@ public class UserController {
 	public Message selectCommentsByArticleId(@RequestParam("articleId")Integer articleId) {
 		List<Comment> comments=commentService.selectCommentsByArticleId(articleId);
 		return Message.success().add("comments",comments);
+	}
+	
+	@GetMapping("/selectAllMessage/{pn}")
+	@ResponseBody
+	public Message selectAllMessage(@PathVariable("pn")Integer pn) {
+		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
+		List<com.wantao.bean.Message> messages=messageService.selectAllMessage();
+		PageInfo pageInfo = new PageInfo(messages, 5);// 用pageInfo封装然后交给页面
+		return Message.success().add("pageInfo", pageInfo);
 	}
 	
 }

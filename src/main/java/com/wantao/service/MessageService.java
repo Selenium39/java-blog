@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wantao.mapper.MessageMapper;
-import com.wantao.util.Message;
+import com.wantao.bean.Message;
 
 /**
  * @author wantao
@@ -43,6 +43,26 @@ public class MessageService implements MessageMapper {
 	@Override
 	public Integer deleteMessageByBatchById(List<Integer> ids) {
 		return messageMapper.deleteMessageByBatchById(ids);
+	}
+
+	@Override
+	public Integer selectNewMessageCount() {
+		return messageMapper.selectNewMessageCount();
+	}
+
+	@Override
+	public Integer updateMessageByBatchById(List<Integer> ids) {
+		return messageMapper.updateMessageByBatchById(ids);
+	}
+
+	@Override
+	public Integer updateAllMessage() {
+		return messageMapper.updateAllMessage();
+	}
+
+	@Override
+	public Integer insertMessage(Message message) {
+		return messageMapper.insertMessage(message);
 	}
 
 }

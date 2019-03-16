@@ -5,12 +5,32 @@
      select count(*) from message
   </select>
   <select id="selectAllMessage" resultType="com.wantao.bean.Message">
-     select * from message
+     select * from message order by message_create_time
   </select>
+    <select id="selectNewMessageCount" resultType="java.lang.Integer">
+		select count(*) from message where answer =0
+	</select>
     <delete id="deleteMessageByBatchById">
 	  delete from message where message_id in
 	  <foreach collection="list" item="id" separator="," open="(" close=")">
 	      #{id}
 	  </foreach>
 	</delete>
+	<update id="updateMessageByBatchById">
+		update message
+		set answer =1
+		where message_id in
+		<foreach collection="list" item="id" separator="," open="("
+			close=")">
+			#{id}
+		</foreach>
+	</update>
+		<update id="updateAllMessage">
+		update message
+		set answer =1
+	</update>
+	<insert id="insertMessage" parameterType="com.wantao.bean.Message">
+	  insert into message(message_user_name,message_content,message_create_time,answer)
+	  values(#{messageUserName},#{messageContent},#{messageCreateTime},#{answer})
+	</insert>
 </mapper>

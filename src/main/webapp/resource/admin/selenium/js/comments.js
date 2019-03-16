@@ -3,13 +3,21 @@
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
-	// 查询未读联系人数量
-	selectNewContactCount();
+	// 查询未读联系人，未读评论，未读留言数量
+	selectNotificationCount();
 	// 查询所有的评论并显示在分页中
 	comments(1);
 	// 为批量删除按钮绑定事件
 	$("#batchDeleteButton").click(function() {
 		deleteCommentByBatchById();
+	});
+	// 为批量已读按钮绑定事件
+	$("#batchUpdateButton").click(function() {
+		updateCommentByBatchById();
+	});
+	// 为全部已读按钮绑定事件
+	$("#allUpdateButton").click(function() {
+		updateAllComment();
 	});
 	// 为跳转任意页面按钮绑定事件
 	$("#jumpButton").click(function() {
@@ -57,7 +65,10 @@ function comments(pn) {// 查询所有的用户并显示在分页中
 												"删除").attr("class",
 												"btn btn-danger").attr("id",
 												"btn-delete-" + item.commentId);
-										buttons.append(deleteButton);
+										var answerButton = $("<button></button>").attr("id",
+												"btn-answer-" + item.commentId);
+										item.answer==1?answerButton.addClass("btn btn-success").append("已读"):answerButton.addClass("btn btn-default").append("未读")
+										buttons.append(deleteButton).append(answerButton);
 										tr.append(checkbox).append(commentId)
 												.append(commentArticleId)
 												.append(commentUserName)
@@ -82,6 +93,12 @@ function comments(pn) {// 查询所有的用户并显示在分页中
 																deleteCommentById(item.commentId);
 															}
 														});
+										$("#btn-answer-" + item.commentId).click(function() {//单个未读已读
+											var flag = confirm("是否已读id为:" + item.commentId + "的信息?");
+											if (flag == true) {
+												updateCommentById(item.commentId);
+											}
+										});
 									});
 
 				}
@@ -174,6 +191,20 @@ function selectCheckBox() {// 完成批量删除的checkbox全选or全不选
 	});
 }
 
+function updateCommentById(id) {// 修改单个
+	$.ajax({
+		url : APP_PATH + "/admin/updateCommentById",
+		type : "get",
+		data : {
+			"id" : id
+		},
+		success : function(result) {
+			window.location.reload();
+		}
+	});
+}
+
+
 function deleteCommentById(commentId) {// 删除单个
 	$.ajax({
 		url : APP_PATH + "/admin/deleteCommentById",
@@ -209,12 +240,50 @@ function deleteCommentByBatchById() {// 批量删除
 	}
 }
 
-function selectNewContactCount() {// 查询未读联系人的数量
+function updateCommentByBatchById() {// 批量修改
+	var id = "";
+	var messageIdShow = "";
+	$.each($(".check_item:checked"), function() {
+		id += $(this).parents("tr").find("td:eq(1)").text() + "-";
+		messageIdShow += $(this).parents("tr").find("td:eq(1)").text() + " ";
+	});
+	var flag = confirm("是否批量已读id为:" + messageIdShow + "的评论信息?");
+	if (flag == true) {
+		$.ajax({
+			url : APP_PATH + "/admin/updateCommentById",
+			type : "get",
+			data : {
+				"id" : id
+			},
+			success : function(result) {
+				window.location.reload();
+			}
+		});
+	}
+}
+
+function updateAllComment(){//将全部信息设为已读
+	var flag = confirm("是否将全部信息设为已读?");
+	if(flag==true){
+		$.ajax({
+			url: APP_PATH + "/admin/updateAllComment",
+			type:"get",
+			success:function(result){
+				window.location.reload();
+			}
+		});
+	}
+}
+
+
+function selectNotificationCount() {// 查询未读联系人,未读信息，未读留言的数量
 	$.ajax({
-		url : APP_PATH + "/admin/selectNewContactCount",
+		url : APP_PATH + "/admin/selectNotificationCount",
 		type : "get",
 		success : function(result) {
 			$("#new_contact_count").append(result.data.newContactCount);
+			$("#new_message_count").append(result.data.newMessageCount);
+			$("#new_comment_count").append(result.data.newCommentCount);
 		}
 	});
 }

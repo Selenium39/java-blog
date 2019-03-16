@@ -3,13 +3,21 @@
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
-	//查询未读联系人数量
-	selectNewContactCount();
+	// 查询未读联系人，未读评论，未读留言数量
+	selectNotificationCount();
 	// 查询所有的评论并显示在分页中
 	messages(1);
 	// 为批量删除按钮绑定事件
 	$("#batchDeleteButton").click(function() {
 		deleteMessageByBatchById();
+	});
+	// 为批量已读按钮绑定事件
+	$("#batchUpdateButton").click(function() {
+		updateMessageByBatchById();
+	});
+	// 为全部已读按钮绑定事件
+	$("#allUpdateButton").click(function() {
+		updateAllMessage();
 	});
 	//为跳转任意页面按钮绑定事件
 	$("#jumpButton").click(function(){
@@ -37,8 +45,6 @@ function messages(pn) {// 查询所有的留言并显示在分页中
 														$("<input type='checkbox' class='check_item' />"))
 										var messageId = $("<td></td>").append(
 												item.messageId);
-										var messageUserId = $("<td></td>")
-												.append(item.messageUserId);
 										var messageUserName = $("<td></td>")
 												.append(item.messageUserName);
 										var messageContent = $("<td></td>")
@@ -51,9 +57,12 @@ function messages(pn) {// 查询所有的留言并显示在分页中
 												"删除").attr("class",
 												"btn btn-danger").attr("id",
 												"btn-delete-" + item.messageId);
-										buttons.append(deleteButton);
+										var answerButton = $("<button></button>").attr("id",
+												"btn-answer-" + item.messageId);
+										item.answer==1?answerButton.addClass("btn btn-success").append("已读"):answerButton.addClass("btn btn-default").append("未读")
+										buttons.append(deleteButton).append(answerButton);
 										tr.append(checkbox).append(messageId)
-												.append(messageUserId).append(
+												.append(
 														messageUserName)
 												.append(messageContent).append(
 														messageCreateTime)
@@ -74,6 +83,12 @@ function messages(pn) {// 查询所有的留言并显示在分页中
 																deleteMessageById(item.messageId);
 															}
 														});
+										$("#btn-answer-" + item.messageId).click(function() {//单个未读已读
+											var flag = confirm("是否已读id为:" + item.messageId + "的信息?");
+											if (flag == true) {
+												updateMessageById(item.messageId);
+											}
+										});
 									});
 
 				}
@@ -200,13 +215,63 @@ function deleteMessageByBatchById() {// 批量删除
 		});
 	}
 }
-
-function selectNewContactCount(){//查询未读联系人的数量
+function updateMessageById(id) {// 修改单个
 	$.ajax({
-		url:APP_PATH+"/admin/selectNewContactCount",
-		type:"get",
-		success:function(result){
+		url : APP_PATH + "/admin/updateMessageById",
+		type : "get",
+		data : {
+			"id" : id
+		},
+		success : function(result) {
+			window.location.reload();
+		}
+	});
+}
+
+function updateMessageByBatchById() {// 批量修改
+	var id = "";
+	var messageIdShow = "";
+	$.each($(".check_item:checked"), function() {
+		id += $(this).parents("tr").find("td:eq(1)").text() + "-";
+		messageIdShow += $(this).parents("tr").find("td:eq(1)").text() + " ";
+	});
+	var flag = confirm("是否批量已读id为:" + messageIdShow + "的留言信息?");
+	if (flag == true) {
+		$.ajax({
+			url : APP_PATH + "/admin/updateMessageById",
+			type : "get",
+			data : {
+				"id" : id
+			},
+			success : function(result) {
+				window.location.reload();
+			}
+		});
+	}
+}
+
+function updateAllMessage(){//将全部信息设为已读
+	var flag = confirm("是否将全部信息设为已读?");
+	if(flag==true){
+		$.ajax({
+			url: APP_PATH + "/admin/updateAllMessage",
+			type:"get",
+			success:function(result){
+				window.location.reload();
+			}
+		});
+	}
+}
+
+
+function selectNotificationCount() {// 查询未读联系人,未读信息，未读留言的数量
+	$.ajax({
+		url : APP_PATH + "/admin/selectNotificationCount",
+		type : "get",
+		success : function(result) {
 			$("#new_contact_count").append(result.data.newContactCount);
+			$("#new_message_count").append(result.data.newMessageCount);
+			$("#new_comment_count").append(result.data.newCommentCount);
 		}
 	});
 }

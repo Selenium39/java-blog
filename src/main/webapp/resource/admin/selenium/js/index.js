@@ -3,8 +3,8 @@
  */
 var APP_PATH = $("#APP_PATH").val();
 $(function() {
-	//查询未读联系人数量
-	selectNewContactCount();
+	// 查询未读联系人，未读评论，未读留言数量
+	selectNotificationCount();
 	// 获取用户数量
 	getUserCount();
 	//获取文章数量
@@ -59,12 +59,14 @@ function getMessageCount(){// 获取留言数量
 	})
 }
 
-function selectNewContactCount(){//查询未读联系人的数量
+function selectNotificationCount() {// 查询未读联系人,未读信息，未读留言的数量
 	$.ajax({
-		url:APP_PATH+"/admin/selectNewContactCount",
-		type:"get",
-		success:function(result){
+		url : APP_PATH + "/admin/selectNotificationCount",
+		type : "get",
+		success : function(result) {
 			$("#new_contact_count").append(result.data.newContactCount);
+			$("#new_message_count").append(result.data.newMessageCount);
+			$("#new_comment_count").append(result.data.newCommentCount);
 		}
 	});
 }

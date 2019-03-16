@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>index</title>
+<title>首页</title>
 <meta name="description" content="">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -68,9 +68,10 @@
 						<!--导航栏界面  -->
 						<nav class="main-navigation">
 							<ul>
-								<li><a href="${APP_PATH}/user/index">HOME</a>
-								<li><a href="${APP_PATH}/user/blog">BLOG</a>
-							    <li><a href="${APP_PATH}/user/aboutMe">ABOUT ME</a>
+								<li><a href="${APP_PATH}/user/index">首页</a></li>
+								<li><a href="${APP_PATH}/user/blog">博客</a></li>
+								<li><a href="${APP_PATH}/user/message">留言</a></li>
+							    <li><a href="${APP_PATH}/user/aboutMe">关于我</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -95,10 +96,10 @@
 				<div class="hero-area-inner">
 					<div class="hero-area-text">
 						<h1>
-							HELLO, <br> I AM Selenium...
+							你好, <br> 我是Selenium...
 						</h1>
-						<h5>A NOOB PROGRAMMER</h5>
-						<a href="about.html" class="readmore">ABOUT ME</a>
+						<h5>一个菜鸟程序员</h5>
+						<a href="${APP_PATH}/user/aboutMe" class="readmore">关于我</a>
 					</div>
 					<div class="hero-area-image">
 						<img

@@ -7,7 +7,7 @@
 }
 
 .menu-wrap a.active {
-    color: #FFF;
+    
 }
 
 /* Menu Button */
@@ -81,8 +81,7 @@
 	z-index: 1001;
 	width: 300px;
 	height: 100%;
-	background: #272727;
-    background: #0d6bb5;
+	background: rgba(255, 255, 255, .15);
 	padding: 2.5em 1.5em 0;
 	font-size: 1.15em;
 	-webkit-transform: translate3d(-320px,0,0);

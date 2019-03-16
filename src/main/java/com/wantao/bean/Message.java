@@ -23,10 +23,10 @@ import lombok.Data;
 public class Message implements Serializable {
 	private static final long serialVersionUID = -181550064979924929L;
 	private Integer messageId;
-	private Integer messageUserId;
 	private String  messageUserName;
 	private String messageContent;
 	private String messageCreateTime;
+	private Integer answer;
 	public Message() {
 		super();
 	}

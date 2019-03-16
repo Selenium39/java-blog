@@ -19,4 +19,7 @@ public interface CommentMapper {
     public List<Comment> selectCommentsByArticleId(Integer articleId);
     public Integer insertComment(Comment comment);
     public Integer selectCommentPostion(Integer commentId);
+    public Integer selectNewCommentCount();
+    public Integer updateCommentByBatchById(List<Integer>ids);
+    public Integer updateAllComment();
 }
