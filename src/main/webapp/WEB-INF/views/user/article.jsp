@@ -25,6 +25,8 @@
 	type="image/x-icon" />
 <link rel="stylesheet" type="text/css"
 	href="${APP_PATH}/resource/user/selenium/css/article.css"  />
+		<link rel="stylesheet" href="${APP_PATH}/resource/user/template5/css/style.css">
+<script  src="${APP_PATH}/resource/user/template5/js/index.js"></script>	
 <script src="${APP_PATH}/resource/user/template3/js/jquery-2.1.4.min.js"></script>
 <script src="${APP_PATH}/resource/user/template3/js/nprogress.js"></script>
 <script
@@ -47,8 +49,8 @@
 			<div class="container">
 				<div class="header-topbar hidden-xs link-border">
 					<!-- 右上角标签栏 -->
-					<ul class="site-nav topmenu">
-						<a>navbar</a>
+					<!--  <ul class="site-nav topmenu">
+						<a>navbar</a>-->
 					</ul>
 					Don't forget your heart.
 				</div>
@@ -79,7 +81,10 @@
 
 					<!-- 导航栏 -->
 					<ul class="nav navbar-nav navbar-right">
-						<li><a title="index" href="${APP_PATH}/user/blog">index</a></li>
+						<li><a title="index" href="${APP_PATH}/user/index">首页</a></li>
+					    <li><a title="blog" href="${APP_PATH}/user/blog">博客</a></li>
+					    <li><a title="index" href="${APP_PATH}/user/message">留言</a></li>
+					    <li><a title="index" href="${APP_PATH}/user/aboutMe">关于我</a></li>
 					</ul>
 				</div>
 			</div>
@@ -214,22 +219,15 @@
 		<aside class="sidebar">
 			<div class="fixed">
 				<!--右侧信息页面  -->
-				<div class="widget widget-tabs">
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#notice"
-							aria-controls="notice" role="tab" data-toggle="tab">Web
-								Statistics</a></li>
-						<li role="presentation"><a href="#contact"
-							aria-controls="contact" role="tab" data-toggle="tab">Contact
-								Me</a></li>
-					</ul>
+				<div class="widget widget-tabs">		
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane contact active" id="notice">
-							<h2>网站统计信息</h2>
+							<h2>站长:万涛</h2>
+							<h2>已维护<span id="my_time"></span>天</h2>
 						</div>
 						<div role="tabpanel" class="tab-pane contact" id="contact">
-							<h2>QQ</h2>
-
+							<h2>QQ:895484122</h2>
+                            <h2>微信:wt895484122</h2>
 						</div>
 					</div>
 				</div>
@@ -237,28 +235,33 @@
 					<form class="navbar-form" action="#" method="post">
 						<div class="input-group">
 							<input type="text" name="keyword" class="form-control" size="35"
-								placeholder="please input keyword" maxlength="15"
+								placeholder="请输入关键字" maxlength="15"
 								autocomplete="off"> <span class="input-group-btn">
 								<button class="btn btn-default btn-search" name="search"
-									type="submit">Search</button>
+									type="submit">查找</button>
 							</span>
 						</div>
 					</form>
 				</div>
 			</div>
-			<!-- 右侧最新评论文章 -->
+			<!-- 右侧日历 -->
 			<div class="widget widget_hot">
-				<h3>The New Comment Article</h3>
-				<ul>
-					<li><a title="title" href="#"><span class="thumbnail">
-								<img class="thumb"
-								data-original="${APP_PATH}/resource/user/template3/images/201610181739277776.jpg"
-								src="${APP_PATH}/resource/user/template3/images/201610181739277776.jpg"
-								alt="alttitle" style="display: block;">
-						</span><span class="text">title</span><span class="muted"><i
-								class="glyphicon glyphicon-time"></i> 2016-11-01 </span><span
-							class="muted"><i class="glyphicon glyphicon-eye-open"></i>88</span></a></li>
-				</ul>
+				<div  class="calendar">
+	             <div class="header">
+		           <a data-action="prev-month" href="javascript:void(0)" title="Previous Month"><i></i></a>
+		            <div class="text" data-render="month-year"></div>
+		             <a data-action="next-month" href="javascript:void(0)" title="Next Month"><i></i></a>
+	              </div>
+	              <div class="months" data-flow="left">
+		          <div class="month month-a">
+			      <div class="render render-a"></div>
+		    </div>
+		   <div class="month month-b">
+			<div class="render render-b"></div>
+		</div>
+	</div>
+</div>
+				
 			</div>
 			<!-- 支付宝 -->
 			<div class="widget widget_sentence">

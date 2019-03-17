@@ -195,4 +195,19 @@ public class UserController {
 		return Message.success().add("pageInfo", pageInfo);
 	}
 	
+	/**
+	 * @param
+	 * @return 
+	 * @description 增加留言
+	 */
+	@PostMapping("/addMessage")
+	@ResponseBody
+	public Message addMessage(com.wantao.bean.Message message, HttpServletRequest request) {
+		//logger.info(comment.toString());
+		message.setAnswer(0);
+		message.setMessageCreateTime(new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss").format(new Date()));
+		messageService.insertMessage(message);
+		return Message.success();
+	}
+	
 }

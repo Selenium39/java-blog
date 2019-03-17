@@ -4,6 +4,10 @@
 var APP_PATH = $("#APP_PATH").val();
 $(function(){
 	messages(1);
+	$("#message_submit_button").click(function(){
+		add_message();
+		return false;
+	});
 });
 
 function messages(pn){
@@ -94,4 +98,16 @@ function build_page_line(result) {// 构建分页条
 	ul.append(nextPageLi).append(lastPageLi);
 	var nav = $("<nav></nav>").append(ul).addClass();
 	$("#page_line").append(nav).addClass("offset-md-7");
+}
+
+function add_message(){
+	$.ajax({
+		url:APP_PATH+"/user/addMessage",
+		type:"post",
+		data:$("#messageForm").serialize(),
+		success:function(result){
+			alert("感谢您的评论");
+			window.location.reload();
+		}
+	});
 }

@@ -131,22 +131,22 @@
     </div>
 
     <div class="padd-box-sm">
-        <form action="#" method="post" class="messageForm">
+        <form action="#" method="post" class="messageForm" id="messageForm">
             <div class="form-group">
                 <label class="form-label" for="author">您的昵称</label>
                 <div class="form-item-wrap">
-                    <input id="comment_user_name" name="comment_user_name" class="form-item" type="text">
+                    <input id="comment_user_name" name="messageUserName" class="form-item" type="text">
                 </div>
             </div>
             <div class="form-group">
                 <label class="form-label" for="comment">评论</label>
                 <div class="form-item-wrap">
-                    <textarea id="comment_content" id="comment" class="form-item"></textarea>
+                    <textarea name="messageContent" id="comment_content" id="comment" class="form-item"></textarea>
                 </div>
             </div>
 
             <div class="form-submit form-item-wrap">
-                <input class="btn btn-primary btn-lg" type="submit" value="发表评论">
+                <input id="message_submit_button" class="btn btn-primary btn-lg" type="submit" value="发表评论">
             </div>
         </form>
     </div>
