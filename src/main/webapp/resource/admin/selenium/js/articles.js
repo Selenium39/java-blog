@@ -15,6 +15,9 @@ $(function() {
 	$("#batchDeleteButton").click(function() {
 		deleteArticleByBatchById();
 	});
+	$("#addButton").click(function(){
+		$(location).attr("href",APP_PATH+"/admin/article");
+	});
 	// 为跳转任意页面按钮绑定事件
 	$("#jumpButton").click(function() {
 		var pn = $("#page_number").val();

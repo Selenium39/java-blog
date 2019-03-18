@@ -116,6 +116,15 @@ public class AdminController {
 	public String articles() {
 		return "admin/articles";
 	}
+	/**
+	 * @param
+	 * @return String
+	 * @description 新增文章跳转
+	 */
+	@RequestMapping("/article")
+	public String article() {
+		return "admin/article";
+	}
 
 	/**
 	 * @param
