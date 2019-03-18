@@ -25,7 +25,7 @@
 	</update>
 
 	<insert id="insertTag" parameterType="com.wantao.bean.Tag">
-		insert into Tag
+		insert into tag
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			tag_name,
 			tag_description,

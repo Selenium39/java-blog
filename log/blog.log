@@ -1,0 +1,522 @@
+2019-03-18 22:21:24,492 DEBUG [com.wantao.mapper.MeMapper.selectMe] - ==>  Preparing: select * from me 
+2019-03-18 22:21:24,603 DEBUG [com.wantao.mapper.MeMapper.selectMe] - ==> Parameters: 
+2019-03-18 22:21:24,652 TRACE [com.wantao.mapper.MeMapper.selectMe] - <==    Columns: id, name, avatar, password, nickname, gender, age, phone, email, title, vice_title, introduction
+2019-03-18 22:21:24,654 TRACE [com.wantao.mapper.MeMapper.selectMe] - <==        Row: 1, 万涛, /resource/avatar/1.jpg, 123456, Selenium, 1, 21, 18800269697, 895484122@qq.com, 你好，我是万涛, 一个菜鸟程序员, <<BLOB>>
+2019-03-18 22:21:24,676 DEBUG [com.wantao.mapper.MeMapper.selectMe] - <==      Total: 1
+2019-03-18 22:21:30,708 DEBUG [com.wantao.mapper.ContactMapper.addContact] - ==>  Preparing: insert into contact(name,email,phone,message,send_time,send_ip,answer) values(?,?,?,?,?,?,?) 
+2019-03-18 22:21:30,712 DEBUG [com.wantao.mapper.ContactMapper.addContact] - ==> Parameters: (String), (String), (String), (String), 2019-21-18  22:21:30(String), 0:0:0:0:0:0:0:1(String), 0(Integer)
+2019-03-18 22:21:30,723 DEBUG [com.wantao.mapper.ContactMapper.addContact] - <==    Updates: 1
+2019-03-18 22:21:32,300 DEBUG [com.wantao.mapper.MeMapper.selectMe] - ==>  Preparing: select * from me 
+2019-03-18 22:21:32,301 DEBUG [com.wantao.mapper.MeMapper.selectMe] - ==> Parameters: 
+2019-03-18 22:21:32,306 TRACE [com.wantao.mapper.MeMapper.selectMe] - <==    Columns: id, name, avatar, password, nickname, gender, age, phone, email, title, vice_title, introduction
+2019-03-18 22:21:32,307 TRACE [com.wantao.mapper.MeMapper.selectMe] - <==        Row: 1, 万涛, /resource/avatar/1.jpg, 123456, Selenium, 1, 21, 18800269697, 895484122@qq.com, 你好，我是万涛, 一个菜鸟程序员, <<BLOB>>
+2019-03-18 22:21:32,312 DEBUG [com.wantao.mapper.MeMapper.selectMe] - <==      Total: 1
+2019-03-18 22:24:30,430 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:24:30,430 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:24:30,434 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:24:30,434 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:24:30,435 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:24:30,435 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==>  Preparing: select count(*) from article 
+2019-03-18 22:24:30,436 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==> Parameters: 
+2019-03-18 22:24:30,437 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==    Columns: count(*)
+2019-03-18 22:24:30,437 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==        Row: 29
+2019-03-18 22:24:30,437 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==      Total: 1
+2019-03-18 22:24:30,437 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==>  Preparing: select count(*) from user 
+2019-03-18 22:24:30,437 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==> Parameters: 
+2019-03-18 22:24:30,438 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==    Columns: count(*)
+2019-03-18 22:24:30,439 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==        Row: 0
+2019-03-18 22:24:30,439 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - <==      Total: 1
+2019-03-18 22:24:30,440 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==>  Preparing: select count(*) from comment 
+2019-03-18 22:24:30,440 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==> Parameters: 
+2019-03-18 22:24:30,442 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==    Columns: count(*)
+2019-03-18 22:24:30,442 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==        Row: 13
+2019-03-18 22:24:30,442 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - <==      Total: 1
+2019-03-18 22:24:30,442 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:24:30,443 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:24:30,445 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:24:30,445 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:24:30,445 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:24:30,452 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:24:30,453 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:24:30,458 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:24:30,458 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:24:30,463 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:24:30,465 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==>  Preparing: select count(*) from message 
+2019-03-18 22:24:30,465 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==> Parameters: 
+2019-03-18 22:24:30,466 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==    Columns: count(*)
+2019-03-18 22:24:30,466 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==        Row: 1011
+2019-03-18 22:24:30,467 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - <==      Total: 1
+2019-03-18 22:24:33,950 DEBUG [com.wantao.mapper.MeMapper.selectMe] - ==>  Preparing: select * from me 
+2019-03-18 22:24:33,950 DEBUG [com.wantao.mapper.MeMapper.selectMe] - ==> Parameters: 
+2019-03-18 22:24:33,950 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:24:33,952 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:24:33,952 TRACE [com.wantao.mapper.MeMapper.selectMe] - <==    Columns: id, name, avatar, password, nickname, gender, age, phone, email, title, vice_title, introduction
+2019-03-18 22:24:33,953 TRACE [com.wantao.mapper.MeMapper.selectMe] - <==        Row: 1, 万涛, /resource/avatar/1.jpg, 123456, Selenium, 1, 21, 18800269697, 895484122@qq.com, 你好，我是万涛, 一个菜鸟程序员, <<BLOB>>
+2019-03-18 22:24:33,954 DEBUG [com.wantao.mapper.MeMapper.selectMe] - <==      Total: 1
+2019-03-18 22:24:33,958 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:24:33,958 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:24:33,959 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:24:33,959 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:24:33,964 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:24:33,966 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:24:33,966 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:24:33,966 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:24:33,967 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:24:33,967 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:24:33,968 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:24:33,968 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:24:33,968 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:24:36,547 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:24:36,547 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:24:36,564 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:24:36,564 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:24:36,565 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:24:36,566 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:24:36,573 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:24:36,583 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:24:36,583 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:24:36,583 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:24:36,586 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:24:36,586 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:24:36,591 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:24:36,591 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:24:36,591 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:24:36,619 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - ==>  Preparing: SELECT count(0) FROM tag 
+2019-03-18 22:24:36,619 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - ==> Parameters: 
+2019-03-18 22:24:36,628 TRACE [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==    Columns: count(0)
+2019-03-18 22:24:36,628 TRACE [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==        Row: 2
+2019-03-18 22:24:36,629 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==      Total: 1
+2019-03-18 22:24:36,631 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - ==>  Preparing: select * from tag LIMIT ? 
+2019-03-18 22:24:36,632 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - ==> Parameters: 5(Integer)
+2019-03-18 22:24:36,632 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==    Columns: tag_id, tag_name, tag_description, tag_image
+2019-03-18 22:24:36,633 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 1, java, java, /resource/tag/java.jpg
+2019-03-18 22:24:36,633 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 2, mysql, mysql, /resource/tag/java.jpg
+2019-03-18 22:24:36,633 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - <==      Total: 2
+2019-03-18 22:25:15,122 DEBUG [com.wantao.mapper.TagMapper.insertTag] - ==>  Preparing: insert into Tag ( tag_name, tag_description, tag_image ) values ( ?, ?, ? ) 
+2019-03-18 22:25:15,129 DEBUG [com.wantao.mapper.TagMapper.insertTag] - ==> Parameters: 测试(String), 测试(String), /resource/tag/1.jpeg(String)
+2019-03-18 22:25:16,720 DEBUG [com.wantao.mapper.TagMapper.insertTag] - ==>  Preparing: insert into Tag ( tag_name, tag_description, tag_image ) values ( ?, ?, ? ) 
+2019-03-18 22:25:16,721 DEBUG [com.wantao.mapper.TagMapper.insertTag] - ==> Parameters: 测试(String), 测试(String), /resource/tag/1.jpeg(String)
+2019-03-18 22:27:55,311 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==>  Preparing: select count(*) from comment 
+2019-03-18 22:27:55,396 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==> Parameters: 
+2019-03-18 22:27:55,476 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==    Columns: count(*)
+2019-03-18 22:27:55,476 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==        Row: 13
+2019-03-18 22:27:55,478 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - <==      Total: 1
+2019-03-18 22:27:55,479 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==>  Preparing: select count(*) from user 
+2019-03-18 22:27:55,480 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==> Parameters: 
+2019-03-18 22:27:55,481 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==    Columns: count(*)
+2019-03-18 22:27:55,482 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==        Row: 0
+2019-03-18 22:27:55,483 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - <==      Total: 1
+2019-03-18 22:27:55,483 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==>  Preparing: select count(*) from article 
+2019-03-18 22:27:55,484 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==> Parameters: 
+2019-03-18 22:27:55,499 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==    Columns: count(*)
+2019-03-18 22:27:55,499 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==        Row: 29
+2019-03-18 22:27:55,500 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==      Total: 1
+2019-03-18 22:27:55,500 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==>  Preparing: select count(*) from message 
+2019-03-18 22:27:55,501 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==> Parameters: 
+2019-03-18 22:27:55,502 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==    Columns: count(*)
+2019-03-18 22:27:55,502 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==        Row: 1011
+2019-03-18 22:27:55,503 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - <==      Total: 1
+2019-03-18 22:27:55,503 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:27:55,503 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:27:55,505 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:27:55,506 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:27:55,506 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:27:55,506 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:27:55,507 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:27:55,512 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:27:55,512 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:27:55,512 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:27:55,513 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:27:55,513 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:27:55,526 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:27:55,526 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:27:55,531 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:27:58,106 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:27:58,110 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:27:58,126 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:27:58,126 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:27:58,127 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:27:58,129 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:27:58,133 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:27:58,135 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:27:58,136 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:27:58,136 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:27:58,137 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:27:58,139 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:27:58,142 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:27:58,142 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:27:58,142 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:27:58,220 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - ==>  Preparing: SELECT count(0) FROM tag 
+2019-03-18 22:27:58,221 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - ==> Parameters: 
+2019-03-18 22:27:58,222 TRACE [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==    Columns: count(0)
+2019-03-18 22:27:58,222 TRACE [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==        Row: 2
+2019-03-18 22:27:58,222 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==      Total: 1
+2019-03-18 22:27:58,225 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - ==>  Preparing: select * from tag LIMIT ? 
+2019-03-18 22:27:58,229 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - ==> Parameters: 5(Integer)
+2019-03-18 22:27:58,231 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==    Columns: tag_id, tag_name, tag_description, tag_image
+2019-03-18 22:27:58,232 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 1, java, java, /resource/tag/java.jpg
+2019-03-18 22:27:58,236 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 2, mysql, mysql, /resource/tag/java.jpg
+2019-03-18 22:27:58,237 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - <==      Total: 2
+2019-03-18 22:28:27,816 DEBUG [com.wantao.mapper.TagMapper.insertTag] - ==>  Preparing: insert into tag ( tag_name, tag_description, tag_image ) values ( ?, ?, ? ) 
+2019-03-18 22:28:27,825 DEBUG [com.wantao.mapper.TagMapper.insertTag] - ==> Parameters: 测试(String), 测试(String), /resource/tag/dog1.jpeg(String)
+2019-03-18 22:28:27,839 DEBUG [com.wantao.mapper.TagMapper.insertTag] - <==    Updates: 1
+2019-03-18 22:28:27,976 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:28:27,977 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:28:27,979 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:28:27,980 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:28:27,980 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:28:27,980 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:28:27,980 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:28:27,987 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - ==>  Preparing: SELECT count(0) FROM tag 
+2019-03-18 22:28:27,990 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:28:27,994 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:28:27,994 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:28:27,996 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:28:27,997 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:28:27,998 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:28:27,998 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:28:27,998 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:28:28,000 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - ==> Parameters: 
+2019-03-18 22:28:28,006 TRACE [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==    Columns: count(0)
+2019-03-18 22:28:28,007 TRACE [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==        Row: 3
+2019-03-18 22:28:28,007 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==      Total: 1
+2019-03-18 22:28:28,008 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - ==>  Preparing: select * from tag LIMIT ? 
+2019-03-18 22:28:28,011 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - ==> Parameters: 5(Integer)
+2019-03-18 22:28:28,012 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==    Columns: tag_id, tag_name, tag_description, tag_image
+2019-03-18 22:28:28,012 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 1, java, java, /resource/tag/java.jpg
+2019-03-18 22:28:28,013 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 2, mysql, mysql, /resource/tag/java.jpg
+2019-03-18 22:28:28,014 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 3, 测试, 测试, /resource/tag/dog1.jpeg
+2019-03-18 22:28:28,014 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - <==      Total: 3
+2019-03-18 22:31:05,235 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:31:05,238 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:31:05,261 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - ==>  Preparing: SELECT count(0) FROM tag 
+2019-03-18 22:31:05,262 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - ==> Parameters: 
+2019-03-18 22:31:05,264 TRACE [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==    Columns: count(0)
+2019-03-18 22:31:05,266 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:31:05,266 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:31:05,267 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:31:05,272 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:31:05,275 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:31:05,275 TRACE [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==        Row: 3
+2019-03-18 22:31:05,278 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==      Total: 1
+2019-03-18 22:31:05,279 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - ==>  Preparing: select * from tag LIMIT ? 
+2019-03-18 22:31:05,279 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:31:05,279 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:31:05,279 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - ==> Parameters: 5(Integer)
+2019-03-18 22:31:05,284 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==    Columns: tag_id, tag_name, tag_description, tag_image
+2019-03-18 22:31:05,284 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 1, java, java, /resource/tag/java.jpg
+2019-03-18 22:31:05,285 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 2, mysql, mysql, /resource/tag/java.jpg
+2019-03-18 22:31:05,287 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 3, 测试, 测试, /resource/tag/dog1.jpeg
+2019-03-18 22:31:05,287 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:31:05,288 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - <==      Total: 3
+2019-03-18 22:31:05,294 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:31:05,298 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:31:05,305 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:31:05,306 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:31:05,307 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:32:13,623 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:32:13,623 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:32:13,624 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:32:13,624 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:32:13,624 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:32:13,625 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:32:13,625 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:32:13,626 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:32:13,627 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:32:13,627 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:32:13,627 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:32:13,627 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:32:13,628 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:32:13,629 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:32:13,629 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:32:13,630 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - ==>  Preparing: SELECT count(0) FROM user 
+2019-03-18 22:32:13,631 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - ==> Parameters: 
+2019-03-18 22:32:13,635 TRACE [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==    Columns: count(0)
+2019-03-18 22:32:13,635 TRACE [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==        Row: 0
+2019-03-18 22:32:13,635 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==      Total: 1
+2019-03-18 22:32:41,811 DEBUG [com.wantao.mapper.UserMapper.insertUser] - ==>  Preparing: insert into user ( user_name, user_password, user_nickname, user_email, user_avatar, user_register_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-03-18 22:32:41,813 DEBUG [com.wantao.mapper.UserMapper.insertUser] - ==> Parameters: 测试(String), 123(String), 123(String), 123(String), /resource/avatar/33.jpeg(String), 2019-32-18  22:32:41(String)
+2019-03-18 22:32:41,824 DEBUG [com.wantao.mapper.UserMapper.insertUser] - <==    Updates: 1
+2019-03-18 22:32:42,405 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:32:42,406 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:32:42,410 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:32:42,411 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:32:42,411 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:32:42,412 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:32:42,412 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:32:42,413 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:32:42,414 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:32:42,411 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - ==>  Preparing: SELECT count(0) FROM user 
+2019-03-18 22:32:42,416 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:32:42,416 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - ==> Parameters: 
+2019-03-18 22:32:42,417 TRACE [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==    Columns: count(0)
+2019-03-18 22:32:42,417 TRACE [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==        Row: 1
+2019-03-18 22:32:42,420 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==      Total: 1
+2019-03-18 22:32:42,420 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:32:42,420 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:32:42,421 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:32:42,422 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:32:42,422 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:32:42,426 DEBUG [com.wantao.mapper.UserMapper.selectAllUser] - ==>  Preparing: select * from user LIMIT ? 
+2019-03-18 22:32:42,427 DEBUG [com.wantao.mapper.UserMapper.selectAllUser] - ==> Parameters: 5(Integer)
+2019-03-18 22:32:42,428 TRACE [com.wantao.mapper.UserMapper.selectAllUser] - <==    Columns: user_id, user_name, user_password, user_nickname, user_email, user_url, user_avatar, user_last_login_ip, user_register_time, user_last_login_time, user_status
+2019-03-18 22:32:42,428 TRACE [com.wantao.mapper.UserMapper.selectAllUser] - <==        Row: 4, 测试, 123, 123, 123, , /resource/avatar/33.jpeg, null, 2019-32-18  22:32:41, null, 1
+2019-03-18 22:32:42,436 DEBUG [com.wantao.mapper.UserMapper.selectAllUser] - <==      Total: 1
+2019-03-18 22:37:52,689 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:37:52,752 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:37:52,764 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - ==>  Preparing: SELECT count(0) FROM article 
+2019-03-18 22:37:52,779 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:37:52,779 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - ==> Parameters: 
+2019-03-18 22:37:52,779 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:37:52,784 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:37:52,785 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==    Columns: count(0)
+2019-03-18 22:37:52,785 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==        Row: 29
+2019-03-18 22:37:52,788 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==      Total: 1
+2019-03-18 22:37:52,792 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article order by article_create_time desc LIMIT ? 
+2019-03-18 22:37:52,793 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:37:52,793 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:37:52,794 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - ==> Parameters: 5(Integer)
+2019-03-18 22:37:52,795 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:37:52,795 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:37:52,795 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:37:52,795 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:37:52,796 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:37:52,796 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:37:52,797 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:37:52,797 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:37:52,823 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-18 22:37:52,823 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 29, 1, selenium, MySQL开发规范, 1, 0, null, 0, 2018-11-25 21:09:53, 2018-11-25 21:10:37, 1, 1, 1, <<BLOB>>
+2019-03-18 22:37:52,830 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 28, 1, selenium, MySQL常用命令语句, 1, 0, null, 0, 2018-11-25 21:06:52, 2018-11-25 21:06:52, 1, 1, 1, <<BLOB>>
+2019-03-18 22:37:52,831 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 27, 1, selenium, Docker_入门？只要这篇就够了！（纯干货适合0基础小白）, 0, 0, null, 0, 2018-11-25 21:05:05, 2018-11-25 21:06:04, 1, 1, 1, <<BLOB>>
+2019-03-18 22:37:52,833 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 26, 1, selenium, RocketMQ 实战之快速入门, 1, 0, null, 0, 2018-11-25 21:02:40, 2018-11-25 21:02:58, 1, 1, 1, <<BLOB>>
+2019-03-18 22:37:52,836 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 25, 1, selenium, SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作, 0, 0, null, 0, 2018-11-25 21:01:24, 2018-11-25 21:01:24, 1, 1, 1, <<BLOB>>
+2019-03-18 22:37:52,837 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==      Total: 5
+2019-03-18 22:38:13,520 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:38:13,526 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:38:13,528 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - ==>  Preparing: SELECT count(0) FROM user 
+2019-03-18 22:38:13,529 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - ==> Parameters: 
+2019-03-18 22:38:13,529 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:38:13,530 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:38:13,530 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:38:13,531 TRACE [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==    Columns: count(0)
+2019-03-18 22:38:13,531 TRACE [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==        Row: 1
+2019-03-18 22:38:13,531 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:38:13,532 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==      Total: 1
+2019-03-18 22:38:13,533 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:38:13,535 DEBUG [com.wantao.mapper.UserMapper.selectAllUser] - ==>  Preparing: select * from user LIMIT ? 
+2019-03-18 22:38:13,536 DEBUG [com.wantao.mapper.UserMapper.selectAllUser] - ==> Parameters: 5(Integer)
+2019-03-18 22:38:13,537 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:38:13,538 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:38:13,538 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:38:13,541 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:38:13,541 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:38:13,542 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:38:13,542 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:38:13,542 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:38:13,545 TRACE [com.wantao.mapper.UserMapper.selectAllUser] - <==    Columns: user_id, user_name, user_password, user_nickname, user_email, user_url, user_avatar, user_last_login_ip, user_register_time, user_last_login_time, user_status
+2019-03-18 22:38:13,546 TRACE [com.wantao.mapper.UserMapper.selectAllUser] - <==        Row: 4, 测试, 123, 123, 123, , /resource/avatar/33.jpeg, null, 2019-32-18  22:32:41, null, 1
+2019-03-18 22:38:13,551 DEBUG [com.wantao.mapper.UserMapper.selectAllUser] - <==      Total: 1
+2019-03-18 22:38:16,127 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:38:16,127 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:38:16,129 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:38:16,129 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:38:16,130 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:38:16,131 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:38:16,131 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:38:16,140 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:38:16,143 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:38:16,143 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:38:16,144 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - ==>  Preparing: SELECT count(0) FROM article 
+2019-03-18 22:38:16,145 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - ==> Parameters: 
+2019-03-18 22:38:16,146 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:38:16,146 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:38:16,146 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==    Columns: count(0)
+2019-03-18 22:38:16,146 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==        Row: 29
+2019-03-18 22:38:16,146 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==      Total: 1
+2019-03-18 22:38:16,147 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:38:16,147 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:38:16,147 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article order by article_create_time desc LIMIT ? 
+2019-03-18 22:38:16,147 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:38:16,147 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - ==> Parameters: 5(Integer)
+2019-03-18 22:38:16,151 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-18 22:38:16,151 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 29, 1, selenium, MySQL开发规范, 1, 0, null, 0, 2018-11-25 21:09:53, 2018-11-25 21:10:37, 1, 1, 1, <<BLOB>>
+2019-03-18 22:38:16,153 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 28, 1, selenium, MySQL常用命令语句, 1, 0, null, 0, 2018-11-25 21:06:52, 2018-11-25 21:06:52, 1, 1, 1, <<BLOB>>
+2019-03-18 22:38:16,153 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 27, 1, selenium, Docker_入门？只要这篇就够了！（纯干货适合0基础小白）, 0, 0, null, 0, 2018-11-25 21:05:05, 2018-11-25 21:06:04, 1, 1, 1, <<BLOB>>
+2019-03-18 22:38:16,154 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 26, 1, selenium, RocketMQ 实战之快速入门, 1, 0, null, 0, 2018-11-25 21:02:40, 2018-11-25 21:02:58, 1, 1, 1, <<BLOB>>
+2019-03-18 22:38:16,159 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 25, 1, selenium, SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作, 0, 0, null, 0, 2018-11-25 21:01:24, 2018-11-25 21:01:24, 1, 1, 1, <<BLOB>>
+2019-03-18 22:38:16,160 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==      Total: 5
+2019-03-18 22:38:17,435 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:38:17,435 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:38:17,436 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:38:17,436 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:38:17,436 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:38:17,438 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:38:17,439 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:38:17,442 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:38:17,442 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:38:17,447 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:38:17,447 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:38:17,448 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:38:17,448 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - ==>  Preparing: SELECT count(0) FROM article 
+2019-03-18 22:38:17,449 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:38:17,451 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:38:17,452 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:38:17,452 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - ==> Parameters: 
+2019-03-18 22:38:17,452 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==    Columns: count(0)
+2019-03-18 22:38:17,453 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==        Row: 29
+2019-03-18 22:38:17,453 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==      Total: 1
+2019-03-18 22:38:17,453 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article order by article_create_time desc LIMIT ? 
+2019-03-18 22:38:17,454 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - ==> Parameters: 5(Integer)
+2019-03-18 22:38:17,460 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-18 22:38:17,460 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 29, 1, selenium, MySQL开发规范, 1, 0, null, 0, 2018-11-25 21:09:53, 2018-11-25 21:10:37, 1, 1, 1, <<BLOB>>
+2019-03-18 22:38:17,461 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 28, 1, selenium, MySQL常用命令语句, 1, 0, null, 0, 2018-11-25 21:06:52, 2018-11-25 21:06:52, 1, 1, 1, <<BLOB>>
+2019-03-18 22:38:17,462 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 27, 1, selenium, Docker_入门？只要这篇就够了！（纯干货适合0基础小白）, 0, 0, null, 0, 2018-11-25 21:05:05, 2018-11-25 21:06:04, 1, 1, 1, <<BLOB>>
+2019-03-18 22:38:17,463 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 26, 1, selenium, RocketMQ 实战之快速入门, 1, 0, null, 0, 2018-11-25 21:02:40, 2018-11-25 21:02:58, 1, 1, 1, <<BLOB>>
+2019-03-18 22:38:17,464 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 25, 1, selenium, SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作, 0, 0, null, 0, 2018-11-25 21:01:24, 2018-11-25 21:01:24, 1, 1, 1, <<BLOB>>
+2019-03-18 22:38:17,464 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==      Total: 5
+2019-03-18 22:38:18,305 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-18 22:38:18,305 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-18 22:38:18,306 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-18 22:38:18,306 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-18 22:38:18,306 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-18 22:38:18,307 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-18 22:38:18,307 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-18 22:38:18,310 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-18 22:38:18,310 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1004
+2019-03-18 22:38:18,310 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-18 22:38:18,311 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-18 22:38:18,312 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-18 22:38:18,311 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage_COUNT] - ==>  Preparing: SELECT count(0) FROM message 
+2019-03-18 22:38:18,313 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage_COUNT] - ==> Parameters: 
+2019-03-18 22:38:18,314 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-18 22:38:18,314 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-18 22:38:18,314 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-18 22:38:18,315 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage_COUNT] - <==    Columns: count(0)
+2019-03-18 22:38:18,315 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage_COUNT] - <==        Row: 1011
+2019-03-18 22:38:18,315 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage_COUNT] - <==      Total: 1
+2019-03-18 22:38:18,316 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage] - ==>  Preparing: select * from message order by message_create_time LIMIT ? 
+2019-03-18 22:38:18,316 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage] - ==> Parameters: 5(Integer)
+2019-03-18 22:38:18,318 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==    Columns: message_id, message_user_name, message_content, message_create_time, answer
+2019-03-18 22:38:18,319 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==        Row: 1, selenium, <<BLOB>>, 2018-11-25 20:51:52, 1
+2019-03-18 22:38:18,320 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==        Row: 4, selenium4, <<BLOB>>, 2018-11-25 20:51:52, 1
+2019-03-18 22:38:18,321 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==        Row: 2, selenium2, <<BLOB>>, 2018-11-25 20:51:53, 1
+2019-03-18 22:38:18,322 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==        Row: 256, 6611ab, <<BLOB>>, 2018-11-25 20:51:54, 0
+2019-03-18 22:38:18,322 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==        Row: 512, bff5ab, <<BLOB>>, 2018-11-25 20:51:54, 0
+2019-03-18 22:38:18,322 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage] - <==      Total: 5
+2019-03-18 22:44:10,674 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage_COUNT] - ==>  Preparing: SELECT count(0) FROM message 
+2019-03-18 22:44:10,676 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage_COUNT] - ==> Parameters: 
+2019-03-18 22:44:10,677 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage_COUNT] - <==    Columns: count(0)
+2019-03-18 22:44:10,677 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage_COUNT] - <==        Row: 1011
+2019-03-18 22:44:10,677 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage_COUNT] - <==      Total: 1
+2019-03-18 22:44:10,677 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage] - ==>  Preparing: select * from message order by message_create_time LIMIT ? 
+2019-03-18 22:44:10,678 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage] - ==> Parameters: 5(Integer)
+2019-03-18 22:44:10,679 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==    Columns: message_id, message_user_name, message_content, message_create_time, answer
+2019-03-18 22:44:10,680 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==        Row: 1, selenium, <<BLOB>>, 2018-11-25 20:51:52, 1
+2019-03-18 22:44:10,680 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==        Row: 4, selenium4, <<BLOB>>, 2018-11-25 20:51:52, 1
+2019-03-18 22:44:10,680 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==        Row: 2, selenium2, <<BLOB>>, 2018-11-25 20:51:53, 1
+2019-03-18 22:44:10,680 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==        Row: 256, 6611ab, <<BLOB>>, 2018-11-25 20:51:54, 0
+2019-03-18 22:44:10,681 TRACE [com.wantao.mapper.MessageMapper.selectAllMessage] - <==        Row: 512, bff5ab, <<BLOB>>, 2018-11-25 20:51:54, 0
+2019-03-18 22:44:10,681 DEBUG [com.wantao.mapper.MessageMapper.selectAllMessage] - <==      Total: 5
+2019-03-18 22:44:13,708 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==>  Preparing: SELECT count(0) FROM article WHERE article_status = 1 
+2019-03-18 22:44:13,708 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==> Parameters: 
+2019-03-18 22:44:13,709 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==    Columns: count(0)
+2019-03-18 22:44:13,710 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==        Row: 27
+2019-03-18 22:44:13,710 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==      Total: 1
+2019-03-18 22:44:13,711 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article where article_status=1 order by article_create_time desc LIMIT ? 
+2019-03-18 22:44:13,712 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==> Parameters: 5(Integer)
+2019-03-18 22:44:13,725 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-18 22:44:13,725 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 29, 1, selenium, MySQL开发规范, 1, 0, null, 0, 2018-11-25 21:09:53, 2018-11-25 21:10:37, 1, 1, 1, <<BLOB>>
+2019-03-18 22:44:13,744 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 28, 1, selenium, MySQL常用命令语句, 1, 0, null, 0, 2018-11-25 21:06:52, 2018-11-25 21:06:52, 1, 1, 1, <<BLOB>>
+2019-03-18 22:44:13,745 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 27, 1, selenium, Docker_入门？只要这篇就够了！（纯干货适合0基础小白）, 0, 0, null, 0, 2018-11-25 21:05:05, 2018-11-25 21:06:04, 1, 1, 1, <<BLOB>>
+2019-03-18 22:44:13,745 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 26, 1, selenium, RocketMQ 实战之快速入门, 1, 0, null, 0, 2018-11-25 21:02:40, 2018-11-25 21:02:58, 1, 1, 1, <<BLOB>>
+2019-03-18 22:44:13,746 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 25, 1, selenium, SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作, 0, 0, null, 0, 2018-11-25 21:01:24, 2018-11-25 21:01:24, 1, 1, 1, <<BLOB>>
+2019-03-18 22:44:13,748 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==      Total: 5
+2019-03-18 22:44:28,650 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==>  Preparing: SELECT count(0) FROM article WHERE article_status = 1 
+2019-03-18 22:44:28,651 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==> Parameters: 
+2019-03-18 22:44:28,652 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==    Columns: count(0)
+2019-03-18 22:44:28,652 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==        Row: 27
+2019-03-18 22:44:28,653 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==      Total: 1
+2019-03-18 22:44:28,653 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article where article_status=1 order by article_create_time desc LIMIT ? 
+2019-03-18 22:44:28,654 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==> Parameters: 5(Integer)
+2019-03-18 22:44:28,664 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-18 22:44:28,664 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 29, 1, selenium, MySQL开发规范, 1, 0, null, 0, 2018-11-25 21:09:53, 2018-11-25 21:10:37, 1, 1, 1, <<BLOB>>
+2019-03-18 22:44:28,666 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 28, 1, selenium, MySQL常用命令语句, 1, 0, null, 0, 2018-11-25 21:06:52, 2018-11-25 21:06:52, 1, 1, 1, <<BLOB>>
+2019-03-18 22:44:28,668 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 27, 1, selenium, Docker_入门？只要这篇就够了！（纯干货适合0基础小白）, 0, 0, null, 0, 2018-11-25 21:05:05, 2018-11-25 21:06:04, 1, 1, 1, <<BLOB>>
+2019-03-18 22:44:28,670 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 26, 1, selenium, RocketMQ 实战之快速入门, 1, 0, null, 0, 2018-11-25 21:02:40, 2018-11-25 21:02:58, 1, 1, 1, <<BLOB>>
+2019-03-18 22:44:28,676 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 25, 1, selenium, SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作, 0, 0, null, 0, 2018-11-25 21:01:24, 2018-11-25 21:01:24, 1, 1, 1, <<BLOB>>
+2019-03-18 22:44:28,677 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==      Total: 5
+2019-03-18 22:45:46,630 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==>  Preparing: SELECT count(0) FROM article WHERE article_status = 1 
+2019-03-18 22:45:46,630 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==> Parameters: 
+2019-03-18 22:45:46,631 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==    Columns: count(0)
+2019-03-18 22:45:46,631 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==        Row: 27
+2019-03-18 22:45:46,631 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==      Total: 1
+2019-03-18 22:45:46,632 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article where article_status=1 order by article_create_time desc LIMIT ? 
+2019-03-18 22:45:46,632 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==> Parameters: 5(Integer)
+2019-03-18 22:45:46,642 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-18 22:45:46,642 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 29, 1, selenium, MySQL开发规范, 1, 0, null, 0, 2018-11-25 21:09:53, 2018-11-25 21:10:37, 1, 1, 1, <<BLOB>>
+2019-03-18 22:45:46,644 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 28, 1, selenium, MySQL常用命令语句, 1, 0, null, 0, 2018-11-25 21:06:52, 2018-11-25 21:06:52, 1, 1, 1, <<BLOB>>
+2019-03-18 22:45:46,644 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 27, 1, selenium, Docker_入门？只要这篇就够了！（纯干货适合0基础小白）, 0, 0, null, 0, 2018-11-25 21:05:05, 2018-11-25 21:06:04, 1, 1, 1, <<BLOB>>
+2019-03-18 22:45:46,645 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 26, 1, selenium, RocketMQ 实战之快速入门, 1, 0, null, 0, 2018-11-25 21:02:40, 2018-11-25 21:02:58, 1, 1, 1, <<BLOB>>
+2019-03-18 22:45:46,645 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 25, 1, selenium, SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作, 0, 0, null, 0, 2018-11-25 21:01:24, 2018-11-25 21:01:24, 1, 1, 1, <<BLOB>>
+2019-03-18 22:45:46,646 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==      Total: 5
+2019-03-18 22:45:47,956 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==>  Preparing: SELECT count(0) FROM article WHERE article_status = 1 
+2019-03-18 22:45:47,956 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==> Parameters: 
+2019-03-18 22:45:47,958 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==    Columns: count(0)
+2019-03-18 22:45:47,958 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==        Row: 27
+2019-03-18 22:45:47,959 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==      Total: 1
+2019-03-18 22:45:47,961 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article where article_status=1 order by article_create_time desc LIMIT ? 
+2019-03-18 22:45:47,961 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==> Parameters: 5(Integer)
+2019-03-18 22:45:47,967 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-18 22:45:47,968 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 29, 1, selenium, MySQL开发规范, 1, 0, null, 0, 2018-11-25 21:09:53, 2018-11-25 21:10:37, 1, 1, 1, <<BLOB>>
+2019-03-18 22:45:47,971 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 28, 1, selenium, MySQL常用命令语句, 1, 0, null, 0, 2018-11-25 21:06:52, 2018-11-25 21:06:52, 1, 1, 1, <<BLOB>>
+2019-03-18 22:45:47,972 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 27, 1, selenium, Docker_入门？只要这篇就够了！（纯干货适合0基础小白）, 0, 0, null, 0, 2018-11-25 21:05:05, 2018-11-25 21:06:04, 1, 1, 1, <<BLOB>>
+2019-03-18 22:45:47,973 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 26, 1, selenium, RocketMQ 实战之快速入门, 1, 0, null, 0, 2018-11-25 21:02:40, 2018-11-25 21:02:58, 1, 1, 1, <<BLOB>>
+2019-03-18 22:45:47,973 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 25, 1, selenium, SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作, 0, 0, null, 0, 2018-11-25 21:01:24, 2018-11-25 21:01:24, 1, 1, 1, <<BLOB>>
+2019-03-18 22:45:47,973 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==      Total: 5
+2019-03-18 22:46:05,428 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==>  Preparing: SELECT count(0) FROM article WHERE article_status = 1 
+2019-03-18 22:46:05,434 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==> Parameters: 
+2019-03-18 22:46:05,438 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==    Columns: count(0)
+2019-03-18 22:46:05,438 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==        Row: 27
+2019-03-18 22:46:05,438 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==      Total: 1
+2019-03-18 22:46:05,439 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article where article_status=1 order by article_create_time desc LIMIT ? 
+2019-03-18 22:46:05,440 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==> Parameters: 5(Integer)
+2019-03-18 22:46:05,444 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-18 22:46:05,444 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 29, 1, selenium, MySQL开发规范, 1, 0, null, 0, 2018-11-25 21:09:53, 2018-11-25 21:10:37, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:05,455 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 28, 1, selenium, MySQL常用命令语句, 1, 0, null, 0, 2018-11-25 21:06:52, 2018-11-25 21:06:52, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:05,455 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 27, 1, selenium, Docker_入门？只要这篇就够了！（纯干货适合0基础小白）, 0, 0, null, 0, 2018-11-25 21:05:05, 2018-11-25 21:06:04, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:05,457 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 26, 1, selenium, RocketMQ 实战之快速入门, 1, 0, null, 0, 2018-11-25 21:02:40, 2018-11-25 21:02:58, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:05,458 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 25, 1, selenium, SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作, 0, 0, null, 0, 2018-11-25 21:01:24, 2018-11-25 21:01:24, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:05,460 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==      Total: 5
+2019-03-18 22:46:06,767 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==>  Preparing: SELECT count(0) FROM article WHERE article_status = 1 
+2019-03-18 22:46:06,767 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==> Parameters: 
+2019-03-18 22:46:06,769 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==    Columns: count(0)
+2019-03-18 22:46:06,770 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==        Row: 27
+2019-03-18 22:46:06,770 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==      Total: 1
+2019-03-18 22:46:06,772 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article where article_status=1 order by article_create_time desc LIMIT ? 
+2019-03-18 22:46:06,772 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==> Parameters: 5(Integer)
+2019-03-18 22:46:06,779 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-18 22:46:06,780 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 29, 1, selenium, MySQL开发规范, 1, 0, null, 0, 2018-11-25 21:09:53, 2018-11-25 21:10:37, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:06,782 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 28, 1, selenium, MySQL常用命令语句, 1, 0, null, 0, 2018-11-25 21:06:52, 2018-11-25 21:06:52, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:06,811 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 27, 1, selenium, Docker_入门？只要这篇就够了！（纯干货适合0基础小白）, 0, 0, null, 0, 2018-11-25 21:05:05, 2018-11-25 21:06:04, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:06,812 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 26, 1, selenium, RocketMQ 实战之快速入门, 1, 0, null, 0, 2018-11-25 21:02:40, 2018-11-25 21:02:58, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:06,814 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 25, 1, selenium, SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作, 0, 0, null, 0, 2018-11-25 21:01:24, 2018-11-25 21:01:24, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:06,819 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==      Total: 5
+2019-03-18 22:46:21,274 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==>  Preparing: SELECT count(0) FROM article WHERE article_status = 1 
+2019-03-18 22:46:21,275 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - ==> Parameters: 
+2019-03-18 22:46:21,275 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==    Columns: count(0)
+2019-03-18 22:46:21,275 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==        Row: 27
+2019-03-18 22:46:21,276 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus_COUNT] - <==      Total: 1
+2019-03-18 22:46:21,277 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article where article_status=1 order by article_create_time desc LIMIT ? 
+2019-03-18 22:46:21,277 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - ==> Parameters: 5(Integer)
+2019-03-18 22:46:21,282 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-18 22:46:21,282 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 29, 1, selenium, MySQL开发规范, 1, 0, null, 0, 2018-11-25 21:09:53, 2018-11-25 21:10:37, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:21,284 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 28, 1, selenium, MySQL常用命令语句, 1, 0, null, 0, 2018-11-25 21:06:52, 2018-11-25 21:06:52, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:21,284 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 27, 1, selenium, Docker_入门？只要这篇就够了！（纯干货适合0基础小白）, 0, 0, null, 0, 2018-11-25 21:05:05, 2018-11-25 21:06:04, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:21,285 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 26, 1, selenium, RocketMQ 实战之快速入门, 1, 0, null, 0, 2018-11-25 21:02:40, 2018-11-25 21:02:58, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:21,285 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==        Row: 25, 1, selenium, SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作, 0, 0, null, 0, 2018-11-25 21:01:24, 2018-11-25 21:01:24, 1, 1, 1, <<BLOB>>
+2019-03-18 22:46:21,286 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticleWithStatus] - <==      Total: 5
+2019-03-18 22:49:23,681 DEBUG [com.wantao.mapper.MeMapper.selectMe] - ==>  Preparing: select * from me 
+2019-03-18 22:49:23,682 DEBUG [com.wantao.mapper.MeMapper.selectMe] - ==> Parameters: 
+2019-03-18 22:49:23,683 TRACE [com.wantao.mapper.MeMapper.selectMe] - <==    Columns: id, name, avatar, password, nickname, gender, age, phone, email, title, vice_title, introduction
+2019-03-18 22:49:23,683 TRACE [com.wantao.mapper.MeMapper.selectMe] - <==        Row: 1, 万涛, /resource/avatar/1.jpg, 123456, Selenium, 1, 21, 18800269697, 895484122@qq.com, 你好，我是万涛, 一个菜鸟程序员, <<BLOB>>
+2019-03-18 22:49:23,684 DEBUG [com.wantao.mapper.MeMapper.selectMe] - <==      Total: 1
