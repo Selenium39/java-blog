@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wantao.mapper.TagMapper">
+	<resultMap type="java.util.HashMap" id="tag_id_name">
+	<result property="tagId" javaType="java.lang.Integer" jdbcType="INTEGER" column="tag_id" />
+	<result property="tagName" javaType="java.lang.String" jdbcType="VARCHAR" column="tag_name"/>
+	</resultMap>
 	<select id="selectAllTag" resultType="com.wantao.bean.Tag">
-		select * from tag
+		select * from tag order by tag_id
+	</select>
+	<select id="selectAllTagIdAndName" resultMap="tag_id_name">
+	    select tag_id,tag_name from tag order by tag_id
 	</select>
 	<select id="selectTagById" resultType="com.wantao.bean.Tag">
 		select * from tag where

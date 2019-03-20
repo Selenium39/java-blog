@@ -39,18 +39,18 @@ public class Article implements Serializable {
 	private static final long serialVersionUID = 6722965489683569650L;
 	private Integer articleId;
 	private Integer articleUserId;
-	private String articleUserName;
-	private String articleTitle;
+	private String  articleUserName;
+	private String  articleTitle;
 	private Integer articleViewCount;
 	private Integer articleCommentCount;
 	private Integer articleDislikeCount;
 	private Integer articleLikeCount;
-	private String articleCreateTime;
-	private String articleUpdateTime;
+	private String  articleCreateTime;
+	private String  articleUpdateTime;
 	private Integer articleIsComment;
 	private Integer articleStatus;
 	private Integer articleOrder;
-	private String articleContent;
+	private String  articleContent;
 
 	public Article() {
 	};

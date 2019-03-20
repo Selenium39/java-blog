@@ -7,4 +7,7 @@
 	       where article_id=#{article_id}
 	    )
 	</select>
+	<insert id="insertArticleCategoryRef">
+	  insert into article_category_ref(article_id,category_id)values(#{newArticleId},#{categoryId})
+	</insert>
 </mapper>

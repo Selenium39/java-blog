@@ -1,5 +1,6 @@
 package com.wantao.mapper;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.wantao.bean.Category;
@@ -12,5 +13,5 @@ import com.wantao.bean.Category;
 @Repository
 public interface ArticleCategoryRefMapper {
 	public Category selectCategoryByArticleId(Integer articleId);
-
+    public Integer insertArticleCategoryRef(@Param("newArticleId")Integer newArticleId,@Param("categoryId")Integer categoryId);
 }

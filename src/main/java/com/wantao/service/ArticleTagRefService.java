@@ -29,4 +29,9 @@ public class ArticleTagRefService implements ArticleTagRefMapper {
 		return articleTagRefMapper.selectRelateArticle(articleId);
 	}
 
+	@Override
+	public Integer insertArticleTagRef(Integer articleId, Integer tagId) {
+		return articleTagRefMapper.insertArticleTagRef(articleId, tagId);
+	}
+
 }

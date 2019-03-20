@@ -1,6 +1,7 @@
 package com.wantao.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +15,7 @@ import com.wantao.bean.Tag;
 @Repository
 public interface TagMapper {
     public List<Tag> selectAllTag();
+    public List<Map<String, Object>>selectAllTagIdAndName();
     public Tag selectTagById(Integer id);
     public Integer deleteTagByBatchById(List<Integer>ids);
     public Integer updateTagById(Tag Tag);

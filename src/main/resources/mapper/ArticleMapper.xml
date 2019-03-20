@@ -46,6 +46,9 @@
 		<select id="selectArticleByIdWithStatus" resultType="com.wantao.bean.Article">
 	select * from article where article_id=#{articleId} and article_status=1
 	</select>
+	<select id="selectNewArticleId" resultType="java.lang.Integer">
+	      select max(article_id)+1 from article
+	</select>
 	<update id="updateArticleById" parameterType="com.wantao.bean.Article">
 	  update article set 
 	  article_title=#{articleTitle},
@@ -54,6 +57,39 @@
 	  article_order=#{articleOrder}
 	  where article_id = #{articleId} 
 	</update>
+	<insert id="insertArticle">
+	insert into article(
+	 article_user_id,
+	 article_user_name,
+	 article_title,
+	 article_view_count,
+	 article_comment_count,
+	 article_dislike_count,
+	 article_like_count,
+	 article_create_time,
+	 article_update_time,
+	 article_is_comment,
+	 article_status,
+	 article_order,
+	 article_content
+	)
+	values(
+    #{articleUserId},      
+    #{articleUserName},   
+    #{articleTitle},       
+    #{articleViewCount},   
+    #{articleCommentCount},
+    #{articleDislikeCount},
+    #{articleLikeCount},  
+    #{articleCreateTime},
+    #{articleUpdateTime}, 
+    #{articleIsComment},   
+    #{articleStatus},      
+    #{articleOrder},      
+    <![CDATA[ 
+   #{articleContent} 
+    ]]>)
+	</insert>
 	<delete id="deleteArticleByBatchById">
 	  delete from article where article_id in
 	  <foreach collection="list" item="id" separator="," open="(" close=")">

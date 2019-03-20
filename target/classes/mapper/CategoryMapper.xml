@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wantao.mapper.CategoryMapper">
+	<resultMap type="java.util.HashMap" id="category_id_name">
+	<result property="categoryId" javaType="java.lang.Integer"  column="category_id" jdbcType="INTEGER" />
+	<result property="categoryName" javaType="java.lang.String"  column="category_name" jdbcType="VARCHAR"/>
+	</resultMap>
 	<select id="selectAllCategory"
 		resultType="com.wantao.bean.Category">
-		select * from category
+		select * from category oder by category_id
+	</select>
+	<select id="selectAllCategoryIdAndName" resultMap="category_id_name">
+	    select category_id,category_name from category order by category_id
 	</select>
 	<select id="selectCategoryById"
 		resultType="com.wantao.bean.Category">

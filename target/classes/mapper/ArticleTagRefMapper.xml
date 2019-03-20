@@ -22,4 +22,7 @@
 	   <!-- 创建视图article_tag_view3找出除这篇文章外的随机5篇文章 -->
 	   select article_id,article_title from article_tag_view2 as t1 where t1.article_id>=(rand()*(select MAX(article_id)from article_tag_view2)) and article_id !=#{articleId} limit 5;
 	</select>
+	<insert id="insertArticleTagRef">
+	 insert into article_tag_ref(article_id,tag_id)values(#{newArticleId},#{tagId})
+	</insert>
 </mapper>

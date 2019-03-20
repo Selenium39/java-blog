@@ -1,7 +1,7 @@
                                                        blog项目开发流程
 
 changed:
-      
+      1.SimpleDateFormat修改为yyyy-MM-dd HH:mm:ss
 
 want:
          1.todolist

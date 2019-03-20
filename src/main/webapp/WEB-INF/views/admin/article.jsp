@@ -112,7 +112,7 @@
 								aria-haspopup="true" aria-expanded="false" class="nav-link"><i
 									class="fa fa-address-book"></i> <!-- 这里显示消息条数 --> <span
 									id="new_contact_count" class="badge bg-orange badge-corner"></span>
-							</a></li> <!--	
+							</a></li> 
 							<!-- Languages dropdown    -->
 							<li class="nav-item dropdown"><a id="languages"
 								rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
@@ -209,8 +209,23 @@
 					<div class="container-fluid">
 					<h1>新增文章</h1>
 						<div class=" row bg-white has-shadow">
-						<form>
+						<form id="addForm">
+						<div class="form-group">
+                          <label for="article_title">标题</label>
+                          <input type="text" name="articleTitle" class="form-control" id="article_title" placeholder="请输入文章标题">
+                         </div>
+                         <div class="form-group">
+                        <label for="article_category">文章分类</label>
+                        <select class="col-md-5" class="form-control"  name="categoryId" id="article_category">
+                        </select>
+                        </div> 
+                         <div class="form-group">
+                        <label for="article_tag">文章标签</label>
+                        <select class="col-md-5" name="tagId" id="article_tag">
+                        </select>
+                        </div> 
                            <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+						<button type="submit" id="addFormButton" class="btn btn-success">新增</button>
 						</form>
 						</div>
 					</div>
@@ -251,6 +266,9 @@
 	<script src="${APP_PATH}/resource/admin/template2/js/charts-home.js"></script>
 	<!-- Main File-->
 	<script src="${APP_PATH}/resource/admin/template2/js/front.js"></script>
+    <!-- Selenium -->
+	<script src="${APP_PATH}/resource/admin/selenium/js/article.js"></script>
+    
 <script type="text/javascript">
     //实例化编辑器
     //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例

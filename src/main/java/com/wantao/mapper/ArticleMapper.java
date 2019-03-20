@@ -19,8 +19,10 @@ public interface ArticleMapper {
    public List<Article> selectAllArticleWithoutStatus();
    public List<Article> selectAllArticleWithOrder();
    public List<Article> selectAllArticleWithoutOrder();
+   public Integer selectNewArticleId();
    public Article selectArticleById(Integer articleId);
    public Article selectArticleByIdWithStatus(Integer articleId);
    public Integer updateArticleById(Article article);
    public Integer deleteArticleByBatchById(List<Integer>ids);
+   public Integer insertArticle(Article article);
 }

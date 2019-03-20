@@ -1,6 +1,7 @@
 package com.wantao.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ import com.wantao.mapper.TagMapper;
 @Service
 public class TagService implements TagMapper {
 	@Autowired
-	TagMapper TagMapper;
+	TagMapper tagMapper;
 
 	/*
 	 * (non-Javadoc)
@@ -25,7 +26,7 @@ public class TagService implements TagMapper {
 	 */
 	@Override
 	public List<Tag> selectAllTag() {
-		return TagMapper.selectAllTag();
+		return tagMapper.selectAllTag();
 	}
 
 	/*
@@ -37,7 +38,7 @@ public class TagService implements TagMapper {
 	 */
 	@Override
 	public Integer deleteTagByBatchById(List<Integer> ids) {
-		return TagMapper.deleteTagByBatchById(ids);
+		return tagMapper.deleteTagByBatchById(ids);
 	}
 
 	/*
@@ -48,7 +49,7 @@ public class TagService implements TagMapper {
 	 */
 	@Override
 	public Tag selectTagById(Integer id) {
-		return TagMapper.selectTagById(id);
+		return tagMapper.selectTagById(id);
 	}
 
 	/*
@@ -60,7 +61,7 @@ public class TagService implements TagMapper {
 	 */
 	@Override
 	public Integer updateTagById(Tag tag) {
-		return TagMapper.updateTagById(tag);
+		return tagMapper.updateTagById(tag);
 	}
 
 	/* (non-Javadoc)
@@ -69,7 +70,15 @@ public class TagService implements TagMapper {
 	 */
 	@Override
 	public Integer insertTag(Tag tag) {
-		return TagMapper.insertTag(tag);
+		return tagMapper.insertTag(tag);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.TagMapper#selectAllTagName()
+	 */
+	@Override
+	public List<Map<String,Object>> selectAllTagIdAndName() {
+		return tagMapper.selectAllTagIdAndName();
 	}
 
 }

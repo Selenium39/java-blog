@@ -95,9 +95,30 @@ public class ArticleService implements ArticleMapper {
 	public Integer deleteArticleByBatchById(List<Integer> ids) {
 		return articleMapper.deleteArticleByBatchById(ids);
 	}
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ArticleMapper#selectArticleByIdWithStatus(java.lang.Integer)
+	 * 通过id查询有效的文章
+	 */
 	@Override
 	public Article selectArticleByIdWithStatus(Integer articleId) {
 		return articleMapper.selectArticleByIdWithStatus(articleId);
+	}
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ArticleMapper#insertArticle(com.wantao.bean.Article)
+	 * 新增文章
+	 */
+	@Override
+	public Integer insertArticle(Article article) {
+		return articleMapper.insertArticle(article);
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ArticleMapper#selectCurrentArticleId()
+	 * 查询新增文章id
+	 */
+	@Override
+	public Integer selectNewArticleId() {
+		return articleMapper.selectNewArticleId();
 	}
 
 }

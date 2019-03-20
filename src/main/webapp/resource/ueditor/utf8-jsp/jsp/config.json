@@ -7,16 +7,16 @@
     "imageCompressBorder": 1600, 
     "imageInsertAlign": "none", 
     "imageUrlPrefix": "", 
-    "imagePathFormat": "/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", 
+    "imagePathFormat": "/resource/image/{time}{rand:6}", 
     "scrawlActionName": "uploadscrawl", 
     "scrawlFieldName": "upfile",
-    "scrawlPathFormat": "/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", 
+    "scrawlPathFormat": "/resource/image/{time}{rand:6}", 
     "scrawlMaxSize": 2048000, 
     "scrawlUrlPrefix": "", 
     "scrawlInsertAlign": "none",
 
     "snapscreenActionName": "uploadimage", 
-    "snapscreenPathFormat": "/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", 
+    "snapscreenPathFormat": "/resource/image/{time}{rand:6}", 
     "snapscreenUrlPrefix": "", 
     "snapscreenInsertAlign": "none", 
 
@@ -24,7 +24,7 @@
     "catcherLocalDomain": ["127.0.0.1", "localhost", "img.baidu.com"],
     "catcherActionName": "catchimage", 
     "catcherFieldName": "source", 
-    "catcherPathFormat": "/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", 
+    "catcherPathFormat": "/resource/image/{time}{rand:6}", 
     "catcherUrlPrefix": "", 
     "catcherMaxSize": 2048000, 
     "catcherAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"], 
@@ -32,7 +32,7 @@
 
     "videoActionName": "uploadvideo", 
     "videoFieldName": "upfile", 
-    "videoPathFormat": "/ueditor/jsp/upload/video/{yyyy}{mm}{dd}/{time}{rand:6}", 
+    "videoPathFormat": "/resource/video/{time}{rand:6}", 
     "videoUrlPrefix": "", 
     "videoMaxSize": 102400000, 
     "videoAllowFiles": [
@@ -42,7 +42,7 @@
     
     "fileActionName": "uploadfile", 
     "fileFieldName": "upfile", 
-    "filePathFormat": "/ueditor/jsp/upload/file/{yyyy}{mm}{dd}/{time}{rand:6}",
+    "filePathFormat": "/resource/file/{time}{rand:6}",
     "fileUrlPrefix": "", 
     "fileMaxSize": 51200000, 
     "fileAllowFiles": [
@@ -55,7 +55,7 @@
 
     
     "imageManagerActionName": "listimage",
-    "imageManagerListPath": "/ueditor/jsp/upload/image/", 
+    "imageManagerListPath": "/resource/image/", 
     "imageManagerListSize": 20, 
     "imageManagerUrlPrefix": "", 
     "imageManagerInsertAlign": "none", 
@@ -63,7 +63,7 @@
 
    
     "fileManagerActionName": "listfile",
-    "fileManagerListPath": "/ueditor/jsp/upload/file/", 
+    "fileManagerListPath": "/resource/file/", 
     "fileManagerUrlPrefix": "", 
     "fileManagerListSize": 20, 
     "fileManagerAllowFiles": [

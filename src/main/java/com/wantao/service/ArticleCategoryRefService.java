@@ -20,4 +20,9 @@ public class ArticleCategoryRefService implements ArticleCategoryRefMapper {
 		return articleCategoryRefMapper.selectCategoryByArticleId(articleId);
 	}
 
+	@Override
+	public Integer insertArticleCategoryRef(Integer newArticleId, Integer categoryId) {
+		return articleCategoryRefMapper.insertArticleCategoryRef(newArticleId, categoryId);
+	}
+
 }

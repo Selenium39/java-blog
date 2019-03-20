@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -29,7 +30,9 @@ import com.wantao.bean.Contact;
 import com.wantao.bean.Me;
 import com.wantao.bean.Tag;
 import com.wantao.bean.User;
+import com.wantao.service.ArticleCategoryRefService;
 import com.wantao.service.ArticleService;
+import com.wantao.service.ArticleTagRefService;
 import com.wantao.service.CategoryService;
 import com.wantao.service.CommentService;
 import com.wantao.service.ContactService;
@@ -65,6 +68,10 @@ public class AdminController {
 	CategoryService categoryService;
 	@Autowired
 	TagService tagService;
+	@Autowired
+	ArticleCategoryRefService articleCategoryRefService;
+	@Autowired
+	ArticleTagRefService articleTagRefService;
 	// ------------------------------跳转--------------------------------------
 
 	/**
@@ -116,6 +123,7 @@ public class AdminController {
 	public String articles() {
 		return "admin/articles";
 	}
+
 	/**
 	 * @param
 	 * @return String
@@ -298,7 +306,7 @@ public class AdminController {
 		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
 			// logger.info(user.toString());
 		} else {
-			String[] userAvatars = PhotoUtil.saveFile(file, request,"avatar").split("webapp");
+			String[] userAvatars = PhotoUtil.saveFile(file, request, "avatar").split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
 			// logger.info(userAvatar);
 			user.setUserAvatar(userAvatar);
@@ -316,11 +324,11 @@ public class AdminController {
 	@ResponseBody
 	public Message showImgOnTime(@RequestParam("file") MultipartFile file, HttpServletRequest request)
 			throws UnsupportedEncodingException {
-		String[] userAvatars = PhotoUtil.saveFile(file, request,"avatar").split("webapp");
+		String[] userAvatars = PhotoUtil.saveFile(file, request, "avatar").split("webapp");
 		String userAvatar = userAvatars[1].replace("\\", "/");
 		return Message.success().add("imgUrl", userAvatar);
 	}
- 
+
 	/**
 	 * @param
 	 * @return Message
@@ -330,11 +338,12 @@ public class AdminController {
 	@ResponseBody
 	public Message showImgOnTime1(@RequestParam("file") MultipartFile file, HttpServletRequest request)
 			throws UnsupportedEncodingException {
-		String[] userAvatars = PhotoUtil.saveFile(file, request,"tag").split("webapp");
+		String[] userAvatars = PhotoUtil.saveFile(file, request, "tag").split("webapp");
 		String userAvatar = userAvatars[1].replace("\\", "/");
-        //logger.info(tagImage);
+		// logger.info(tagImage);
 		return Message.success().add("imgUrl", userAvatar);
 	}
+
 	/**
 	 * @param
 	 * @return Message
@@ -368,12 +377,12 @@ public class AdminController {
 		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
 			// logger.info(user.toString());
 		} else {
-			String[] userAvatars = PhotoUtil.saveFile(file, request,"avatar").split("webapp");
+			String[] userAvatars = PhotoUtil.saveFile(file, request, "avatar").split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
 			user.setUserAvatar(userAvatar);
 			// logger.info(userAvatar);
 		}
-		user.setUserRegisterTime(new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss").format(new Date()));
+		user.setUserRegisterTime(new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss").format(new Date()));
 		userService.insertUser(user);
 		return Message.success();
 	}
@@ -389,28 +398,28 @@ public class AdminController {
 			@RequestParam(name = "type", required = false, defaultValue = "0") Integer type) {
 		List<Article> articles = null;
 		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
-		if (type == 1) {//有效文章
+		if (type == 1) {// 有效文章
 			articles = articleService.selectAllArticleWithStatus();
 		}
-		if (type == 2) {//无效文章
+		if (type == 2) {// 无效文章
 			articles = articleService.selectAllArticleWithoutStatus();
 		}
-		if (type == 3) {//置顶文章
+		if (type == 3) {// 置顶文章
 			articles = articleService.selectAllArticleWithOrder();
 		}
-		if (type == 4) {//未置顶文章
+		if (type == 4) {// 未置顶文章
 			articles = articleService.selectAllArticleWithoutOrder();
 		}
 		if (type == 0) {
-			logger.info("type==0方法被调用");
+			// logger.info("type==0方法被调用");
 			articles = articleService.selectAllArticle();
 		}
 		if (articles == null) {
-			logger.info("articles==null方法被调用");
+			// logger.info("articles==null方法被调用");
 			articles = articleService.selectAllArticle();
 		}
 		PageInfo pageInfo = new PageInfo(articles, 5);// 用pageInfo封装然后交给页面
-		return Message.success().add("pageInfo", pageInfo).add("type",type);
+		return Message.success().add("pageInfo", pageInfo).add("type", type);
 	}
 
 	/**
@@ -423,6 +432,38 @@ public class AdminController {
 	public Message selectArticleById(@PathVariable("articleId") Integer articleId) {
 		Article article = articleService.selectArticleById(articleId);
 		return Message.success().add("article", article);
+	}
+
+	
+	/**  
+	* @method: addArticle   
+	* @param @param article
+	* @param @param editorValue
+	* @param @return     
+	* @return Message    
+	* @throws  
+	* @description: 新增文章(目前只允许自己新增)
+	*/
+	@PostMapping("/addArticle")
+	@ResponseBody
+	public Message addArticle(Article article, String editorValue,Integer categoryId,Integer tagId) {
+		Integer newArticleId=articleService.selectNewArticleId();
+		article.setArticleUserId(1);// 先写死，只允许我一个人写文章
+		article.setArticleUserName("selenium");// 先写死，只允许我一个人写文章
+		article.setArticleViewCount(0);
+		article.setArticleCommentCount(0);
+		article.setArticleDislikeCount(0);
+		article.setArticleLikeCount(0);
+		article.setArticleCreateTime(new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss").format(new Date()));
+		article.setArticleUpdateTime(new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss").format(new Date()));
+		article.setArticleIsComment(1);
+		article.setArticleStatus(1);
+		article.setArticleOrder(0);
+		article.setArticleContent(editorValue);
+		articleService.insertArticle(article);
+		articleCategoryRefService.insertArticleCategoryRef(newArticleId,categoryId);
+		articleTagRefService.insertArticleTagRef(newArticleId,tagId);
+		return Message.success();
 	}
 
 	/**
@@ -473,7 +514,7 @@ public class AdminController {
 		PageInfo pageInfo = new PageInfo(comments, 5);// 用pageInfo封装然后交给页面
 		return Message.success().add("pageInfo", pageInfo);
 	}
-	
+
 	/**
 	 * @param
 	 * @return Message
@@ -494,7 +535,7 @@ public class AdminController {
 		commentService.updateCommentByBatchById(ids);
 		return Message.success();
 	}
-	
+
 	/**
 	 * @param
 	 * @return Message
@@ -562,7 +603,7 @@ public class AdminController {
 		messageService.deleteMessageByBatchById(ids);
 		return Message.success();
 	}
-	
+
 	/**
 	 * @param
 	 * @return Message
@@ -583,6 +624,7 @@ public class AdminController {
 		messageService.updateMessageByBatchById(ids);
 		return Message.success();
 	}
+
 	/**
 	 * @param
 	 * @return Message
@@ -619,7 +661,7 @@ public class AdminController {
 		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
 			// logger.info(user.toString());
 		} else {
-			String[] userAvatars = PhotoUtil.saveFile(file, request,"avatar").split("webapp");
+			String[] userAvatars = PhotoUtil.saveFile(file, request, "avatar").split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
 			// logger.info(userAvatar);
 			me.setAvatar(userAvatar);
@@ -708,7 +750,8 @@ public class AdminController {
 		Integer newContactCount = contactService.selectNewContactCount();
 		Integer newMessageCount = messageService.selectNewMessageCount();
 		Integer newCommentCount = commentService.selectNewCommentCount();
-		return Message.success().add("newContactCount", newContactCount).add("newMessageCount",newMessageCount).add("newCommentCount",newCommentCount);
+		return Message.success().add("newContactCount", newContactCount).add("newMessageCount", newMessageCount)
+				.add("newCommentCount", newCommentCount);
 	}
 
 	/**
@@ -724,6 +767,36 @@ public class AdminController {
 		PageInfo pageInfo = new PageInfo(tags, 5);// 用pageInfo封装然后交给页面
 		return Message.success().add("pageInfo", pageInfo);
 	}
+	
+	
+	/**  
+	* @method: selectAllTagIdAndName   
+	* @param @return     
+	* @return Message    
+	* @throws  
+	* @description: 查询所有的标签id和name
+	*/
+	@GetMapping("/selectAllTagIdAndName")
+	@ResponseBody
+	public Message selectAllTagIdAndName() {
+		List<Map<String,Object>>tagIdAndName=tagService.selectAllTagIdAndName();
+		return Message.success().add("tagIdAndName",tagIdAndName);
+	}
+	
+	/**  
+	* @method: selectAllCategoryIdAndName   
+	* @param @return     
+	* @return Message    
+	* @throws  
+	* @description: 查询所有的分类id和name
+	*/
+	@GetMapping("/selectAllCategoryIdAndName")
+	@ResponseBody
+	public Message selectAllCategoryIdAndName() {
+		List<Map<String,Object>>categoryIdAndName=categoryService.selectAllCategoryIdAndName();
+		return Message.success().add("categoryIdAndName",categoryIdAndName);
+	}
+	
 
 	/**
 	 * @param
@@ -770,11 +843,11 @@ public class AdminController {
 		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
 			// logger.info(user.toString());
 		} else {
-			String[] userAvatars = PhotoUtil.saveFile(file, request,"tag").split("webapp");
+			String[] userAvatars = PhotoUtil.saveFile(file, request, "tag").split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
 			// logger.info(userAvatar);
 			tag.setTagImage(userAvatar);
-			
+
 		}
 		tagService.updateTagById(tag);
 		return Message.success();
@@ -792,9 +865,9 @@ public class AdminController {
 		if (file.getSize() == 0) {// 注意这里不要使用file==null判断
 			// logger.info(user.toString());
 		} else {
-			String[] userAvatars = PhotoUtil.saveFile(file, request,"avatar").split("webapp");
+			String[] userAvatars = PhotoUtil.saveFile(file, request, "avatar").split("webapp");
 			String userAvatar = userAvatars[1].replace("\\", "/");
-			String tagImage=userAvatar.replaceAll("avatar","tag");
+			String tagImage = userAvatar.replaceAll("avatar", "tag");
 			tag.setTagImage(tagImage);
 			// logger.info(userAvatar);
 		}

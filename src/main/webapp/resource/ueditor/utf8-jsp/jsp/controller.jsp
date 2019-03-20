@@ -8,7 +8,7 @@
 	response.setHeader("Content-Type" , "text/html");
 	
 	String rootPath = application.getRealPath( "/" );
-	
-	out.write( new ActionEnter( request, rootPath ).exec() );
-	
+	rootPath="/home/selenium/selenium/src/eclipse/blog/src/main/webapp";
+	out.write( new ActionEnter( request, rootPath).exec() );
+    //System.out.println(rootPath);
 %>
