@@ -15,6 +15,9 @@ $(function(){
 			$("#show_more").text("已经到最底部了!!!");
 		}
 	});
+	$("#find").click(function(){
+		return;
+	});
 });
 
 function articles(pn){

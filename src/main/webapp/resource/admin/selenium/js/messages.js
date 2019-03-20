@@ -51,6 +51,7 @@ function messages(pn) {// 查询所有的留言并显示在分页中
 												.append(item.messageContent);
 										var messageCreateTime = $("<td></td>")
 												.append(item.messageCreateTime);
+										var messageIp=$("<td></td>").append(item.messageIp);
 										var buttons = $("<td></td>");
 										var deleteButton = $(
 												"<button></button>").append(
@@ -65,7 +66,7 @@ function messages(pn) {// 查询所有的留言并显示在分页中
 												.append(
 														messageUserName)
 												.append(messageContent).append(
-														messageCreateTime)
+														messageCreateTime).append(messageIp)
 												.append(buttons).appendTo(
 														$("#messages"));
 										build_page_info(result);

@@ -238,7 +238,7 @@
 								placeholder="请输入关键字" maxlength="15"
 								autocomplete="off"> <span class="input-group-btn">
 								<button class="btn btn-default btn-search" name="search"
-									type="submit">查找</button>
+									id="find">查找</button>
 							</span>
 						</div>
 					</form>

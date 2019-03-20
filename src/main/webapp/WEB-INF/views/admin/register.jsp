@@ -66,38 +66,34 @@
 				<!-- Start Sign In Form -->
 				<form action="#" class="fh5co-form animate-box"
 					data-animate-effect="fadeInLeft">
-					<h2>Sign Up</h2>
+					<h2>注册</h2>
 					<div class="form-group">
-						<label for="name" class="sr-only">Name</label> <input type="text"
-							class="form-control" id="name" placeholder="Name"
+						<label for="name" class="sr-only">姓名</label> <input type="text"
+							class="form-control" id="name" placeholder="姓名"
 							autocomplete="off">
 					</div>
 					<div class="form-group">
-						<label for="email" class="sr-only">Email</label> <input
-							type="email" class="form-control" id="email" placeholder="Email"
+						<label for="email" class="sr-only">邮箱</label> <input
+							type="email" class="form-control" id="邮箱" placeholder="邮箱"
 							autocomplete="off">
 					</div>
 					<div class="form-group">
-						<label for="password" class="sr-only">Password</label> <input
+						<label for="password" class="sr-only">密码</label> <input
 							type="password" class="form-control" id="password"
-							placeholder="Password" autocomplete="off">
+							placeholder="密码" autocomplete="off">
 					</div>
 					<div class="form-group">
-						<label for="re-password" class="sr-only">Re-type Password</label>
+						<label for="re-password" class="sr-only">重新输入密码</label>
 						<input type="password" class="form-control" id="re-password"
-							placeholder="Re-type Password" autocomplete="off">
-					</div>
-					<div class="form-group">
-						<label for="remember"><input type="checkbox" id="remember">
-							Remember Me</label>
+							placeholder="重新输入密码" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<p>
-							Already registered? <a href="${APP_PATH}/admin/login">Sign In</a>
+							已经注册? <a href="${APP_PATH}/admin/login">登录</a>
 						</p>
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Sign Up" class="btn btn-primary">
+						<input type="submit" value="注册" class="btn btn-primary">
 					</div>
 				</form>
 				<!-- END Sign In Form -->

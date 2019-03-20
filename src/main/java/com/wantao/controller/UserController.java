@@ -33,6 +33,7 @@ import com.wantao.service.CommentService;
 import com.wantao.service.ContactService;
 import com.wantao.service.MeService;
 import com.wantao.service.MessageService;
+import com.wantao.util.HtmlUtil;
 import com.wantao.util.Message;
 
 /**
@@ -57,8 +58,15 @@ public class UserController {
 	CommentService commentService;
 	@Autowired
 	MessageService messageService;
+	@Autowired
+	HtmlUtil htmlUtil;
 	private static final Logger logger = LoggerFactory.getLogger("UserController.class");
 
+	@RequestMapping("/404")
+	public String error_404() {
+		return "user/404" ;	
+    }
+	
 	/**
 	 * @param
 	 * @return String
@@ -175,6 +183,12 @@ public class UserController {
 		comment.setCommentCreateTime(new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss").format(new Date()));
 		comment.setCommentIp(request.getRemoteAddr());
 		comment.setAnswer(0);
+		String commentContent=htmlUtil.htmlFilter(comment.getCommentContent());
+		String commentUserName=htmlUtil.htmlFilter(comment.getCommentUserName());
+		String commentUserEmail=htmlUtil.htmlFilter(comment.getCommentUserEmail());
+		comment.setCommentContent(commentContent);
+		comment.setCommentUserName(commentUserName);
+		comment.setCommentUserEmail(commentUserEmail);
 		commentService.insertComment(comment);
 		return Message.success();
 	}
@@ -206,6 +220,11 @@ public class UserController {
 		//logger.info(comment.toString());
 		message.setAnswer(0);
 		message.setMessageCreateTime(new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss").format(new Date()));
+		message.setMessageIp(request.getRemoteAddr());
+		String messageUserName=htmlUtil.htmlFilter(message.getMessageUserName());
+		String messageContent=htmlUtil.htmlFilter(message.getMessageContent());
+		message.setMessageUserName(messageUserName);
+		message.setMessageContent(messageContent);
 		messageService.insertMessage(message);
 		return Message.success();
 	}

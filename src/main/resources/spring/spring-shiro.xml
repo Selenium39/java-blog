@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="securityManager"
+		class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="authorizer" ref="authorizer"></property>
+		<property name="realm" ref="myRealm"></property>
+	</bean> 
+	<!-- 授权管理器 -->
+	<bean id="authorizer"
+		class="org.apache.shiro.authz.ModularRealmAuthorizer">
+	</bean>
+	<bean id="myRealm" class="com.wantao.shiro.MyRealm">
+	</bean>
+	<!-- 必须有这样的实例,来管理在spring容器当中shiro常见的对象 -->
+	<bean id="lifecycleBeanPostProcessor"
+		class="org.apache.shiro.spring.LifecycleBeanPostProcessor"></bean>
+	<!-- 启用shiro注解 -->
+	<bean depends-on="lifecycleBeanPostProcessor"
+		class="org.springframework.aop.framework.adapter.DefaultAdvisorAdapterRegistry"></bean>
+	<!-- 网络方面 -->
+	<bean id="secureRemoteInvocationExecutor"
+		class="org.apache.shiro.spring.remoting.SecureRemoteInvocationExecutor">
+		<property name="securityManager" ref="securityManager"></property>
+	</bean>   
+	<!-- 配置shiro的过滤器 1.shiroFilter这个bean的id必须与web.xml中filter代理类名相同 -->
+	<bean id="shiroFilter"
+		class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager"></property>
+		<property name="loginUrl" value="/user/index"></property>
+		<property name="successUrl" value="/admin/home"></property>
+		<property name="unauthorizedUrl" value="/user/404"></property>
+		<!-- 代表我们要完成shiro的具体配置 -->
+		<property name="filterChainDefinitions">
+			<value>
+				<!-- url=拦截器[参数 ] -->
+				 /resource/**=anon
+				 /user/**=anon
+				 /admin/login=anon  <!-- 未经过认证可以访问的资源 -->
+				 /admin/register=anon
+				 /admin/forgot=anon
+				 /admin/logout=logout     <!-- 当登录成功后回退再次登录,即使密码错误还是能够登录成功,因为又缓存,这是可以设置logout,再次登录如果密码错误不能够登录 -->
+				 /admin/**=roles[admin]<!--admin可以访问的资源-->
+				 /**=authc        <!-- 认证后可以访问的资源 -->
+			</value>
+		</property>
+	</bean>
+
+</beans>

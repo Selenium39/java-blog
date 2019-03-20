@@ -64,20 +64,19 @@
 				<!-- Start Sign In Form -->
 				<form action="#" class="fh5co-form animate-box"
 					data-animate-effect="fadeInLeft">
-					<h2>Forgot Password</h2>
+					<h2>忘记密码</h2>
 					<div class="form-group">
-						<label for="email" class="sr-only">Email</label> <input
-							type="email" class="form-control" id="email" placeholder="Email"
+						<label for="email" class="sr-only">邮箱</label> <input
+							type="email" class="form-control" id="email" placeholder="邮箱"
 							autocomplete="off">
 					</div>
 					<div class="form-group">
 						<p>
-							<a href="${APP_PATH}/admin/login">Sign In</a> or <a href="${APP_PATH}/admin/register">Sign
-								Up</a>
+							<a href="${APP_PATH}/admin/login">登录</a> OR <a href="${APP_PATH}/admin/register">注册</a>
 						</p>
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Send Email" class="btn btn-primary">
+						<input type="submit" value="发送" class="btn btn-primary">
 					</div>
 				</form>
 				<!-- END Sign In Form -->

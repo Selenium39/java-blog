@@ -11,6 +11,9 @@ $(function() {
 		add_comment($(this).attr("send_id"));
 		return false;
 	});
+	$("#find").click(function(){
+		return;
+	});
 })
 
 function show() {

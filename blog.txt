@@ -2,6 +2,8 @@
 
 changed:
       1.SimpleDateFormat修改为yyyy-MM-dd HH:mm:ss
+      2.新增加了文件修改功能
+      3.后台增加shiro权限认证功能
 
 want:
          1.todolist

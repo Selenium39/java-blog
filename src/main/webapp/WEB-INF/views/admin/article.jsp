@@ -133,7 +133,7 @@
 									</a></li>
 								</ul></li>
 							<!-- Logout    -->
-							<li class="nav-item"><a href="login.html"
+							<li class="nav-item"><a href="${APP_PATH}/admin/logout"
 								class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i
 									class="fa fa-sign-out"></i></a></li>
 						</ul>

@@ -30,7 +30,7 @@
 		set answer =1
 	</update>
 	<insert id="insertMessage" parameterType="com.wantao.bean.Message">
-	  insert into message(message_user_name,message_content,message_create_time,answer)
-	  values(#{messageUserName},#{messageContent},#{messageCreateTime},#{answer})
+	  insert into message(message_user_name,message_content,message_create_time,message_ip,answer)
+	  values(#{messageUserName},#{messageContent},#{messageCreateTime},#{messageIp},#{answer})
 	</insert>
 </mapper>

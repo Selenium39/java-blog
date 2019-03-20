@@ -71,8 +71,8 @@
 							<input type="text" name="keyword" class="form-control"
 								placeholder="请输入关键字" maxlength="20"
 								autocomplete="off"> <span class="input-group-btn">
-								<button class="btn btn-default btn-search" name="search"
-									type="submit">查找</button>
+								<button id="find" class="btn btn-default btn-search" name="search"
+									>查找</button>
 							</span>
 						</div>
 					</form>

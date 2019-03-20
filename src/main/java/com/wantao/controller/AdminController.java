@@ -9,6 +9,10 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,7 +77,7 @@ public class AdminController {
 	@Autowired
 	ArticleTagRefService articleTagRefService;
 	// ------------------------------跳转--------------------------------------
-
+	
 	/**
 	 * @param
 	 * @return String
@@ -210,9 +214,27 @@ public class AdminController {
 	 * @return String
 	 * @description 登录处理
 	 */
-	@RequestMapping("/loginAction")
-	public String loginAction() {
+	@PostMapping("/login")
+	public String loginAction(String username,String password) {
+		        // 1.创建Subject实例
+				Subject subject = SecurityUtils.getSubject();
+				// 2.判断当前用户是否登录
+				if (subject.isAuthenticated() == false) {
+					// 3.将用户名和密码封装
+					UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+					try {
+						// 4.登录
+						subject.login(token);
+					} catch (AuthenticationException e) {
+						return "admin/login";
+					}
+				}
+
 		return "admin/index";
+	}
+	@GetMapping("/logout")
+	public String logout() {
+		return "admin/login";
 	}
 
 	// ------------------------------ajax处理--------------------------------------

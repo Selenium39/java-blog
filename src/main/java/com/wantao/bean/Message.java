@@ -26,6 +26,7 @@ public class Message implements Serializable {
 	private String  messageUserName;
 	private String messageContent;
 	private String messageCreateTime;
+	private String messageIp;
 	private Integer answer;
 	public Message() {
 		super();

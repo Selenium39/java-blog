@@ -64,31 +64,27 @@
 
 
 				<!-- Start Sign In Form -->
-				<form action="${APP_PATH}/admin/loginAction" class="fh5co-form animate-box"
-					data-animate-effect="fadeInLeft" type="post">
-					<h2>Sign In</h2>
+				<form action="${APP_PATH}/admin/login" class="fh5co-form animate-box"
+					 method="post">
+					<h2>登录</h2>
 					<div class="form-group">
-						<label for="username" class="sr-only">Username</label> <input
-							type="text" class="form-control" id="username"
-							placeholder="Username" autocomplete="off">
+						<label for="username" class="sr-only">用户名</label> 
+						<input type="text" class="form-control" id="username"
+							name="username" placeholder="用户名" autocomplete="off">
 					</div>
 					<div class="form-group">
-						<label for="password" class="sr-only">Password</label> <input
-							type="password" class="form-control" id="password"
-							placeholder="Password" autocomplete="off">
-					</div>
-					<div class="form-group">
-						<label for="remember"><input type="checkbox" id="remember">
-							Remember Me</label>
+						<label for="password" class="sr-only">密码</label> <input
+							type="password" class="form-control" id="password" name="password"
+							placeholder="密码" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<p>
-							Not registered? <a href="${APP_PATH}/admin/register">Sign Up</a> | <a
-								href="${APP_PATH}/admin/forgot">Forgot Password?</a>
+							没有注册?<a href="${APP_PATH}/admin/register">注册</a> | <a
+								href="${APP_PATH}/admin/forgot">忘记密码?</a>
 						</p>
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Sign In" class="btn btn-primary">
+						<input type="submit" value="登录" class="btn btn-primary">
 					</div>
 				</form>
 				<!-- END Sign In Form -->
