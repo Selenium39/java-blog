@@ -7,7 +7,7 @@
 	</resultMap>
 	<select id="selectAllCategory"
 		resultType="com.wantao.bean.Category">
-		select * from category oder by category_id
+		select * from category order by category_id
 	</select>
 	<select id="selectAllCategoryIdAndName" resultMap="category_id_name">
 	    select category_id,category_name from category order by category_id

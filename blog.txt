@@ -1,9 +1,7 @@
                                                        blog项目开发流程
 
 changed:
-      1.SimpleDateFormat修改为yyyy-MM-dd HH:mm:ss
-      2.新增加了文件修改功能
-      3.后台增加shiro权限认证功能
+      
 
 want:
          1.todolist
@@ -48,8 +46,10 @@ attention:        1.登录注册等校验
                      和user_last_login_ip(是否要设置user_register_ip???)
                    17.留言ip
                    18.日历的时间显示不对
-                   19.全局异常检测（404页面）
+                  *19.全局异常检测（404页面）
                    20.注意隐私
+                   21.删除文章时候应该把对应的评论删除大
+                   22.分类标签有问题
 		  
 	
 1.搭建了基本的框架

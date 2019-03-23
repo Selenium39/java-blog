@@ -13544,3 +13544,687 @@ Caused by: java.nio.channels.ClosedByInterruptException
 2019-03-21 00:57:48,154 INFO [org.springframework.web.servlet.DispatcherServlet] - Initializing Servlet 'springDispatcherServlet'
 2019-03-21 00:57:48,388 INFO [org.springframework.web.servlet.DispatcherServlet] - Completed initialization in 234 ms
 2019-03-21 01:03:55,484 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-03-21 20:12:28,881 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2019-03-21 20:12:30,164 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:12:30,458 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'authorizer' of type [org.apache.shiro.authz.ModularRealmAuthorizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:12:31,206 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2019-03-21 20:12:31,207 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:12:32,029 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:12:32,044 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:12:32,071 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:12:32,078 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [com.sun.proxy.$Proxy19] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:12:32,083 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userService' of type [com.wantao.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:12:32,086 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'myRealm' of type [com.wantao.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:12:32,101 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:12:32,789 INFO [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 5.3.5.Final
+2019-03-21 20:12:33,779 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext initialized in 4896 ms
+2019-03-21 20:12:33,886 INFO [org.springframework.web.servlet.DispatcherServlet] - Initializing Servlet 'springDispatcherServlet'
+2019-03-21 20:12:34,088 INFO [org.springframework.web.servlet.DispatcherServlet] - Completed initialization in 202 ms
+2019-03-21 20:13:02,631 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==>  Preparing: select count(*) from comment 
+2019-03-21 20:13:02,699 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==>  Preparing: select count(*) from message 
+2019-03-21 20:13:02,712 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==> Parameters: 
+2019-03-21 20:13:02,716 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==> Parameters: 
+2019-03-21 20:13:02,768 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==    Columns: count(*)
+2019-03-21 20:13:02,768 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==        Row: 13
+2019-03-21 20:13:02,768 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==    Columns: count(*)
+2019-03-21 20:13:02,769 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==        Row: 1013
+2019-03-21 20:13:02,770 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - <==      Total: 1
+2019-03-21 20:13:02,771 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==>  Preparing: select count(*) from user 
+2019-03-21 20:13:02,772 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==> Parameters: 
+2019-03-21 20:13:02,776 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==    Columns: count(*)
+2019-03-21 20:13:02,776 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==        Row: 1
+2019-03-21 20:13:02,776 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - <==      Total: 1
+2019-03-21 20:13:02,779 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - <==      Total: 1
+2019-03-21 20:13:02,779 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 20:13:02,780 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==>  Preparing: select count(*) from article 
+2019-03-21 20:13:02,781 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 20:13:02,781 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==> Parameters: 
+2019-03-21 20:13:02,785 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 20:13:02,785 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 20:13:02,785 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 20:13:02,786 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 20:13:02,787 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 20:13:02,789 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 20:13:02,789 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 20:13:02,789 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 20:13:02,790 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 20:13:02,791 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 20:13:02,792 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 20:13:02,792 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 20:13:02,792 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 20:13:02,785 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==    Columns: count(*)
+2019-03-21 20:13:02,794 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==        Row: 38
+2019-03-21 20:13:02,794 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==      Total: 1
+2019-03-21 20:13:06,826 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 20:13:06,828 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 20:13:06,832 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 20:13:06,832 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 20:13:06,832 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 20:13:06,833 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 20:13:06,833 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 20:13:06,835 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 20:13:06,835 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 20:13:06,835 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 20:13:06,835 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 20:13:06,836 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 20:13:06,837 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 20:13:06,837 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 20:13:06,837 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 20:13:06,894 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: select count(0) from (select * from category oder by category_id) tmp_count 
+2019-03-21 20:13:06,894 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 20:15:09,276 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 20:15:09,277 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 20:15:09,279 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 20:15:09,279 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 20:15:09,288 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: select count(0) from (select * from category oder by category_id) tmp_count 
+2019-03-21 20:15:09,288 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 20:15:09,289 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 20:15:09,289 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 20:15:09,290 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 20:15:09,291 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 20:15:09,292 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 20:15:09,292 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 20:15:09,294 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 20:15:09,294 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 20:15:09,296 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 20:15:09,296 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 20:15:09,296 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 20:15:18,233 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-03-21 20:15:22,511 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2019-03-21 20:15:24,043 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:15:24,279 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'authorizer' of type [org.apache.shiro.authz.ModularRealmAuthorizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:15:25,184 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2019-03-21 20:15:25,184 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:15:25,917 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:15:25,922 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:15:25,932 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:15:25,936 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [com.sun.proxy.$Proxy19] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:15:25,939 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userService' of type [com.wantao.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:15:25,942 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'myRealm' of type [com.wantao.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:15:25,952 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:15:26,562 INFO [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 5.3.5.Final
+2019-03-21 20:15:27,254 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext initialized in 4743 ms
+2019-03-21 20:15:27,340 INFO [org.springframework.web.servlet.DispatcherServlet] - Initializing Servlet 'springDispatcherServlet'
+2019-03-21 20:15:27,553 INFO [org.springframework.web.servlet.DispatcherServlet] - Completed initialization in 213 ms
+2019-03-21 20:16:02,098 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 20:16:02,211 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==>  Preparing: select count(*) from article 
+2019-03-21 20:16:02,216 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==> Parameters: 
+2019-03-21 20:16:02,216 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 20:16:02,302 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 20:16:02,303 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==    Columns: count(*)
+2019-03-21 20:16:02,303 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==        Row: 38
+2019-03-21 20:16:02,306 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 20:16:02,306 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 20:16:02,307 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==      Total: 1
+2019-03-21 20:16:02,311 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==>  Preparing: select count(*) from message 
+2019-03-21 20:16:02,313 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==> Parameters: 
+2019-03-21 20:16:02,313 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==>  Preparing: select count(*) from user 
+2019-03-21 20:16:02,314 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==> Parameters: 
+2019-03-21 20:16:02,323 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==    Columns: count(*)
+2019-03-21 20:16:02,323 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==    Columns: count(*)
+2019-03-21 20:16:02,323 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==        Row: 1
+2019-03-21 20:16:02,323 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==        Row: 1013
+2019-03-21 20:16:02,323 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - <==      Total: 1
+2019-03-21 20:16:02,323 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - <==      Total: 1
+2019-03-21 20:16:02,325 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==>  Preparing: select count(*) from comment 
+2019-03-21 20:16:02,325 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 20:16:02,325 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==> Parameters: 
+2019-03-21 20:16:02,326 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 20:16:02,337 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==    Columns: count(*)
+2019-03-21 20:16:02,338 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==        Row: 13
+2019-03-21 20:16:02,338 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - <==      Total: 1
+2019-03-21 20:16:02,347 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 20:16:02,347 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 20:16:02,347 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 20:16:02,348 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 20:16:02,349 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 20:16:02,352 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 20:16:02,352 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 20:16:02,352 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 20:16:05,904 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 20:16:05,905 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 20:16:05,921 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 20:16:05,921 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 20:16:05,922 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 20:16:05,926 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 20:16:05,931 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 20:16:05,932 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 20:16:05,932 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 20:16:05,932 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 20:16:05,933 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 20:16:05,933 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 20:16:05,934 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 20:16:05,934 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 20:16:05,934 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 20:16:05,999 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 20:16:05,999 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 20:16:06,000 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 20:16:06,000 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 22
+2019-03-21 20:16:06,001 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 20:16:06,003 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ? 
+2019-03-21 20:16:06,004 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 5(Integer)
+2019-03-21 20:16:06,007 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 20:16:06,007 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 1, Java, Java语言, fa fa-coffee
+2019-03-21 20:16:06,009 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 2, Java基础, , 
+2019-03-21 20:16:06,009 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 3, Core Java, , 
+2019-03-21 20:16:06,010 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 4, 多线程并发编程, , 
+2019-03-21 20:16:06,010 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 5, Sockets和IO, , 
+2019-03-21 20:16:06,010 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 5
+2019-03-21 20:16:26,587 DEBUG [com.wantao.mapper.CategoryMapper.insertCategory] - ==>  Preparing: insert into category ( category_name, category_description, category_icon ) values ( ?, ?, ? ) 
+2019-03-21 20:16:26,599 DEBUG [com.wantao.mapper.CategoryMapper.insertCategory] - ==> Parameters: 测试分类(String), 分类测试(String), fa fa-book(String)
+2019-03-21 20:16:26,616 DEBUG [com.wantao.mapper.CategoryMapper.insertCategory] - <==    Updates: 1
+2019-03-21 20:16:26,737 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 20:16:26,737 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 20:16:26,739 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 20:16:26,740 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 20:16:26,740 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 20:16:26,740 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 20:16:26,741 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 20:16:26,742 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 20:16:26,742 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 20:16:26,742 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 20:16:26,743 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 20:16:26,743 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 20:16:26,744 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 20:16:26,744 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 20:16:26,745 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 20:16:26,757 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 20:16:26,758 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 20:16:26,761 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 20:16:26,761 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 20:16:26,761 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 20:16:26,763 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ? 
+2019-03-21 20:16:26,764 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 5(Integer)
+2019-03-21 20:16:26,766 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 20:16:26,766 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 1, Java, Java语言, fa fa-coffee
+2019-03-21 20:16:26,768 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 2, Java基础, , 
+2019-03-21 20:16:26,768 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 3, Core Java, , 
+2019-03-21 20:16:26,769 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 4, 多线程并发编程, , 
+2019-03-21 20:16:26,769 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 5, Sockets和IO, , 
+2019-03-21 20:16:26,769 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 5
+2019-03-21 20:16:28,843 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 20:16:28,844 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 20:16:28,847 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 20:16:28,848 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 20:16:28,848 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 20:16:28,852 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ?, ? 
+2019-03-21 20:16:28,853 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 20(Integer), 5(Integer)
+2019-03-21 20:16:28,856 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 20:16:28,857 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 22, 权限框架, , 
+2019-03-21 20:16:28,859 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 23, 开发利器, , 
+2019-03-21 20:16:28,860 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 24, 测试分类, 分类测试, fa fa-book
+2019-03-21 20:16:28,861 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 3
+2019-03-21 20:16:30,582 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 20:16:30,583 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 20:16:30,588 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 20:16:30,588 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 20:16:30,589 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 20:16:30,592 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ?, ? 
+2019-03-21 20:16:30,592 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 15(Integer), 5(Integer)
+2019-03-21 20:16:30,597 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 20:16:30,598 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 16, 消息服务, , 
+2019-03-21 20:16:30,600 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 17, 缓存服务, , 
+2019-03-21 20:16:30,602 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 19, Hello, 1111, 11
+2019-03-21 20:16:30,606 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 20, 微服务, , 
+2019-03-21 20:16:30,607 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 21, 搜索引擎, , 
+2019-03-21 20:16:30,608 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 5
+2019-03-21 20:16:32,026 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 20:16:32,027 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 20:16:32,030 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 20:16:32,031 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 20:16:32,031 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 20:16:32,033 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ?, ? 
+2019-03-21 20:16:32,034 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 10(Integer), 5(Integer)
+2019-03-21 20:16:32,041 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 20:16:32,045 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 11, 数据结构和算法, , 
+2019-03-21 20:16:32,051 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 12, 操作系统, , 
+2019-03-21 20:16:32,058 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 13, 数据库, , 
+2019-03-21 20:16:32,071 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 14, 计算机网络, , 
+2019-03-21 20:16:32,072 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 15, 其他技术, , fa-snowflake-o fa
+2019-03-21 20:16:32,075 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 5
+2019-03-21 20:16:33,201 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 20:16:33,202 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 20:16:33,205 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 20:16:33,206 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 20:16:33,206 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 20:16:33,211 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ?, ? 
+2019-03-21 20:16:33,212 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 20(Integer), 5(Integer)
+2019-03-21 20:16:33,217 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 20:16:33,218 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 22, 权限框架, , 
+2019-03-21 20:16:33,220 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 23, 开发利器, , 
+2019-03-21 20:16:33,221 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 24, 测试分类, 分类测试, fa fa-book
+2019-03-21 20:16:33,221 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 3
+2019-03-21 20:16:36,519 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 20:16:36,519 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 20:16:36,520 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 20:16:36,520 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 20:16:36,520 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 20:16:36,521 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 20:16:36,521 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 20:16:36,522 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - ==>  Preparing: SELECT count(0) FROM tag 
+2019-03-21 20:16:36,522 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 20:16:36,522 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 20:16:36,522 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - ==> Parameters: 
+2019-03-21 20:16:36,522 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 20:16:36,523 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 20:16:36,523 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 20:16:36,523 TRACE [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==    Columns: count(0)
+2019-03-21 20:16:36,523 TRACE [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==        Row: 3
+2019-03-21 20:16:36,523 DEBUG [com.wantao.mapper.TagMapper.selectAllTag_COUNT] - <==      Total: 1
+2019-03-21 20:16:36,524 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 20:16:36,524 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 20:16:36,524 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 20:16:36,531 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - ==>  Preparing: select * from tag order by tag_id LIMIT ? 
+2019-03-21 20:16:36,531 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - ==> Parameters: 5(Integer)
+2019-03-21 20:16:36,533 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==    Columns: tag_id, tag_name, tag_description, tag_image
+2019-03-21 20:16:36,533 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 1, java, java, /resource/tag/java.jpg
+2019-03-21 20:16:36,533 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 2, mysql, mysql, /resource/tag/java.jpg
+2019-03-21 20:16:36,534 TRACE [com.wantao.mapper.TagMapper.selectAllTag] - <==        Row: 3, 测试, 测试, /resource/tag/dog1.jpeg
+2019-03-21 20:16:36,534 DEBUG [com.wantao.mapper.TagMapper.selectAllTag] - <==      Total: 3
+2019-03-21 20:16:46,688 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-03-21 20:55:20,912 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2019-03-21 20:55:21,867 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:22,081 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'authorizer' of type [org.apache.shiro.authz.ModularRealmAuthorizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:22,830 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2019-03-21 20:55:22,830 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:23,398 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:23,402 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:23,411 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:23,415 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [com.sun.proxy.$Proxy19] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:23,418 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userService' of type [com.wantao.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:23,420 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'myRealm' of type [com.wantao.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:23,429 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:24,467 INFO [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 5.3.5.Final
+2019-03-21 20:55:25,608 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext initialized in 4695 ms
+2019-03-21 20:55:25,677 INFO [org.springframework.web.servlet.DispatcherServlet] - Initializing Servlet 'springDispatcherServlet'
+2019-03-21 20:55:25,850 INFO [org.springframework.web.servlet.DispatcherServlet] - Completed initialization in 173 ms
+2019-03-21 20:55:35,905 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-03-21 20:55:37,181 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2019-03-21 20:55:37,962 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:37,987 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'authorizer' of type [org.apache.shiro.authz.ModularRealmAuthorizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:38,609 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2019-03-21 20:55:38,609 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:38,993 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:39,017 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:39,045 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:39,057 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [com.sun.proxy.$Proxy53] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:39,060 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userService' of type [com.wantao.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:39,062 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'myRealm' of type [com.wantao.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:39,086 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 20:55:40,036 INFO [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 5.3.5.Final
+2019-03-21 20:55:40,597 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext initialized in 3416 ms
+2019-03-21 20:55:40,641 INFO [org.springframework.web.servlet.DispatcherServlet] - Initializing Servlet 'springDispatcherServlet'
+2019-03-21 20:55:40,809 INFO [org.springframework.web.servlet.DispatcherServlet] - Completed initialization in 168 ms
+2019-03-21 21:03:22,420 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 21:03:22,499 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 21:03:22,501 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==>  Preparing: select count(*) from message 
+2019-03-21 21:03:22,502 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==> Parameters: 
+2019-03-21 21:03:22,538 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 21:03:22,538 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 21:03:22,538 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==    Columns: count(*)
+2019-03-21 21:03:22,539 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==        Row: 1013
+2019-03-21 21:03:22,542 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 21:03:22,543 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - <==      Total: 1
+2019-03-21 21:03:22,547 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==>  Preparing: select count(*) from article 
+2019-03-21 21:03:22,547 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==> Parameters: 
+2019-03-21 21:03:22,548 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==    Columns: count(*)
+2019-03-21 21:03:22,548 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==        Row: 38
+2019-03-21 21:03:22,548 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==      Total: 1
+2019-03-21 21:03:22,549 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==>  Preparing: select count(*) from comment 
+2019-03-21 21:03:22,549 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==> Parameters: 
+2019-03-21 21:03:22,550 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==    Columns: count(*)
+2019-03-21 21:03:22,550 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==        Row: 13
+2019-03-21 21:03:22,550 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - <==      Total: 1
+2019-03-21 21:03:22,556 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==>  Preparing: select count(*) from user 
+2019-03-21 21:03:22,558 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==> Parameters: 
+2019-03-21 21:03:22,559 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==    Columns: count(*)
+2019-03-21 21:03:22,559 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==        Row: 1
+2019-03-21 21:03:22,559 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - <==      Total: 1
+2019-03-21 21:03:22,575 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 21:03:22,576 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 21:03:22,580 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 21:03:22,580 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 21:03:22,581 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 21:03:22,584 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 21:03:22,585 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 21:03:22,592 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 21:03:22,592 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 21:03:22,592 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 21:03:26,478 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 21:03:26,479 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 21:03:26,484 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 21:03:26,484 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 21:03:26,485 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 21:03:26,486 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 21:03:26,487 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 21:03:26,489 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 21:03:26,490 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 21:03:26,490 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 21:03:26,491 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 21:03:26,496 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 21:03:26,498 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 21:03:26,499 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 21:03:26,499 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 21:03:26,535 DEBUG [com.wantao.mapper.CommentMapper.selectAllComment_COUNT] - ==>  Preparing: SELECT count(0) FROM comment 
+2019-03-21 21:03:26,535 DEBUG [com.wantao.mapper.CommentMapper.selectAllComment_COUNT] - ==> Parameters: 
+2019-03-21 21:03:26,536 TRACE [com.wantao.mapper.CommentMapper.selectAllComment_COUNT] - <==    Columns: count(0)
+2019-03-21 21:03:26,536 TRACE [com.wantao.mapper.CommentMapper.selectAllComment_COUNT] - <==        Row: 13
+2019-03-21 21:03:26,537 DEBUG [com.wantao.mapper.CommentMapper.selectAllComment_COUNT] - <==      Total: 1
+2019-03-21 21:03:26,540 DEBUG [com.wantao.mapper.CommentMapper.selectAllComment] - ==>  Preparing: select * from comment LIMIT ? 
+2019-03-21 21:03:26,541 DEBUG [com.wantao.mapper.CommentMapper.selectAllComment] - ==> Parameters: 5(Integer)
+2019-03-21 21:03:26,544 TRACE [com.wantao.mapper.CommentMapper.selectAllComment] - <==    Columns: comment_id, comment_article_id, comment_user_name, comment_user_email, comment_content, comment_ip, comment_create_time, answer
+2019-03-21 21:03:26,545 TRACE [com.wantao.mapper.CommentMapper.selectAllComment] - <==        Row: 1, 29, selenium, 895484122@qq.com, 6666666, 127.0.0.1, 2018-11-25 20:51:52, 1
+2019-03-21 21:03:26,547 TRACE [com.wantao.mapper.CommentMapper.selectAllComment] - <==        Row: 26, 29, zxy, 895484122@qq.com, zxy, 127.0.0.1, 2019-30-15  01:30:40, 1
+2019-03-21 21:03:26,547 TRACE [com.wantao.mapper.CommentMapper.selectAllComment] - <==        Row: 27, 29, zxy1, 895484122@qq.com, zxy1, 127.0.0.1, 2019-40-15  01:40:27, 1
+2019-03-21 21:03:26,548 TRACE [com.wantao.mapper.CommentMapper.selectAllComment] - <==        Row: 28, 29, zxy1, 895484122@qq.com, zxy1, 127.0.0.1, 2019-40-15  01:40:39, 1
+2019-03-21 21:03:26,549 TRACE [com.wantao.mapper.CommentMapper.selectAllComment] - <==        Row: 29, 29, zxy2, 895484122@qq.com, zxy2, 127.0.0.1, 2019-42-15  01:42:15, 1
+2019-03-21 21:03:26,549 DEBUG [com.wantao.mapper.CommentMapper.selectAllComment] - <==      Total: 5
+2019-03-21 21:03:27,734 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 21:03:27,734 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 21:03:27,735 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 21:03:27,736 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 21:03:27,737 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 21:03:27,738 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 21:03:27,738 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 21:03:27,739 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 21:03:27,739 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 21:03:27,739 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 21:03:27,740 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 21:03:27,740 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 21:03:27,741 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 21:03:27,742 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 21:03:27,742 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 21:03:27,752 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 21:03:27,752 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 21:03:27,756 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 21:03:27,756 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 21:03:27,758 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 21:03:27,762 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ? 
+2019-03-21 21:03:27,762 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 5(Integer)
+2019-03-21 21:03:27,764 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 21:03:27,764 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 1, Java, Java语言, fa fa-coffee
+2019-03-21 21:03:27,764 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 2, Java基础, , 
+2019-03-21 21:03:27,764 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 3, Core Java, , 
+2019-03-21 21:03:27,765 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 4, 多线程并发编程, , 
+2019-03-21 21:03:27,765 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 5, Sockets和IO, , 
+2019-03-21 21:03:27,765 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 5
+2019-03-21 21:03:31,419 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 21:03:31,420 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 21:03:31,423 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 21:03:31,423 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 21:03:31,424 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 21:03:31,426 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 21:03:31,426 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 21:03:31,429 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 21:03:31,429 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 21:03:31,429 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 21:03:31,430 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 21:03:31,430 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 21:03:31,431 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 21:03:31,431 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 21:03:31,431 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 21:03:31,439 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - ==>  Preparing: SELECT count(0) FROM article 
+2019-03-21 21:03:31,440 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - ==> Parameters: 
+2019-03-21 21:03:31,446 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==    Columns: count(0)
+2019-03-21 21:03:31,446 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==        Row: 38
+2019-03-21 21:03:31,446 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==      Total: 1
+2019-03-21 21:03:31,447 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article order by article_create_time desc LIMIT ? 
+2019-03-21 21:03:31,448 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - ==> Parameters: 5(Integer)
+2019-03-21 21:03:31,455 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-21 21:03:31,455 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 36, 1, selenium, 文章测试, 0, 0, 0, 0, 2019-32-19  22:32:07, 2019-32-19  22:32:07, 1, 1, 0, <<BLOB>>
+2019-03-21 21:03:31,463 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 35, 1, selenium, titleTest, 0, 0, 0, 0, 2019-29-19  22:29:08, 2019-29-19  22:29:08, 1, 1, 0, <<BLOB>>
+2019-03-21 21:03:31,463 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 40, 1, selenium, 文章时间测试, 0, 0, 0, 0, 2019-25-20  13:25:16, 2019-25-20  13:25:16, 1, 1, 0, <<BLOB>>
+2019-03-21 21:03:31,464 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 39, 1, selenium, selenium测试, 0, 0, 0, 0, 2019-20-20  13:20:42, 2019-20-20  13:20:42, 1, 1, 0, <<BLOB>>
+2019-03-21 21:03:31,465 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 38, 1, selenium, selenium测试, 0, 0, 0, 0, 2019-17-20  13:17:18, 2019-17-20  13:17:18, 1, 1, 0, <<BLOB>>
+2019-03-21 21:03:31,466 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==      Total: 5
+2019-03-21 21:03:32,519 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 21:03:32,519 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 21:03:32,523 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 21:03:32,523 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 21:03:32,523 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 21:03:32,525 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 21:03:32,525 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 21:03:32,526 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 21:03:32,526 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 21:03:32,528 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 21:03:32,528 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 21:03:32,529 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 21:03:32,526 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 21:03:32,534 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 21:03:32,535 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 21:03:32,535 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 21:03:32,535 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 21:03:32,536 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ? 
+2019-03-21 21:03:32,536 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 5(Integer)
+2019-03-21 21:03:32,538 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 21:03:32,538 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 1, Java, Java语言, fa fa-coffee
+2019-03-21 21:03:32,541 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 2, Java基础, , 
+2019-03-21 21:03:32,541 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 3, Core Java, , 
+2019-03-21 21:03:32,541 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 4, 多线程并发编程, , 
+2019-03-21 21:03:32,542 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 5, Sockets和IO, , 
+2019-03-21 21:03:32,542 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 5
+2019-03-21 21:03:32,542 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 21:03:32,542 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 21:03:32,542 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 21:03:37,238 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 21:03:37,238 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 21:03:37,242 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 21:03:37,243 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 21:03:37,243 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 21:03:37,254 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ?, ? 
+2019-03-21 21:03:37,255 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 5(Integer), 5(Integer)
+2019-03-21 21:03:37,267 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 21:03:37,270 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 6, 设计模式和反射, , 
+2019-03-21 21:03:37,275 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 7, JVM, , 
+2019-03-21 21:03:37,280 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 8, JavaWeb, , 
+2019-03-21 21:03:37,288 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 9, Java框架, , 
+2019-03-21 21:03:37,289 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 10, 计算机科学, , fa fa-cubes
+2019-03-21 21:03:37,289 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 5
+2019-03-21 21:03:38,984 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 21:03:38,986 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 21:03:38,990 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 21:03:38,990 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 21:03:38,991 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 21:03:38,993 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ?, ? 
+2019-03-21 21:03:38,994 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 20(Integer), 5(Integer)
+2019-03-21 21:03:38,998 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 21:03:38,998 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 22, 权限框架, , 
+2019-03-21 21:03:39,005 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 23, 开发利器, , 
+2019-03-21 21:03:39,006 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 24, 测试分类, 分类测试, fa fa-book
+2019-03-21 21:03:39,007 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 3
+2019-03-21 21:03:40,439 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 21:03:40,439 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 21:03:40,441 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 21:03:40,441 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 21:03:40,441 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 21:03:40,447 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - ==>  Preparing: SELECT count(0) FROM article 
+2019-03-21 21:03:40,449 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - ==> Parameters: 
+2019-03-21 21:03:40,451 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==    Columns: count(0)
+2019-03-21 21:03:40,451 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==        Row: 38
+2019-03-21 21:03:40,452 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle_COUNT] - <==      Total: 1
+2019-03-21 21:03:40,456 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 21:03:40,461 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 21:03:40,452 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - ==>  Preparing: select article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content from article order by article_create_time desc LIMIT ? 
+2019-03-21 21:03:40,462 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - ==> Parameters: 5(Integer)
+2019-03-21 21:03:40,462 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 21:03:40,462 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 21:03:40,462 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 21:03:40,463 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 21:03:40,463 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 21:03:40,464 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 21:03:40,464 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 21:03:40,464 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 21:03:40,464 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==    Columns: article_id, article_user_id, article_user_name, article_title, article_view_count, article_comment_count, article_dislike_count, article_like_count, article_create_time, article_update_time, article_is_comment, article_status, article_order, article_content
+2019-03-21 21:03:40,464 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 36, 1, selenium, 文章测试, 0, 0, 0, 0, 2019-32-19  22:32:07, 2019-32-19  22:32:07, 1, 1, 0, <<BLOB>>
+2019-03-21 21:03:40,465 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 35, 1, selenium, titleTest, 0, 0, 0, 0, 2019-29-19  22:29:08, 2019-29-19  22:29:08, 1, 1, 0, <<BLOB>>
+2019-03-21 21:03:40,465 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 40, 1, selenium, 文章时间测试, 0, 0, 0, 0, 2019-25-20  13:25:16, 2019-25-20  13:25:16, 1, 1, 0, <<BLOB>>
+2019-03-21 21:03:40,466 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 39, 1, selenium, selenium测试, 0, 0, 0, 0, 2019-20-20  13:20:42, 2019-20-20  13:20:42, 1, 1, 0, <<BLOB>>
+2019-03-21 21:03:40,466 TRACE [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==        Row: 38, 1, selenium, selenium测试, 0, 0, 0, 0, 2019-17-20  13:17:18, 2019-17-20  13:17:18, 1, 1, 0, <<BLOB>>
+2019-03-21 21:03:40,467 DEBUG [com.wantao.mapper.ArticleMapper.selectAllArticle] - <==      Total: 5
+2019-03-21 21:03:41,101 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 21:03:41,101 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 21:03:41,102 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 21:03:41,103 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 21:03:41,103 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 21:03:41,103 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 21:03:41,103 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 21:03:41,105 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 21:03:41,105 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 21:03:41,106 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 21:03:41,107 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 21:03:41,107 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 21:03:41,108 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 21:03:41,108 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 21:03:41,108 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 21:03:41,108 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 21:03:41,109 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 21:03:41,111 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 21:03:41,111 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 21:03:41,112 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 21:03:41,114 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ? 
+2019-03-21 21:03:41,116 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 5(Integer)
+2019-03-21 21:03:41,117 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 21:03:41,117 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 1, Java, Java语言, fa fa-coffee
+2019-03-21 21:03:41,117 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 2, Java基础, , 
+2019-03-21 21:03:41,118 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 3, Core Java, , 
+2019-03-21 21:03:41,118 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 4, 多线程并发编程, , 
+2019-03-21 21:03:41,118 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 5, Sockets和IO, , 
+2019-03-21 21:03:41,118 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 5
+2019-03-21 21:04:52,116 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 21:04:52,117 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 21:04:52,118 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 21:04:52,118 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 21:04:52,119 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 21:04:52,121 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ? 
+2019-03-21 21:04:52,121 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 5(Integer)
+2019-03-21 21:04:52,123 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 21:04:52,123 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 1, Java, Java语言, fa fa-coffee
+2019-03-21 21:04:52,124 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 2, Java基础, , 
+2019-03-21 21:04:52,124 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 3, Core Java, , 
+2019-03-21 21:04:52,125 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 4, 多线程并发编程, , 
+2019-03-21 21:04:52,127 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 5, Sockets和IO, , 
+2019-03-21 21:04:52,128 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 5
+2019-03-21 21:12:00,940 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-03-21 21:14:09,576 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2019-03-21 21:14:10,462 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:14:15,528 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'authorizer' of type [org.apache.shiro.authz.ModularRealmAuthorizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:14:16,354 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2019-03-21 21:14:16,354 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:14:17,196 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:14:17,212 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:14:17,252 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:14:17,256 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [com.sun.proxy.$Proxy23] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:14:17,270 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userService' of type [com.wantao.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:14:17,271 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'myRealm' of type [com.wantao.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:14:17,284 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:14:18,151 INFO [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 5.3.5.Final
+2019-03-21 21:14:19,223 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext initialized in 9647 ms
+2019-03-21 21:14:19,315 INFO [org.springframework.web.servlet.DispatcherServlet] - Initializing Servlet 'springDispatcherServlet'
+2019-03-21 21:14:19,661 INFO [org.springframework.web.servlet.DispatcherServlet] - Completed initialization in 346 ms
+2019-03-21 21:15:01,075 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-03-21 21:19:53,803 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext: initialization started
+2019-03-21 21:19:54,726 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:19:54,915 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'authorizer' of type [org.apache.shiro.authz.ModularRealmAuthorizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:19:55,581 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2019-03-21 21:19:55,581 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:19:56,120 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.mybatis.spring.SqlSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:19:56,125 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:19:56,135 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:19:56,138 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userMapper' of type [com.sun.proxy.$Proxy19] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:19:56,142 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'userService' of type [com.wantao.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:19:56,145 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'myRealm' of type [com.wantao.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:19:56,155 INFO [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 21:19:56,574 INFO [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 5.3.5.Final
+2019-03-21 21:19:57,112 INFO [org.springframework.web.context.ContextLoader] - Root WebApplicationContext initialized in 3308 ms
+2019-03-21 21:19:57,174 INFO [org.springframework.web.servlet.DispatcherServlet] - Initializing Servlet 'springDispatcherServlet'
+2019-03-21 21:19:57,337 INFO [org.springframework.web.servlet.DispatcherServlet] - Completed initialization in 163 ms
+2019-03-21 21:20:18,897 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==>  Preparing: select count(*) from comment 
+2019-03-21 21:20:19,007 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - ==> Parameters: 
+2019-03-21 21:20:19,030 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==>  Preparing: select count(*) from user 
+2019-03-21 21:20:19,044 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - ==> Parameters: 
+2019-03-21 21:20:19,099 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==    Columns: count(*)
+2019-03-21 21:20:19,099 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==    Columns: count(*)
+2019-03-21 21:20:19,100 TRACE [com.wantao.mapper.CommentMapper.selectCommentCount] - <==        Row: 13
+2019-03-21 21:20:19,102 TRACE [com.wantao.mapper.UserMapper.selectUserCount] - <==        Row: 1
+2019-03-21 21:20:19,103 DEBUG [com.wantao.mapper.CommentMapper.selectCommentCount] - <==      Total: 1
+2019-03-21 21:20:19,103 DEBUG [com.wantao.mapper.UserMapper.selectUserCount] - <==      Total: 1
+2019-03-21 21:20:19,107 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==>  Preparing: select count(*) from article 
+2019-03-21 21:20:19,107 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 21:20:19,107 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - ==> Parameters: 
+2019-03-21 21:20:19,107 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 21:20:19,108 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 21:20:19,108 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 21:20:19,109 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 21:20:19,111 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==>  Preparing: select count(*) from message 
+2019-03-21 21:20:19,111 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - ==> Parameters: 
+2019-03-21 21:20:19,111 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==    Columns: count(*)
+2019-03-21 21:20:19,111 TRACE [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==        Row: 38
+2019-03-21 21:20:19,111 DEBUG [com.wantao.mapper.ArticleMapper.selectArticleCount] - <==      Total: 1
+2019-03-21 21:20:19,116 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==    Columns: count(*)
+2019-03-21 21:20:19,116 TRACE [com.wantao.mapper.MessageMapper.selectMessageCount] - <==        Row: 1013
+2019-03-21 21:20:19,117 DEBUG [com.wantao.mapper.MessageMapper.selectMessageCount] - <==      Total: 1
+2019-03-21 21:20:19,117 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 21:20:19,118 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 21:20:19,119 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 21:20:19,119 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 21:20:19,120 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 21:20:19,120 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 21:20:19,121 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 21:20:19,124 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 21:20:19,124 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 21:20:19,124 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 21:20:20,351 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 21:20:20,353 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 21:20:20,358 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 21:20:20,358 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 21:20:20,360 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 21:20:20,361 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 21:20:20,365 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 21:20:20,368 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 21:20:20,368 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 21:20:20,368 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 21:20:20,369 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 21:20:20,376 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 21:20:20,377 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 21:20:20,377 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 21:20:20,378 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 21:20:20,432 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - ==>  Preparing: SELECT count(0) FROM user 
+2019-03-21 21:20:20,432 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - ==> Parameters: 
+2019-03-21 21:20:20,434 TRACE [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==    Columns: count(0)
+2019-03-21 21:20:20,435 TRACE [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==        Row: 1
+2019-03-21 21:20:20,436 DEBUG [com.wantao.mapper.UserMapper.selectAllUser_COUNT] - <==      Total: 1
+2019-03-21 21:20:20,438 DEBUG [com.wantao.mapper.UserMapper.selectAllUser] - ==>  Preparing: select * from user LIMIT ? 
+2019-03-21 21:20:20,446 DEBUG [com.wantao.mapper.UserMapper.selectAllUser] - ==> Parameters: 5(Integer)
+2019-03-21 21:20:20,456 TRACE [com.wantao.mapper.UserMapper.selectAllUser] - <==    Columns: user_id, user_name, user_password, user_nickname, user_email, user_url, user_avatar, user_last_login_ip, user_register_time, user_last_login_time, user_status
+2019-03-21 21:20:20,457 TRACE [com.wantao.mapper.UserMapper.selectAllUser] - <==        Row: 4, 测试, 123, 123, 123, , /resource/avatar/33.jpeg, null, 2019-32-18  22:32:41, null, 1
+2019-03-21 21:20:20,461 DEBUG [com.wantao.mapper.UserMapper.selectAllUser] - <==      Total: 1
+2019-03-21 21:20:22,550 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==>  Preparing: select count(*) from contact where answer =0 
+2019-03-21 21:20:22,550 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - ==> Parameters: 
+2019-03-21 21:20:22,553 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==    Columns: count(*)
+2019-03-21 21:20:22,553 TRACE [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==        Row: 1
+2019-03-21 21:20:22,553 DEBUG [com.wantao.mapper.ContactMapper.selectNewContactCount] - <==      Total: 1
+2019-03-21 21:20:22,554 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==>  Preparing: select count(*) from message where answer =0 
+2019-03-21 21:20:22,554 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - ==> Parameters: 
+2019-03-21 21:20:22,555 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==    Columns: count(*)
+2019-03-21 21:20:22,555 TRACE [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==        Row: 1006
+2019-03-21 21:20:22,556 DEBUG [com.wantao.mapper.MessageMapper.selectNewMessageCount] - <==      Total: 1
+2019-03-21 21:20:22,556 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==>  Preparing: select count(*) from comment where answer =0 
+2019-03-21 21:20:22,556 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - ==> Parameters: 
+2019-03-21 21:20:22,565 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==    Columns: count(*)
+2019-03-21 21:20:22,566 TRACE [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==        Row: 1
+2019-03-21 21:20:22,567 DEBUG [com.wantao.mapper.CommentMapper.selectNewCommentCount] - <==      Total: 1
+2019-03-21 21:20:22,567 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==>  Preparing: SELECT count(0) FROM category 
+2019-03-21 21:20:22,567 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - ==> Parameters: 
+2019-03-21 21:20:22,570 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==    Columns: count(0)
+2019-03-21 21:20:22,570 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==        Row: 23
+2019-03-21 21:20:22,571 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory_COUNT] - <==      Total: 1
+2019-03-21 21:20:22,573 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==>  Preparing: select * from category order by category_id LIMIT ? 
+2019-03-21 21:20:22,574 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - ==> Parameters: 5(Integer)
+2019-03-21 21:20:22,578 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==    Columns: category_id, category_name, category_description, category_icon
+2019-03-21 21:20:22,578 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 1, Java, Java语言, fa fa-coffee
+2019-03-21 21:20:22,579 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 2, Java基础, , 
+2019-03-21 21:20:22,579 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 3, Core Java, , 
+2019-03-21 21:20:22,580 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 4, 多线程并发编程, , 
+2019-03-21 21:20:22,581 TRACE [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==        Row: 5, Sockets和IO, , 
+2019-03-21 21:20:22,581 DEBUG [com.wantao.mapper.CategoryMapper.selectAllCategory] - <==      Total: 5
+2019-03-21 21:25:02,937 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
