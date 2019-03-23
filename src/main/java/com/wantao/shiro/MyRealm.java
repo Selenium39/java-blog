@@ -53,8 +53,8 @@ public class MyRealm extends AuthorizingRealm {
 		// 3.查询数据库看是否存在指定的用户名和密码
 		try {
 			//这里以后从数据库中查
-			Object principal = "selenium";// 用户
-			Object credentials = "15773272279wt..A";// 密码
+			Object principal = "用户名";// 用户
+			Object credentials = "密码";// 密码
 			String realmName = this.getName();
 			info = new SimpleAuthenticationInfo(principal,credentials,realmName);
 		} catch (Exception e) {
