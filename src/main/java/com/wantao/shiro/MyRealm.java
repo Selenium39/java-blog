@@ -18,6 +18,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.wantao.bean.User;
 import com.wantao.service.UserService;
 
 /**
@@ -53,8 +54,9 @@ public class MyRealm extends AuthorizingRealm {
 		// 3.查询数据库看是否存在指定的用户名和密码
 		try {
 			//这里以后从数据库中查
-			Object principal = "selenium";// 用户
-			Object credentials = "15773272279wt..A";// 密码
+			User user=UserService.selectUserById(1);
+			Object principal = user.getUserName();// 用户
+			Object credentials = user.getUserPassword();// 密码
 			String realmName = this.getName();
 			info = new SimpleAuthenticationInfo(principal,credentials,realmName);
 		} catch (Exception e) {

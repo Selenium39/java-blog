@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -136,6 +137,12 @@ public class AdminController {
 	@RequestMapping("/article")
 	public String article() {
 		return "admin/article";
+	}
+	
+	@RequestMapping("/updateArticle/{articleId}")
+	public String  updateArticle(@PathVariable("articleId")Integer articleId,Model model) {
+		model.addAttribute("articleId",articleId);
+		return "admin/article_update";
 	}
 
 	/**
@@ -968,6 +975,14 @@ public class AdminController {
 		List<Category> categorys = categoryService.selectAllCategory();
 		PageInfo pageInfo = new PageInfo(categorys, 5);// 用pageInfo封装然后交给页面
 		return Message.success().add("pageInfo", pageInfo);
+	}
+	
+	@GetMapping("/selectArticleTagAndCategoryByArticleId/{articleId}")
+	@ResponseBody
+	public Message selectArticleTagAndCategoryByArticleId(@PathVariable("articleId")Integer articleId) {
+		List<Tag> tags= articleTagRefService.selectTagByArticleId(articleId);
+		Category category=articleCategoryRefService.selectCategoryByArticleId(articleId);
+		return Message.success().add("tags",tags).add("category",category);
 	}
 
 }

@@ -79,8 +79,11 @@ function articles(pn, type) {// 查询所有的文章并显示在分页中
 				var deleteButton = $("<button></button>").append("删除").attr(
 						"class", "btn btn-danger").attr("id",
 						"btn-delete-" + item.articleId);
+				var updateButton1 = $("<button></button>").append("详细修改").attr(
+						"class", "btn btn-warning").attr("id",
+						"btn-update1-" + item.articleId);
 				buttons.append(showButton).append(" ").append(updateButton)
-						.append(" ").append(deleteButton);
+						.append(" ").append(deleteButton).append(" ").append(updateButton1);
 				tr.append(checkbox).append(articleId).append(articleUserName)
 						.append(articleTitle).append(articleCreateTime).append(
 								buttons).appendTo($("#articles"));
@@ -103,6 +106,9 @@ function articles(pn, type) {// 查询所有的文章并显示在分页中
 								deleteArticleById(item.articleId);
 							}
 						});
+				$("#btn-update1-" + item.articleId).click(function() {
+					$(location).attr("href",APP_PATH+"/admin/updateArticle/"+item.articleId);
+				});
 			});
 
 		}
