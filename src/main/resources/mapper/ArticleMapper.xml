@@ -57,6 +57,13 @@
 	  article_order=#{articleOrder}
 	  where article_id = #{articleId} 
 	</update>
+	<update id="updateArticle1ById" parameterType="com.wantao.bean.Article">
+	  update article set 
+	  article_title=#{articleTitle},
+	  article_content=#{articleContent}
+	  where article_id = #{articleId} 
+	</update>
+	
 	<insert id="insertArticle">
 	insert into article(
 	 article_user_id,

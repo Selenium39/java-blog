@@ -13,8 +13,11 @@ $(function(){
 		show_article(ue,ARTICLE_ID);
 	});
 	show_category_tags(ARTICLE_ID);
+	$("#updateFormButton").click(function(){
+		update_article(ARTICLE_ID);
+		return false;
+    });
 });
-
 
 function selectNotificationCount() {// 查询未读联系人,未读信息，未读留言的数量
 	$.ajax({
@@ -78,7 +81,19 @@ function show_category_tags(ARTICLE_ID){
 			$("#category-"+category.categoryId).attr("selected","selected");
 			$.each(tags,function(index,item){
 				$("#tag-"+item.tagId).attr("selected","selected");
-			})
+			});
 		}
 	});
+}
+
+function update_article(ARTICLE_ID){
+	$.ajax({
+		url:APP_PATH+"/admin/updateArticle1ById",
+		type:"post",
+		data:$("#updateForm").serialize()+"&articleId="+ARTICLE_ID,
+		success:function(index,item){
+			alert("修改成功");
+			$(location).attr("href",APP_PATH+"/admin/articles");
+		}
+});
 }

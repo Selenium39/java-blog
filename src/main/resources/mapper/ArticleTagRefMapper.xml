@@ -25,4 +25,7 @@
 	<insert id="insertArticleTagRef">
 	 insert into article_tag_ref(article_id,tag_id)values(#{newArticleId},#{tagId})
 	</insert>
+	<update id="updateArticleTagRef">
+	  update article_tag_ref set tag_id=#{tagId} where article_id=#{articleId}
+	</update>
 </mapper>

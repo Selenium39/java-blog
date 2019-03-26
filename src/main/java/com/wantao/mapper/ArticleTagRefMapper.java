@@ -19,4 +19,5 @@ public interface ArticleTagRefMapper {
 	public List<Tag> selectTagByArticleId(Integer articleId);
     public List<Article> selectRelateArticle(Integer articleId);
     public Integer insertArticleTagRef(@Param("newArticleId")Integer newArticleId,@Param("tagId")Integer tagId);
+    public Integer updateArticleTagRef(@Param("articleId")Integer articleId,@Param("tagId")Integer tagId);
 }

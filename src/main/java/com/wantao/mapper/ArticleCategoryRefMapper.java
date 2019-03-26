@@ -14,4 +14,5 @@ import com.wantao.bean.Category;
 public interface ArticleCategoryRefMapper {
 	public Category selectCategoryByArticleId(Integer articleId);
     public Integer insertArticleCategoryRef(@Param("newArticleId")Integer newArticleId,@Param("categoryId")Integer categoryId);
+    public Integer updateArticleCategoryRef(@Param("articleId")Integer articleId,@Param("categoryId")Integer categoryId);
 }

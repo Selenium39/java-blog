@@ -498,13 +498,37 @@ public class AdminController {
 	/**
 	 * @param
 	 * @return Message
-	 * @description 通过id修改文章
+	 * @description 通过id修改文章是否有效是否置顶
 	 */
 	@PostMapping("/updateArticleById")
 	@ResponseBody
 	public Message updateArticleById(@RequestParam Integer articleId, Article article) {
 		// logger.info("进入到updateArticleById的方法");
 		articleService.updateArticleById(article);
+		return Message.success();
+	}
+	
+	
+	/**  
+	* @method: updateArticle1ById   
+	* @param @param articleId
+	* @param @param article
+	* @param @param editorValue
+	* @param @param categoryId
+	* @param @param tagId
+	* @param @return     
+	* @return Message    
+	* @throws  
+	* @description: 修改文章的标题内容分类和标签
+	*/
+	@PostMapping("/updateArticle1ById")
+	@ResponseBody
+	public Message updateArticle1ById(@RequestParam Integer articleId, Article article,String editorValue,Integer categoryId,Integer tagId) {
+		 article.setArticleId(articleId);
+		 article.setArticleContent(editorValue);
+		 articleService.updateArticle1ById(article);
+		 articleCategoryRefService.updateArticleCategoryRef(articleId,categoryId);
+		 articleTagRefService.updateArticleTagRef(articleId,tagId);
 		return Message.success();
 	}
 

@@ -10,4 +10,7 @@
 	<insert id="insertArticleCategoryRef">
 	  insert into article_category_ref(article_id,category_id)values(#{newArticleId},#{categoryId})
 	</insert>
+	<update id="updateArticleCategoryRef">
+	  update article_category_ref set category_id=#{categoryId} where article_id=#{articleId}
+	</update>
 </mapper>

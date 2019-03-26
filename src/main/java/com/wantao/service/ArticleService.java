@@ -121,4 +121,13 @@ public class ArticleService implements ArticleMapper {
 		return articleMapper.selectNewArticleId();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wantao.mapper.ArticleMapper#updateArticleById1(com.wantao.bean.Article)
+	 * 修改文章内容
+	 */
+	@Override
+	public Integer updateArticle1ById(Article article) {
+		return articleMapper.updateArticle1ById(article);
+	}
+
 }

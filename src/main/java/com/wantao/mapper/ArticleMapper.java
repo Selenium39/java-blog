@@ -23,6 +23,7 @@ public interface ArticleMapper {
    public Article selectArticleById(Integer articleId);
    public Article selectArticleByIdWithStatus(Integer articleId);
    public Integer updateArticleById(Article article);
+   public Integer updateArticle1ById(Article article);
    public Integer deleteArticleByBatchById(List<Integer>ids);
    public Integer insertArticle(Article article);
 }
