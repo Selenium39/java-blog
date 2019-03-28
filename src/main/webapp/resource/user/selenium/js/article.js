@@ -12,7 +12,15 @@ $(function() {
 		return false;
 	});
 	$("#find").click(function(){
-		return;
+		var content=$("#article_content").text();
+		var keyword=$("#ky").val();
+		if(content.indexOf(keyword)<0){//没有找到
+			alert("文章内没找到您查找的值，换个关键字试试吧");
+			window.location.reload();
+		}else{
+			find();	
+		}
+		return false;
 	});
 })
 
@@ -54,13 +62,18 @@ function show() {
 					"draggable" : "false"
 				}).append(item.tagName).appendTo($("#tagDiv"));
 			});
+			// 构建文章推荐
 			var recommend = $("#relate_recommend");
+			var flag=$.isEmptyObject(relateArticles);
+			if(flag==false){
 			$.each(relateArticles, function(index, item) {
 				recommend.append($("<li></li>").append(
 						$("<a></a>").prop("href",
 								APP_PATH + "/user/article/" + item.articleId)
-								.append(item.articleTitle)));
-			})
+								.append(item.articleTitle))).append($("<br/>"));
+			})}else{
+				recommend.append($("<li style='color:red'></li>").append("此分类暂无文章推荐")).append($("<br/>"));
+			}
 
 		}
 	});
@@ -75,6 +88,8 @@ function show_comment(articleId) {
 		},
 		success : function(result) {
 			var comments=result.data.comments;
+			var flag=$.isEmptyObject(comments);
+			if(flag==false){
 			var count=1;
 			$.each(comments,function(index,item){
 				number=$("<li></li>").addClass("comment-content").append($("<span></span>").addClass("comment-f").append("#"+count));
@@ -83,6 +98,9 @@ function show_comment(articleId) {
 				$("#comment_list").append(number).append(commentDiv);
 				++count;
 			});
+			}else{
+				$("#comment_list").append($("<li></li>").addClass("comment-content")).append($("<br/>")).append($("<li style='color:red'></li>").append("暂无评论，期待您的评论"));
+			}
 		}
 	});
 }
@@ -116,5 +134,23 @@ function my_time(){
 	// 注：Javascript中时间戳的单位是毫秒
 	var offsetDays = Math.floor(offsetTime / (3600 * 24 * 1e3));
 	$("#my_time").text(offsetDays);
-	
+}
+
+var old_content=null;
+var count =1;
+function find(){
+	    if(old_content==null){
+	    	var content=$("#article_content").html();
+	    	if(count==1){
+	    	old_content=content; 
+	    	}  
+	    }else{
+	    	content=old_content;
+	    }
+	    var keyword=$("#ky").val();
+    	re = new RegExp(keyword+"","g"); //定义正则表达式
+    	var newstr=content.replace(re,"<b style='color:red'>"+keyword+"</b>"); 
+    	//第一个参数是正则表达式。
+		$("#article_content").empty();
+		$("#article_content").append(newstr);
 }

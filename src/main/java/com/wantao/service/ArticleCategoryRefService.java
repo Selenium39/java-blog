@@ -1,8 +1,11 @@
 package com.wantao.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.wantao.bean.Article;
 import com.wantao.bean.Category;
 import com.wantao.mapper.ArticleCategoryRefMapper;
 
@@ -28,6 +31,16 @@ public class ArticleCategoryRefService implements ArticleCategoryRefMapper {
 	@Override
 	public Integer updateArticleCategoryRef(Integer articleId, Integer categoryId) {
 		return articleCategoryRefMapper.updateArticleCategoryRef(articleId, categoryId);
+	}
+
+	@Override
+	public List<Article> selectArticleByCategoryId(Integer categoryId) {
+		return articleCategoryRefMapper.selectArticleByCategoryId(categoryId);
+	}
+
+	@Override
+	public List<Category> selectMostArticleCategory4() {
+		return articleCategoryRefMapper.selectMostArticleCategory4();
 	}
 
 }

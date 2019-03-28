@@ -13,4 +13,14 @@
 	<update id="updateArticleCategoryRef">
 	  update article_category_ref set category_id=#{categoryId} where article_id=#{articleId}
 	</update>
+	<select id="selectArticleByCategoryId" resultType="com.wantao.bean.Article">
+	  select * from article where article_id in (
+	      select article_id from article_category_ref
+	      where category_id = #{categoryId}
+	  ) and article_status =1 order by article_create_time desc
+	</select>
+	<select id="selectMostArticleCategory4" resultType="com.wantao.bean.Category">
+	    create or replace view article_category_view0 as select category_id from article_category_ref group by category_id order by count(article_id) desc limit 4;
+         select * from category where category_id in (select category_id from article_category_view0);
+	</select>
 </mapper>

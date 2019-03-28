@@ -1,0 +1,6 @@
+@charset "UTF-8";
+.title .more {
+    float: right;
+    position: relative;
+    top: -1px;
+}

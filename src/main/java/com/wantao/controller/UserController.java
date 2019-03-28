@@ -3,6 +3,7 @@ package com.wantao.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -29,6 +30,7 @@ import com.wantao.bean.Tag;
 import com.wantao.service.ArticleCategoryRefService;
 import com.wantao.service.ArticleService;
 import com.wantao.service.ArticleTagRefService;
+import com.wantao.service.CategoryService;
 import com.wantao.service.CommentService;
 import com.wantao.service.ContactService;
 import com.wantao.service.MeService;
@@ -60,6 +62,8 @@ public class UserController {
 	MessageService messageService;
 	@Autowired
 	HtmlUtil htmlUtil;
+	@Autowired
+	CategoryService categoryService;
 	private static final Logger logger = LoggerFactory.getLogger("UserController.class");
 
 	@RequestMapping("/404")
@@ -146,13 +150,22 @@ public class UserController {
 	 * @return Message
 	 * @description 查询有效文章列表
 	 */
-	@GetMapping("/selectAllArticle/{pn}")
+	@GetMapping("/selectArticle/{pn}")
 	@ResponseBody
-	public Message selectAllArticle(@PathVariable("pn") Integer pn) {
-		PageHelper.startPage(pn, 5);// 后面紧跟的查询为分页查询
-		List<Article> articles = articleService.selectAllArticleWithStatus();
-		PageInfo pageInfo = new PageInfo(articles, 5);// 用pageInfo封装然后交给页面
-		return Message.success().add("pageInfo", pageInfo);
+	public Message selectAllArticle(@RequestParam(name = "categoryId", required = false, defaultValue = "0") Integer categoryId,@PathVariable("pn") Integer pn) {
+		PageInfo pageInfo=null;
+		List<Article> articles=null;
+		if(categoryId==0) {
+		PageHelper.startPage(pn, 7);// 后面紧跟的查询为分页查询
+		articles = articleService.selectAllArticleWithStatus();
+		pageInfo = new PageInfo(articles, 7);// 用pageInfo封装然后交给页面
+		return Message.success().add("pageInfo", pageInfo).add("categoryId",categoryId);
+		}else {
+		PageHelper.startPage(pn, 7);
+		articles=articleCategoryRefService.selectArticleByCategoryId(categoryId);
+		pageInfo = new PageInfo(articles, 7);
+		return  Message.success().add("pageInfo", pageInfo).add("categoryId",categoryId);
+		}
 	}
 
 	/**
@@ -170,6 +183,18 @@ public class UserController {
 		return Message.success().add("article", article).add("category", category).add("tags", tags)
 				.add("relateArticles", relateArticles);
 	}
+	
+	@PostMapping("/selectArticleByKeyword/{pn}")
+	@ResponseBody
+	public Message selectArticleByKeyword(@RequestParam("ky")String ky,@PathVariable("pn")Integer pn) {
+		String keyword=htmlUtil.htmlFilter(ky);
+		PageHelper.startPage(pn, 7);
+		List<Article>kyArticles=articleService.selectArticleByKeyword(keyword);
+		PageInfo pageInfo = new PageInfo(kyArticles, 7);
+		return Message.success().add("pageInfo",pageInfo);
+	}
+	
+	
 	
 	/**
 	 * @param
@@ -229,4 +254,23 @@ public class UserController {
 		return Message.success();
 	}
 	
+	/**  
+	* @method: selectAllCategoryIdAndName   
+	* @param @return     
+	* @return Message    
+	* @throws  
+	* @description: 查询所有的分类id和name
+	*/
+	@GetMapping("/selectAllCategoryIdAndName")
+	@ResponseBody
+	public Message selectAllCategoryIdAndName() {
+		List<Map<String,Object>>categoryIdAndName=categoryService.selectAllCategoryIdAndName();
+		return Message.success().add("categoryIdAndName",categoryIdAndName);
+	}
+	@GetMapping("/selectMostArticleCategory4")
+	@ResponseBody
+	public Message selectMostArticleCategory4() {
+		List<Category>categorys=articleCategoryRefService.selectMostArticleCategory4();
+		return Message.success().add("categorys",categorys);
+	}
 }

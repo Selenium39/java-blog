@@ -26,4 +26,5 @@ public interface ArticleMapper {
    public Integer updateArticle1ById(Article article);
    public Integer deleteArticleByBatchById(List<Integer>ids);
    public Integer insertArticle(Article article);
+   public List<Article> selectArticleByKeyword(String keyword);
 }

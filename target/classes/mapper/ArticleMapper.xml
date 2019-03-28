@@ -49,6 +49,9 @@
 	<select id="selectNewArticleId" resultType="java.lang.Integer">
 	      select max(article_id)+1 from article
 	</select>
+	<select id="selectArticleByKeyword" resultType="com.wantao.bean.Article">
+	     select * from article where article_title like concat(concat('%',#{keyword}),'%') and article_status=1  order by article_create_time desc
+	</select>
 	<update id="updateArticleById" parameterType="com.wantao.bean.Article">
 	  update article set 
 	  article_title=#{articleTitle},

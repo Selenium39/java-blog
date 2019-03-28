@@ -129,5 +129,9 @@ public class ArticleService implements ArticleMapper {
 	public Integer updateArticle1ById(Article article) {
 		return articleMapper.updateArticle1ById(article);
 	}
+	@Override
+	public List<Article> selectArticleByKeyword(String keyword) {
+		return articleMapper.selectArticleByKeyword(keyword);
+	}
 
 }

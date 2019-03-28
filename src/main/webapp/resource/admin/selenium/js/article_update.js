@@ -9,10 +9,10 @@ $(function(){
 	selectNotificationCount();
 	show_categorys();
 	show_tags();
+	show_category_tags(ARTICLE_ID);
 	ue.ready(function() {
 		show_article(ue,ARTICLE_ID);
 	});
-	show_category_tags(ARTICLE_ID);
 	$("#updateFormButton").click(function(){
 		update_article(ARTICLE_ID);
 		return false;

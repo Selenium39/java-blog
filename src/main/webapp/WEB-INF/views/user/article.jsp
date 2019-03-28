@@ -10,7 +10,7 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>article</title>
+<title>文章</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="stylesheet" type="text/css"
@@ -169,7 +169,7 @@
 				<!-- 相关推荐 -->
 				<div style="font-size:20px;">
 					<div>
-					<h2>相关推荐</h2>
+					<h2>相关文章推荐</h2><br/>
 					</div>
 					<div>
 					   <ul id="relate_recommend"></ul>
@@ -232,16 +232,14 @@
 					</div>
 				</div>
 				<div class="widget widget_search">
-					<form class="navbar-form" action="#" method="post">
 						<div class="input-group">
-							<input type="text" name="keyword" class="form-control" size="35"
+							<input type="text" id="ky" name="ky" class="form-control" size="35"
 								placeholder="请输入关键字" maxlength="15"
 								autocomplete="off"> <span class="input-group-btn">
 								<button class="btn btn-default btn-search" name="search"
 									id="find">查找</button>
 							</span>
 						</div>
-					</form>
 				</div>
 			</div>
 			<!-- 右侧日历 -->
@@ -280,9 +278,9 @@
 			</div>
 			<!--友情链接 -->
 			<div class="widget widget_sentence">
-				<h3>friendly link</h3>
+				<h3>友情链接</h3>
 				<div class="widget-sentence-link">
-					<a href="#" title="friendlylink" target="_blank">friendly link</a>&nbsp;&nbsp;&nbsp;
+					<a href="#" title="friendlylink" target="_blank">暂无链接</a>&nbsp;&nbsp;&nbsp;
 				</div>
 			</div>
 		</aside>
@@ -290,11 +288,7 @@
 	<footer class="footer">
 		<div class="container">
 			<p>
-				Copyright &copy; 2016.Company name All rights reserved.More
-				Templates <a href="http://www.cssmoban.com/" target="_blank"
-					title="æ¨¡æ¿ä¹å®¶">æ¨¡æ¿ä¹å®¶</a> - Collect from <a
-					href="http://www.cssmoban.com/" title="ç½é¡µæ¨¡æ¿"
-					target="_blank">ç½é¡µæ¨¡æ¿</a>
+				<small>@上海电机学院 Selenium</small>
 			</p>
 		</div>
 		<div id="gotop">
